@@ -26,6 +26,9 @@ import com.ajit.myfirstapp.vo.QuestionAnswerVo;
 public class MainActivity extends Activity  implements OnClickListener {
 
 	  private RadioGroup radioOptions;
+	  private TextView txtViewExplanation;
+	  private TextView txtViewText;
+	  private TextView txtViewQuestion;
 	  private Button btnDisplay;
 	  private ImageButton btnprevious, btnnext;
 	  private int position = 0;
@@ -44,7 +47,10 @@ public class MainActivity extends Activity  implements OnClickListener {
         	return;
         }
         
+        this.txtViewQuestion = (TextView)findViewById(R.id.placeHolderQuestion);
+        this.txtViewExplanation = (TextView) findViewById(R.id.placeHolderExplanation);
         this.radioOptions = (RadioGroup)findViewById(R.id.radioOption);
+        this.txtViewText = (TextView) findViewById(R.id.placeHolderText);
         
         //Display view 
         changePosition(this.position);
@@ -104,7 +110,7 @@ public class MainActivity extends Activity  implements OnClickListener {
             
             switch (eventType){
                 case XmlPullParser.START_DOCUMENT:
-                	voList = new ArrayList();
+                	voList = new ArrayList<QuestionAnswerVo>();
                 	System.out.println("switch - 1");
                     break;
                 case XmlPullParser.START_TAG:
@@ -146,7 +152,8 @@ public class MainActivity extends Activity  implements OnClickListener {
 
 
 	public void displayRadioButton(int position) {
-    	
+		
+		this.radioOptions.setVisibility(RadioGroup.VISIBLE);
     	QuestionAnswerVo qaVo = qaList.get(position);
     	
     	this.radioOptions.removeAllViews();
@@ -174,65 +181,6 @@ public class MainActivity extends Activity  implements OnClickListener {
 
    }
     
-    private List<QuestionAnswerVo> getQuestionAnswerList1() {
-    	//List<QuestionAnswerVo> qaList = new ArrayList<QuestionAnswerVo>();
-		QuestionAnswerVo qa = null;
-		
-		qa = new QuestionAnswerVo();
-		qa.question = "Question 1";
-		qa.answer = "1";
-		qa.option1 = "Option A";
-		qa.option2 = "Option B";
-		qa.option3 = "Option C";
-		qa.option4 = "Option D";
-		qa.explanation = "Explanation for Answer";
-		qaList.add(qa);
-		
-		qa = new QuestionAnswerVo();
-		qa.question = "Question 2";
-		qa.answer = "2";
-		qa.option1 = "Option A";
-		qa.option2 = "Option B";
-		qa.option3 = "Option C";
-		qa.option4 = "Option D";
-		qa.explanation = "Explanation for Answer";
-		qaList.add(qa);
-		
-		qa = new QuestionAnswerVo();
-		qa.question = "Question 3";
-		qa.answer = "3";
-		qa.option1 = "Option A";
-		qa.option2 = "Option B";
-		qa.option3 = "Option C";
-		qa.option4 = "Option D";
-		qa.explanation = "Explanation for Answer";
-		qaList.add(qa);
-		
-		qa = new QuestionAnswerVo();
-		qa.question = "Question 4";
-		qa.answer = "4";
-		qa.option1 = "Option A";
-		qa.option2 = "Option B";
-		qa.option3 = "Option C";
-		qa.option4 = "Option D";
-		qa.explanation = "Explanation for Answer";
-		qaList.add(qa);
-		
-		qa = new QuestionAnswerVo();
-		qa.question = "Question 5";
-		qa.answer = "2";
-		qa.option1 = "Option A";
-		qa.option2 = "Option B";
-		qa.option3 = "Option C";
-		qa.option4 = "Option D";
-		qa.explanation = "Explanation for Answer";
-		qaList.add(qa);
-		
-		
-		return qaList;
-	}
-
-	
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -265,26 +213,27 @@ public class MainActivity extends Activity  implements OnClickListener {
 			//call the method Check
 			RadioButton radioBtn = null;
 			QuestionAnswerVo qaVo = qaList.get(position);
-			int selectedId = radioOptions.getCheckedRadioButtonId();
-			
-			TextView txtViewExplanation = (TextView)findViewById(R.id.placeHolderExplanation);
-			txtViewExplanation.setText(qaVo.explanation + " - " + selectedId);
-			txtViewExplanation.setVisibility(TextView.VISIBLE);
-			
-			if(!(selectedId <= 0)){
-				System.out.println(qaVo.answer + " == " + selectedId);
-				if(qaVo.answer.equals(""+selectedId)){
-					radioBtn = (RadioButton) findViewById(selectedId);
-					radioBtn.setBackgroundColor(Color.GREEN);
-				}
+			if(this.radioOptions.getVisibility() == RadioGroup.VISIBLE){
+				int selectedId = radioOptions.getCheckedRadioButtonId();
 				
-			}else{
-				txtViewExplanation = (TextView)findViewById(R.id.placeHolderExplanation);
-				txtViewExplanation.setText(qaVo.explanation + " - " + selectedId);
-				txtViewExplanation.setVisibility(TextView.VISIBLE);
+				if(!(selectedId <= 0)){
+					System.out.println(qaVo.answer + " == " + selectedId);
+					if(qaVo.answer.equals(""+selectedId)){
+						radioBtn = (RadioButton) findViewById(selectedId);
+						radioBtn.setBackgroundColor(Color.GREEN);
+						
+						this.txtViewExplanation.setText(qaVo.explanation);
+						this.txtViewExplanation.setVisibility(TextView.VISIBLE);
+					}
+				}	
+			}else if(this.txtViewText.getVisibility() == TextView.VISIBLE){
+				String textResult = "Incorrect";
+				if(qaVo.answer.equals(this.txtViewText.getText().toString())){
+					textResult = "Correct";
+				}
+				this.txtViewExplanation.setText(textResult + " : Answer is " + qaVo.answer + ".\n" + qaVo.explanation);
+				this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 			}
-
-			
 			
 		}
 	}
@@ -293,13 +242,27 @@ public class MainActivity extends Activity  implements OnClickListener {
     //after navigation button is clicked
     private void changePosition(int position){
     	QuestionAnswerVo qaVo = qaList.get(position);
-		TextView txtViewQuestion = (TextView)findViewById(R.id.placeHolderQuestion);
-		txtViewQuestion.setText(qaVo.question);
 		
-		displayRadioButton(position);
+		this.txtViewQuestion.setText(qaVo.question);
+		/*this.radioOptions.setVisibility(RadioGroup.INVISIBLE);
+		this.txtViewExplanation.setVisibility(TextView.INVISIBLE);
+		this.txtViewText.setVisibility(TextView.INVISIBLE);*/
+		this.radioOptions.setVisibility(View.GONE);
+		this.txtViewExplanation.setVisibility(View.GONE);
+		this.txtViewText.setVisibility(View.GONE);
 		
-		TextView txtViewExplanation = (TextView) findViewById(R.id.placeHolderExplanation);
-        txtViewExplanation.setVisibility(TextView.INVISIBLE);
+		System.out.println("qaVo.option1 : " + qaVo.option1);
+		if(qaVo.option1 == null || qaVo.option1.equals("")){
+			this.txtViewText.setText("");
+			this.txtViewText.setVisibility(TextView.VISIBLE);
+		}else if(qaVo.option1 != null){
+			displayRadioButton(position);	
+		}
+		
+        /*this.txtViewExplanation.setVisibility(TextView.INVISIBLE);*/
+		this.txtViewExplanation.setVisibility(View.GONE);
+        
+        
     }//end changeNumber
     
 }

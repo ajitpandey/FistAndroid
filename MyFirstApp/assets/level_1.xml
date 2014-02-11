@@ -39,6 +39,11 @@
 	<quiz>     
 		<question>Question 5</question>
 		<answer>1</answer>
+		<explanation>Explanation for answer</explanation>
+	</quiz>
+	<quiz>     
+		<question>Question 6</question>
+		<answer>1</answer>
 		<option1>Option 1</option1>
 		<option2>Option 2</option2>
 		<option3>Option 3</option3>
