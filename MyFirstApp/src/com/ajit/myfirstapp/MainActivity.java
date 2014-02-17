@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,14 +19,20 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TableLayout;
@@ -33,6 +40,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.ajit.myfirstapp.vo.QuestionAnswerVo;
+import com.ajit.myfirstapp.vo.RawStringContent;
 
 public class MainActivity extends Activity  implements OnClickListener {
 
@@ -61,8 +69,8 @@ public class MainActivity extends Activity  implements OnClickListener {
         }
         
         this.txtViewExplanation = (TextView) findViewById(R.id.placeHolderExplanation);
-        this.radioOptions = (RadioGroup)findViewById(R.id.radioOption);
-        this.txtViewText = (TextView) findViewById(R.id.placeHolderText);
+        //this.radioOptions = (RadioGroup)findViewById(R.id.radioOption);
+        //this.txtViewText = (TextView) findViewById(R.id.placeHolderText);
         
         //Display view 
         changePosition(this.position);
@@ -160,6 +168,8 @@ public class MainActivity extends Activity  implements OnClickListener {
                         	questionAnswerVo.option4 = parser.nextText();
                         } else if (name.equals("explanation")){
                         	questionAnswerVo.explanation = parser.nextText();
+                        } else if (name.equals("type")){
+                        	questionAnswerVo.type = parser.nextText();
                         }  
                     }
                     break;
@@ -178,39 +188,43 @@ public class MainActivity extends Activity  implements OnClickListener {
 
 
 	public void displayRadioButton(int position) {
+		TableRow ansOpt =  (TableRow)findViewById(R.id.rowSelectAnswer);
+		ansOpt.removeAllViews();
 		
-		this.radioOptions.setVisibility(RadioGroup.VISIBLE);
+		this.radioOptions = new RadioGroup(this);
+		ansOpt.addView(radioOptions);
+		//radioOptions.setVisibility(RadioGroup.VISIBLE);
     	QuestionAnswerVo qaVo = qaList.get(position);
     	
-    	this.radioOptions.removeAllViews();
+    	//radioOptions.removeAllViews();
     	
         RadioButton rdbtn = null;
         if(qaVo.option1 != null && qaVo.option1 != ""){
         	rdbtn = new RadioButton(this);
             rdbtn.setId(1);
             rdbtn.setText(qaVo.option1);
-            this.radioOptions.addView(rdbtn);	
+            radioOptions.addView(rdbtn);	
         }
         
         if(qaVo.option2 != null && qaVo.option2 != ""){
 	        rdbtn = new RadioButton(this);
 	        rdbtn.setId(2);
 	        rdbtn.setText(qaVo.option2);
-	        this.radioOptions.addView(rdbtn);
+	        radioOptions.addView(rdbtn);
         }
 
         if(qaVo.option3 != null && qaVo.option3 != ""){
         rdbtn = new RadioButton(this);
         rdbtn.setId(3);
         rdbtn.setText(qaVo.option3);
-        this.radioOptions.addView(rdbtn);
+        radioOptions.addView(rdbtn);
         }
         
         if(qaVo.option4 != null && qaVo.option4 != ""){
         rdbtn = new RadioButton(this);
         rdbtn.setId(4);
         rdbtn.setText(qaVo.option4);
-        this.radioOptions.addView(rdbtn);
+        radioOptions.addView(rdbtn);
         }
 
    }
@@ -247,8 +261,8 @@ public class MainActivity extends Activity  implements OnClickListener {
 			//call the method Check
 			RadioButton radioBtn = null;
 			QuestionAnswerVo qaVo = qaList.get(position);
-			if(this.radioOptions.getVisibility() == RadioGroup.VISIBLE){
-				int selectedId = radioOptions.getCheckedRadioButtonId();
+			if(qaVo.type.equals("radio")){
+				int selectedId = this.radioOptions.getCheckedRadioButtonId();
 				
 				if(!(selectedId <= 0)){
 					//System.out.println(qaVo.answer + " == " + selectedId);
@@ -260,13 +274,51 @@ public class MainActivity extends Activity  implements OnClickListener {
 						this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 					}
 				}	
-			}else if(this.txtViewText.getVisibility() == TextView.VISIBLE){
+			}else if(qaVo.type.equals("text")){
 				String textResult = "Incorrect";
 				if(qaVo.answer.equals(this.txtViewText.getText().toString())){
 					textResult = "Correct";
 				}
 				this.txtViewExplanation.setText(textResult + " : Answer is " + qaVo.answer + ".\n" + qaVo.explanation);
 				this.txtViewExplanation.setVisibility(TextView.VISIBLE);
+			}else if(qaVo.type.equals("check")){
+				String boxId = "";
+				/*TableRow ansOpt =  (TableRow)findViewById(R.id.rowSelectAnswer);
+				System.out.println("ansOpt.getChildCount() : " + ansOpt.getChildCount());
+				//Get get checked checkbox ids
+				
+				for(int i = 0; i < ansOpt.getChildCount(); i++){
+					View child = ansOpt.getChildAt(i);
+					System.out.println("child type : " + child.getClass());
+					if (child instanceof CheckBox) {
+				        CheckBox box = (CheckBox) child;
+				        if(box.isChecked()){
+				        	boxId = boxId.length()==0?""+box.getId():"," + box.getId();
+				        }
+				    }
+				}*/
+				for(int i = 1; i <= 4; i++){
+					View child = findViewById(i);
+					System.out.println("child type : " + i + " - " + child.getClass());
+					if (child != null && child instanceof CheckBox) {
+				        CheckBox box = (CheckBox) child;
+				        if(box.isChecked()){
+				        	boxId = boxId + (boxId.length()==0?""+box.getId():"," + box.getId());
+				        }
+				    }
+				}
+				System.out.println("boxId : " + qaVo.answer + " - " + boxId);
+				//Validate Check box
+				if(boxId != ""){
+					//System.out.println(qaVo.answer + " == " + selectedId);
+					String textResult = "Incorrect";
+					if(qaVo.answer.equals(boxId)){
+						textResult = "Correct";
+						
+					}
+					this.txtViewExplanation.setText(textResult + " : " + qaVo.explanation);
+					this.txtViewExplanation.setVisibility(TextView.VISIBLE);
+				}	
 			}
 			
 		}
@@ -279,16 +331,17 @@ public class MainActivity extends Activity  implements OnClickListener {
 		
     	printQuestion(qaVo.question);
 		
-		this.radioOptions.setVisibility(View.GONE);
+		//this.radioOptions.setVisibility(View.GONE);
 		this.txtViewExplanation.setVisibility(View.GONE);
-		this.txtViewText.setVisibility(View.GONE);
+		//this.txtViewText.setVisibility(View.GONE);
 		
 		//System.out.println("qaVo.option1 : " + qaVo.option1);
-		if(qaVo.option1 == null || qaVo.option1.equals("")){
-			this.txtViewText.setText("");
-			this.txtViewText.setVisibility(TextView.VISIBLE);
-		}else if(qaVo.option1 != null){
+		if(qaVo.type.equals("text")){
+			displayTextEdit(position);
+		}else if(qaVo.type.equals("radio")){
 			displayRadioButton(position);	
+		}else if(qaVo.type.equals("check")){
+			displayCheckBoxButton(position);	
 		}
 		
         /*this.txtViewExplanation.setVisibility(TextView.INVISIBLE);*/
@@ -297,7 +350,83 @@ public class MainActivity extends Activity  implements OnClickListener {
         
     }//end changeNumber
 
-    private void printQuestion(String question) {
+    private void displayTextEdit(int position2) {
+    	TableRow ansOpt =  (TableRow)findViewById(R.id.rowSelectAnswer);
+		ansOpt.removeAllViews();
+		
+		this.txtViewText = new EditText(this);
+		ansOpt.addView(this.txtViewText);
+		
+	}
+
+	private void displayCheckBoxButton(int position2) {
+		TableRow ansOpt =  (TableRow)findViewById(R.id.rowSelectAnswer);
+		//ansOpt.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+		//ansOpt.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+		ansOpt.removeAllViews();
+		
+		TableLayout tb = new TableLayout(this);
+		ansOpt.addView(tb);
+		TableRow tr = null;
+		
+		QuestionAnswerVo qaVo = qaList.get(position);
+    	
+		CheckBox cb = null;
+        if(qaVo.option1 != null && qaVo.option1 != ""){
+        	tr = new TableRow(this);
+        	cb = new CheckBox(this);
+        	cb.setId(1);
+        	setCheckBoxViewData(cb,qaVo.option1);
+        	tr.addView(cb);
+        	tb.addView(tr);
+        }
+        if(qaVo.option2 != null && qaVo.option2 != ""){
+        	tr = new TableRow(this);
+        	cb = new CheckBox(this);
+        	cb.setId(2);
+        	setCheckBoxViewData(cb,qaVo.option2);
+        	tb.addView(tr);
+        	tr.addView(cb);
+        }
+
+        if(qaVo.option3 != null && qaVo.option3 != ""){
+        	tr = new TableRow(this);
+        	cb = new CheckBox(this);
+        	cb.setId(3);
+        	setCheckBoxViewData(cb,qaVo.option3);
+        	tb.addView(tr);
+        	tr.addView(cb);
+        }
+        
+        if(qaVo.option4 != null && qaVo.option4 != ""){
+        	tr = new TableRow(this);
+        	cb = new CheckBox(this);
+        	cb.setId(4);
+        	setCheckBoxViewData(cb,qaVo.option4);
+        	tb.addView(tr);
+        	tr.addView(cb);
+        }
+	}
+
+	private void setCheckBoxViewData(CheckBox cb, String option) {
+		Map map = getImageIdFromString(option);
+		System.out.println("map.size() :" + map.size());
+    	for(int i = 1 ; i <= map.size() ; i++){
+    		RawStringContent rawStringContent = (RawStringContent)map.get("" + i);
+    		if(rawStringContent.type.equals("text")){
+    			cb.setText(rawStringContent.value);
+    		}else if(rawStringContent.type.equals("image")){
+    			String[] strArr = rawStringContent.value.split(",");
+    			Bitmap bit = decodeSampledBitmapFromResource(getResources(), getImageId(this, strArr[0]), 50, 50);
+    			bit.
+    			Drawable d = new BitmapDrawable(getResources(), bit);
+    			
+    			cb.setCompoundDrawablesWithIntrinsicBounds(null, null, d, null);
+    		}
+    	}
+	}
+
+	private void printQuestion(String question) {
 		String rawQuestion = question;
 
 		String strImage = "_s-img_";
@@ -366,6 +495,43 @@ public class MainActivity extends Activity  implements OnClickListener {
 		         createQuestionTextView(str, tblayout, mDisplayMetrics);
 		      }
 		}
+	}
+	
+	private Map<String, RawStringContent> getImageIdFromString(String rawString){
+		Map map = new HashMap<String, RawStringContent>();
+		RawStringContent rawStringContent = null;
+		String strImage = "_s-img_";
+		String[] splittedImageString = rawString.split(strImage);
+	    System.out.println(splittedImageString.length);
+	    int count = 1;
+		for(String str : splittedImageString){
+			System.out.println(str);
+			String pattern = "(.*),(\\d)_e-img_(.*)";
+
+		      // Create a Pattern object
+		      Pattern r = Pattern.compile(pattern);
+
+		      // Now create matcher object.
+		      Matcher m = r.matcher(str);
+		      if (m.find( )) {
+		    	  System.out.println("ImageName: " + m.group(1) );
+			         System.out.println("ImageCount: " + m.group(2) );
+			         System.out.println("more text : " + m.group(3) );
+			         rawStringContent = new RawStringContent();
+			         rawStringContent.type = "image";
+			         rawStringContent.value = m.group(1) +","+ m.group(2);
+			         map.put(""+count, rawStringContent);
+		         
+		      } else {
+		         rawStringContent = new RawStringContent();
+		         rawStringContent.type = "text";
+		         rawStringContent.value = str;
+		         map.put(""+count, rawStringContent);
+		      }
+		      count++;
+		}
+		
+		return map;
 	}
 
 	private void createQuestionImageView(String imageName,

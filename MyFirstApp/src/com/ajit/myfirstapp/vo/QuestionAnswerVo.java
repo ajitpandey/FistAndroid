@@ -1,6 +1,7 @@
 package com.ajit.myfirstapp.vo;
 
 public class QuestionAnswerVo {
+	public String type;
 	public String question;
 	public String answer;
 	public String option1;
