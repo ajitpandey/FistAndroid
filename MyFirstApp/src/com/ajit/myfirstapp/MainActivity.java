@@ -418,7 +418,7 @@ public class MainActivity extends Activity  implements OnClickListener {
     		}else if(rawStringContent.type.equals("image")){
     			String[] strArr = rawStringContent.value.split(",");
     			Bitmap bit = decodeSampledBitmapFromResource(getResources(), getImageId(this, strArr[0]), 50, 50);
-    			bit.
+    			
     			Drawable d = new BitmapDrawable(getResources(), bit);
     			
     			cb.setCompoundDrawablesWithIntrinsicBounds(null, null, d, null);
