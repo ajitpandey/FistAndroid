@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Counting -->
 <quiz_level>
     <quiz>
 	    <type>check</type>
@@ -13,7 +12,7 @@
 	</quiz>
     <quiz>
 	    <type>radio</type>
-		<question>What is the total of below addition? \n  4 \n+ 2 </question>
+		<question>What is the total of below addition? \n  4 \n+2 </question>
 		<answer>1</answer>
 		<option1>6</option1>
 		<option2>7</option2>
