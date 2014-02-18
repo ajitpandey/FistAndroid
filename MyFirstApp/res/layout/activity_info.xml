@@ -1,5 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<!--
+ <RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -9,17 +9,69 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="36dp"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
 
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="36dp"
-        android:src="@drawable/start"
-        android:contentDescription="@string/start_app" />
+        android:contentDescription="@string/appInfoText"
+        android:src="@drawable/aj" />
+
+    <TextView
+        android:id="@+id/appInfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_gravity="center"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:text="@string/appInfoText" >
+
+    </TextView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:background="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnLevel1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/level1" />
+
+    <Button
+        android:id="@+id/btnLevel2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/level2" />
+
+    <Button
+        android:id="@+id/btnLevel3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/level3" />
     
-</RelativeLayout>
+    <Button
+        android:id="@+id/btnLevel4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/level4" />
+    <Button
+        android:id="@+id/btnAboutUs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/aboutUs" />
+
+</LinearLayout> <!-- </RelativeLayout> -->
 
 

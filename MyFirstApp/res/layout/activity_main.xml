@@ -1,16 +1,17 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
     android:scrollbars="none"
-    android:layout_weight="1">
-<TableLayout  
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"  >
+    android:layout_weight="1"
+    android:background="@android:color/white"
+    android:id="@+id/mainScrollView"
+    >
+<TableLayout  android:id="@+id/mainTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TableRow
             android:id="@+id/rowQuestion"
@@ -20,9 +21,11 @@
         </TableRow>
         <TableRow
             android:id="@+id/rowSelectAnswer"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1" >
+           android:layout_width="wrap_content" android:layout_height="0dp"
+            android:layout_weight="1" 
+             >
+            
+
 		</TableRow>
         <TableRow
             android:id="@+id/rowExplanation"
@@ -31,10 +34,10 @@
             android:layout_weight="1" >
 
             <TextView
-		        android:id="@+id/placeHolderExplanation"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text="@string/hello_world" />
+                android:id="@+id/placeHolderExplanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
         </TableRow>
         
         <TableRow

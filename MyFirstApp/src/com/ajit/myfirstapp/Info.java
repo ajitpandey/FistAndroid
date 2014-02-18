@@ -15,21 +15,41 @@ public class Info extends Activity //implements OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
         
-        webinfo=(WebView)findViewById(R.id.webinfo);
+        //webinfo=(WebView)findViewById(R.id.webinfo);
         //provide the URL path pointing to info.html
-        webinfo.loadUrl("file:///android_asset/info.html");
+        //webinfo.loadUrl("file:///android_asset/info.html");
         
-        findViewById(R.id.imageButton1).setOnClickListener(mButton1_OnClickListener);
+        findViewById(R.id.btnLevel1).setOnClickListener(btnLevel1_OnClickListener);
+        findViewById(R.id.btnLevel2).setOnClickListener(btnLevel2_OnClickListener);
+        findViewById(R.id.btnAboutUs).setOnClickListener(btnAboutUs_OnClickListener);
     }
     
-  //On click listener for button1
-    final OnClickListener mButton1_OnClickListener = new OnClickListener() {
+    //On click listener for btnLevel1
+    final OnClickListener btnLevel1_OnClickListener = new OnClickListener() {
         public void onClick(final View v) {
         	//invoke the Info activity
 				Intent main = new Intent(getApplicationContext(), MainActivity.class);
-				System.out.println("Main : " + main.toString());
+				main.putExtra("appLevel", "level_1");
 	    		startActivity(main);        
         }
     };
     
+  //On click listener for btnLevel2
+    final OnClickListener btnLevel2_OnClickListener = new OnClickListener() {
+        public void onClick(final View v) {
+        	//invoke the Info activity
+				Intent main = new Intent(getApplicationContext(), MainActivity.class);
+				main.putExtra("appLevel", "level_2");
+	    		startActivity(main);        
+        }
+    };
+    
+  //On click listener for btnLevel1
+    final OnClickListener btnAboutUs_OnClickListener = new OnClickListener() {
+        public void onClick(final View v) {
+        	//invoke the Info activity
+				Intent main = new Intent(getApplicationContext(), AboutUs.class);
+	    		startActivity(main);        
+        }
+    };
 }

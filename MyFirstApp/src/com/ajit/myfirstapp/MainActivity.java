@@ -15,6 +15,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,17 +23,16 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TableLayout;
@@ -52,23 +52,35 @@ public class MainActivity extends Activity  implements OnClickListener {
 	  private int position = 0;
 	  private List<QuestionAnswerVo> qaList = new ArrayList<QuestionAnswerVo>();
 	  private HashMap<String, Integer> map;
+
+	  private void printSysout(int str){
+		  printSysout("" + str);
+	  }
+	  
+	  private void printSysout(String str){
+		  System.out.println(str);
+	  }
 	  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        
         loadImageInMap();
         
-        this.qaList = getQuestionAnswerList();
+        Intent mIntent = getIntent();
+        String level = mIntent.getStringExtra("appLevel");
+        this.qaList = getQuestionAnswerList(level + ".xml");
         
-        //System.out.println(this.qaList + " - ");
-        //System.out.println(this.qaList.size() + " - ");
+        //printSysout(this.qaList + " - ");
+        //printSysout(this.qaList.size() + " - ");
         if(this.qaList == null || this.qaList.size() < 1){
         	return;
         }
         
         this.txtViewExplanation = (TextView) findViewById(R.id.placeHolderExplanation);
+        this.txtViewExplanation.setTextColor(Color.BLACK);
         //this.radioOptions = (RadioGroup)findViewById(R.id.radioOption);
         //this.txtViewText = (TextView) findViewById(R.id.placeHolderText);
         
@@ -107,20 +119,20 @@ public class MainActivity extends Activity  implements OnClickListener {
         this.map = images;
 	}
 
-	private List<QuestionAnswerVo> getQuestionAnswerList() {
+	private List<QuestionAnswerVo> getQuestionAnswerList(String level) {
     	List<QuestionAnswerVo> voList = null;
     	XmlPullParserFactory pullParserFactory;
 		try {
 			pullParserFactory = XmlPullParserFactory.newInstance();
 			XmlPullParser parser = pullParserFactory.newPullParser();
 
-			    InputStream in_s = getApplicationContext().getAssets().open("level_1.xml");
+			    InputStream in_s = getApplicationContext().getAssets().open(level);
 		        parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
 	            parser.setInput(in_s, null);
 
-	            //System.out.println("step - 1");
+	            //printSysout("step - 1");
 	            voList = parseXML(parser);
-	            //System.out.println("step - 2");
+	            //printSysout("step - 2");
 		} catch (XmlPullParserException e) {
 
 			e.printStackTrace();
@@ -136,7 +148,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 		List<QuestionAnswerVo> voList = null;
         int eventType = parser.getEventType();
         QuestionAnswerVo questionAnswerVo = null;
-        //System.out.println("eventType - " + eventType);
+        //printSysout("eventType - " + eventType);
         
         while (eventType != XmlPullParser.END_DOCUMENT){
             String name = null;
@@ -144,18 +156,18 @@ public class MainActivity extends Activity  implements OnClickListener {
             switch (eventType){
                 case XmlPullParser.START_DOCUMENT:
                 	voList = new ArrayList<QuestionAnswerVo>();
-                	//System.out.println("switch - 1");
+                	//printSysout("switch - 1");
                     break;
                 case XmlPullParser.START_TAG:
                 	name = parser.getName();
-                	//System.out.println("switch - 2 - " + name);
+                	//printSysout("switch - 2 - " + name);
                     if (name.equals("quiz")){
                     	questionAnswerVo = new QuestionAnswerVo();
-                    	//System.out.println("questionAnswerVo : " + questionAnswerVo);
+                    	//printSysout("questionAnswerVo : " + questionAnswerVo);
                     } else if (questionAnswerVo != null){
                         if (name.equals("question")){
                         	questionAnswerVo.question = parser.nextText();
-                        	//System.out.println("questionAnswerVo.question - " + questionAnswerVo.question);
+                        	//printSysout("questionAnswerVo.question - " + questionAnswerVo.question);
                         } else if (name.equals("answer")){
                         	questionAnswerVo.answer = parser.nextText();
                         } else if (name.equals("option1")){
@@ -175,14 +187,14 @@ public class MainActivity extends Activity  implements OnClickListener {
                     break;
                 case XmlPullParser.END_TAG:
                     name = parser.getName();
-                	//System.out.println("switch - 3 - " + name);
+                	//printSysout("switch - 3 - " + name);
                     if (name.equalsIgnoreCase("quiz") && questionAnswerVo != null){
                     	voList.add(questionAnswerVo);
                     } 
             }
             eventType = parser.next();
         }
-    	//System.out.println("switch - 4 - " + voList.size());
+    	//printSysout("switch - 4 - " + voList.size());
         return voList;
 	}
 
@@ -200,9 +212,11 @@ public class MainActivity extends Activity  implements OnClickListener {
     	
         RadioButton rdbtn = null;
         if(qaVo.option1 != null && qaVo.option1 != ""){
+        	printSysout("qaVo.option1 : " + qaVo.option1);
         	rdbtn = new RadioButton(this);
             rdbtn.setId(1);
             rdbtn.setText(qaVo.option1);
+            rdbtn.setTextColor(Color.BLACK);
             radioOptions.addView(rdbtn);	
         }
         
@@ -210,21 +224,24 @@ public class MainActivity extends Activity  implements OnClickListener {
 	        rdbtn = new RadioButton(this);
 	        rdbtn.setId(2);
 	        rdbtn.setText(qaVo.option2);
+	        rdbtn.setTextColor(Color.BLACK);
 	        radioOptions.addView(rdbtn);
         }
 
         if(qaVo.option3 != null && qaVo.option3 != ""){
-        rdbtn = new RadioButton(this);
-        rdbtn.setId(3);
-        rdbtn.setText(qaVo.option3);
-        radioOptions.addView(rdbtn);
+	        rdbtn = new RadioButton(this);
+	        rdbtn.setId(3);
+	        rdbtn.setText(qaVo.option3);
+	        rdbtn.setTextColor(Color.BLACK);
+	        radioOptions.addView(rdbtn);
         }
         
         if(qaVo.option4 != null && qaVo.option4 != ""){
-        rdbtn = new RadioButton(this);
-        rdbtn.setId(4);
-        rdbtn.setText(qaVo.option4);
-        radioOptions.addView(rdbtn);
+	        rdbtn = new RadioButton(this);
+	        rdbtn.setId(4);
+	        rdbtn.setText(qaVo.option4);
+	        rdbtn.setTextColor(Color.BLACK);
+	        radioOptions.addView(rdbtn);
         }
 
    }
@@ -258,24 +275,25 @@ public class MainActivity extends Activity  implements OnClickListener {
 		}
 		//when btnCheck is clicked
 		else if(arg0.getId()==R.id.btn_check){
+			String textResult = "Incorrect";
 			//call the method Check
 			RadioButton radioBtn = null;
 			QuestionAnswerVo qaVo = qaList.get(position);
 			if(qaVo.type.equals("radio")){
 				int selectedId = this.radioOptions.getCheckedRadioButtonId();
 				
+				//when some value is selected - validate
 				if(!(selectedId <= 0)){
-					//System.out.println(qaVo.answer + " == " + selectedId);
+					printSysout(qaVo.answer + " == " + selectedId);
 					if(qaVo.answer.equals(""+selectedId)){
 						radioBtn = (RadioButton) findViewById(selectedId);
 						radioBtn.setBackgroundColor(Color.GREEN);
-						
-						this.txtViewExplanation.setText(qaVo.explanation);
-						this.txtViewExplanation.setVisibility(TextView.VISIBLE);
+						textResult = "Correct";
 					}
+					this.txtViewExplanation.setText(textResult + " : " + qaVo.explanation);
+					this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 				}	
 			}else if(qaVo.type.equals("text")){
-				String textResult = "Incorrect";
 				if(qaVo.answer.equals(this.txtViewText.getText().toString())){
 					textResult = "Correct";
 				}
@@ -283,23 +301,9 @@ public class MainActivity extends Activity  implements OnClickListener {
 				this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 			}else if(qaVo.type.equals("check")){
 				String boxId = "";
-				/*TableRow ansOpt =  (TableRow)findViewById(R.id.rowSelectAnswer);
-				System.out.println("ansOpt.getChildCount() : " + ansOpt.getChildCount());
-				//Get get checked checkbox ids
-				
-				for(int i = 0; i < ansOpt.getChildCount(); i++){
-					View child = ansOpt.getChildAt(i);
-					System.out.println("child type : " + child.getClass());
-					if (child instanceof CheckBox) {
-				        CheckBox box = (CheckBox) child;
-				        if(box.isChecked()){
-				        	boxId = boxId.length()==0?""+box.getId():"," + box.getId();
-				        }
-				    }
-				}*/
 				for(int i = 1; i <= 4; i++){
 					View child = findViewById(i);
-					System.out.println("child type : " + i + " - " + child.getClass());
+					printSysout("child type : " + i + " - " + child.getClass());
 					if (child != null && child instanceof CheckBox) {
 				        CheckBox box = (CheckBox) child;
 				        if(box.isChecked()){
@@ -307,16 +311,15 @@ public class MainActivity extends Activity  implements OnClickListener {
 				        }
 				    }
 				}
-				System.out.println("boxId : " + qaVo.answer + " - " + boxId);
+				printSysout("boxId : " + qaVo.answer + " - " + boxId);
 				//Validate Check box
 				if(boxId != ""){
-					//System.out.println(qaVo.answer + " == " + selectedId);
-					String textResult = "Incorrect";
+					//printSysout(qaVo.answer + " == " + selectedId);
 					if(qaVo.answer.equals(boxId)){
 						textResult = "Correct";
 						
 					}
-					this.txtViewExplanation.setText(textResult + " : " + qaVo.explanation);
+					this.txtViewExplanation.setText(textResult + " : Answer is " + qaVo.answer + ".\n" + qaVo.explanation);
 					this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 				}	
 			}
@@ -335,7 +338,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 		this.txtViewExplanation.setVisibility(View.GONE);
 		//this.txtViewText.setVisibility(View.GONE);
 		
-		//System.out.println("qaVo.option1 : " + qaVo.option1);
+		//printSysout("qaVo.option1 : " + qaVo.option1);
 		if(qaVo.type.equals("text")){
 			displayTextEdit(position);
 		}else if(qaVo.type.equals("radio")){
@@ -409,8 +412,8 @@ public class MainActivity extends Activity  implements OnClickListener {
 	}
 
 	private void setCheckBoxViewData(CheckBox cb, String option) {
-		Map map = getImageIdFromString(option);
-		System.out.println("map.size() :" + map.size());
+		Map<String, RawStringContent> map = getImageIdFromString(option);
+		printSysout("map.size() :" + map.size());
     	for(int i = 1 ; i <= map.size() ; i++){
     		RawStringContent rawStringContent = (RawStringContent)map.get("" + i);
     		if(rawStringContent.type.equals("text")){
@@ -430,7 +433,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 		String rawQuestion = question;
 
 		String strImage = "_s-img_";
-		String strImageNameCountSeparator = "-";
+		//String strImageNameCountSeparator = "-";
 
 		// get the screen size
 		DisplayMetrics mDisplayMetrics = this.getResources().getDisplayMetrics();
@@ -440,11 +443,11 @@ public class MainActivity extends Activity  implements OnClickListener {
 		TableLayout tblayout = new TableLayout(this);
 		
 		if(rawQuestion.indexOf(strImage) == -1){
-			System.out.println("IMage not found");
+			printSysout("IMage not found");
 			createQuestionTextView(rawQuestion, tblayout, mDisplayMetrics);			
 		}else{
 			 //_s-img_flower_blue.jpg,1_e-img_  _s-img_flower_red.jpg,2_e-img_ _s-img_car_red.jpg,1_e-img_
-			System.out.println("Image Found");
+			printSysout("Image Found");
 			createQuestionView(rawQuestion, tblayout, mDisplayMetrics);
 			
 		}
@@ -458,9 +461,14 @@ public class MainActivity extends Activity  implements OnClickListener {
 	private void createQuestionTextView(String rawQuestion, TableLayout tblayout, DisplayMetrics mDisplayMetrics) {
 		TableRow row1 = new TableRow(this);
 		TextView qTextView = new TextView(this);
-		qTextView.setText(rawQuestion);
+		//qTextView.setText(rawQuestion.replace("\\n", System.getProperty("line.separator")));
+		qTextView.setText(rawQuestion.replace("\\n", "\r\n"));
 		// force view width to only be as wide as the screen
 		qTextView.setMaxWidth(mDisplayMetrics.widthPixels);
+		qTextView.setTextColor(Color.BLACK);
+		qTextView.setSingleLine(false);
+		qTextView.setInputType(qTextView.getInputType()|InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+		//qTextView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
 		row1.addView(qTextView);
 		tblayout.addView(row1);
 	}
@@ -468,9 +476,9 @@ public class MainActivity extends Activity  implements OnClickListener {
 	private void createQuestionView(String rawQuestion, TableLayout tblayout, DisplayMetrics mDisplayMetrics) {
 		String strImage = "_s-img_";
 		String[] splittedImageString = rawQuestion.split(strImage);
-	    System.out.println(splittedImageString.length);
+	    printSysout(splittedImageString.length);
 		for(String str : splittedImageString){
-			System.out.println(str);
+			printSysout(str);
 			String pattern = "(.*),(\\d)_e-img_(.*)";
 
 		      // Create a Pattern object
@@ -479,10 +487,10 @@ public class MainActivity extends Activity  implements OnClickListener {
 		      // Now create matcher object.
 		      Matcher m = r.matcher(str);
 		      if (m.find( )) {
-		    	  System.out.println("ImageName: " + m.group(1) );
-			         System.out.println("ImageCount: " + m.group(2) );
-			         System.out.println("more text : " + m.group(3) );
-		    	  int imageCount = (new Integer(m.group(2))).intValue();
+		    	  printSysout("ImageName: " + m.group(1) );
+			         printSysout("ImageCount: " + m.group(2) );
+			         printSysout("more text : " + m.group(3) );
+			         int imageCount = Integer.valueOf(m.group(2));
 		    	  String imageName = m.group(1);
 		    	  
 		    	  TableRow row2 = new TableRow(this);
@@ -498,14 +506,14 @@ public class MainActivity extends Activity  implements OnClickListener {
 	}
 	
 	private Map<String, RawStringContent> getImageIdFromString(String rawString){
-		Map map = new HashMap<String, RawStringContent>();
+		Map<String, RawStringContent> map = new HashMap<String, RawStringContent>();
 		RawStringContent rawStringContent = null;
 		String strImage = "_s-img_";
 		String[] splittedImageString = rawString.split(strImage);
-	    System.out.println(splittedImageString.length);
+	    printSysout(splittedImageString.length);
 	    int count = 1;
 		for(String str : splittedImageString){
-			System.out.println(str);
+			printSysout(str);
 			String pattern = "(.*),(\\d)_e-img_(.*)";
 
 		      // Create a Pattern object
@@ -514,9 +522,9 @@ public class MainActivity extends Activity  implements OnClickListener {
 		      // Now create matcher object.
 		      Matcher m = r.matcher(str);
 		      if (m.find( )) {
-		    	  System.out.println("ImageName: " + m.group(1) );
-			         System.out.println("ImageCount: " + m.group(2) );
-			         System.out.println("more text : " + m.group(3) );
+		    	  printSysout("ImageName: " + m.group(1) );
+			         printSysout("ImageCount: " + m.group(2) );
+			         printSysout("more text : " + m.group(3) );
 			         rawStringContent = new RawStringContent();
 			         rawStringContent.type = "image";
 			         rawStringContent.value = m.group(1) +","+ m.group(2);
@@ -587,7 +595,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 	public int getImageId(Context context, String imageName) {
 	    //int imageId =  context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
 		int imageId =  (this.map.get(imageName)).intValue();
-	    System.out.println("Image Id : " + imageId);
+	    printSysout("Image Id : " + imageId);
 	    return imageId;
 	}
 }
