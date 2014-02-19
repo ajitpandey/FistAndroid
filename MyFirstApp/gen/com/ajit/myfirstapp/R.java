@@ -22,18 +22,31 @@ public final class R {
     }
     public static final class drawable {
         public static final int aj=0x7f020000;
-        public static final int car_blue=0x7f020001;
-        public static final int car_red=0x7f020002;
-        public static final int car_yellow=0x7f020003;
-        public static final int flower=0x7f020004;
-        public static final int flower_blue=0x7f020005;
-        public static final int flower_red=0x7f020006;
-        public static final int flower_yellow=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int info=0x7f020009;
-        public static final int next=0x7f02000a;
-        public static final int prev=0x7f02000b;
-        public static final int start=0x7f02000c;
+        public static final int aj_black_square=0x7f020001;
+        public static final int aj_blue_dot=0x7f020002;
+        public static final int aj_blue_square=0x7f020003;
+        public static final int aj_green_dot=0x7f020004;
+        public static final int aj_purple_dot=0x7f020005;
+        public static final int aj_red_dot=0x7f020006;
+        public static final int blue_dahlia_flower=0x7f020007;
+        public static final int car_blue=0x7f020008;
+        public static final int car_red=0x7f020009;
+        public static final int car_yellow=0x7f02000a;
+        public static final int flower=0x7f02000b;
+        public static final int flower_blue=0x7f02000c;
+        public static final int flower_pink=0x7f02000d;
+        public static final int flower_purple=0x7f02000e;
+        public static final int flower_red=0x7f02000f;
+        public static final int flower_yellow=0x7f020010;
+        public static final int ic_launcher=0x7f020011;
+        public static final int icon_2=0x7f020012;
+        public static final int info=0x7f020013;
+        public static final int next=0x7f020014;
+        public static final int pencil_grey=0x7f020015;
+        public static final int pencil_orange=0x7f020016;
+        public static final int pencil_red=0x7f020017;
+        public static final int prev=0x7f020018;
+        public static final int start=0x7f020019;
     }
     public static final class id {
         public static final int aboutUs=0x7f090018;
