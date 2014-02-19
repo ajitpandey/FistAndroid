@@ -79,10 +79,10 @@
 	    <type>radio</type>
 		<question>Which one is red ?</question>
 		<answer>1</answer>
-		<option1>A.  _image_car_red.jpg-1_ </option1>
-		<option2>B. _image_flower.jpg-1_ </option2>
-		<option3>C. _image_flower_yellow.jpg-1_ </option3>
-		<option4>D. _image_flower.jpg-1_ </option4>
+		<option1>A.  _s-img_car_red.jpg,1_e-img_ </option1>
+		<option2>B. _s-img_flower.jpg-1_e-img_ </option2>
+		<option3>C. _s-img_flower_yellow.jpg-1_e-img_ </option3>
+		<option4>D. _s-img_flower.jpg-1_e-img_ </option4>
 		<explanation>Correct answer is option A and B</explanation>
 	</quiz>
 </quiz_level>
