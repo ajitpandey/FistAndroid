@@ -6,22 +6,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputType;
@@ -31,6 +25,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -213,16 +208,17 @@ public class MainActivity extends Activity  implements OnClickListener {
         	PrintSysout.printSysout("qaVo.option1 : " + qaVo.option1);
         	rdbtn = new RadioButton(this);
             rdbtn.setId(1);
-            rdbtn.setText(qaVo.option1);
+            //rdbtn.setText(qaVo.option1);
             rdbtn.setTextColor(Color.BLACK);
-            //rdbtn.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, DrawableBitmap.getDrawableImage(getResources(), this.map, qaVo.option1), null);
+            setCheckBoxViewData(rdbtn, qaVo.option1);
             radioOptions.addView(rdbtn);	
         }
         
         if(qaVo.option2 != null && qaVo.option2 != ""){
 	        rdbtn = new RadioButton(this);
 	        rdbtn.setId(2);
-	        rdbtn.setText(qaVo.option2);
+	        //rdbtn.setText(qaVo.option2);
+	        setCheckBoxViewData(rdbtn, qaVo.option2);
 	        rdbtn.setTextColor(Color.BLACK);
 	        radioOptions.addView(rdbtn);
         }
@@ -230,7 +226,8 @@ public class MainActivity extends Activity  implements OnClickListener {
         if(qaVo.option3 != null && qaVo.option3 != ""){
 	        rdbtn = new RadioButton(this);
 	        rdbtn.setId(3);
-	        rdbtn.setText(qaVo.option3);
+	        //rdbtn.setText(qaVo.option3);
+	        setCheckBoxViewData(rdbtn, qaVo.option3);
 	        rdbtn.setTextColor(Color.BLACK);
 	        radioOptions.addView(rdbtn);
         }
@@ -238,7 +235,8 @@ public class MainActivity extends Activity  implements OnClickListener {
         if(qaVo.option4 != null && qaVo.option4 != ""){
 	        rdbtn = new RadioButton(this);
 	        rdbtn.setId(4);
-	        rdbtn.setText(qaVo.option4);
+	        //rdbtn.setText(qaVo.option4);
+	        setCheckBoxViewData(rdbtn, qaVo.option4);
 	        rdbtn.setTextColor(Color.BLACK);
 	        radioOptions.addView(rdbtn);
         }
@@ -411,7 +409,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         }
 	}
 
-	private void setCheckBoxViewData(CheckBox cb, String option) {
+	private void setCheckBoxViewData(CompoundButton cb, String option) {
 		Map<String, RawStringContent> map = StringUtil.getImageIdFromString(option);
 		PrintSysout.printSysout("map.size() :" + map.size());
     	for(int i = 1 ; i <= map.size() ; i++){
@@ -426,6 +424,136 @@ public class MainActivity extends Activity  implements OnClickListener {
 	}
 
 	private void printQuestion(String question) {
+		Map<String, RawStringContent> qMap = StringUtil.getImageIdFromString(question);
+
+		// get the screen size
+		DisplayMetrics mDisplayMetrics = this.getResources().getDisplayMetrics();
+		TableRow questiontr =  (TableRow)findViewById(R.id.rowQuestion);
+		questiontr.removeAllViews();
+		
+		TableLayout tblayout = new TableLayout(this);
+		
+		RawStringContent rsc = null;
+		RawStringContent rscPrv = null;
+		RawStringContent rscNext = null;
+		String strPrvObjectType  = null;
+		TableRow row1 = null;
+		
+		PrintSysout.printSysout("printQuestion : " + qMap.size() + " - " + question);
+		 
+		for(int i = 1 ; i <= qMap.size(); i++){
+			strPrvObjectType  = null;
+			rsc = (RawStringContent)qMap.get("" + i);
+			if(i <= qMap.size() && i > 1){
+				rscPrv = (RawStringContent)qMap.get("" + (i-1));
+				strPrvObjectType = rscPrv.type;
+			}
+			
+			PrintSysout.printSysout("rsc.type : " + rsc.type);
+			
+			if(rsc.type.equals("text")){
+				if(row1!=null){
+					PrintSysout.printSysout("text addrow row1 : " + row1);
+					tblayout.addView(row1);
+				}
+				row1 = new TableRow(this);
+				PrintSysout.printSysout("text");
+				View textView = createQuestionTextView(rsc.value, tblayout, mDisplayMetrics);
+				row1.addView(textView);
+			}else if(rsc.type.equals("image")){
+				
+				Bitmap bm = null;
+				int j = 0;
+				for(j = i+1 ; j <= qMap.size(); j++){
+					rscNext = (RawStringContent)qMap.get(""+j);
+					if(rscNext.type.equals(rsc.type)){
+						if(bm == null){
+							bm = DrawableBitmap.getBitmapImage(getResources(), this.map, rsc.value);
+						}
+						bm = DrawableBitmap.joinImages(bm, DrawableBitmap.getBitmapImage(getResources(), this.map, rscNext.value));
+					}else{
+						break;
+					}
+				}
+				i = j;
+				
+				if(row1!=null){
+					PrintSysout.printSysout("image row1 : " + row1);
+					tblayout.addView(row1);
+				}
+				row1 = new TableRow(this);	
+				
+				ImageView imageView = new ImageView(this);
+				imageView.setImageBitmap(bm);
+				row1.addView(imageView);
+			}
+		}
+		//Add last row
+		tblayout.addView(row1);
+		questiontr.addView(tblayout);
+	}
+	
+	/*private void printQuestion(String question) {
+		Map<String, RawStringContent> qMap = StringUtil.getImageIdFromString(question);
+
+		// get the screen size
+		DisplayMetrics mDisplayMetrics = this.getResources().getDisplayMetrics();
+		TableRow questiontr =  (TableRow)findViewById(R.id.rowQuestion);
+		questiontr.removeAllViews();
+		
+		TableLayout tblayout = new TableLayout(this);
+		
+		RawStringContent rsc = null;
+		RawStringContent rscPrv = null;
+		String strPrvObjectType  = null;
+		TableRow row1 = null;
+		
+		PrintSysout.printSysout("printQuestion : " + qMap.size() + " - " + question);
+		 
+		for(int i = 1 ; i <= qMap.size(); i++){
+			strPrvObjectType  = null;
+			rsc = (RawStringContent)qMap.get("" + i);
+			if(i <= qMap.size() && i > 1){
+				rscPrv = (RawStringContent)qMap.get("" + (i-1));
+				strPrvObjectType = rscPrv.type;
+			}
+			
+			PrintSysout.printSysout("rsc.type : " + rsc.type);
+			
+			if(rsc.type.equals("text")){
+				if(row1!=null){
+					PrintSysout.printSysout("text addrow row1 : " + row1);
+					tblayout.addView(row1);
+				}
+				row1 = new TableRow(this);
+				PrintSysout.printSysout("text");
+				View textView = createQuestionTextView(rsc.value, tblayout, mDisplayMetrics);
+				row1.addView(textView);
+			}else if(rsc.type.equals("image")){
+				//Next Map value is not null and is not image then create row
+				//else use the same row to add more images in same row
+				PrintSysout.printSysout("image strNextObjectType : " + strPrvObjectType);
+				if(row1 == null  || (strPrvObjectType!= null && !rsc.type.equals(strPrvObjectType))){
+					if(row1!=null){
+						PrintSysout.printSysout("image addrow row1 : " + row1);
+						tblayout.addView(row1);
+					}
+					PrintSysout.printSysout("image row1 : " + row1);
+					row1 = new TableRow(this);	
+				}
+				PrintSysout.printSysout("Image Found");
+				Drawable d = DrawableBitmap.getDrawableImage(getResources(), this.map, rsc.value);
+				ImageView imageView = new ImageView(this);
+				imageView.setImageDrawable(d);
+				row1.addView(imageView);
+			}
+		}
+		//Add last row
+		tblayout.addView(row1);
+		questiontr.addView(tblayout);
+	}*/
+	
+/*	private void printQuestion1(String question) {
 		String rawQuestion = question;
 
 		String strImage = "_s-img_";
@@ -452,10 +580,10 @@ public class MainActivity extends Activity  implements OnClickListener {
 		
 		
 		questiontr.addView(tblayout);
-	}
+	}*/
 
-	private void createQuestionTextView(String rawQuestion, TableLayout tblayout, DisplayMetrics mDisplayMetrics) {
-		TableRow row1 = new TableRow(this);
+	private TextView createQuestionTextView(String rawQuestion, TableLayout tblayout, DisplayMetrics mDisplayMetrics) {
+		//TableRow row1 = new TableRow(this);
 		TextView qTextView = new TextView(this);
 		//qTextView.setText(rawQuestion.replace("\\n", System.getProperty("line.separator")));
 		qTextView.setText(rawQuestion.replace("\\n", "\r\n"));
@@ -465,11 +593,12 @@ public class MainActivity extends Activity  implements OnClickListener {
 		qTextView.setSingleLine(false);
 		qTextView.setInputType(qTextView.getInputType()|InputType.TYPE_TEXT_FLAG_MULTI_LINE);
 		//qTextView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
-		row1.addView(qTextView);
-		tblayout.addView(row1);
+		//row1.addView(qTextView);
+		//tblayout.addView(row1);
+		return qTextView;
 	}
 
-	private void createQuestionView(String rawQuestion, TableLayout tblayout, DisplayMetrics mDisplayMetrics) {
+	/*private void createQuestionView(String rawQuestion, TableLayout tblayout, DisplayMetrics mDisplayMetrics) {
 		String strImage = "_s-img_";
 		String[] splittedImageString = rawQuestion.split(strImage);
 	    PrintSysout.printSysout(splittedImageString.length);
@@ -500,8 +629,8 @@ public class MainActivity extends Activity  implements OnClickListener {
 		      }
 		}
 	}
-
-	private void createQuestionImageView(String imageName,
+*/
+	/*private void createQuestionImageView(String imageName,
 			TableRow row2, DisplayMetrics mDisplayMetrics) {
 		
 		ImageView imageView = new ImageView(this);
@@ -509,6 +638,6 @@ public class MainActivity extends Activity  implements OnClickListener {
 		row2.addView(imageView);
 		
 		
-	}
+	}*/
 }
 

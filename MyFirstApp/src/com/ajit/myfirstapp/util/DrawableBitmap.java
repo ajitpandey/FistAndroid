@@ -11,6 +11,13 @@ import android.graphics.drawable.Drawable;
 
 public class DrawableBitmap {
 
+	public static Bitmap getBitmapImage(Resources resources, Map<String, Integer> mapImage, String option1) {
+    	String[] strArr = option1.split(",");
+    	Bitmap bm = joinImages(resources, mapImage, strArr[0], Integer.valueOf(strArr[1]).intValue());
+    	
+		return bm;
+	}
+	
 	public static Drawable getDrawableImage(Resources resources, Map<String, Integer> mapImage, String option1) {
     	String[] strArr = option1.split(",");
     	Bitmap bm = joinImages(resources, mapImage, strArr[0], Integer.valueOf(strArr[1]).intValue());
@@ -18,11 +25,8 @@ public class DrawableBitmap {
 		return d;
 	}
 
-	/*private Bitmap joinImages(String image1, String image2)
+	public static Bitmap joinImages(Bitmap bmp1, Bitmap bmp2)
 	{
-	    Bitmap bmp1, bmp2;
-	    bmp1 = decodeSampledBitmapFromResource(getResources(), getImageId(this, image1), 50, 50);
-	    bmp2 = decodeSampledBitmapFromResource(getResources(), getImageId(this, image2), 50, 50);
 	    if (bmp1 == null || bmp2 == null)
 	        return bmp1;
 	    int height = bmp1.getHeight();
@@ -34,7 +38,7 @@ public class DrawableBitmap {
 	    canvas.drawBitmap(bmp1, 0, 0, null);
 	    canvas.drawBitmap(bmp2, bmp1.getWidth(), 0, null);
 	    return bmOverlay;
-	}*/
+	}
 	
 	private static Bitmap joinImages(Resources resources, Map<String, Integer> mapImage, Bitmap bmp1, String image1)
 	{
@@ -67,7 +71,7 @@ public class DrawableBitmap {
 	public static int getImageId(Map<String, Integer> mapImage, String imageName) {
 	    //int imageId =  context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
 		int imageId =  Integer.valueOf("" + mapImage.get(imageName)).intValue();
-	    PrintSysout.printSysout("Image Id : " + imageId);
+	    //PrintSysout.printSysout("Image Id : " + imageId);
 	    return imageId;
 	}
 	
