@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputType;
@@ -411,13 +412,33 @@ public class MainActivity extends Activity  implements OnClickListener {
 
 	private void setCheckBoxViewData(CompoundButton cb, String option) {
 		Map<String, RawStringContent> map = StringUtil.getImageIdFromString(option);
+		RawStringContent rscNext = null;
 		PrintSysout.printSysout("map.size() :" + map.size());
     	for(int i = 1 ; i <= map.size() ; i++){
     		RawStringContent rawStringContent = (RawStringContent)map.get("" + i);
     		if(rawStringContent.type.equals("text")){
     			cb.setText(rawStringContent.value);
     		}else if(rawStringContent.type.equals("image")){
-    			cb.setCompoundDrawablesWithIntrinsicBounds(null, null, DrawableBitmap.getDrawableImage(getResources(), this.map, rawStringContent.value), null);
+    			
+    			Bitmap bm = null;
+    			if(bm == null){
+					bm = DrawableBitmap.getBitmapImage(getResources(), this.map, rawStringContent.value);
+				}
+				int j = 0;
+				for(j = i+1 ; j <= map.size(); j++){
+					rscNext = (RawStringContent)map.get(""+j);
+					if(rscNext.type.equals(rawStringContent.type)){
+						
+						bm = DrawableBitmap.joinImages(bm, DrawableBitmap.getBitmapImage(getResources(), this.map, rscNext.value));
+					}else{
+						break;
+					}
+				}
+				i = j;
+				Drawable d = new BitmapDrawable(getResources(), bm);
+    			cb.setCompoundDrawablesWithIntrinsicBounds(null, null, d, null);
+    			
+    			//cb.setCompoundDrawablesWithIntrinsicBounds(null, null, DrawableBitmap.getDrawableImage(getResources(), this.map, rawStringContent.value), null);
     			
     		}
     	}
