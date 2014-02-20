@@ -44,7 +44,7 @@ public class DrawableBitmap {
 	{
 	    Bitmap bmp2;
 	    //bmp1 = decodeSampledBitmapFromResource(getResources(), getImageId(this, image1), 50, 50);
-	    bmp2 = decodeSampledBitmapFromResource(resources, getImageId(mapImage, image1), 50, 50);
+	    bmp2 = decodeSampledBitmapFromResource(resources, getImageId(mapImage, image1), 30, 30);
 	    if (bmp1 == null || bmp2 == null)
 	        return bmp1;
 	    int height = bmp1.getHeight();
@@ -60,7 +60,7 @@ public class DrawableBitmap {
 	
 	private static Bitmap joinImages(Resources resources, Map<String, Integer> mapImage, String image1, int count)
 	{
-		Bitmap bm = decodeSampledBitmapFromResource(resources, getImageId(mapImage, image1), 50, 50);
+		Bitmap bm = decodeSampledBitmapFromResource(resources, getImageId(mapImage, image1), 30, 30);
 		for(int i = 1 ; i < count; i++){
 			bm = joinImages(resources, mapImage, bm, image1);
 		}

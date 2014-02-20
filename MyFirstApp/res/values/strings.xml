@@ -12,12 +12,9 @@
     <string name="btn_previous">Previous</string>
     <string name="btn_check">Check</string>
     <string name="level1">Level 1 - Counting</string>
-    <string name="level1.1">Level 1.1 - Fewer and Greater</string>
-    <string name="level2">Level 2 - Ordering</string>
+    <string name="level2">Level 2 - Fewer and Greater</string>
     <string name="level3">Level 3 - Addition</string>
     <string name="level4">Level 4 - Subtraction</string>
-    <string name="level5">Level 5 - Multiplication</string>
-    <string name="level6">Level 6 - Division</string>
     <string name="appInfoText">Math Flash Card App v1.0 \n Tap on the Back button to return.</string>
     <string name="aboutUs">About Us</string>
     <string name="aboutUsAppText">Features : Counting, Ordering, Pattern, Addition, Subtraction, Multiplication, Division \nAnswers can be Single choise, Multiple choice or Entered through key pad. \nStudents can attain different lwvel of question/answer again and again for practice.</string>

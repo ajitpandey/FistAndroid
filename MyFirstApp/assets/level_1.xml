@@ -1,88 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Counting -->
 <quiz_level>
-    <quiz>
-	    <type>radio</type>
-		<question>Which option has 3 rose ?</question>
-		<answer>1</answer>
-		<option1>A. _s-img_flower_red.jpg,3_e-img_ </option1>
-		<option2>B. _s-img_flower_yellow.jpg,1_e-img_ </option2>
-		<option3>C. _s-img_flower_yellow.jpg,2_e-img_ </option3>
-		<option4>D. _s-img_flower_red.jpg,4_e-img_ </option4>
-		<explanation>Correct answer is 6.</explanation>
-	</quiz>
-	<quiz>
-	    <type>radio</type>
-		<question>What is next in Pattern ? _s-img_flower_blue.jpg,1_e-img__s-img_flower_red.jpg,1_e-img_ \n _s-img_flower_blue.jpg,1_e-img__s-img_flower_red.jpg,1_e-img__s-img_flower_blue.jpg,1_e-img_ </question>
-		<answer>2</answer>
-		<option1>A. _s-img_flower_blue.jpg,1_e-img__s-img_flower_red.jpg,1_e-img_</option1>
-		<option2>B. _s-img_flower_red.jpg,1_e-img__s-img_flower_blue.jpg,1_e-img_</option2>
-		<option3>C. _s-img_flower_blue.jpg,1_e-img__s-img_flower_blue.jpg,1_e-img_</option3>
-		<option4>D. _s-img_flower_red.jpg,1_e-img__s-img_flower_red.jpg,1_e-img_</option4>
-		<explanation>Right answer is B.</explanation>
-	</quiz>
-    <quiz>
-	    <type>check</type>
-		<question>Which all are red</question>
-		<answer>1,2</answer>
-		<option1>A. _s-img_car_red.jpg,1_e-img_ </option1>
-		<option2>B. _s-img_flower_red.jpg,1_e-img_ </option2>
-		<option3>C. _s-img_flower_yellow.jpg,1_e-img_ </option3>
-		<option4>D. _s-img_flower.jpg,1_e-img_ </option4>
-		<explanation>Correct answer is option A and B</explanation>
-	</quiz>
-    <quiz>
-	    <type>radio</type>
-		<question>What is the total of below addition? \n  4 \n+ 2 </question>
-		<answer>1</answer>
-		<option1>6</option1>
-		<option2>7</option2>
-		<option3>4</option3>
-		<option4>2</option4>
-		<explanation>Correct answer is 6.</explanation>
-	</quiz>
-	<quiz>
-	    <type>radio</type>
-		<question>How many flowers are there ? _s-img_flower_blue.jpg,1_e-img__s-img_flower_red.jpg,2_e-img__s-img_car_red.jpg,1_e-img_ </question>
-		<answer>3</answer>
-		<option1>1</option1>
-		<option2>2</option2>
-		<option3>3</option3>
-		<option4>4</option4>
-		<explanation></explanation>
-	</quiz>
-	<quiz>
-	    <type>radio</type>     
-		<question>which number is smaller</question>
-		<answer>2</answer>
-		<option1>5</option1>
-		<option2>3</option2>
-		<explanation>Correct answer is 3</explanation>
-	</quiz>
-	<quiz>
-	    <type>radio</type>
-		<question>Which row has fewer A</question>
-		<answer>3</answer>
-		<option1>A A A A A</option1>
-		<option2>A A A A</option2>
-		<option3>A A</option3>
-		<option4>A A A A A A</option4>
-		<explanation>Correct anwser is A A, as it has only 2 times A</explanation>
-	</quiz>
-	<quiz>
-	    <type>text</type>
-		<question>Click in the box and click A key 3 times</question>
-		<answer>AAA</answer>
-		<explanation>Correct answer is AAA</explanation>
-	</quiz>
-	<quiz>
-	    <type>radio</type>
-		<question>Which one is red ?</question>
-		<answer>1</answer>
-		<option1>A.  _s-img_car_red.jpg,1_e-img_ </option1>
-		<option2>B. _s-img_flower.jpg-1_e-img_ </option2>
-		<option3>C. _s-img_flower_yellow.jpg-1_e-img_ </option3>
-		<option4>D. _s-img_flower.jpg-1_e-img_ </option4>
-		<explanation>Correct answer is option A and B</explanation>
-	</quiz>
+    <quiz><type>radio</type><question>How many flowers are below ? _s-img_flower_yellow.jpg,3_e-img__s-img_car_red.jpg,1_e-img__s-img_flower_red.jpg,2_e-img_</question><answer>1</answer><option1>5</option1><option2>6</option2><option3>3</option3><option4>2</option4><explanation>Correct answer is 5.</explanation></quiz>
+<quiz><type>radio</type><question>Which option has 3 rose ?</question><answer>1</answer><option1>A. _s-img_flower_red.jpg,3_e-img_ </option1><option2>B. _s-img_flower_yellow.jpg,1_e-img_ </option2><option3>C. _s-img_flower_yellow.jpg,2_e-img_ </option3><option4>D. _s-img_flower_red.jpg,4_e-img_ </option4><explanation>Correct answer is A.</explanation></quiz>
+<!-- <quiz><type>radio</type><question>How many flowers are below ? _s-img_flower_red.jpg,4_e-img_</question><answer>2</answer><option1>1</option1><option2>4</option2><option3>3</option3><option4>2</option4><explanation>Correct answer is 4.</explanation></quiz> -->
+<quiz><type>check</type><question>Which option has 2 flowers ?</question><answer>3,4</answer><option1>A. _s-img_flower_red.jpg,3_e-img_ </option1><option2>B. _s-img_flower_yellow.jpg,1_e-img_ </option2><option3>C. _s-img_flower_yellow.jpg,2_e-img_ </option3><option4>D. _s-img_flower_red.jpg,2_e-img_ </option4><explanation>Correct answer is C and D.</explanation></quiz>
+<quiz><type>text</type><question>How many flowers are below ? _s-img_flower_yellow.jpg,5_e-img_ </question><answer>5</answer><option1></option1><option2></option2><option3></option3><option4></option4><explanation>Correct answer is 5.</explanation></quiz>
+<quiz><type>text</type><question>Click in the box and click A key 3 times</question><answer>AAA</answer><option1></option1><option2></option2><option3></option3><option4></option4><explanation>Correct answer is AAA.</explanation></quiz>
 </quiz_level>

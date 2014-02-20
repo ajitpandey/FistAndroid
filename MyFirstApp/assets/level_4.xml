@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz_level>
+<quiz><type>check</type><question>What makes answer as 5 ?</question><answer>1,2,3</answer><option1> 6 - 1</option1><option2> 7 - 2</option2><option3> 8 - 3</option3><option4> 6 - 2</option4><explanation>Correct answer is 7 - 2 =5, 8 - 3 = 5 and  6 - 1 = 5</explanation></quiz>
+<quiz><type>text</type><question>How much is 7 - 4 ?</question><answer>3</answer><option1></option1><option2></option2><option3></option3><option4></option4><explanation>Correct answer is 3.</explanation></quiz>
+<quiz><type>text</type><question>How much is 9 - 0 ?</question><answer>9</answer><option1></option1><option2></option2><option3></option3><option4></option4><explanation>Correct answer is 9.</explanation></quiz>
+<quiz><type>radio</type><question>How much is 5 - 4 ?</question><answer>1</answer><option1>1</option1><option2>2</option2><option3>3</option3><option4>4</option4><explanation>Correct answer is 5 - 4 = 1.</explanation></quiz>
+<quiz><type>radio</type><question>How much is 6 - 3 ?</question><answer>3</answer><option1>1</option1><option2>2</option2><option3>3</option3><option4>4</option4><explanation>Correct answer is 3.</explanation></quiz>
+</quiz_level>

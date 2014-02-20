@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz_level>
+<quiz><type>check</type><question>What makes total of 5 ?</question><answer>1,2,3</answer><option1>1 + 4</option1><option2>2 + 3</option2><option3>0 + 5</option3><option4>2 + 4</option4><explanation>Correct answer is 1 + 4 = 5, 2 + 3 = 5 and  0 + 5 = 5</explanation></quiz>
+<quiz><type>text</type><question>How much is 4 + 5 ?</question><answer>9</answer><option1></option1><option2></option2><option3></option3><option4></option4><explanation>Correct answer is 9.</explanation></quiz>
+<quiz><type>radio</type><question>How many is red and yellow flowers ? _s-img_flower_yellow.jpg,3_e-img__s-img_car_red.jpg,1_e-img__s-img_flower_yellow.jpg,3_e-img_ </question><answer>3</answer><option1>3</option1><option2>4</option2><option3>6</option3><option4>2</option4><explanation>Correct answer is 6.</explanation></quiz>
+<quiz><type>radio</type><question>What makes total of 8 ?</question><answer>1</answer><option1>6 + 2</option1><option2>4 + 5</option2><option3>5 + 2</option3><option4>3 + 4</option4><explanation>Correct answer is 6 + 2 = 8</explanation></quiz>
+<quiz><type>radio</type><question>How much is 2 + 2 ?</question><answer>3</answer><option1>2</option1><option2>3</option2><option3>4</option3><option4>5</option4><explanation>2 + 2 = 4</explanation></quiz>
+</quiz_level>

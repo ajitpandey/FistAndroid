@@ -13,7 +13,6 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -318,7 +317,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 						textResult = "Correct";
 						
 					}
-					this.txtViewExplanation.setText(textResult + " : Answer is " + qaVo.answer + ".\n" + qaVo.explanation);
+					this.txtViewExplanation.setText(textResult + " : " + qaVo.explanation);
 					this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 				}	
 			}
@@ -379,6 +378,8 @@ public class MainActivity extends Activity  implements OnClickListener {
         	cb = new CheckBox(this);
         	cb.setId(1);
         	setCheckBoxViewData(cb,qaVo.option1);
+        	PrintSysout.printSysout("check box : " + cb.getText());
+        	cb.setTextColor(Color.BLACK);
         	tr.addView(cb);
         	tb.addView(tr);
         }
@@ -387,6 +388,8 @@ public class MainActivity extends Activity  implements OnClickListener {
         	cb = new CheckBox(this);
         	cb.setId(2);
         	setCheckBoxViewData(cb,qaVo.option2);
+        	PrintSysout.printSysout("check box : " + cb.getText());
+        	cb.setTextColor(Color.BLACK);
         	tb.addView(tr);
         	tr.addView(cb);
         }
@@ -396,6 +399,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         	cb = new CheckBox(this);
         	cb.setId(3);
         	setCheckBoxViewData(cb,qaVo.option3);
+        	cb.setTextColor(Color.BLACK);
         	tb.addView(tr);
         	tr.addView(cb);
         }
@@ -405,6 +409,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         	cb = new CheckBox(this);
         	cb.setId(4);
         	setCheckBoxViewData(cb,qaVo.option4);
+        	cb.setTextColor(Color.BLACK);
         	tb.addView(tr);
         	tr.addView(cb);
         }
@@ -418,6 +423,7 @@ public class MainActivity extends Activity  implements OnClickListener {
     		RawStringContent rawStringContent = (RawStringContent)map.get("" + i);
     		if(rawStringContent.type.equals("text")){
     			cb.setText(rawStringContent.value);
+    			PrintSysout.printSysout("cb text :" + rawStringContent.value);
     		}else if(rawStringContent.type.equals("image")){
     			
     			Bitmap bm = null;

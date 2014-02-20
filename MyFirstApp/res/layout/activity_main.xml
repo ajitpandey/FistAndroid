@@ -13,11 +13,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+    <TableRow
+            android:id="@+id/rowQuestionBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <View
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white" />
+        </TableRow>
         <TableRow
             android:id="@+id/rowQuestion"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1" >
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowQuestionAfter"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <View
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white" />
         </TableRow>
         <TableRow
             android:id="@+id/rowSelectAnswer"
@@ -27,6 +47,16 @@
             
 
 		</TableRow>
+		<TableRow
+            android:id="@+id/rowExplanationBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <View
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white" />
+        </TableRow>
         <TableRow
             android:id="@+id/rowExplanation"
             android:layout_width="wrap_content"
@@ -39,7 +69,16 @@
                 android:layout_height="wrap_content" />
 
         </TableRow>
-        
+        <TableRow
+            android:id="@+id/rowExplanationAfter"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <View
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white" />
+        </TableRow>
         <TableRow
             android:id="@+id/rowButton"
             android:layout_width="wrap_content"
