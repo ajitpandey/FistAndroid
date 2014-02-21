@@ -18,7 +18,6 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.View;
@@ -48,10 +47,11 @@ public class MainActivity extends Activity  implements OnClickListener {
 	  private TextView txtViewText;
 	  private Button btnDisplay;
 	  private ImageButton btnprevious, btnnext;
+	  private TextView txtHelp;
 	  private int position = 0;
 	  private List<QuestionAnswerVo> qaList = new ArrayList<QuestionAnswerVo>();
 	  private HashMap<String, Integer> map;
-
+	  private Integer fontSize = 20;
 	  
 	  
     @Override
@@ -72,10 +72,23 @@ public class MainActivity extends Activity  implements OnClickListener {
         	return;
         }
         
+        this.txtHelp = (TextView) findViewById(R.id.placeHolderHelp);
         this.txtViewExplanation = (TextView) findViewById(R.id.placeHolderExplanation);
+        this.btnprevious=(ImageButton)findViewById(R.id.btnprevious);
+        this.btnnext=(ImageButton)findViewById(R.id.btnnext);
+        this.btnprevious.setVisibility(Button.INVISIBLE);
+        this.btnnext.setVisibility(Button.INVISIBLE);
+        btnnext=(ImageButton)findViewById(R.id.btnnext);
+        btnnext.setOnClickListener(this);
+        
+        btnDisplay = (Button) findViewById(R.id.btn_check);
+        btnDisplay.setOnClickListener(this);
+        
+        
         this.txtViewExplanation.setTextColor(Color.BLACK);
-        //this.radioOptions = (RadioGroup)findViewById(R.id.radioOption);
-        //this.txtViewText = (TextView) findViewById(R.id.placeHolderText);
+        this.txtViewExplanation.setTextSize(fontSize);
+        this.txtHelp.setVisibility(TextView.INVISIBLE);
+        this.txtHelp.setText("Press -> to Proceed to next question.");
         
         //Display view 
         changePosition(this.position);
@@ -83,17 +96,12 @@ public class MainActivity extends Activity  implements OnClickListener {
         
         
         //initialize the object for the button
-        btnprevious=(ImageButton)findViewById(R.id.btnprevious);
         //this button will innitially be disabled
         btnprevious.setEnabled(false);
         //add listener to the button
         btnprevious.setOnClickListener(this);
         
-        btnnext=(ImageButton)findViewById(R.id.btnnext);
-        btnnext.setOnClickListener(this);
-        
-        btnDisplay = (Button) findViewById(R.id.btn_check);
-        btnDisplay.setOnClickListener(this);
+
         //addListenerOnButton();
         
         
@@ -269,6 +277,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 			btnnext.setEnabled(position==qaList.size()-1?false:true);
 			//changePosition(position);
 			btnprevious.setEnabled(true);
+			
 					
 		}
 		//when btnCheck is clicked
@@ -332,10 +341,6 @@ public class MainActivity extends Activity  implements OnClickListener {
 		
     	printQuestion(qaVo.question);
 		
-		//this.radioOptions.setVisibility(View.GONE);
-		this.txtViewExplanation.setVisibility(View.GONE);
-		//this.txtViewText.setVisibility(View.GONE);
-		
 		//PrintSysout.printSysout("qaVo.option1 : " + qaVo.option1);
 		if(qaVo.type.equals("text")){
 			displayTextEdit(position);
@@ -347,7 +352,24 @@ public class MainActivity extends Activity  implements OnClickListener {
 		
         /*this.txtViewExplanation.setVisibility(TextView.INVISIBLE);*/
 		this.txtViewExplanation.setVisibility(View.GONE);
-        
+		
+		
+		
+		if(position==0){
+			this.btnprevious.setVisibility(Button.INVISIBLE);
+			this.btnnext.setVisibility(Button.VISIBLE);
+			this.txtHelp.setText("Press -> to Proceed to next question.");
+			this.txtHelp.setVisibility(TextView.VISIBLE);
+		}else if(position==qaList.size()-1){
+			this.btnprevious.setVisibility(Button.VISIBLE);
+			btnnext.setVisibility(Button.INVISIBLE);
+			this.txtHelp.setText("Press return to go back to first screen.");
+			this.txtHelp.setVisibility(TextView.VISIBLE);
+		}else{
+			this.btnprevious.setVisibility(Button.VISIBLE);
+			this.btnnext.setVisibility(Button.VISIBLE);
+			this.txtHelp.setVisibility(View.GONE);
+		}
         
     }//end changeNumber
 
@@ -486,6 +508,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 				row1 = new TableRow(this);
 				PrintSysout.printSysout("text");
 				View textView = createQuestionTextView(rsc.value, tblayout, mDisplayMetrics);
+				
 				row1.addView(textView);
 			}else if(rsc.type.equals("image")){
 				
@@ -536,7 +559,8 @@ public class MainActivity extends Activity  implements OnClickListener {
 		qTextView.setMaxWidth(mDisplayMetrics.widthPixels);
 		qTextView.setTextColor(Color.BLACK);
 		qTextView.setSingleLine(false);
-		qTextView.setInputType(qTextView.getInputType()|InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+		//qTextView.setInputType(qTextView.getInputType()|InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+		qTextView.setTextSize(fontSize);
 		//qTextView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
 		//row1.addView(qTextView);
 		//tblayout.addView(row1);
