@@ -27,8 +27,12 @@ public class DrawableBitmap {
 
 	public static Bitmap joinImages(Bitmap bmp1, Bitmap bmp2)
 	{
-	    if (bmp1 == null || bmp2 == null)
-	        return bmp1;
+	    if (bmp1 == null){
+	    	return bmp2;
+	    }else if(bmp2 == null){
+	    	return bmp1;
+	    }
+	        
 	    int height = bmp1.getHeight();
 	    if (height < bmp2.getHeight())
 	        height = bmp2.getHeight();

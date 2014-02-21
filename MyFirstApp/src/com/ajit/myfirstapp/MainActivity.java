@@ -490,14 +490,20 @@ public class MainActivity extends Activity  implements OnClickListener {
 			}else if(rsc.type.equals("image")){
 				
 				Bitmap bm = null;
+				PrintSysout.printSysout("i count : " + i);
+				if(bm == null){
+					PrintSysout.printSysout("1 rsc.value : " + rsc.value);
+					bm = DrawableBitmap.getBitmapImage(getResources(), this.map, rsc.value);
+					PrintSysout.printSysout("first bm :" + bm);
+				}
 				int j = 0;
 				for(j = i+1 ; j <= qMap.size(); j++){
+					PrintSysout.printSysout("j count : " + j);
 					rscNext = (RawStringContent)qMap.get(""+j);
-					if(rscNext.type.equals(rsc.type)){
-						if(bm == null){
-							bm = DrawableBitmap.getBitmapImage(getResources(), this.map, rsc.value);
-						}
+					if(rscNext.type.equals(rsc.type) && !rscNext.value.trim().equals("")){
+						PrintSysout.printSysout("2 rsc.value : " + rscNext.value);
 						bm = DrawableBitmap.joinImages(bm, DrawableBitmap.getBitmapImage(getResources(), this.map, rscNext.value));
+						PrintSysout.printSysout("second bm :" + bm);
 					}else{
 						break;
 					}
@@ -510,6 +516,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 				}
 				row1 = new TableRow(this);	
 				
+				PrintSysout.printSysout("thrid bm :" + bm);
 				ImageView imageView = new ImageView(this);
 				imageView.setImageBitmap(bm);
 				row1.addView(imageView);
