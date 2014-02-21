@@ -86,7 +86,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         btnDisplay = (Button) findViewById(R.id.btn_check);
         btnDisplay.setOnClickListener(this);
         
-        
+        this.txtHelp.setTextColor(Color.BLACK);
         this.txtViewExplanation.setTextColor(Color.BLACK);
         this.txtViewExplanation.setTextSize(fontSize);
         this.txtHelp.setVisibility(TextView.INVISIBLE);
