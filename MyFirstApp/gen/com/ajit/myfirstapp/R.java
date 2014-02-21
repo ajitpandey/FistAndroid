@@ -39,16 +39,15 @@ public final class R {
         public static final int flower_purple=0x7f02000f;
         public static final int flower_red=0x7f020010;
         public static final int flower_yellow=0x7f020011;
-        public static final int font_up=0x7f020012;
-        public static final int ic_launcher=0x7f020013;
-        public static final int icon_2=0x7f020014;
-        public static final int info=0x7f020015;
-        public static final int next=0x7f020016;
-        public static final int pencil_grey=0x7f020017;
-        public static final int pencil_orange=0x7f020018;
-        public static final int pencil_red=0x7f020019;
-        public static final int prev=0x7f02001a;
-        public static final int start=0x7f02001b;
+        public static final int ic_launcher=0x7f020012;
+        public static final int icon_2=0x7f020013;
+        public static final int info=0x7f020014;
+        public static final int next=0x7f020015;
+        public static final int pencil_grey=0x7f020016;
+        public static final int pencil_orange=0x7f020017;
+        public static final int pencil_red=0x7f020018;
+        public static final int prev=0x7f020019;
+        public static final int start=0x7f02001a;
     }
     public static final class id {
         public static final int aboutUs=0x7f0a001f;
