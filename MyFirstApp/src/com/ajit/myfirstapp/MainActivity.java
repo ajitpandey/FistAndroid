@@ -45,6 +45,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 	  private RadioGroup radioOptions;
 	  private TextView txtViewExplanation;
 	  private TextView txtViewText;
+	  private TextView txtPlaceHolderQuestionCount;
 	  private Button btnDisplay;
 	  private ImageButton btnprevious, btnnext;
 	  private TextView txtHelp;
@@ -72,6 +73,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         	return;
         }
         
+        this.txtPlaceHolderQuestionCount = (TextView) findViewById(R.id.placeHolderQuestionCount);
         this.txtHelp = (TextView) findViewById(R.id.placeHolderHelp);
         this.txtViewExplanation = (TextView) findViewById(R.id.placeHolderExplanation);
         this.btnprevious=(ImageButton)findViewById(R.id.btnprevious);
@@ -340,6 +342,8 @@ public class MainActivity extends Activity  implements OnClickListener {
     	QuestionAnswerVo qaVo = qaList.get(position);
 		
     	printQuestion(qaVo.question);
+    	
+    	this.txtPlaceHolderQuestionCount.setText(position+1 + " / " + qaList.size());
 		
 		//PrintSysout.printSysout("qaVo.option1 : " + qaVo.option1);
 		if(qaVo.type.equals("text")){

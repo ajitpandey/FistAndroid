@@ -25,6 +25,17 @@
             
         </TableRow>
         <TableRow
+            android:id="@+id/rowQuestionBefore1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <TextView
+                android:id="@+id/placeHolderQuestionCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+        </TableRow>
+        <TableRow
             android:id="@+id/rowQuestion"
             android:layout_width="wrap_content"
             android:layout_height="0dp"

@@ -51,8 +51,8 @@ public final class R {
         public static final int start=0x7f02001b;
     }
     public static final class id {
-        public static final int aboutUs=0x7f0a001d;
-        public static final int action_settings=0x7f0a001c;
+        public static final int aboutUs=0x7f0a001f;
+        public static final int action_settings=0x7f0a001e;
         public static final int appInfo=0x7f0a0001;
         public static final int appInfoText=0x7f0a0002;
         public static final int btnAboutUs=0x7f0a0009;
@@ -61,27 +61,29 @@ public final class R {
         public static final int btnLevel2=0x7f0a0006;
         public static final int btnLevel3=0x7f0a0007;
         public static final int btnLevel4=0x7f0a0008;
-        public static final int btn_check=0x7f0a0016;
-        public static final int btnnext=0x7f0a0017;
-        public static final int btnprevious=0x7f0a0015;
+        public static final int btn_check=0x7f0a0018;
+        public static final int btnnext=0x7f0a0019;
+        public static final int btnprevious=0x7f0a0017;
         public static final int infoLinearLayout=0x7f0a0004;
-        public static final int level1XmlFilePath=0x7f0a001a;
+        public static final int level1XmlFilePath=0x7f0a001c;
         public static final int logo=0x7f0a0000;
         public static final int mainScrollView=0x7f0a000a;
         public static final int mainTableLayout=0x7f0a000b;
-        public static final int menu_settings=0x7f0a001b;
-        public static final int placeHolderExplanation=0x7f0a0012;
-        public static final int placeHolderHelp=0x7f0a0019;
-        public static final int preference=0x7f0a001e;
-        public static final int rowButton=0x7f0a0014;
-        public static final int rowButtonAfter=0x7f0a0018;
-        public static final int rowExplanation=0x7f0a0011;
-        public static final int rowExplanationAfter=0x7f0a0013;
-        public static final int rowExplanationBefore=0x7f0a0010;
-        public static final int rowQuestion=0x7f0a000d;
-        public static final int rowQuestionAfter=0x7f0a000e;
+        public static final int menu_settings=0x7f0a001d;
+        public static final int placeHolderExplanation=0x7f0a0014;
+        public static final int placeHolderHelp=0x7f0a001b;
+        public static final int placeHolderQuestionCount=0x7f0a000e;
+        public static final int preference=0x7f0a0020;
+        public static final int rowButton=0x7f0a0016;
+        public static final int rowButtonAfter=0x7f0a001a;
+        public static final int rowExplanation=0x7f0a0013;
+        public static final int rowExplanationAfter=0x7f0a0015;
+        public static final int rowExplanationBefore=0x7f0a0012;
+        public static final int rowQuestion=0x7f0a000f;
+        public static final int rowQuestionAfter=0x7f0a0010;
         public static final int rowQuestionBefore=0x7f0a000c;
-        public static final int rowSelectAnswer=0x7f0a000f;
+        public static final int rowQuestionBefore1=0x7f0a000d;
+        public static final int rowSelectAnswer=0x7f0a0011;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f060000;
