@@ -461,20 +461,20 @@ public class MainActivity extends Activity  implements OnClickListener {
 		TableLayout tblayout = new TableLayout(this);
 		
 		RawStringContent rsc = null;
-		RawStringContent rscPrv = null;
+		//RawStringContent rscPrv = null;
 		RawStringContent rscNext = null;
-		String strPrvObjectType  = null;
+		//String strPrvObjectType  = null;
 		TableRow row1 = null;
 		
 		PrintSysout.printSysout("printQuestion : " + qMap.size() + " - " + question);
 		 
 		for(int i = 1 ; i <= qMap.size(); i++){
-			strPrvObjectType  = null;
+			//strPrvObjectType  = null;
 			rsc = (RawStringContent)qMap.get("" + i);
-			if(i <= qMap.size() && i > 1){
-				rscPrv = (RawStringContent)qMap.get("" + (i-1));
-				strPrvObjectType = rscPrv.type;
-			}
+			//if(i <= qMap.size() && i > 1){
+				//rscPrv = (RawStringContent)qMap.get("" + (i-1));
+				//strPrvObjectType = rscPrv.type;
+			//}
 			
 			PrintSysout.printSysout("rsc.type : " + rsc.type);
 			

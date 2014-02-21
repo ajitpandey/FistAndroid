@@ -18,7 +18,8 @@
     android:layout_marginLeft="1dp"
     android:layout_marginRight="1dp"
     android:gravity="center_vertical"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:id="@+id/infoLinearLayout" >
 
     <ImageView
         android:id="@+id/logo"

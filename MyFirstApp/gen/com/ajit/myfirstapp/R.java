@@ -50,66 +50,67 @@ public final class R {
         public static final int start=0x7f02001a;
     }
     public static final class id {
-        public static final int aboutUs=0x7f09001c;
-        public static final int action_settings=0x7f09001b;
-        public static final int appInfo=0x7f090001;
-        public static final int appInfoText=0x7f090002;
-        public static final int appstart=0x7f090017;
-        public static final int btnAboutUs=0x7f090008;
-        public static final int btnAboutUsBack=0x7f090003;
-        public static final int btnLevel1=0x7f090004;
-        public static final int btnLevel2=0x7f090005;
-        public static final int btnLevel3=0x7f090006;
-        public static final int btnLevel4=0x7f090007;
-        public static final int btn_check=0x7f090015;
-        public static final int btnnext=0x7f090016;
-        public static final int btnprevious=0x7f090014;
-        public static final int imageButton1=0x7f090018;
-        public static final int level1XmlFilePath=0x7f090019;
-        public static final int logo=0x7f090000;
-        public static final int mainScrollView=0x7f090009;
-        public static final int mainTableLayout=0x7f09000a;
-        public static final int menu_settings=0x7f09001a;
-        public static final int placeHolderExplanation=0x7f090011;
-        public static final int preference=0x7f09001d;
-        public static final int rowButton=0x7f090013;
-        public static final int rowExplanation=0x7f090010;
-        public static final int rowExplanationAfter=0x7f090012;
-        public static final int rowExplanationBefore=0x7f09000f;
-        public static final int rowQuestion=0x7f09000c;
-        public static final int rowQuestionAfter=0x7f09000d;
-        public static final int rowQuestionBefore=0x7f09000b;
-        public static final int rowSelectAnswer=0x7f09000e;
+        public static final int aboutUs=0x7f0a001b;
+        public static final int action_settings=0x7f0a001a;
+        public static final int appInfo=0x7f0a0001;
+        public static final int appInfoText=0x7f0a0002;
+        public static final int btnAboutUs=0x7f0a0009;
+        public static final int btnAboutUsBack=0x7f0a0003;
+        public static final int btnLevel1=0x7f0a0005;
+        public static final int btnLevel2=0x7f0a0006;
+        public static final int btnLevel3=0x7f0a0007;
+        public static final int btnLevel4=0x7f0a0008;
+        public static final int btn_check=0x7f0a0016;
+        public static final int btnnext=0x7f0a0017;
+        public static final int btnprevious=0x7f0a0015;
+        public static final int infoLinearLayout=0x7f0a0004;
+        public static final int level1XmlFilePath=0x7f0a0018;
+        public static final int logo=0x7f0a0000;
+        public static final int mainScrollView=0x7f0a000a;
+        public static final int mainTableLayout=0x7f0a000b;
+        public static final int menu_settings=0x7f0a0019;
+        public static final int placeHolderExplanation=0x7f0a0012;
+        public static final int preference=0x7f0a001c;
+        public static final int rowButton=0x7f0a0014;
+        public static final int rowExplanation=0x7f0a0011;
+        public static final int rowExplanationAfter=0x7f0a0013;
+        public static final int rowExplanationBefore=0x7f0a0010;
+        public static final int rowQuestion=0x7f0a000d;
+        public static final int rowQuestionAfter=0x7f0a000e;
+        public static final int rowQuestionBefore=0x7f0a000c;
+        public static final int rowSelectAnswer=0x7f0a000f;
+    }
+    public static final class integer {
+        public static final int google_play_services_version=0x7f060000;
     }
     public static final class layout {
         public static final int activity_aboutus=0x7f030000;
         public static final int activity_info=0x7f030001;
         public static final int activity_main=0x7f030002;
-        public static final int activity_start=0x7f030003;
     }
     public static final class menu {
-        public static final int activity_info=0x7f080000;
-        public static final int main=0x7f080001;
+        public static final int activity_info=0x7f090000;
+        public static final int main=0x7f090001;
     }
     public static final class string {
-        public static final int aboutUs=0x7f06000e;
-        public static final int aboutUsAppText=0x7f06000f;
-        public static final int aboutUsText=0x7f060010;
-        public static final int action_settings=0x7f060001;
-        public static final int appInfoText=0x7f06000d;
-        public static final int app_name=0x7f060000;
-        public static final int back=0x7f060011;
-        public static final int btn_check=0x7f060008;
-        public static final int btn_next=0x7f060006;
-        public static final int btn_previous=0x7f060007;
-        public static final int hello_world=0x7f060002;
-        public static final int level1=0x7f060009;
-        public static final int level2=0x7f06000a;
-        public static final int level3=0x7f06000b;
-        public static final int level4=0x7f06000c;
-        public static final int menu_settings=0x7f060003;
-        public static final int start_app=0x7f060005;
-        public static final int title_activity_info=0x7f060004;
+        public static final int aboutUs=0x7f07000e;
+        public static final int aboutUsAppText=0x7f07000f;
+        public static final int aboutUsText=0x7f070010;
+        public static final int action_settings=0x7f070001;
+        public static final int appInfoText=0x7f07000d;
+        public static final int app_name=0x7f070000;
+        public static final int back=0x7f070011;
+        public static final int btn_check=0x7f070008;
+        public static final int btn_next=0x7f070006;
+        public static final int btn_previous=0x7f070007;
+        public static final int hello_world=0x7f070002;
+        public static final int level1=0x7f070009;
+        public static final int level2=0x7f07000a;
+        public static final int level3=0x7f07000b;
+        public static final int level4=0x7f07000c;
+        public static final int menu_settings=0x7f070003;
+        public static final int start_app=0x7f070005;
+        public static final int title_activity_info=0x7f070004;
     }
     public static final class style {
         /** 
@@ -133,11 +134,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;
