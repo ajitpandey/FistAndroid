@@ -28,6 +28,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TableLayout;
@@ -303,7 +304,13 @@ public class MainActivity extends Activity  implements OnClickListener {
 					this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 				}	
 			}else if(qaVo.type.equals("text")){
-				if(qaVo.answer.equals(this.txtViewText.getText().toString())){
+				String textAnswer = "";
+				if(qaVo.answer.matches("[0-9]*")){
+					textAnswer = "" + this.numPicker.getValue();
+				}else{
+					textAnswer = this.txtViewText.getText().toString();
+				}
+				if(qaVo.answer.equalsIgnoreCase(textAnswer)){
 					textResult = "Correct";
 				}
 				this.txtViewExplanation.setText(textResult + " : Answer is " + qaVo.answer + ".\n" + qaVo.explanation);
@@ -347,7 +354,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 		
 		//PrintSysout.printSysout("qaVo.option1 : " + qaVo.option1);
 		if(qaVo.type.equals("text")){
-			displayTextEdit(position);
+			displayTextEdit(qaVo, position);
 		}else if(qaVo.type.equals("radio")){
 			displayRadioButton(position);	
 		}else if(qaVo.type.equals("check")){
@@ -377,12 +384,22 @@ public class MainActivity extends Activity  implements OnClickListener {
         
     }//end changeNumber
 
-    private void displayTextEdit(int position2) {
+    private NumberPicker numPicker = null;
+    
+    private void displayTextEdit(QuestionAnswerVo qaVo, int position2) {
     	TableRow ansOpt =  (TableRow)findViewById(R.id.rowSelectAnswer);
 		ansOpt.removeAllViews();
 		
-		this.txtViewText = new EditText(this);
-		ansOpt.addView(this.txtViewText);
+		if(qaVo.answer.matches("[0-9]*")){
+			this.numPicker = new NumberPicker(this);
+			numPicker.setMinValue(0);
+			numPicker.setMaxValue(20);
+			numPicker.setHorizontalScrollBarEnabled(true);
+			ansOpt.addView(this.numPicker);	
+		}else{
+			this.txtViewText = new EditText(this);
+			ansOpt.addView(this.txtViewText);
+		}
 		
 	}
 
