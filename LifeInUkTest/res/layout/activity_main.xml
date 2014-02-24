@@ -1,0 +1,138 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:scrollbars="none"
+    android:layout_weight="1"
+    android:background="@android:color/white"
+    android:id="@+id/mainScrollView"
+    >
+<TableLayout  android:id="@+id/mainTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:stretchColumns="0,1,2">
+
+    <TableRow
+            android:id="@+id/rowQuestionBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <View
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white" />
+            
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowQuestionBefore1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <TextView
+                android:id="@+id/placeHolderQuestionCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowQuestionAfter"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <View
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowSelectAnswer"
+           android:layout_width="wrap_content" android:layout_height="0dp"
+            android:layout_weight="1" 
+             >
+            
+
+		</TableRow>
+		<TableRow
+            android:id="@+id/rowExplanationBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <View
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowExplanation"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/placeHolderExplanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowExplanationAfter"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <View
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <ImageButton
+                android:contentDescription="@string/btn_previous"
+                android:id="@+id/btnprevious"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/prev"
+                android:layout_column="0" />
+
+            <Button
+                android:id="@+id/btn_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_check"
+                android:layout_column="1" />
+            
+            <ImageButton
+                android:contentDescription="@string/btn_next"
+                android:id="@+id/btnnext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/next"
+                android:layout_column="2" />
+            <!-- </TableRow>
+            </TableLayout> -->
+        </TableRow>
+        <TableRow
+            android:id="@+id/rowButtonAfter"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+            <TextView
+                android:id="@+id/placeHolderHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+    </TableLayout>
+    </ScrollView>

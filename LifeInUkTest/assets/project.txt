@@ -1,0 +1,8 @@
+Learn math with fun and challenging way for kids to practice basic math skills.
+We have compiled over 1000s questions that may be asked in the maths objective question answer pattern.
+
+Features : Practice Counting, Ordering, Pattern, Addition, Subtraction, Multiplication, Division. Answers can be Single choise, Multiple choice or Entered through key pad. Students can attain different level of question/answer again and again for practice.
+
+Future Enhancement :
+1. More question/answer for each level
+2. More levels of Question/Answers

@@ -1,0 +1,70 @@
+<!--
+ <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <WebView
+        android:id="@+id/webinfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="36dp"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:gravity="center|center_vertical"
+    android:orientation="vertical"
+    android:background="@android:color/white" >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/appInfoText"
+        android:src="@drawable/aj" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:background="@android:color/black" />
+    
+    <TextView
+        android:id="@+id/appInfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_gravity="center"
+        android:layout_weight="1.52"
+        android:gravity="center"
+        android:text="@string/aboutUsText" >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/appInfoText"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_gravity="center"
+        android:layout_weight="1.65"
+        android:gravity="center"
+        android:text="@string/aboutUsAppText" >
+
+    </TextView>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:background="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnAboutUsBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back" />
+
+</LinearLayout> <!-- </RelativeLayout> -->
+
+
