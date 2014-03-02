@@ -13,6 +13,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -28,6 +29,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -35,6 +37,9 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.sunita.lifeinuktest.util.DrawableBitmap;
 import com.sunita.lifeinuktest.util.PrintSysout;
 import com.sunita.lifeinuktest.util.StringUtil;
@@ -42,7 +47,7 @@ import com.sunita.lifeinuktest.vo.QuestionAnswerVo;
 import com.sunita.lifeinuktest.vo.RawStringContent;
 
 public class MainActivity extends Activity  implements OnClickListener {
-
+		private AdView adView;
 	  private RadioGroup radioOptions;
 	  private TextView txtViewExplanation;
 	  private TextView txtViewText;
@@ -61,6 +66,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        addAd();
         
         loadImageInMap();
         
@@ -81,16 +87,22 @@ public class MainActivity extends Activity  implements OnClickListener {
         this.btnnext=(ImageButton)findViewById(R.id.btnnext);
         this.btnprevious.setVisibility(Button.INVISIBLE);
         this.btnnext.setVisibility(Button.INVISIBLE);
+        //btnnext=(ImageButton)findViewById(R.id.btnnext);
         btnnext.setOnClickListener(this);
         
         btnDisplay = (Button) findViewById(R.id.btn_check);
         btnDisplay.setOnClickListener(this);
         
         this.txtHelp.setTextColor(Color.BLACK);
+        this.txtPlaceHolderQuestionCount.setTextColor(Color.BLACK);
         this.txtViewExplanation.setTextColor(Color.BLACK);
         this.txtViewExplanation.setTextSize(fontSize);
         this.txtHelp.setVisibility(TextView.INVISIBLE);
         this.txtHelp.setText("Press -> to Proceed to next question.");
+        
+        
+        this.position = getPreferencePosition();
+     
         
         //Display view 
         changePosition(this.position);
@@ -99,7 +111,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         
         //initialize the object for the button
         //this button will innitially be disabled
-        btnprevious.setEnabled(false);
+        //btnprevious.setEnabled(false);
         //add listener to the button
         btnprevious.setOnClickListener(this);
         
@@ -109,7 +121,32 @@ public class MainActivity extends Activity  implements OnClickListener {
         
     }
 
-    private void loadImageInMap() {
+    
+
+	private void addAd() {
+		 // Create the adView.
+        adView = new AdView(this);
+        adView.setAdUnitId("ca-app-pub-4300070308662571/2467683040");
+        adView.setAdSize(AdSize.BANNER);
+        
+        
+     // Lookup your LinearLayout assuming it's been given
+        // the attribute android:id="@+id/mainLayout".
+        LinearLayout layout = (LinearLayout)findViewById(R.id.mainLinearLayout);
+
+        // Add the adView to it.
+        layout.addView(adView);
+
+        // Initiate a generic request.
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Load the adView with the ad request.
+        adView.loadAd(adRequest);
+	}
+
+
+
+	private void loadImageInMap() {
     	HashMap<String, Integer> images = new HashMap<String, Integer>();
         this.map = images;
 	}
@@ -197,7 +234,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 	public void displayRadioButton(int position) {
 		TableRow ansOpt =  (TableRow)findViewById(R.id.rowSelectAnswer);
 		ansOpt.removeAllViews();
-		
+		DisplayMetrics mDisplayMetrics = this.getResources().getDisplayMetrics();
 		this.radioOptions = new RadioGroup(this);
 		ansOpt.addView(radioOptions);
 		//radioOptions.setVisibility(RadioGroup.VISIBLE);
@@ -210,7 +247,8 @@ public class MainActivity extends Activity  implements OnClickListener {
         	PrintSysout.printSysout("qaVo.option1 : " + qaVo.option1);
         	rdbtn = new RadioButton(this);
             rdbtn.setId(1);
-            //rdbtn.setText(qaVo.option1);
+            rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
+            rdbtn.setSingleLine(false);
             rdbtn.setTextColor(Color.BLACK);
             setCheckBoxViewData(rdbtn, qaVo.option1);
             radioOptions.addView(rdbtn);	
@@ -219,7 +257,8 @@ public class MainActivity extends Activity  implements OnClickListener {
         if(qaVo.option2 != null && qaVo.option2 != ""){
 	        rdbtn = new RadioButton(this);
 	        rdbtn.setId(2);
-	        //rdbtn.setText(qaVo.option2);
+	        rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
+            rdbtn.setSingleLine(false);
 	        setCheckBoxViewData(rdbtn, qaVo.option2);
 	        rdbtn.setTextColor(Color.BLACK);
 	        radioOptions.addView(rdbtn);
@@ -228,7 +267,8 @@ public class MainActivity extends Activity  implements OnClickListener {
         if(qaVo.option3 != null && qaVo.option3 != ""){
 	        rdbtn = new RadioButton(this);
 	        rdbtn.setId(3);
-	        //rdbtn.setText(qaVo.option3);
+	        rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
+            rdbtn.setSingleLine(false);
 	        setCheckBoxViewData(rdbtn, qaVo.option3);
 	        rdbtn.setTextColor(Color.BLACK);
 	        radioOptions.addView(rdbtn);
@@ -237,7 +277,8 @@ public class MainActivity extends Activity  implements OnClickListener {
         if(qaVo.option4 != null && qaVo.option4 != ""){
 	        rdbtn = new RadioButton(this);
 	        rdbtn.setId(4);
-	        //rdbtn.setText(qaVo.option4);
+	        rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
+            rdbtn.setSingleLine(false);
 	        setCheckBoxViewData(rdbtn, qaVo.option4);
 	        rdbtn.setTextColor(Color.BLACK);
 	        radioOptions.addView(rdbtn);
@@ -263,6 +304,8 @@ public class MainActivity extends Activity  implements OnClickListener {
 			btnprevious.setEnabled(position==0?false:true);
 			//changePosition(position);
 			btnnext.setEnabled(true);
+			
+			persistPageNumber(position);
 		}
 		//when btnnext is clicked
 		else if(arg0.getId()==R.id.btnnext){
@@ -272,6 +315,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 			//changePosition(position);
 			btnprevious.setEnabled(true);
 			
+			persistPageNumber(position);
 					
 		}
 		//when btnCheck is clicked
@@ -291,7 +335,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 						radioBtn.setBackgroundColor(Color.GREEN);
 						textResult = "Correct";
 					}
-					this.txtViewExplanation.setText(textResult + " : " + qaVo.explanation);
+					this.txtViewExplanation.setText(textResult + (qaVo.explanation == null?"":" : " + qaVo.explanation));
 					this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 				}	
 			}else if(qaVo.type.equals("text")){
@@ -304,7 +348,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 				if(qaVo.answer.equalsIgnoreCase(textAnswer)){
 					textResult = "Correct";
 				}
-				this.txtViewExplanation.setText(textResult + " : Answer is " + qaVo.answer + ".\n" + qaVo.explanation);
+				this.txtViewExplanation.setText(textResult + (qaVo.explanation == null?"":" : Answer is " + qaVo.answer + ".\n" + qaVo.explanation));
 				this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 			}else if(qaVo.type.equals("check")){
 				String boxId = "";
@@ -326,7 +370,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 						textResult = "Correct";
 						
 					}
-					this.txtViewExplanation.setText(textResult + " : " + qaVo.explanation);
+					this.txtViewExplanation.setText(textResult + (qaVo.explanation == null?"":" : " + qaVo.explanation));
 					this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 				}	
 			}
@@ -334,6 +378,30 @@ public class MainActivity extends Activity  implements OnClickListener {
 		}
 	}
 	
+	private  static final String PREFS_NAME = "LifeInUKPratCurPosition";
+	private void persistPageNumber(int position2) {
+		// We need an Editor object to make preference changes.
+	      // All objects are from android.context.Context
+	      SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+	      SharedPreferences.Editor editor = settings.edit();
+	      editor.putInt("position", position2);
+
+	      	PrintSysout.printSysout("Set Position : " + position2);
+	      // Commit the edits!
+	      editor.commit();
+		
+	}
+	
+	private int getPreferencePosition() {
+    	// Restore preferences
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        int pos = settings.getInt("position", 1);
+        
+        PrintSysout.printSysout("Get Position : " + pos);
+        
+		return pos;
+	}
+
 	//this method is to change the number that appear on the screen
     //after navigation button is clicked
     private void changePosition(int position){
@@ -578,6 +646,13 @@ public class MainActivity extends Activity  implements OnClickListener {
 		//tblayout.addView(row1);
 		return qTextView;
 	}
+	
+	@Override
+    protected void onStop(){
+       super.onStop();
+
+      persistPageNumber(position);
+    }
 
 }
 

@@ -9,6 +9,15 @@
     android:background="@android:color/white"
     android:id="@+id/mainScrollView"
     >
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="36dp"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:id="@+id/mainLinearLayout" >
 <TableLayout  android:id="@+id/mainTableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" android:stretchColumns="0,1,2">
@@ -33,7 +42,7 @@
                 android:id="@+id/placeHolderQuestionCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="1" />
+                android:layout_column="0" />
         </TableRow>
         <TableRow
             android:id="@+id/rowQuestion"
@@ -135,4 +144,5 @@
         </TableRow>
 
     </TableLayout>
+    </LinearLayout>
     </ScrollView>

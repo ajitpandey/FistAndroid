@@ -6,6 +6,6 @@ public class PrintSysout {
 	  }
 	  
 	  public static void printSysout(String str){
-		  //System.out.println(str);
+		  System.out.println(str);
 	  }
 }

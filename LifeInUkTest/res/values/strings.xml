@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Maths Flash Card</string>
+    <string name="app_name">Life In UK Test Practice</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_info">Maths Flash Card</string>
+    <string name="title_activity_info">Life In UK Flash Card</string>
     <string name="start_app">Start App</string>
     <string name="btn_next">Next</string>
     <string name="btn_previous">Previous</string>
     <string name="btn_check">Check</string>
-    <string name="level1">Level 1 - Counting</string>
-    <string name="level2">Level 2 - Fewer and Greater</string>
-    <string name="level3">Level 3 - Addition</string>
-    <string name="level4">Level 4 - Subtraction</string>
-    <string name="appInfoText">Math Flash Card App v1.0 \n Tap on the Back button to return.</string>
+    <string name="level1">Practice all question</string>
+    <string name="level2">Take a test</string>
+    <string name="level3">Test Result</string>
+    <string name="level4">All in-correct test answer</string>
+    <string name="appInfoText">Life In UK Flash Card v1.0 \n Tap on the Back button to return.</string>
     <string name="aboutUs">About Us</string>
     <string name="aboutUsAppText">Features : Counting, Ordering, Pattern, Addition, Subtraction, Multiplication, Division \nAnswers can be Single choise, Multiple choice or Entered through key pad. \nStudents can attain different lwvel of question/answer again and again for practice.</string>
     <string name="aboutUsText">About the App \n We compiled over 1000 questions that may be asked in the maths objective question answer pattern.</string>
