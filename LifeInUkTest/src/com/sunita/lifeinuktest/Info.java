@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.sunita.lifeinuktest.util.SaveDataToFile;
 
 
 public class Info extends Activity //implements OnClickListener
@@ -45,10 +47,23 @@ public class Info extends Activity //implements OnClickListener
         //webinfo.loadUrl("file:///android_asset/info.html");
         
         findViewById(R.id.btnLevel1).setOnClickListener(btnLevel1_OnClickListener);
+        findViewById(R.id.btnLevel2).setOnClickListener(btnLevel2_OnClickListener);
         findViewById(R.id.btnAboutUs).setOnClickListener(btnAboutUs_OnClickListener);
+        
+        updateButtonLabel();
     }
     
-    //On click listener for btnLevel1
+    private void updateButtonLabel() {
+		int position =  Integer.valueOf(SaveDataToFile.getData(this, SaveDataToFile.TYPE_INT, SaveDataToFile.CUR_POSITION));
+		int count = Integer.valueOf(SaveDataToFile.getData(this, SaveDataToFile.TYPE_INT, SaveDataToFile.TOTAL_QUESTION));
+		if(position != 0 && count != 0){
+			Button btnLevel1 = (Button) findViewById(R.id.btnLevel1);
+			btnLevel1.setText(btnLevel1.getText() + " - " + position + " / " + count);	
+		}
+		
+	}
+
+	//On click listener for btnLevel1
     final OnClickListener btnLevel1_OnClickListener = new OnClickListener() {
         public void onClick(final View v) {
         	//invoke the Info activity
@@ -58,6 +73,15 @@ public class Info extends Activity //implements OnClickListener
         }
     };
     
+  //On click listener for btnLevel2
+    final OnClickListener btnLevel2_OnClickListener = new OnClickListener() {
+        public void onClick(final View v) {
+        	//invoke the Info activity
+				Intent main = new Intent(getApplicationContext(), MainActivity.class);
+				main.putExtra("appLevel", "test");
+	    		startActivity(main);        
+        }
+    };
   
   //On click listener for btnLevel1
     final OnClickListener btnAboutUs_OnClickListener = new OnClickListener() {
