@@ -48,6 +48,7 @@ import com.sunita.lifeinuktest.vo.RawStringContent;
 
 public class MainActivity extends Activity  implements OnClickListener {
 		private AdView adView;
+		private AdView adView2;
 	  private RadioGroup radioOptions;
 	  private TextView txtViewExplanation;
 	  private TextView txtViewText;
@@ -138,6 +139,9 @@ public class MainActivity extends Activity  implements OnClickListener {
 			SaveDataToFile.persistData(this, SaveDataToFile.TYPE_INT, "" + testStartPosition, SaveDataToFile.TEST_POSITION);	
 		}else{
 			testStartPosition = testStartPosition - 25;
+			if(testStartPosition < 1){
+				testStartPosition = this.qaList.size() - 25;
+			}
 			SaveDataToFile.persistData(this, SaveDataToFile.TYPE_INT, "" + testStartPosition, SaveDataToFile.TEST_POSITION);
 		}
 		//PrintSysout.printSysout("testStartPosition : " + testStartPosition);
@@ -171,6 +175,22 @@ public class MainActivity extends Activity  implements OnClickListener {
 
         // Load the adView with the ad request.
         adView.loadAd(adRequest);
+        
+        
+        // Create the adView.
+        adView2 = new AdView(this);
+        adView2.setAdUnitId("ca-app-pub-4300070308662571/9785153443");
+        adView2.setAdSize(AdSize.BANNER);
+        
+        
+        // Add the adView to it.
+        layout.addView(adView2, 0);
+
+        // Initiate a generic request.
+        adRequest = new AdRequest.Builder().build();
+
+        // Load the adView with the ad request.
+        adView2.loadAd(adRequest);
 	}
 
 
@@ -543,7 +563,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 
 
 	private void btnDisplayCheck() {
-		String textResult = "Incorrect";
+		String textResult = "Incorrect \n";
 		//call the method Check
 		RadioButton radioBtn = null;
 		QuestionAnswerVo qaVo = qaList.get(position);
@@ -558,7 +578,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 					radioBtn.setBackgroundColor(Color.GREEN);
 					textResult = "Correct";
 				}
-				this.txtViewExplanation.setText(textResult + (qaVo.explanation == null?"":" : " + qaVo.explanation));
+				this.txtViewExplanation.setText(textResult  + " \nCorrect answer is :" + qaVo.showAnswer() + " \n" + (qaVo.explanation == null?"":" : " + qaVo.explanation));
 				this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 			}	
 		}else if(qaVo.type.equals("text")){
@@ -593,7 +613,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 					textResult = "Correct";
 					
 				}
-				this.txtViewExplanation.setText(textResult + (qaVo.explanation == null?"":" : " + qaVo.explanation));
+				this.txtViewExplanation.setText(textResult + " \nCorrect answer is: \n" + qaVo.showAnswer() + " \n" + (qaVo.explanation == null?"":" : " + qaVo.explanation));
 				this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 			}	
 		}
