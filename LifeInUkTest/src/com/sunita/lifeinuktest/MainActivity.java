@@ -1,15 +1,14 @@
 package com.sunita.lifeinuktest;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -39,16 +38,19 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.sunita.lifeinuktest.constant.StaticConstants;
+import com.sunita.lifeinuktest.file.io.CreateXMLFile;
 import com.sunita.lifeinuktest.util.DrawableBitmap;
 import com.sunita.lifeinuktest.util.PrintSysout;
 import com.sunita.lifeinuktest.util.SaveDataToFile;
 import com.sunita.lifeinuktest.util.StringUtil;
 import com.sunita.lifeinuktest.vo.QuestionAnswerVo;
+import com.sunita.lifeinuktest.vo.QuizLevel;
 import com.sunita.lifeinuktest.vo.RawStringContent;
 
 public class MainActivity extends Activity  implements OnClickListener {
-		private AdView adView;
-		private AdView adView2;
+	private AdView adView;
+	private AdView adView2;
 	  private RadioGroup radioOptions;
 	  private TextView txtViewExplanation;
 	  private TextView txtViewText;
@@ -69,16 +71,20 @@ public class MainActivity extends Activity  implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addAd();
+        if(StaticConstants.DISPLAY_ADD){
+        	addAd();	
+        }
         
         loadImageInMap();
         
         //Check which button pressed
         Intent mIntent = getIntent();
-        this.pageType = mIntent.getStringExtra("appLevel");
-        this.qaList = getQuestionAnswerList("level_1.xml");
+        this.pageType = mIntent.getStringExtra(StaticConstants.ACTIVITY_CONTEXT_VARIABLE);
+        this.qaList = CreateXMLFile.getQuestionAnswerList(this, "level_1.xml");
         if(this.pageType.equalsIgnoreCase("test")){
         	filterQAList();
+        }else if(this.pageType.equalsIgnoreCase("resultList")){
+        	populateResultTestQA(this.qaList, "");
         }
         
         if(this.qaList == null || this.qaList.size() < 1){
@@ -111,6 +117,9 @@ public class MainActivity extends Activity  implements OnClickListener {
         if(this.pageType.equalsIgnoreCase("test")){
         	//For Test cahnge button name
         	btnDisplay.setText("Finish");
+        }else if(this.pageType.equalsIgnoreCase("resultList")){
+        	//For Test cahnge button name
+        	btnDisplay.setVisibility(View.GONE);
         }else{
         	SaveDataToFile.persistData(this, SaveDataToFile.TYPE_INT, "" + qaList.size(), SaveDataToFile.TOTAL_QUESTION);
         	this.position = Integer.valueOf(SaveDataToFile.getData(this, SaveDataToFile.TYPE_INT, SaveDataToFile.CUR_POSITION));
@@ -130,6 +139,25 @@ public class MainActivity extends Activity  implements OnClickListener {
     }
 
     
+
+
+	private void populateResultTestQA(List<QuestionAnswerVo> qaList2, String resultCountName) {
+		try {
+			CreateXMLFile.readfile(this, StaticConstants.TEST_RESULT_FILE_NAME);
+		} catch (IOException e) {
+			PrintSysout.printSysout("FileRead Error 1");
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			PrintSysout.printSysout("FileRead Error 2");
+			e.printStackTrace();
+		} catch (SAXException e) {
+			PrintSysout.printSysout("FileRead Error 3");
+			e.printStackTrace();
+		}
+		
+	}
+
+
 
 
 	private void filterQAList() {
@@ -161,7 +189,6 @@ public class MainActivity extends Activity  implements OnClickListener {
         adView = new AdView(this);
         adView.setAdUnitId("ca-app-pub-4300070308662571/2467683040");
         adView.setAdSize(AdSize.BANNER);
-        
         
      // Lookup your LinearLayout assuming it's been given
         // the attribute android:id="@+id/mainLayout".
@@ -224,84 +251,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         this.map = images;
 	}
 
-	private List<QuestionAnswerVo> getQuestionAnswerList(String level) {
-    	List<QuestionAnswerVo> voList = null;
-    	XmlPullParserFactory pullParserFactory;
-		try {
-			pullParserFactory = XmlPullParserFactory.newInstance();
-			XmlPullParser parser = pullParserFactory.newPullParser();
-
-			    InputStream in_s = getApplicationContext().getAssets().open(level);
-		        parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-	            parser.setInput(in_s, null);
-
-	            //PrintSysout.printSysout("step - 1");
-	            voList = parseXML(parser);
-	            //PrintSysout.printSysout("step - 2");
-		} catch (XmlPullParserException e) {
-
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return voList;
-	}
-    
-    private List<QuestionAnswerVo> parseXML(XmlPullParser parser) throws XmlPullParserException,IOException
-	{
-		List<QuestionAnswerVo> voList = null;
-        int eventType = parser.getEventType();
-        QuestionAnswerVo questionAnswerVo = null;
-        //PrintSysout.printSysout("eventType - " + eventType);
-        
-        while (eventType != XmlPullParser.END_DOCUMENT){
-            String name = null;
-            
-            switch (eventType){
-                case XmlPullParser.START_DOCUMENT:
-                	voList = new ArrayList<QuestionAnswerVo>();
-                	//PrintSysout.printSysout("switch - 1");
-                    break;
-                case XmlPullParser.START_TAG:
-                	name = parser.getName();
-                	//PrintSysout.printSysout("switch - 2 - " + name);
-                    if (name.equals("quiz")){
-                    	questionAnswerVo = new QuestionAnswerVo();
-                    	//PrintSysout.printSysout("questionAnswerVo : " + questionAnswerVo);
-                    } else if (questionAnswerVo != null){
-                        if (name.equals("question")){
-                        	questionAnswerVo.question = parser.nextText();
-                        	//PrintSysout.printSysout("questionAnswerVo.question - " + questionAnswerVo.question);
-                        } else if (name.equals("answer")){
-                        	questionAnswerVo.answer = parser.nextText();
-                        } else if (name.equals("option1")){
-                        	questionAnswerVo.option1 = parser.nextText();
-                        } else if (name.equals("option2")){
-                        	questionAnswerVo.option2 = parser.nextText();
-                        } else if (name.equals("option3")){
-                        	questionAnswerVo.option3 = parser.nextText();
-                        } else if (name.equals("option4")){
-                        	questionAnswerVo.option4 = parser.nextText();
-                        } else if (name.equals("explanation")){
-                        	questionAnswerVo.explanation = parser.nextText();
-                        } else if (name.equals("type")){
-                        	questionAnswerVo.type = parser.nextText();
-                        }  
-                    }
-                    break;
-                case XmlPullParser.END_TAG:
-                    name = parser.getName();
-                	//PrintSysout.printSysout("switch - 3 - " + name);
-                    if (name.equalsIgnoreCase("quiz") && questionAnswerVo != null){
-                    	voList.add(questionAnswerVo);
-                    } 
-            }
-            eventType = parser.next();
-        }
-    	//PrintSysout.printSysout("switch - 4 - " + voList.size());
-        return voList;
-	}
+	
 
 
 	public void displayRadioButton(int position) {
@@ -328,7 +278,7 @@ public class MainActivity extends Activity  implements OnClickListener {
             if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("1")){
             	rdbtn.setSelected(true);
             }
-            if(this.pageType.equalsIgnoreCase("testResult")){
+            if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
             	rdbtn.setEnabled(false);
             	if(qaVo.answer.equalsIgnoreCase("1")){
             		rdbtn.setBackgroundColor(Color.GREEN);	
@@ -350,7 +300,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 	        if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("2")){
             	rdbtn.setSelected(true);
             }
-	        if(this.pageType.equalsIgnoreCase("testResult")){
+	        if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
             	rdbtn.setEnabled(false);
             	if(qaVo.answer.equalsIgnoreCase("2")){
             		rdbtn.setBackgroundColor(Color.GREEN);	
@@ -372,7 +322,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 	        if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("3")){
             	rdbtn.setSelected(true);
             }
-	        if(this.pageType.equalsIgnoreCase("testResult")){
+	        if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
             	rdbtn.setEnabled(false);
             	if(qaVo.answer.equalsIgnoreCase("3")){
             		rdbtn.setBackgroundColor(Color.GREEN);	
@@ -394,7 +344,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 	        if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("4")){
             	rdbtn.setSelected(true);
             }
-	        if(this.pageType.equalsIgnoreCase("testResult")){
+	        if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
             	rdbtn.setEnabled(false);
             	if(qaVo.answer.equalsIgnoreCase("4")){
             		rdbtn.setBackgroundColor(Color.GREEN);	
@@ -417,7 +367,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
-		populateSelectedAnswer();
+		storeSelectedAnswer();
 		PrintSysout.printSysout("Click Id : " + arg0.getId());
 		//when btnprevious is clicked
 		if(arg0.getId()==R.id.btnprevious){
@@ -451,7 +401,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 			if(this.btnDisplay.getText().equals("Check")){
 				btnDisplayCheck();
 			}else if(this.btnDisplay.getText().equals("Finish")){
-				this.pageType = "testResult";
+				this.pageType = StaticConstants.ACTIVITY_TEST_RESULT;
 				btnDisplayTestFinish();
 			}
 		}
@@ -475,16 +425,26 @@ public class MainActivity extends Activity  implements OnClickListener {
 	}
 	
 	
-	
-	
-
-	private void populateSelectedAnswer() {
-		QuestionAnswerVo qaVo = qaList.get(position);
+	private void displaySelectedAnswer(QuestionAnswerVo qaVo) {
+		PrintSysout.printSysout("-------selectedAnswer - " + qaVo.selectedAnswer);
+		PrintSysout.printSysout("####type : " + qaVo.type);
 		if(qaVo.type.equals("radio")){
-			int selectedId = this.radioOptions.getCheckedRadioButtonId();
-			//when some value is selected - validate
-			if(!(selectedId <= 0)){
-				qaVo.selectedAnswer = "" + selectedId;
+			//Test Result Page, prepopulate the selected answer
+			if(qaVo.selectedAnswer != null && !qaVo.selectedAnswer.equalsIgnoreCase("") && this.radioOptions.getCheckedRadioButtonId() == -1){
+				for(int i = 1; i <= 4; i++){
+					View child = findViewById(i);
+					PrintSysout.printSysout("child type : " + i + " - " + child.getClass());
+					if (child != null && child instanceof RadioButton) {
+						RadioButton rb = (RadioButton) child;
+						PrintSysout.printSysout("i = " + i + " = selectedAnswer : " + qaVo.selectedAnswer);
+				        if(qaVo.selectedAnswer.equalsIgnoreCase("" + i)){
+				        	PrintSysout.printSysout("i = checkied");
+				        	rb.setSelected(true);
+				        	rb.setChecked(true);
+				        	break;
+				        }
+				    }
+				}
 			}	
 		}else if(qaVo.type.equals("text")){
 			String textAnswer = "";
@@ -495,6 +455,52 @@ public class MainActivity extends Activity  implements OnClickListener {
 			}
 			qaVo.selectedAnswer = textAnswer;
 		}else if(qaVo.type.equals("check")){
+			//Test Result Page, prepopulate the selected answer
+			PrintSysout.printSysout("---1----CheckBox - " + qaVo.selectedAnswer);
+			if(qaVo.selectedAnswer != null && !qaVo.selectedAnswer.equalsIgnoreCase("") && this.radioOptions.getCheckedRadioButtonId() == -1){
+				PrintSysout.printSysout("--2-----CheckBox - " + qaVo.selectedAnswer);
+				String[] strArr = qaVo.selectedAnswer.split(",");
+				for(int i = 1; i <= 4; i++){
+					View child = findViewById(i);
+					PrintSysout.printSysout("-----child type : " + i + " - " + child.getClass());
+					if (child != null && child instanceof CheckBox) {
+						CheckBox cb = (CheckBox) child;
+						for(String str : strArr){
+							if(str.equalsIgnoreCase("" + i)){
+					        	cb.setChecked(true);
+					        	break;
+					        }	
+						}
+				    }
+				}
+				PrintSysout.printSysout("--3-----CheckBox - " + qaVo.selectedAnswer);
+			}
+		}
+	}
+	
+
+	private void storeSelectedAnswer() {
+		QuestionAnswerVo qaVo = qaList.get(position);
+		PrintSysout.printSysout("-------selectedAnswer - " + qaVo.selectedAnswer);
+		PrintSysout.printSysout("####type : " + qaVo.type);
+		if(qaVo.type.equals("radio")){
+			//Test Result Page, prepopulate the selected answer
+			int selectedId = this.radioOptions.getCheckedRadioButtonId();
+			//when some value is selected - validate
+			if(!(selectedId <= 0)){
+				qaVo.selectedAnswer = "" + selectedId;
+			}
+		}else if(qaVo.type.equals("text")){
+			String textAnswer = "";
+			if(qaVo.answer.matches("[0-9]*")){
+				textAnswer = "" + this.numPicker.getValue();
+			}else{
+				textAnswer = this.txtViewText.getText().toString();
+			}
+			qaVo.selectedAnswer = textAnswer;
+		}else if(qaVo.type.equals("check")){
+			//Test Result Page, prepopulate the selected answer
+			PrintSysout.printSysout("---1----CheckBox - " + qaVo.selectedAnswer);
 			String boxId = "";
 			for(int i = 1; i <= 4; i++){
 				View child = findViewById(i);
@@ -502,16 +508,16 @@ public class MainActivity extends Activity  implements OnClickListener {
 				if (child != null && child instanceof CheckBox) {
 			        CheckBox box = (CheckBox) child;
 			        if(box.isChecked()){
-			        	boxId = boxId + (boxId.length()==0?""+box.getId():"," + box.getId());
+			        	PrintSysout.printSysout("boxId.length() - " + boxId.length());
+			        	boxId = boxId + (boxId.equals("")?""+box.getId():"," + box.getId());
 			        }
 			    }
 			}
-			//PrintSysout.printSysout("boxId : " + qaVo.answer + " - " + boxId);
+			PrintSysout.printSysout("boxId : " + qaVo.answer + " - " + boxId);
 			//Validate Check box
-			if(boxId != ""){
-				//PrintSysout.printSysout(qaVo.answer + " == " + selectedId);
+			if(!boxId.equals("")){
 				qaVo.selectedAnswer = boxId;
-			}	
+			}
 		}
 	}
 
@@ -536,6 +542,22 @@ public class MainActivity extends Activity  implements OnClickListener {
 			}else{
 				btn.setTextColor(Color.RED);
 				btn.setText(btn.getText());
+			}
+		}
+		PrintSysout.printSysout("########pageType : " + pageType);
+		if(pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
+			QuizLevel quizLevel = new QuizLevel(this.qaList);
+			try {
+				CreateXMLFile.createFile(this, StaticConstants.TEST_RESULT_FILE_NAME, quizLevel.toString() );
+			} catch (IllegalArgumentException e) {
+				PrintSysout.printSysout("Exception 1");
+				e.printStackTrace();
+			} catch (IllegalStateException e) {
+				PrintSysout.printSysout("Exception 2");
+				e.printStackTrace();
+			} catch (IOException e) {
+				PrintSysout.printSysout("Exception 3");
+				e.printStackTrace();
 			}
 		}
 	}
@@ -563,7 +585,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 
 
 	private void btnDisplayCheck() {
-		String textResult = "Incorrect \n";
+		String textResult = "Incorrect";
 		//call the method Check
 		RadioButton radioBtn = null;
 		QuestionAnswerVo qaVo = qaList.get(position);
@@ -578,7 +600,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 					radioBtn.setBackgroundColor(Color.GREEN);
 					textResult = "Correct";
 				}
-				this.txtViewExplanation.setText(textResult  + " \nCorrect answer is :" + qaVo.showAnswer() + " \n" + (qaVo.explanation == null?"":" : " + qaVo.explanation));
+				this.txtViewExplanation.setText(textResult  + (textResult.equals("Incorrect")?" \nCorrect answer is :" + qaVo.showAnswer() + " \n":"") + (qaVo.explanation == null?"":" : " + qaVo.explanation));
 				this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 			}	
 		}else if(qaVo.type.equals("text")){
@@ -613,7 +635,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 					textResult = "Correct";
 					
 				}
-				this.txtViewExplanation.setText(textResult + " \nCorrect answer is: \n" + qaVo.showAnswer() + " \n" + (qaVo.explanation == null?"":" : " + qaVo.explanation));
+				this.txtViewExplanation.setText(textResult  + (textResult.equals("Incorrect")?" \nCorrect answer is :" + qaVo.showAnswer() + " \n":"") + (qaVo.explanation == null?"":" : " + qaVo.explanation));
 				this.txtViewExplanation.setVisibility(TextView.VISIBLE);
 			}	
 		}
@@ -624,7 +646,6 @@ public class MainActivity extends Activity  implements OnClickListener {
     //after navigation button is clicked
     private void changePosition(int position){
     	QuestionAnswerVo qaVo = qaList.get(position);
-		
     	printQuestion(qaVo.question);
     	
     	this.txtPlaceHolderQuestionCount.setText(position+1 + " / " + qaList.size());
@@ -637,17 +658,16 @@ public class MainActivity extends Activity  implements OnClickListener {
 		}else if(qaVo.type.equals("check")){
 			displayCheckBoxButton(position);	
 		}
+		//display selected values
+		displaySelectedAnswer(qaVo);
 		
         /*this.txtViewExplanation.setVisibility(TextView.INVISIBLE);*/
-		if(this.pageType.equalsIgnoreCase("testResult")){
+		if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
 			this.txtViewExplanation.setVisibility(View.VISIBLE);
 			this.txtViewExplanation.setText("Answer : " + qaVo.showAnswer() + ((qaVo.explanation != null && !qaVo.explanation.equals(""))?" \nExplanation :" + qaVo.explanation:""));
 		}else{
 			this.txtViewExplanation.setVisibility(View.GONE);	
 		}
-		
-		
-		
 		
 		if(position==0){
 			this.btnprevious.setVisibility(Button.INVISIBLE);
@@ -711,7 +731,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         	if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.indexOf("1") != -1){
             	cb.setSelected(true);
             }
-        	if(this.pageType.equalsIgnoreCase("testResult")){
+        	if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
             	cb.setEnabled(false);
             	if(qaVo.answer.equalsIgnoreCase("1")){
             		cb.setBackgroundColor(Color.GREEN);	
@@ -733,7 +753,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         	if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.indexOf("2") != -1){
             	cb.setSelected(true);
             }
-        	if(this.pageType.equalsIgnoreCase("testResult")){
+        	if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
             	cb.setEnabled(false);
             	if(qaVo.answer.equalsIgnoreCase("2")){
             		cb.setBackgroundColor(Color.GREEN);	
@@ -755,7 +775,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         	if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.indexOf("3") != -1){
             	cb.setSelected(true);
             }
-        	if(this.pageType.equalsIgnoreCase("testResult")){
+        	if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
             	cb.setEnabled(false);
             	if(qaVo.answer.equalsIgnoreCase("3")){
             		cb.setBackgroundColor(Color.GREEN);	
@@ -777,7 +797,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         	if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.indexOf("4") != -1){
             	cb.setSelected(true);
             }
-        	if(this.pageType.equalsIgnoreCase("testResult")){
+        	if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
             	cb.setEnabled(false);
             	if(qaVo.answer.equalsIgnoreCase("4")){
             		cb.setBackgroundColor(Color.GREEN);	
@@ -923,7 +943,15 @@ public class MainActivity extends Activity  implements OnClickListener {
        if(!this.pageType.equalsIgnoreCase("test")){
 			SaveDataToFile.persistData(this, SaveDataToFile.TYPE_INT,""+position, SaveDataToFile.CUR_POSITION);	
 		}
+       
     }
+
+
+
+
+	
+	
+	
 
 }
 

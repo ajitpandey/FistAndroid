@@ -29,11 +29,9 @@
 
     <TextView
         android:id="@+id/appInfo"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_gravity="center"
-        android:layout_weight="0.1"
-        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:text="@string/appInfoText" >
 
     </TextView>
@@ -59,8 +57,7 @@
         android:id="@+id/btnLevel3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/level3"
-        android:visibility="gone" />
+        android:text="@string/level3" />
     
     <Button
         android:id="@+id/btnLevel4"
