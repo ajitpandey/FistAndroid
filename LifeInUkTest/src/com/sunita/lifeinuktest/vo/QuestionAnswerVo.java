@@ -32,7 +32,11 @@ public class QuestionAnswerVo implements Serializable {
 	}
 
 	public boolean isAnswerCoorect(){
-		return answer.equalsIgnoreCase(selectedAnswer)?true:false;
+		boolean result = false;
+		if(answer != null){
+			result = answer.equalsIgnoreCase(selectedAnswer)?true:false;
+		}
+		return result;
 	}
 	
 	public String showAnswer(){
@@ -76,6 +80,18 @@ public class QuestionAnswerVo implements Serializable {
 		strBuf.append("<option3>" + option3 + "</option3>");
 		strBuf.append("<option4>" + option4 + "</option4>");
 		strBuf.append("<explanation>" + explanation + "</explanation>");
+		
+		return strBuf.toString();
+	}
+	
+	
+	public String filteredToString() {
+		StringBuffer strBuf = new StringBuffer();
+		
+		strBuf.append("<id>" + id + "</id>");
+		strBuf.append("<type>" + type + "</type>");
+		strBuf.append("<selans>" + answer + "</selans>");
+		
 		
 		return strBuf.toString();
 	}

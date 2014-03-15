@@ -6,9 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException;
+import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -45,8 +43,8 @@ import com.sunita.lifeinuktest.util.PrintSysout;
 import com.sunita.lifeinuktest.util.SaveDataToFile;
 import com.sunita.lifeinuktest.util.StringUtil;
 import com.sunita.lifeinuktest.vo.QuestionAnswerVo;
-import com.sunita.lifeinuktest.vo.QuizLevel;
 import com.sunita.lifeinuktest.vo.RawStringContent;
+import com.sunita.lifeinuktest.vo.TestResult;
 
 public class MainActivity extends Activity  implements OnClickListener {
 	private AdView adView;
@@ -61,6 +59,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 	  private TextView txtHelp;
 	  private int position = 0;
 	  private List<QuestionAnswerVo> qaList = new ArrayList<QuestionAnswerVo>();
+	  private List<TestResult> trVoList = new ArrayList<TestResult>();
 	  private HashMap<String, Integer> map;
 	  private Integer fontSize = 20;
 	  private TableLayout mainTableLayout, testResultTableLayout;
@@ -71,27 +70,6 @@ public class MainActivity extends Activity  implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(StaticConstants.DISPLAY_ADD){
-        	addAd();	
-        }
-        
-        loadImageInMap();
-        
-        //Check which button pressed
-        Intent mIntent = getIntent();
-        this.pageType = mIntent.getStringExtra(StaticConstants.ACTIVITY_CONTEXT_VARIABLE);
-        this.qaList = CreateXMLFile.getQuestionAnswerList(this, "level_1.xml");
-        if(this.pageType.equalsIgnoreCase("test")){
-        	filterQAList();
-        }else if(this.pageType.equalsIgnoreCase("resultList")){
-        	populateResultTestQA(this.qaList, "");
-        }
-        
-        if(this.qaList == null || this.qaList.size() < 1){
-        	return;
-        }
-        
-        
         this.mainTableLayout = (TableLayout)findViewById(R.id.mainTableLayout);
 		this.testResultTableLayout = (TableLayout)findViewById(R.id.testResultTableLayout);
         this.txtPlaceHolderQuestionCount = (TextView) findViewById(R.id.placeHolderQuestionCount);
@@ -103,62 +81,93 @@ public class MainActivity extends Activity  implements OnClickListener {
         this.btnprevious.setVisibility(Button.INVISIBLE);
         this.btnnext.setVisibility(Button.INVISIBLE);
         this.btnDisplay = (Button) findViewById(R.id.btn_check);
-        btnDisplay.setOnClickListener(this);
-        btnnext.setOnClickListener(this);
         
-        
-        this.txtHelp.setTextColor(Color.BLACK);
-        this.txtPlaceHolderQuestionCount.setTextColor(Color.BLACK);
         this.txtViewExplanation.setTextColor(Color.BLACK);
         this.txtViewExplanation.setTextSize(fontSize);
+        
+        this.txtHelp.setTextColor(Color.BLACK);
         this.txtHelp.setVisibility(TextView.INVISIBLE);
         this.txtHelp.setText("Press -> to Proceed to next question.");
         
-        if(this.pageType.equalsIgnoreCase("test")){
-        	//For Test cahnge button name
+        this.txtPlaceHolderQuestionCount.setTextColor(Color.BLACK);
+        
+        this.btnDisplay.setOnClickListener(this);
+        this.btnnext.setOnClickListener(this);
+        this.btnprevious.setOnClickListener(this);
+        
+        /*DisplayMetrics dm = new DisplayMetrics();
+        // dm holds your structure of resolution
+        this.getWindowManager().getDefaultDisplay().getMetrics(dm);
+	     int width = dm.widthPixels;
+	     this.btnDisplay.setWidth(width/3);
+	     this.btnnext.getLayoutParams().width = width/3;
+	     this.btnprevious.getLayoutParams().width = width/3;*/
+	     
+     
+        
+        if(StaticConstants.DISPLAY_ADD){
+        	addAd();	
+        }
+        
+        loadImageInMap();
+        
+        //Check which button pressed
+        Intent mIntent = getIntent();
+        this.pageType = mIntent.getStringExtra(StaticConstants.ACTIVITY_CONTEXT_VARIABLE);
+       // String parm1 = mIntent.getStringExtra(StaticConstants.TEST_RESULT_PARM1);
+        this.qaList = CreateXMLFile.getQuestionAnswerList(this, "level_1.xml");
+        
+        if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST)){
+        	//For Test change button name
         	btnDisplay.setText("Finish");
-        }else if(this.pageType.equalsIgnoreCase("resultList")){
-        	//For Test cahnge button name
+        	filterQAList();
+        }else if(this.pageType.equalsIgnoreCase(StaticConstants.TEST_RESULT)){
+        	String str = mIntent.getStringExtra(StaticConstants.TEST_RESULT_PARM1);
+        	try {
+				this.trVoList = CreateXMLFile.parseStringXML(str);
+			} catch (XmlPullParserException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	//For Test change button name
         	btnDisplay.setVisibility(View.GONE);
-        }else{
+        	populateResultTestQA(this.trVoList.get(0), this.qaList);
+        	this.qaList = this.trVoList.get(0).getQaVoList();
+        }else if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_PRACTICE)){
         	SaveDataToFile.persistData(this, SaveDataToFile.TYPE_INT, "" + qaList.size(), SaveDataToFile.TOTAL_QUESTION);
         	this.position = Integer.valueOf(SaveDataToFile.getData(this, SaveDataToFile.TYPE_INT, SaveDataToFile.CUR_POSITION));
         }
         
+        if(this.qaList == null || this.qaList.size() < 1){
+        	return;
+        }
+        
+        
         //Display view 
         changePosition(this.position);
 
-        
-        
-        //initialize the object for the button
-        //this button will innitially be disabled
-        //btnprevious.setEnabled(false);
-        //add listener to the button
-        btnprevious.setOnClickListener(this);
            
     }
 
     
 
 
-	private void populateResultTestQA(List<QuestionAnswerVo> qaList2, String resultCountName) {
-		try {
-			CreateXMLFile.readfile(this, StaticConstants.TEST_RESULT_FILE_NAME);
-		} catch (IOException e) {
-			PrintSysout.printSysout("FileRead Error 1");
-			e.printStackTrace();
-		} catch (ParserConfigurationException e) {
-			PrintSysout.printSysout("FileRead Error 2");
-			e.printStackTrace();
-		} catch (SAXException e) {
-			PrintSysout.printSysout("FileRead Error 3");
-			e.printStackTrace();
-		}
-		
-	}
-
-
-
+    private void populateResultTestQA(TestResult testResult, List<QuestionAnswerVo> qaList1) {
+    	List<QuestionAnswerVo> finalqaVoList = new ArrayList<QuestionAnswerVo>();
+    	for(QuestionAnswerVo trqa : testResult.getQaVoList()){
+    		for(QuestionAnswerVo qa : qaList1){
+    			if(trqa.id.equalsIgnoreCase(qa.id)){
+    				qa.selectedAnswer = trqa.selectedAnswer;
+    				finalqaVoList.add(qa);
+    				break;
+    			}
+    		}
+    	}
+    	testResult.setQaVoList(finalqaVoList);
+    }
 
 	private void filterQAList() {
 		int testStartPosition = Integer.valueOf(SaveDataToFile.getData(this, SaveDataToFile.TYPE_INT, SaveDataToFile.TEST_POSITION));
@@ -257,7 +266,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 	public void displayRadioButton(int position) {
 		TableRow ansOpt =  (TableRow)findViewById(R.id.rowSelectAnswer);
 		ansOpt.removeAllViews();
-		DisplayMetrics mDisplayMetrics = this.getResources().getDisplayMetrics();
+		
 		this.radioOptions = new RadioGroup(this);
 		ansOpt.addView(radioOptions);
 		//radioOptions.setVisibility(RadioGroup.VISIBLE);
@@ -265,99 +274,47 @@ public class MainActivity extends Activity  implements OnClickListener {
     	
     	//radioOptions.removeAllViews();
     	
-        RadioButton rdbtn = null;
-        if(qaVo.option1 != null && qaVo.option1 != ""){
-        	PrintSysout.printSysout("qaVo.option1 : " + qaVo.option1);
-        	rdbtn = new RadioButton(this);
-            rdbtn.setId(1);
-            rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
-            rdbtn.setSingleLine(false);
-            rdbtn.setTextColor(Color.BLACK);
-            setCheckBoxViewData(rdbtn, qaVo.option1);
-            radioOptions.addView(rdbtn);
-            if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("1")){
-            	rdbtn.setSelected(true);
-            }
-            if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
-            	rdbtn.setEnabled(false);
-            	if(qaVo.answer.equalsIgnoreCase("1")){
-            		rdbtn.setBackgroundColor(Color.GREEN);	
-            	}
-            	if(!qaVo.isAnswerCoorect() && qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("1")){
-            		rdbtn.setBackgroundColor(Color.RED);
-            	}
-            }
-        }
+        buildRadioButton(radioOptions, 1, qaVo.option1, qaVo.answer, qaVo.isAnswerCoorect(), qaVo.selectedAnswer);
+        buildRadioButton(radioOptions, 2, qaVo.option2, qaVo.answer, qaVo.isAnswerCoorect(), qaVo.selectedAnswer);
+        buildRadioButton(radioOptions, 3, qaVo.option3, qaVo.answer, qaVo.isAnswerCoorect(), qaVo.selectedAnswer);
+        buildRadioButton(radioOptions, 4, qaVo.option4, qaVo.answer, qaVo.isAnswerCoorect(), qaVo.selectedAnswer);
         
-        if(qaVo.option2 != null && qaVo.option2 != ""){
-	        rdbtn = new RadioButton(this);
-	        rdbtn.setId(2);
-	        rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
-            rdbtn.setSingleLine(false);
-	        setCheckBoxViewData(rdbtn, qaVo.option2);
-	        rdbtn.setTextColor(Color.BLACK);
-	        radioOptions.addView(rdbtn);
-	        if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("2")){
-            	rdbtn.setSelected(true);
-            }
-	        if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
-            	rdbtn.setEnabled(false);
-            	if(qaVo.answer.equalsIgnoreCase("2")){
-            		rdbtn.setBackgroundColor(Color.GREEN);	
-            	}
-            	if(!qaVo.isAnswerCoorect() && qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("2")){
-            		rdbtn.setBackgroundColor(Color.RED);
-            	}
-            }
-        }
-
-        if(qaVo.option3 != null && qaVo.option3 != ""){
-	        rdbtn = new RadioButton(this);
-	        rdbtn.setId(3);
-	        rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
-            rdbtn.setSingleLine(false);
-	        setCheckBoxViewData(rdbtn, qaVo.option3);
-	        rdbtn.setTextColor(Color.BLACK);
-	        radioOptions.addView(rdbtn);
-	        if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("3")){
-            	rdbtn.setSelected(true);
-            }
-	        if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
-            	rdbtn.setEnabled(false);
-            	if(qaVo.answer.equalsIgnoreCase("3")){
-            		rdbtn.setBackgroundColor(Color.GREEN);	
-            	}
-            	if(!qaVo.isAnswerCoorect() && qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("3")){
-            		rdbtn.setBackgroundColor(Color.RED);
-            	}
-            }
-        }
-        
-        if(qaVo.option4 != null && qaVo.option4 != ""){
-	        rdbtn = new RadioButton(this);
-	        rdbtn.setId(4);
-	        rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
-            rdbtn.setSingleLine(false);
-	        setCheckBoxViewData(rdbtn, qaVo.option4);
-	        rdbtn.setTextColor(Color.BLACK);
-	        radioOptions.addView(rdbtn);
-	        if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("4")){
-            	rdbtn.setSelected(true);
-            }
-	        if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
-            	rdbtn.setEnabled(false);
-            	if(qaVo.answer.equalsIgnoreCase("4")){
-            		rdbtn.setBackgroundColor(Color.GREEN);	
-            	}
-            	if(!qaVo.isAnswerCoorect() && qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("4")){
-            		rdbtn.setBackgroundColor(Color.RED);
-            	}
-            }
-        }
-
    }
     
     
+	private void buildRadioButton(RadioGroup radioOptions2, int i,
+			String option, String answer, boolean answerCorrect,
+			String selectedAnswer) {
+		RadioButton rdbtn; 
+		DisplayMetrics mDisplayMetrics = this.getResources().getDisplayMetrics();
+		
+		if(option != null && option != ""){
+        	PrintSysout.printSysout("qaVo.option " +i +" : " + option);
+        	rdbtn = new RadioButton(this);
+            rdbtn.setId(i);
+            rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
+            rdbtn.setSingleLine(false);
+            rdbtn.setTextColor(Color.BLACK);
+            setCheckBoxViewData(rdbtn, option);
+            radioOptions.addView(rdbtn);
+            if(selectedAnswer != null && selectedAnswer.equalsIgnoreCase("" + i)){
+            	rdbtn.setSelected(true);
+            }
+            if(this.pageType.equalsIgnoreCase(StaticConstants.TEST_RESULT)){
+            	rdbtn.setEnabled(false);
+            	if(answer.equalsIgnoreCase("" + i)){
+            		rdbtn.setBackgroundColor(Color.GREEN);	
+            	}
+            	if(!answerCorrect && selectedAnswer != null && selectedAnswer.equalsIgnoreCase("" + i)){
+            		rdbtn.setBackgroundColor(Color.RED);
+            	}
+            }
+        }
+	}
+
+
+
+
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -401,7 +358,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 			if(this.btnDisplay.getText().equals("Check")){
 				btnDisplayCheck();
 			}else if(this.btnDisplay.getText().equals("Finish")){
-				this.pageType = StaticConstants.ACTIVITY_TEST_RESULT;
+				this.pageType = StaticConstants.TEST_RESULT;
 				btnDisplayTestFinish();
 			}
 		}
@@ -504,8 +461,8 @@ public class MainActivity extends Activity  implements OnClickListener {
 			String boxId = "";
 			for(int i = 1; i <= 4; i++){
 				View child = findViewById(i);
-				PrintSysout.printSysout("child type : " + i + " - " + child.getClass());
 				if (child != null && child instanceof CheckBox) {
+					PrintSysout.printSysout("storeselected answer child type : " + i + " - " + child.getClass());
 			        CheckBox box = (CheckBox) child;
 			        if(box.isChecked()){
 			        	PrintSysout.printSysout("boxId.length() - " + boxId.length());
@@ -545,10 +502,10 @@ public class MainActivity extends Activity  implements OnClickListener {
 			}
 		}
 		PrintSysout.printSysout("########pageType : " + pageType);
-		if(pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
-			QuizLevel quizLevel = new QuizLevel(this.qaList);
+		if(pageType.equalsIgnoreCase(StaticConstants.TEST_RESULT)){
+			TestResult testResult = new TestResult(this.qaList);
 			try {
-				CreateXMLFile.createFile(this, StaticConstants.TEST_RESULT_FILE_NAME, quizLevel.toString() );
+				CreateXMLFile.createFile(this, StaticConstants.TEST_RESULT_FILE_NAME, testResult.toString() );
 			} catch (IllegalArgumentException e) {
 				PrintSysout.printSysout("Exception 1");
 				e.printStackTrace();
@@ -619,9 +576,10 @@ public class MainActivity extends Activity  implements OnClickListener {
 			String boxId = "";
 			for(int i = 1; i <= 4; i++){
 				View child = findViewById(i);
-				PrintSysout.printSysout("child type : " + i + " - " + child.getClass());
 				if (child != null && child instanceof CheckBox) {
+					PrintSysout.printSysout("child type : " + i + " - " + child.getClass());
 			        CheckBox box = (CheckBox) child;
+			        
 			        if(box.isChecked()){
 			        	boxId = boxId + (boxId.length()==0?""+box.getId():"," + box.getId());
 			        }
@@ -662,7 +620,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 		displaySelectedAnswer(qaVo);
 		
         /*this.txtViewExplanation.setVisibility(TextView.INVISIBLE);*/
-		if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
+		if(this.pageType.equalsIgnoreCase(StaticConstants.TEST_RESULT)){
 			this.txtViewExplanation.setVisibility(View.VISIBLE);
 			this.txtViewExplanation.setText("Answer : " + qaVo.showAnswer() + ((qaVo.explanation != null && !qaVo.explanation.equals(""))?" \nExplanation :" + qaVo.explanation:""));
 		}else{
@@ -708,106 +666,49 @@ public class MainActivity extends Activity  implements OnClickListener {
 
 	private void displayCheckBoxButton(int position2) {
 		TableRow ansOpt =  (TableRow)findViewById(R.id.rowSelectAnswer);
-		//ansOpt.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
-		//ansOpt.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
 		ansOpt.removeAllViews();
 		
 		TableLayout tb = new TableLayout(this);
 		ansOpt.addView(tb);
-		TableRow tr = null;
+		
 		
 		QuestionAnswerVo qaVo = qaList.get(position);
     	
-		CheckBox cb = null;
-        if(qaVo.option1 != null && qaVo.option1 != ""){
-        	tr = new TableRow(this);
-        	cb = new CheckBox(this);
-        	cb.setId(1);
-        	setCheckBoxViewData(cb,qaVo.option1);
-        	PrintSysout.printSysout("check box : " + cb.getText());
-        	cb.setTextColor(Color.BLACK);
-        	tr.addView(cb);
-        	tb.addView(tr);
-        	if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.indexOf("1") != -1){
-            	cb.setSelected(true);
-            }
-        	if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
-            	cb.setEnabled(false);
-            	if(qaVo.answer.equalsIgnoreCase("1")){
-            		cb.setBackgroundColor(Color.GREEN);	
-            	}
-            	if(!qaVo.isAnswerCoorect() && qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("1")){
-            		cb.setBackgroundColor(Color.RED);
-            	}
-            }
-        }
-        if(qaVo.option2 != null && qaVo.option2 != ""){
-        	tr = new TableRow(this);
-        	cb = new CheckBox(this);
-        	cb.setId(2);
-        	setCheckBoxViewData(cb,qaVo.option2);
-        	PrintSysout.printSysout("check box : " + cb.getText());
-        	cb.setTextColor(Color.BLACK);
-        	tb.addView(tr);
-        	tr.addView(cb);
-        	if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.indexOf("2") != -1){
-            	cb.setSelected(true);
-            }
-        	if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
-            	cb.setEnabled(false);
-            	if(qaVo.answer.equalsIgnoreCase("2")){
-            		cb.setBackgroundColor(Color.GREEN);	
-            	}
-            	if(!qaVo.isAnswerCoorect() && qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("2")){
-            		cb.setBackgroundColor(Color.RED);
-            	}
-            }
-        }
+		buildCheckBox(tb, qaVo.option1, 1, qaVo.selectedAnswer, qaVo.isAnswerCoorect(), qaVo.answer);
+		buildCheckBox(tb, qaVo.option2, 2, qaVo.selectedAnswer, qaVo.isAnswerCoorect(), qaVo.answer);
+		buildCheckBox(tb, qaVo.option3, 3, qaVo.selectedAnswer, qaVo.isAnswerCoorect(), qaVo.answer);
+		buildCheckBox(tb, qaVo.option4, 4, qaVo.selectedAnswer, qaVo.isAnswerCoorect(), qaVo.answer);
+	}
 
-        if(qaVo.option3 != null && qaVo.option3 != ""){
+	private void buildCheckBox(TableLayout tb, String option, int i,
+			String selectedAnswer, boolean answerCorrect, String answer) {
+		TableRow tr = null;
+		CheckBox cb = null;
+		if(option != null && option != ""){
         	tr = new TableRow(this);
         	cb = new CheckBox(this);
-        	cb.setId(3);
-        	setCheckBoxViewData(cb,qaVo.option3);
+        	cb.setId(i);
+        	setCheckBoxViewData(cb,option);
+        	PrintSysout.printSysout("check box : " + cb.getText());
         	cb.setTextColor(Color.BLACK);
-        	tb.addView(tr);
         	tr.addView(cb);
-        	if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.indexOf("3") != -1){
-            	cb.setSelected(true);
+        	tb.addView(tr);
+        	if(selectedAnswer != null && selectedAnswer.indexOf("" + i) != -1){
+            	//cb.setSelected(true);
+            	cb.setChecked(true);
             }
-        	if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
+        	if(this.pageType.equalsIgnoreCase(StaticConstants.TEST_RESULT)){
             	cb.setEnabled(false);
-            	if(qaVo.answer.equalsIgnoreCase("3")){
+            	if(answer.indexOf("" + i) != -1){
             		cb.setBackgroundColor(Color.GREEN);	
             	}
-            	if(!qaVo.isAnswerCoorect() && qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("3")){
-            		cb.setBackgroundColor(Color.RED);
-            	}
-            }
-        }
-        
-        if(qaVo.option4 != null && qaVo.option4 != ""){
-        	tr = new TableRow(this);
-        	cb = new CheckBox(this);
-        	cb.setId(4);
-        	setCheckBoxViewData(cb,qaVo.option4);
-        	cb.setTextColor(Color.BLACK);
-        	tb.addView(tr);
-        	tr.addView(cb);
-        	if(qaVo.selectedAnswer != null && qaVo.selectedAnswer.indexOf("4") != -1){
-            	cb.setSelected(true);
-            }
-        	if(this.pageType.equalsIgnoreCase(StaticConstants.ACTIVITY_TEST_RESULT)){
-            	cb.setEnabled(false);
-            	if(qaVo.answer.equalsIgnoreCase("4")){
-            		cb.setBackgroundColor(Color.GREEN);	
-            	}
-            	if(!qaVo.isAnswerCoorect() && qaVo.selectedAnswer != null && qaVo.selectedAnswer.equalsIgnoreCase("4")){
+            	if(!answerCorrect && selectedAnswer != null && selectedAnswer.equalsIgnoreCase("" + i)){
             		cb.setBackgroundColor(Color.RED);
             	}
             }
         }
 	}
+
 
 	private void setCheckBoxViewData(CompoundButton cb, String option) {
 		Map<String, RawStringContent> map = StringUtil.getImageIdFromString(option);
@@ -925,7 +826,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 		//qTextView.setText(rawQuestion.replace("\\n", System.getProperty("line.separator")));
 		qTextView.setText(rawQuestion.replace("\\n", "\r\n"));
 		// force view width to only be as wide as the screen
-		qTextView.setMaxWidth(mDisplayMetrics.widthPixels);
+		qTextView.setMaxWidth(mDisplayMetrics.widthPixels -100);
 		qTextView.setTextColor(Color.BLACK);
 		qTextView.setSingleLine(false);
 		//qTextView.setInputType(qTextView.getInputType()|InputType.TYPE_TEXT_FLAG_MULTI_LINE);
@@ -945,13 +846,6 @@ public class MainActivity extends Activity  implements OnClickListener {
 		}
        
     }
-
-
-
-
-	
-	
-	
 
 }
 

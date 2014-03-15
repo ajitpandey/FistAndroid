@@ -1,11 +1,13 @@
 package com.sunita.lifeinuktest.file.io;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -22,6 +25,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Xml;
@@ -29,6 +33,7 @@ import android.util.Xml;
 import com.sunita.lifeinuktest.MainActivity;
 import com.sunita.lifeinuktest.util.PrintSysout;
 import com.sunita.lifeinuktest.vo.QuestionAnswerVo;
+import com.sunita.lifeinuktest.vo.TestResult;
 
 public class CreateXMLFile {
 	
@@ -59,12 +64,28 @@ public class CreateXMLFile {
 	    return false;
 	}
 	
-	public static void createFile(MainActivity mainActivity, String fileName, String xmlData) throws IllegalArgumentException, IllegalStateException, IOException {
-		//String filename = "LifeInUk_TestResult.xml";
-		PrintSysout.printSysout("-----------------WriteFile : " + fileName);
-		FileOutputStream fos;
+	public static List<String> ListDir(File f){
+		List<String> fileList = new ArrayList<String>();
+		File[] files = f.listFiles();
+		
+		for (File file : files){
+			PrintSysout.printSysout("File Name : " + file.getName());
+			fileList.add(file.getName());
+		}
 
-		fos = mainActivity.openFileOutput(fileName, Context.MODE_APPEND);
+		return fileList;
+	}
+	
+	
+	public static void createFile(MainActivity mainActivity, String fileName, String xmlData) throws IllegalArgumentException, IllegalStateException, IOException {
+		
+		
+		
+		String fileNameToCreate = fileNameToCreate(mainActivity, fileName);
+		
+		PrintSysout.printSysout("-----------------WriteFile : " + fileNameToCreate);
+		FileOutputStream fos;
+		fos = mainActivity.openFileOutput(fileNameToCreate, Context.MODE_PRIVATE);
 
 		XmlSerializer serializer = Xml.newSerializer();
 		serializer.setOutput(fos, "UTF-8");
@@ -89,12 +110,52 @@ public class CreateXMLFile {
 		fos.close();
 	}
 
-	public static void readfile(MainActivity mainActivity, String filename) throws IOException, ParserConfigurationException, SAXException {
+	private static String fileNameToCreate(Activity mainActivity, String fileName) {
+		String newFileName = fileName;
+		boolean trynext = true;
+		int Count = 1;
+		while(trynext){
+			newFileName = Count + "_" +fileName;
+			File file = mainActivity.getFileStreamPath(newFileName);
+			if(file.exists()){
+				Count++;
+			}else{
+				trynext = false;	
+			}
+		}
+		
+		return newFileName;
+	}
+
+	public static List<String> readfile(Activity activity, String fileName) throws IOException, ParserConfigurationException, SAXException, DOMException, XmlPullParserException {
+		List<String> strList =new ArrayList<String>();
+		String newFileName = fileName;
+		boolean trynext = true;
+		int Count = 1;
+		while(trynext){
+			newFileName = Count + "_" +fileName;
+			File file = activity.getFileStreamPath(newFileName);
+			if(file.exists()){
+				Count++;
+				strList.add(readfileEach(activity, newFileName));
+			}else{
+				trynext = false;	
+			}
+		}
+		return strList;
+	}
+	
+	public static String readfileEach(Activity activity, String filename) throws IOException, ParserConfigurationException, SAXException, DOMException, XmlPullParserException {
 		PrintSysout.printSysout("-----------------ReadFile : " + filename);
+		//File root = new File(Environment.getExternalStorageDirectory().getAbsolutePath());
+		//PrintSysout.printSysout("##root : " + root.getAbsolutePath());
+		//PrintSysout.printSysout("##root : " + root.getName());
+		//ListDir(root);
+		
 		FileInputStream fis = null;
 		InputStreamReader isr = null;
 
-		fis = mainActivity.openFileInput(filename);
+		fis = activity.openFileInput(filename);
 		isr = new InputStreamReader(fis);
 		char[] inputBuffer = new char[fis.available()];
 		isr.read(inputBuffer);
@@ -125,18 +186,26 @@ public class CreateXMLFile {
 		PrintSysout.printSysout(dom.toString());
 		items = dom.getElementsByTagName("record");
 
-		ArrayList<String> arr = new ArrayList<String>();
+		List<String> strList = new ArrayList<String>();
 
 		for (int i = 0; i < items.getLength(); i++) {
-
 			Node item = items.item(i);
-			PrintSysout.printSysout("COntent : " + item.getTextContent());
-			arr.add(item.getNodeValue());
-			PrintSysout.printSysout("item.getNodeValue() : " + item.getNodeValue());
-
+			PrintSysout.printSysout("Content : " + item.getTextContent());
+			strList.add(item.getTextContent());
 		}
+		
+		return strList.get(0);
 	}
 	
+	public static List<TestResult>  parseStringXML(String textContent) throws XmlPullParserException, IOException {
+		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+        factory.setNamespaceAware(true);
+        XmlPullParser xpp = factory.newPullParser();
+
+        xpp.setInput( new StringReader ( textContent ) );
+        return parseTestResultXML(xpp);
+	}
+
 	public static List<QuestionAnswerVo> getQuestionAnswerList(MainActivity mainActivity, String assetFileName) {
     	List<QuestionAnswerVo> voList = null;
     	XmlPullParserFactory pullParserFactory;
@@ -162,6 +231,66 @@ public class CreateXMLFile {
 		return voList;
 	}
     
+	
+	private static List<TestResult> parseTestResultXML(XmlPullParser parser) throws XmlPullParserException,IOException
+	{
+		List<TestResult> TestResultVoList = null;
+        int eventType = parser.getEventType();
+        TestResult testResultVo = null;
+        QuestionAnswerVo questionAnswerVo = null;
+        //PrintSysout.printSysout("eventType - " + eventType);
+        
+        while (eventType != XmlPullParser.END_DOCUMENT){
+            String name = null;
+            
+            switch (eventType){
+                case XmlPullParser.START_DOCUMENT:
+                	TestResultVoList = new ArrayList<TestResult>();
+                	//PrintSysout.printSysout("switch - 1");
+                    break;
+                case XmlPullParser.START_TAG:
+                	name = parser.getName();
+                	//PrintSysout.printSysout("switch - 2 - " + name);
+                	if (name.equals("trslt")){
+                    	testResultVo = new TestResult();
+                    	//PrintSysout.printSysout("questionAnswerVo : " + questionAnswerVo);
+                    }else if (testResultVo != null){
+                    	if (name.equals("dt")){
+                        	testResultVo.setDateTime(parser.nextText());
+                        	//PrintSysout.printSysout("questionAnswerVo : " + questionAnswerVo);
+                        } else if (name.equals("score")){
+                        	testResultVo.setScore(parser.nextText());
+                        	//PrintSysout.printSysout("questionAnswerVo : " + questionAnswerVo);
+                        } else if (name.equals("quiz")){
+                        	questionAnswerVo = new QuestionAnswerVo();
+                        	testResultVo.addQaVo(questionAnswerVo);
+                        	//PrintSysout.printSysout("questionAnswerVo : " + questionAnswerVo);
+                        } else if (testResultVo != null){
+                            if (name.equals("id")){
+                            	questionAnswerVo.id = parser.nextText();
+                            	//PrintSysout.printSysout("questionAnswerVo.question - " + questionAnswerVo.question);
+                            } else if (name.equals("type")){
+                            	questionAnswerVo.type = parser.nextText();
+                            } else if (name.equals("selans")){
+                            	questionAnswerVo.selectedAnswer = parser.nextText();
+                            }
+                        }
+                    }
+                    
+                    break;
+                case XmlPullParser.END_TAG:
+                    name = parser.getName();
+                	//PrintSysout.printSysout("switch - 3 - " + name);
+                    if (name.equalsIgnoreCase("trslt") && questionAnswerVo != null){
+                    	TestResultVoList.add(testResultVo);
+                    } 
+            }
+            eventType = parser.next();
+        }
+    	//PrintSysout.printSysout("switch - 4 - " + voList.size());
+        return TestResultVoList;
+	}
+	
     private static List<QuestionAnswerVo> parseXML(XmlPullParser parser) throws XmlPullParserException,IOException
 	{
 		List<QuestionAnswerVo> voList = null;

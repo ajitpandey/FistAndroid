@@ -1,0 +1,24 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:scrollbars="none"
+    android:layout_weight="1"
+    android:background="@android:color/white"
+    android:id="@+id/rstListScrollView"
+    android:fillViewport="true"
+    >
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="36dp"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:id="@+id/rstListLinearLayout" >
+
+    </LinearLayout>
+</ScrollView>
