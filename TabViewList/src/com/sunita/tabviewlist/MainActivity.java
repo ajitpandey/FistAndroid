@@ -6,7 +6,10 @@ import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -15,12 +18,16 @@ import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import com.sunita.tabviewlist.setting.UserSettingsActivity;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
+	
+	private static final int RESULT_SETTINGS = 1;
 
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -81,10 +88,39 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		//getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.settings, menu);
+        
 		return true;
 	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+ 
+        case R.id.menu_settings:
+            Intent i = new Intent(this, UserSettingsActivity.class);
+            startActivityForResult(i, RESULT_SETTINGS);
+            break;
+ 
+        }
+ 
+        return true;
+    }
 
+	@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+ 
+        switch (requestCode) {
+        case RESULT_SETTINGS:
+            showUserSettings();
+            break;
+ 
+        }
+ 
+    }
+	
 	@Override
 	public void onTabSelected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
@@ -103,6 +139,26 @@ public class MainActivity extends FragmentActivity implements
 			FragmentTransaction fragmentTransaction) {
 	}
 
+	private void showUserSettings() {
+        SharedPreferences sharedPrefs = PreferenceManager
+                .getDefaultSharedPreferences(this);
+ 
+        StringBuilder builder = new StringBuilder();
+ 
+        builder.append("\n Username: "
+                + sharedPrefs.getString("prefUsername", "NULL"));
+ 
+        builder.append("\n Send report:"
+                + sharedPrefs.getBoolean("prefSendReport", false));
+ 
+        builder.append("\n Sync Frequency: "
+                + sharedPrefs.getString("prefSyncFrequency", "NULL"));
+ 
+        //TextView settingsTextView = (TextView) findViewById(R.id.textUserSettings);
+         //settingsTextView.setText(builder.toString());
+        System.out.println("builder.toString() : " + builder.toString());
+    }
+	
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
 	 * one of the sections/tabs/pages.
