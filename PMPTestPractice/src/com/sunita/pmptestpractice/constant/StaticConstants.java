@@ -1,7 +1,7 @@
 package com.sunita.pmptestpractice.constant;
 
 public class StaticConstants {
-	public static final String TEST_RESULT_FILE_NAME = "LifeInUk_TestResult.xml";
+	public static final String TEST_RESULT_FILE_NAME = "PMP_TestResult.xml";
 	public static final String ACTIVITY_CONTEXT_VARIABLE = "appLevel";
 	
 
@@ -17,5 +17,5 @@ public class StaticConstants {
 	
 	public static final String ADD_1 = "ca-app-pub-4300070308662571/2467683040";
 	
-	public static final boolean DISPLAY_ADD = true;
+	public static final boolean DISPLAY_ADD = false;
 }

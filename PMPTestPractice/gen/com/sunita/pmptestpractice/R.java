@@ -24,9 +24,12 @@ public final class R {
         public static final int aj=0x7f020000;
         public static final int aj_flashcard=0x7f020001;
         public static final int ic_launcher=0x7f020002;
-        public static final int icon_2=0x7f020003;
-        public static final int next=0x7f020004;
-        public static final int prev=0x7f020005;
+        public static final int icon=0x7f020003;
+        public static final int icon1=0x7f020004;
+        public static final int icon2=0x7f020005;
+        public static final int icon3=0x7f020006;
+        public static final int next=0x7f020007;
+        public static final int prev=0x7f020008;
     }
     public static final class id {
         public static final int action_settings=0x7f09003f;
@@ -107,23 +110,24 @@ public final class R {
         public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int aboutUs=0x7f06000e;
-        public static final int aboutUsAppText=0x7f06000f;
-        public static final int aboutUsText=0x7f060010;
+        public static final int aboutUs=0x7f06000d;
+        public static final int aboutUsAppText=0x7f06000e;
+        public static final int aboutUsText=0x7f06000f;
         public static final int action_settings=0x7f060001;
-        public static final int appInfoText=0x7f06000d;
+        public static final int appInfoText=0x7f06000c;
         public static final int app_name=0x7f060000;
-        public static final int back=0x7f060011;
-        public static final int btn_check=0x7f060008;
-        public static final int btn_next=0x7f060006;
-        public static final int btn_previous=0x7f060007;
+        public static final int back=0x7f060010;
+        public static final int btn_check=0x7f060007;
+        /**  <string name="start_app">Start App</string> 
+         */
+        public static final int btn_next=0x7f060005;
+        public static final int btn_previous=0x7f060006;
         public static final int hello_world=0x7f060002;
-        public static final int level1=0x7f060009;
-        public static final int level2=0x7f06000a;
-        public static final int level3=0x7f06000b;
-        public static final int level4=0x7f06000c;
+        public static final int level1=0x7f060008;
+        public static final int level2=0x7f060009;
+        public static final int level3=0x7f06000a;
+        public static final int level4=0x7f06000b;
         public static final int menu_settings=0x7f060003;
-        public static final int start_app=0x7f060005;
         public static final int title_activity_info=0x7f060004;
     }
     public static final class style {

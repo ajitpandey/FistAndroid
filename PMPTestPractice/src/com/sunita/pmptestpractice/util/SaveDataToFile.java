@@ -8,9 +8,9 @@ public class SaveDataToFile {
 	public static final String TYPE_STRING = "String";
 	public static final String TYPE_INT = "Int";
 	
-	public static final String CUR_POSITION = "LifeInUKPratCurPosition";
-	public static final String TOTAL_QUESTION = "LifeInUKPratQuestCount";
-	public static final String TEST_POSITION = "LifeInUKTestQuestCount";
+	public static final String CUR_POSITION = "PMPPratCurPosition";
+	public static final String TOTAL_QUESTION = "PMPPratQuestCount";
+	public static final String TEST_POSITION = "PMPTestQuestCount";
 
 	
 	public static void persistData(Context context, String type, String value, String fieldLabel) {
