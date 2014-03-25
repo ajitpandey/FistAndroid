@@ -20,7 +20,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -100,12 +100,17 @@ ActionBar.TabListener {
        adView.setAdUnitId("ca-app-pub-4300070308662571/2467683040");
        adView.setAdSize(AdSize.BANNER);
        
+    
+       // Set the AdListener.
+       //adView.setAdListener(this);
     // Lookup your LinearLayout assuming it's been given
        // the attribute android:id="@+id/mainLayout".
-       LinearLayout layout = (LinearLayout)findViewById(R.id.mainLinearLayout);
-
+       RelativeLayout layout = (RelativeLayout)findViewById(R.id.mainLinearLayout);
+       RelativeLayout.LayoutParams adsParams =new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT); 
+       adsParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+       layout.addView(adView,adsParams);
        // Add the adView to it.
-       layout.addView(adView);
+       //layout.addView(adView);
 
        // Initiate a generic request.
        AdRequest adRequest = new AdRequest.Builder().build();

@@ -36,12 +36,13 @@ public final class R {
         public static final int ok=0x7f02000c;
     }
     public static final class id {
-        public static final int action_settings=0x7f090005;
-        public static final int authby=0x7f090004;
-        public static final int label=0x7f090003;
-        public static final int mainLinearLayout=0x7f090000;
-        public static final int pager=0x7f090001;
-        public static final int section_label=0x7f090002;
+        public static final int action_settings=0x7f090006;
+        public static final int authby=0x7f090005;
+        public static final int label=0x7f090004;
+        public static final int mainLinearLayout=0x7f090001;
+        public static final int mainScrollView=0x7f090000;
+        public static final int pager=0x7f090002;
+        public static final int section_label=0x7f090003;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f050000;
