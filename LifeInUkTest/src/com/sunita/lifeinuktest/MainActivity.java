@@ -62,14 +62,20 @@ public class MainActivity extends Activity  implements OnClickListener {
 	  private List<TestResult> trVoList = new ArrayList<TestResult>();
 	  private HashMap<String, Integer> map;
 	  private Integer fontSize = 20;
+	  private int fontColour = Color.BLACK;
 	  private TableLayout mainTableLayout, testResultTableLayout;
 	  private String pageType = "";
+	  private int minusDpxWidth = 30;
+	  private DisplayMetrics displayMetrics = new DisplayMetrics();
+	  
 	  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        
         this.mainTableLayout = (TableLayout)findViewById(R.id.mainTableLayout);
 		this.testResultTableLayout = (TableLayout)findViewById(R.id.testResultTableLayout);
         this.txtPlaceHolderQuestionCount = (TextView) findViewById(R.id.placeHolderQuestionCount);
@@ -82,28 +88,20 @@ public class MainActivity extends Activity  implements OnClickListener {
         this.btnnext.setVisibility(Button.INVISIBLE);
         this.btnDisplay = (Button) findViewById(R.id.btn_check);
         
-        this.txtViewExplanation.setTextColor(Color.BLACK);
+        this.txtViewExplanation.setTextColor(fontColour);
         this.txtViewExplanation.setTextSize(fontSize);
+        this.txtViewExplanation.setMaxWidth(displayMetrics.widthPixels - minusDpxWidth);
         
-        this.txtHelp.setTextColor(Color.BLACK);
+        this.txtHelp.setTextColor(fontColour);
         this.txtHelp.setVisibility(TextView.INVISIBLE);
         this.txtHelp.setText("Press -> to Proceed to next question.");
+        this.txtHelp.setMaxWidth(displayMetrics.widthPixels - minusDpxWidth);
         
-        this.txtPlaceHolderQuestionCount.setTextColor(Color.BLACK);
+        this.txtPlaceHolderQuestionCount.setTextColor(fontColour);
         
         this.btnDisplay.setOnClickListener(this);
         this.btnnext.setOnClickListener(this);
         this.btnprevious.setOnClickListener(this);
-        
-        /*DisplayMetrics dm = new DisplayMetrics();
-        // dm holds your structure of resolution
-        this.getWindowManager().getDefaultDisplay().getMetrics(dm);
-	     int width = dm.widthPixels;
-	     this.btnDisplay.setWidth(width/3);
-	     this.btnnext.getLayoutParams().width = width/3;
-	     this.btnprevious.getLayoutParams().width = width/3;*/
-	     
-     
         
         if(StaticConstants.DISPLAY_ADD){
         	addAd();	
@@ -292,9 +290,9 @@ public class MainActivity extends Activity  implements OnClickListener {
         	PrintSysout.printSysout("qaVo.option " +i +" : " + option);
         	rdbtn = new RadioButton(this);
             rdbtn.setId(i);
-            rdbtn.setMaxWidth(mDisplayMetrics.widthPixels);
+            rdbtn.setMaxWidth(mDisplayMetrics.widthPixels - minusDpxWidth);
             rdbtn.setSingleLine(false);
-            rdbtn.setTextColor(Color.BLACK);
+            rdbtn.setTextColor(fontColour);
             setCheckBoxViewData(rdbtn, option);
             radioOptions.addView(rdbtn);
             if(selectedAnswer != null && selectedAnswer.equalsIgnoreCase("" + i)){
@@ -690,7 +688,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         	cb.setId(i);
         	setCheckBoxViewData(cb,option);
         	PrintSysout.printSysout("check box : " + cb.getText());
-        	cb.setTextColor(Color.BLACK);
+        	cb.setTextColor(fontColour);
         	tr.addView(cb);
         	tb.addView(tr);
         	if(selectedAnswer != null && selectedAnswer.indexOf("" + i) != -1){
@@ -826,8 +824,8 @@ public class MainActivity extends Activity  implements OnClickListener {
 		//qTextView.setText(rawQuestion.replace("\\n", System.getProperty("line.separator")));
 		qTextView.setText(rawQuestion.replace("\\n", "\r\n"));
 		// force view width to only be as wide as the screen
-		qTextView.setMaxWidth(mDisplayMetrics.widthPixels -100);
-		qTextView.setTextColor(Color.BLACK);
+		qTextView.setMaxWidth(mDisplayMetrics.widthPixels - minusDpxWidth);
+		qTextView.setTextColor(fontColour);
 		qTextView.setSingleLine(false);
 		//qTextView.setInputType(qTextView.getInputType()|InputType.TYPE_TEXT_FLAG_MULTI_LINE);
 		qTextView.setTextSize(fontSize);

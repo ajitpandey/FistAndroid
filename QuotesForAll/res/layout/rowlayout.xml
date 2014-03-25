@@ -5,28 +5,31 @@
     android:layout_height="wrap_content" >
 
     <ListView
-	  android:id="@android:id/list"
-	  android:layout_width="match_parent"
-	  android:layout_height="wrap_content" >
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" >
+
 	</ListView> 
     
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="22px"
-        android:layout_height="22px"
-        android:layout_marginLeft="4px"
-        android:layout_marginRight="10px"
-        android:layout_marginTop="4px"
-      >
-    </ImageView>
 
     <TextView
         android:id="@+id/label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@+id/label"
-        android:textSize="40px" >
+        android:textSize="30px"
+        android:textColor="#FFFFFF" >
     </TextView>
-   
+   <TextView
+        android:id="@+id/authby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_weight="1.0"
+        android:textSize="20px"
+        android:textColor="#FFFFFF" >
+    </TextView>
 
 </LinearLayout>
