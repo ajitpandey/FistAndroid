@@ -34,6 +34,7 @@ public final class R {
         public static final int ic_launcher=0x7f02000a;
         public static final int no=0x7f02000b;
         public static final int ok=0x7f02000c;
+        public static final int quotesforall=0x7f02000d;
     }
     public static final class id {
         public static final int action_settings=0x7f090006;

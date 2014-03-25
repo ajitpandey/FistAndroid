@@ -25,7 +25,6 @@ import android.widget.RelativeLayout;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.sunita.quotesforall.util.PrintSysout;
 import com.sunita.quotesforall.util.SAXXMLParser;
 import com.sunita.quotesforall.vo.QuotesVo;
 
@@ -60,7 +59,10 @@ ActionBar.TabListener {
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		loadPositionMap();
-		addAd();
+		if(false){
+			addAd();	
+		}
+		
 		
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
@@ -183,7 +185,7 @@ ActionBar.TabListener {
 
 		//TextView settingsTextView = (TextView) findViewById(R.id.textUserSettings);
 		//settingsTextView.setText(builder.toString());
-		System.out.println("builder.toString() : " + builder.toString());
+		//System.out.println("builder.toString() : " + builder.toString());
 	}
 
 	/**
@@ -223,9 +225,7 @@ ActionBar.TabListener {
 			int pos = position + 1;
 			QuotesVo quotesVo = getQuotesVo(pos);
 			
-			PrintSysout.printSysout("The value of the Quotes object is: "+quotesVo);
-			PrintSysout.printSysout("position : " + pos ); 
-			PrintSysout.printSysout(" quotesVo.getTopic() : " + quotesVo.getTopic());
+			
 			if(quotesVo != null && quotesVo.getTopic() != null){
 				return quotesVo.getTopic();
 			}
