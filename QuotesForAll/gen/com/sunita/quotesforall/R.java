@@ -11,6 +11,9 @@ public final class R {
     public static final class attr {
     }
     public static final class dimen {
+        public static final int actionbar_height=0x7f040002;
+        public static final int actionbar_item_height=0x7f040003;
+        public static final int actionbar_item_width=0x7f040004;
         /**  Default screen margins, per the Android Design guidelines. 
 
          Customize dimensions originally defined in res/values/dimens.xml (such as
@@ -37,21 +40,19 @@ public final class R {
         public static final int quotesforall=0x7f02000d;
     }
     public static final class id {
-        public static final int action_settings=0x7f090006;
-        public static final int authby=0x7f090005;
-        public static final int label=0x7f090004;
+        public static final int action_settings=0x7f090005;
+        public static final int authby=0x7f090004;
+        public static final int label=0x7f090003;
         public static final int mainLinearLayout=0x7f090001;
         public static final int mainScrollView=0x7f090000;
         public static final int pager=0x7f090002;
-        public static final int section_label=0x7f090003;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f050000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int fragment_main_dummy=0x7f030001;
-        public static final int rowlayout=0x7f030002;
+        public static final int rowlayout=0x7f030001;
     }
     public static final class menu {
         public static final int quotelist=0x7f080000;
@@ -64,6 +65,17 @@ public final class R {
         public static final int title_section3=0x7f060004;
     }
     public static final class style {
+        /**  <item name="android:background">@drawable/actionbar_background</item> 
+         */
+        public static final int ActionBar=0x7f070002;
+        public static final int ActionBarHomeItem=0x7f070004;
+        public static final int ActionBarItem=0x7f070003;
+        /**  <style name="ActionBarHomeLogo">
+        <item name="android:layout_marginRight">1px</item>
+        <item name="android:layout_marginLeft">0px</item>
+    </style> 
+         */
+        public static final int ActionBarProgressBar=0x7f070005;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.

@@ -1,0 +1,174 @@
+<quotes>
+<topic>Leadership Quotations</topic>
+<quote>
+<text>Do not follow where the path may lead. Go instead where there is no path and leave a trail.</text>
+<authby>Harold R. McAlindon (also attributed to Emerson and others)</authby>
+</quote>
+<quote>
+<text>flock of birds in flight - Not the cry, but the flight of a wild duck, leads the flock to fly and follow. </text>
+<authby>Chinese Proverb</authby>
+</quote>
+<quote>
+<text>Leadership: The art of getting someone else to do something you want done because he wants to do it.</text>
+<authby>Dwight D. Eisenhower</authby>
+</quote>
+<quote>
+<text>There go the people. I must follow them for I am their leader.</text>
+<authby>Alexandre Ledru-Rollin</authby>
+</quote>
+<quote>
+<text>What chance gathers she easily scatters. A great person attracts great people and knows how to hold them together. </text>
+<authby>Johann Wolfgang Von Goethe</authby>
+</quote>
+<quote>
+<text>A general is just as good or just as bad as the troops under his command make him.</text>
+<authby>General Douglas MacArthur</authby>
+</quote>
+<quote>
+<text>Men are governed only by serving them; the rule is without exception.</text>
+<authby>V. Cousin</authby>
+</quote>
+<quote>
+<text>The real leader has no need to lead. He is content to point the way.</text>
+<authby>Henry Miller</authby>
+</quote>
+<quote>
+<text>Be known for pleasing others, espcecially if you govern them...Ruling others has one advantage: you can do more good than anyone else.</text>
+<authby>Baltasar Gracián</authby>
+</quote>
+<quote>
+<text>Go to the people. Learn from them. Live with them. Start with what they know. Build with what they have. The best of leaders when the job is done, when the task is accomplished, the people will say we have done it ourselves.</text>
+<authby>Lao Tzu</authby>
+</quote>
+<quote>
+<text>A leader is a dealer in hope.</text>
+<authby>Napoleon Bonaparte</authby>
+</quote>
+<quote>
+<text>Rely on your own strength of body and soul. Take for your star self-reliance, faith, honesty and industry. Don't take too much advice — keep at the helm and steer your own ship, and remember that the great art of commanding is to take a fair share of the work. Fire above the mark you intend to hit. Energy, invincible determination with the right motive, are the levers that move the world.</text>
+<authby>Noah Porter</authby>
+</quote>
+<quote>
+<text>There is always room for a man of force and he makes room for many. Society is a troop of thinkers and the best heads among them take the best places.</text>
+<authby>Ralph Waldo Emerson</authby>
+</quote>
+<quote>
+<text>If your actions inspire others to dream more, learn more, do more and become more, you are a leader. </text>
+<authby>John Quincy Adams</authby>
+</quote>
+<quote>
+<text>Be willing to make decisions. That's the most important quality in a good leader.</text>
+<authby>George S. Patton</authby>
+</quote>
+<quote>
+<text>The art of leadership is saying no, not yes. It is very easy to say yes.</text>
+<authby>Tony Blair</authby>
+</quote>
+<quote>
+<text>The people follow the example of those above them.</text>
+<authby>Chinese Proverb</authby>
+</quote>
+<quote>
+<text>He who has never learned to obey cannot be a good commander.</text>
+<authby>Aristotle</authby>
+</quote>
+<quote>
+<text>The ultimate measure of a man is not where he stands in moments of comfort, but where he stands at times of challenge and controversy.</text>
+<authby>Martin Luther King, Jr.(from Christian Leadership World)</authby>
+</quote>
+<quote>
+<text>Any one can hold the helm when the sea is calm.</text>
+<authby>Publilius Syrus</authby>
+</quote>
+<quote>
+<text>Never tell people how to do things. Tell them what to do and they will surprise you with their ingenuity.</text>
+<authby>George Patton (from Big Dog's Quotes)</authby>
+</quote>
+<quote>
+<text>Where there is no vision, the people perish.</text>
+<authby>Proverbs 29:18</authby>
+</quote>
+<quote>
+<text>Misfortunes, untoward events, lay open, disclose the skill of a general, while success conceals his weakness, his weak points.</text>
+<authby>Horace</authby>
+</quote>
+<quote>
+<text>In this world a man must either be an anvil or hammer.</text>
+<authby>Henry W. Longfellow</authby>
+</quote>
+<quote>
+<text>Leadership does not always wear the harness of compromise.</text>
+<authby>Woodrow Wilson</authby>
+</quote>
+<quote>
+<text>The greater a man is in power above others, the more he ought to excel them in virtue. None ought to govern who is not better than the governed.</text>
+<authby>Publilius Syrus</authby>
+</quote>
+<quote>
+<text>Take time to deliberate; but when the time for action arrives, stop thinking and go in.</text>
+<authby>Andrew Jackson</authby>
+</quote>
+<quote>
+<text>A bold onset is half the battle.</text>
+<authby>Giuseppe Garibaldi</authby>
+</quote>
+<quote>
+<text>The power is detested, and miserable the life, of him who wishes to be feared rather than to be loved.</text>
+<authby>Cornelius Nepos</authby>
+</quote>
+<quote>
+<text>To be a great leader and so always master of the situation, one must of necessity have been a great thinker in action. An eagle was never yet hatched from a goose's egg.</text>
+<authby>James Thomas</authby>
+</quote>
+<quote>
+<text>Ill can he rule the great that cannot reach the small.</text>
+<authby>Edmund Spenser</authby>
+</quote>
+<quote>
+<text>He who has learned how to obey will know how to command.</text>
+<authby>Solon</authby>
+</quote>
+<quote>
+<text>When I give a minister an order, I leave it to him to find the means to carry it out.</text>
+<authby>Napoleon Bonaparte</authby>
+</quote>
+<quote>
+<text>No man can stand on top because he is put there.</text>
+<authby>H. H. Vreeland</authby>
+</quote>
+<quote>
+<text>A ruler should be slow to punish and swift to reward.</text>
+<authby>Ovid </authby>
+</quote>
+<quote>
+<text>It is impossible to imagine anything which better becomes a ruler than mercy.</text>
+<authby>Seneca</authby>
+</quote>
+<quote>
+<text>No man is good enough to govern another man without that other's consent.</text>
+<authby>Abraham Lincoln</authby>
+</quote>
+<quote>
+<text>What you cannot enforce / Do not command.</text>
+<authby>Sophocles</authby>
+</quote>
+<quote>
+<text>No general can fight his battles alone. He must depend upon his lieutenants, and his success depends upon his ability to select the right man for the right place.</text>
+<authby>Philip Armour</authby>
+</quote>
+<quote>
+<text>To do great things is difficult; but to command great things is more difficult.</text>
+<authby>Friedrich Nietzsche</authby>
+</quote>
+<quote>
+<text>It is absurd that a man should rule others, who cannot rule himself. (Absurdum est ut alios regat, qui seipsum regere nescit.) </text>
+<authby>Latin Proverb</authby>
+</quote>
+<quote>
+<text>Let him who would be moved to convince others, be first moved to convince himself.</text>
+<authby>Thomas Carlyle</authby>
+</quote>
+<quote>
+<text>A good general not only sees the way to victory; he also knows when victory is impossible.</text>
+<authby>Polybius</authby>
+</quote>

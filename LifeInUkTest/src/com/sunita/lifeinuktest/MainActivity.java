@@ -194,7 +194,7 @@ public class MainActivity extends Activity  implements OnClickListener {
 	private void addAd() {
 		 // Create the adView.
         adView = new AdView(this);
-        adView.setAdUnitId("ca-app-pub-4300070308662571/2467683040");
+        adView.setAdUnitId(StaticConstants.ADD_2);
         adView.setAdSize(AdSize.BANNER);
         
      // Lookup your LinearLayout assuming it's been given
@@ -213,7 +213,7 @@ public class MainActivity extends Activity  implements OnClickListener {
         
         // Create the adView.
         adView2 = new AdView(this);
-        adView2.setAdUnitId("ca-app-pub-4300070308662571/9785153443");
+        adView2.setAdUnitId(StaticConstants.ADD_3);
         adView2.setAdSize(AdSize.BANNER);
         
         

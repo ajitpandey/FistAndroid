@@ -25,6 +25,7 @@ import android.widget.RelativeLayout;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.sunita.quotesforall.constant.StaticConstants;
 import com.sunita.quotesforall.util.SAXXMLParser;
 import com.sunita.quotesforall.vo.QuotesVo;
 
@@ -59,9 +60,8 @@ ActionBar.TabListener {
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		loadPositionMap();
-		if(false){
-			addAd();	
-		}
+		addAd();	
+		
 		
 		
 		// Create the adapter that will return a fragment for each of the three
@@ -93,13 +93,14 @@ ActionBar.TabListener {
 			actionBar.addTab(actionBar.newTab()
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this));
+			
 		}
 	}
 	
 	private void addAd() {
 		 // Create the adView.
        adView = new AdView(this);
-       adView.setAdUnitId("ca-app-pub-4300070308662571/2467683040");
+       adView.setAdUnitId(StaticConstants.ADD_1);
        adView.setAdSize(AdSize.BANNER);
        
     
@@ -127,6 +128,10 @@ ActionBar.TabListener {
 		this.positionXmlMap.put("1", "experience_quotations.xml");
 		this.positionXmlMap.put("2", "fear_of_failure.xml");
 		this.positionXmlMap.put("3", "follow_your_dreams.xml");
+		this.positionXmlMap.put("4", "character_building_quotations.xml");
+		this.positionXmlMap.put("5", "communication_quotations.xml");
+		this.positionXmlMap.put("6", "dealing_with_people.xml");
+		this.positionXmlMap.put("7", "destiny_quotations.xml");
 	}
 
 	@Override
@@ -217,7 +222,7 @@ ActionBar.TabListener {
 		@Override
 		public int getCount() {
 			// Show 3 total pages.
-			return 3;
+			return positionXmlMap.size();
 		}
 
 		@Override

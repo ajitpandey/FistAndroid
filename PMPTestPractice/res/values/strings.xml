@@ -20,4 +20,8 @@
     <string name="aboutUsAppText">Features : PMP test sample question that may be asked in PMP Certification Exams.</string>
     <string name="aboutUsText">About the App \n We compiled over 100+ questions that may be asked in the PMP objective test. \n About PMP Exam : There are 200 questions you need to answer in 4 hours. 25 pretest questions are randomly placed throughout the test to gather statistical information on the performance of these questions in order to determine whether they may be used on future examinations. These 25 pretest items are included in the 200-question examination, but will not be included in the pass/fail determination; candidates will be scored on 175 questions. Each question on this exam is worth exactly as much as the next. The very simple ones and the more complex ones are not weighted against each other; all are the same weight. All of the test questions are given multiple choice and there are 4 options. There is only one correct answer. You are required to select one answer.</string>
     <string name="back">Back</string>
+    
+    <string name="adunitid1">ca-app-pub-4300070308662571/8685889843</string>
+    <string name="adunitid2">ca-app-pub-4300070308662571/8685889843</string>
+    <string name="adunitid3">ca-app-pub-4300070308662571/8685889843</string>
 </resources>

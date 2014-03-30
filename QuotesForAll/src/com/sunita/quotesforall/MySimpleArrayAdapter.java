@@ -67,9 +67,10 @@ public class MySimpleArrayAdapter extends ArrayAdapter<QuoteVo> {
 		ViewHolder tag = (ViewHolder) rowView.getTag();
 
 		tag.t.setText(values.get(position).getText());
+		//tag.t.setTextSize(CustomFontFeatures.fontSize(parent, 10));
 		tag.authBy.setText(values.get(position).getAuthby().toUpperCase(l));
 		// Change the icon for Windows and iPhone
-/*
+/*text.setTextSize(16 * getResources().getDisplayMetrics().density);
 		if (values.get(position).isSelected()) {
 			tag.i.setImageResource(R.drawable.ok);
 		} else {

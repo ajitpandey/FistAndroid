@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
+    
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@+id/label"
-        android:textSize="30px"
+        android:textSize="30sp"
         android:textColor="#FFFFFF" >
     </TextView>
    <TextView
@@ -28,7 +29,7 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:layout_weight="1.0"
-        android:textSize="20px"
+        android:textSize="20sp"
         android:textColor="#FFFFFF" >
     </TextView>
 

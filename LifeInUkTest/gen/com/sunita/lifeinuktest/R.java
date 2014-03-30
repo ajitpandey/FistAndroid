@@ -113,6 +113,9 @@ public final class R {
         public static final int aboutUsAppText=0x7f06000f;
         public static final int aboutUsText=0x7f060010;
         public static final int action_settings=0x7f060001;
+        public static final int adunitid1=0x7f060012;
+        public static final int adunitid2=0x7f060013;
+        public static final int adunitid3=0x7f060014;
         public static final int appInfoText=0x7f06000d;
         public static final int app_name=0x7f060000;
         public static final int back=0x7f060011;
