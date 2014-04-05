@@ -1,12 +1,10 @@
 package com.sunita.interviewpractice;
 
-
-
 import java.io.IOException;
-import java.util.ArrayList;
 
 import android.app.ExpandableListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.ExpandableListView;
@@ -16,8 +14,6 @@ import com.sunita.interviewpractice.vo.InterviewQuestAnsVoList;
 
 public class MainActivity extends ExpandableListActivity{
 
-	private ArrayList<String> parentItems = new ArrayList<String>();
-	private ArrayList<Object> childItems = new ArrayList<Object>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,9 +29,18 @@ public class MainActivity extends ExpandableListActivity{
 		expandableList.setGroupIndicator(null);
 		expandableList.setClickable(true);
 
+		//Get passed parameter
+		//Check which button pressed
+        Intent mIntent = getIntent();
+        String fileName = mIntent.getStringExtra("filename");
+		if(fileName == null){
+			return;
+		}
+		
+		
 		InterviewQuestAnsVoList interviewQuestAnsVoList;
 		try {
-			interviewQuestAnsVoList = SAXXMLParser.parse(getAssets().open("java_interview.xml"));
+			interviewQuestAnsVoList = SAXXMLParser.parse(getAssets().open(fileName));
 			MyExpandableAdapter adapter = new MyExpandableAdapter(interviewQuestAnsVoList);
 			adapter.setInflater((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE), this);
 			expandableList.setAdapter(adapter);

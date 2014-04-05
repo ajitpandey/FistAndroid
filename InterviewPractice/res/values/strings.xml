@@ -3,6 +3,9 @@
 
     <string name="app_name">Interview Practice</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_landing_layout">LandingActivity</string>
+    <string name="samplelink">samplelink</string>
+     <string name="aboutus">About Us</string>
     
 
 </resources>

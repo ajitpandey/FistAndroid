@@ -1,0 +1,12 @@
+<landing>
+    <link>
+    <text>Core Java</text>
+    <value>java_interview.xml</value>
+    </link>
+    <link>
+    <text>Advance Java</text>
+    <value>java_interview1.xml</value>
+    </link>
+    
+    
+</landing>
