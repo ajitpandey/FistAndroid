@@ -10,16 +10,26 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.sunita.interviewpractice.constant.StaticConstants;
 import com.sunita.interviewpractice.util.SAXXMLParser;
 import com.sunita.interviewpractice.vo.LandingVo;
 import com.sunita.interviewpractice.vo.LandingVoList;
 
 public class LandingLayoutActivity extends Activity {
 
+	
+	private AdView adView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.landing_layout);
+		
+		if(StaticConstants.DISPLAY_ADD){
+        	addAd();	
+        }
 		
 		try {
 			LandingVoList landingVoList = SAXXMLParser.parseLanding(getAssets().open("landing.xml"));
@@ -39,6 +49,7 @@ public class LandingLayoutActivity extends Activity {
 		
 		for(LandingVo landingVo : landingVoList.getVoList()){
 			final String value = landingVo.getValue();
+			
 			Button btn = new Button(this);
 			btn.setText(landingVo.getText());
 			linearLayout.addView(btn);
@@ -55,22 +66,24 @@ public class LandingLayoutActivity extends Activity {
 		}
 	}
 
-	//On click listener for btnLevel1
-    final OnClickListener btnLevel1_OnClickListener = new OnClickListener() {
-        public void onClick(final View v) {
-        	//invoke the Info activity
-				Intent main = new Intent(getApplicationContext(), MainActivity.class);
-				//v.getId()
-				main.putExtra("filename", "java_interview.xml");
-	    		startActivity(main);        
-        }
-    };
+	private void addAd() {
+    	// Create the adView.
+        adView = new AdView(this);
+        adView.setAdUnitId(StaticConstants.ADD_1);
+        adView.setAdSize(AdSize.BANNER);
+        
+        
+     // Lookup your LinearLayout assuming it's been given
+        // the attribute android:id="@+id/mainLayout".
+        LinearLayout layout = (LinearLayout)findViewById(R.id.infoLinearLayout);
 
-	/*@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.landing_layout, menu);
-		return true;
-	}*/
+        // Add the adView to it.
+        layout.addView(adView);
 
+        // Initiate a generic request.
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Load the adView with the ad request.
+        adView.loadAd(adRequest);
+	}
 }

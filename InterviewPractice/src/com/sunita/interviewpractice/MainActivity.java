@@ -8,18 +8,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.sunita.interviewpractice.constant.StaticConstants;
 import com.sunita.interviewpractice.util.SAXXMLParser;
 import com.sunita.interviewpractice.vo.InterviewQuestAnsVoList;
 
 public class MainActivity extends ExpandableListActivity{
 
-
+	private AdView adView;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 
+
+		/*if(StaticConstants.DISPLAY_ADD){
+        	addAd();	
+        }*/
+		
 		// this is not really  necessary as ExpandableListActivity contains an ExpandableList
 		//setContentView(R.layout.main);
 
@@ -52,5 +62,24 @@ public class MainActivity extends ExpandableListActivity{
 		
 
 		
+	}
+	
+	private void addAd() {
+    	// Create the adView.
+        adView = new AdView(this);
+        adView.setAdUnitId(StaticConstants.ADD_1);
+        adView.setAdSize(AdSize.BANNER);
+        
+        
+        LinearLayout layout = (LinearLayout)findViewById(R.id.mainLinearLayout);
+        layout = (LinearLayout)findViewById(R.id.groupLinearLayout);
+        // Add the adView to it.
+        layout.addView(adView);
+
+        // Initiate a generic request.
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Load the adView with the ad request.
+        adView.loadAd(adRequest);
 	}
 }

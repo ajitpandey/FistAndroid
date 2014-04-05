@@ -20,19 +20,6 @@
     android:gravity="center_vertical"
     android:orientation="vertical" >
 
-    <!-- <Button
-        android:id="@+id/btnLevel1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/samplelink" />
-
     
-
-    <Button
-        android:id="@+id/btnAboutUs"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/aboutus" /> -->
-
-</LinearLayout> <!-- </RelativeLayout> -->
+</LinearLayout> 
 </ScrollView>
