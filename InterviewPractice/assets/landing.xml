@@ -7,6 +7,13 @@
     <text>Advance Java</text>
     <value>java_interview1.xml</value>
     </link>
-    
+    <link>
+    <text>Interview Etiquette</text>
+    <value>interviewetiquette.xml</value>
+    </link>
+    <link>
+    <text>Java</text>
+    <value>java_interview_question.xml</value>
+    </link>
     
 </landing>

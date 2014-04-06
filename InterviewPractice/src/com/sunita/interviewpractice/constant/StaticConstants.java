@@ -19,5 +19,5 @@ public class StaticConstants {
 	public static final String ADD_2 = "ca-app-pub-4300070308662571/8685889843";
 	public static final String ADD_3 = "ca-app-pub-4300070308662571/3617745046";
 	
-	public static final boolean DISPLAY_ADD = true;
+	public static final boolean DISPLAY_ADD = false;
 }

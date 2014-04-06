@@ -1,0 +1,850 @@
+<interview>
+<topic>Java Interview Questions</topic>
+<qa>
+<q>Q: What do you know about Java?</q>
+<a>A: Java is a high-level programming language originally developed by Sun Microsystems and released in 1995. Java runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX.</a>
+</qa><qa>
+<q>Q: What are the supported platforms by Java Programming Language?</q>
+<a>A: Java runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX/Linux like HP-Unix, Sun Solaris, Redhat Linux, Ubuntu, CentOS, etc.</a>
+</qa><qa>
+<q>Q: List any five features of Java?</q>
+<a>A: Some features include Object Oriented, Platform Independent, Robust, Interpreted, Multi-threaded</a>
+</qa><qa>
+<q>Q: Why is Java Architectural Neutral?</q>
+<a>A: It’s compiler generates an architecture-neutral object file format, which makes the compiled code to be executable on many processors, with the presence of Java runtime system.</a>
+</qa><qa>
+<q>Q: How Java enabled High Performance?</q>
+<a>A: Java uses Just-In-Time compiler to enable high performance. Just-In-Time compiler is a program that turns Java bytecode, which is a program that contains instructions that must be interpreted into instructions that can be sent directly to the processor.</a>
+</qa><qa>
+<q>Q: Why Java is considered dynamic?</q>
+<a>A: It is designed to adapt to an evolving environment. Java programs can carry extensive amount of run-time information that can be used to verify and resolve accesses to objects on run-time.</a>
+</qa><qa>
+<q>Q: What is Java Virtual Machine and how it is considered in context of Java’s platform independent feature?</q>
+<a>A: When Java is compiled, it is not compiled into platform specific machine, rather into platform independent byte code. This byte code is distributed over the web and interpreted by virtual Machine (JVM) on whichever platform it is being run.</a>
+</qa><qa>
+<q>Q: List two Java IDE’s?</q>
+<a>A: Netbeans, Eclipse, etc.</a>
+</qa><qa>
+<q>Q: List some Java keywords(unlike C, C++ keywords)?</q>
+<a>A: Some Java keywords are import, super, finally, etc.</a>
+</qa><!-- <qa>
+<q>Q: What do you mean by Object?</q>
+<a>A: Object is a runtime entity and it’s state is stored in fields and behavior is shown via methods. Methods operate on an object's internal state and serve as the primary mechanism for object-to-object communication.</a>
+</qa><qa>
+<q>Q: Define class?</q>
+<a>A: A class is a blue print from which individual objects are created. A class can contain fields and methods to describe the behavior of an object.</a>
+</qa><qa>
+<q>Q: What kind of variables a class can consist of?</q>
+<a>A: A class consist of Local variable, instance variables and class variables.</a>
+</qa><qa>
+<q>Q: What is a Local Variable</q>
+<a>A: Variables defined inside methods, constructors or blocks are called local variables. The variable will be declared and initialized within the method and it will be destroyed when the method has completed.</a>
+</qa><qa>
+<q>Q: What is a Instance Variable</q>
+<a>A: Instance variables are variables within a class but outside any method. These variables are instantiated when the class is loaded.</a>
+</qa><qa>
+<q>Q: What is a Class Variable</q>
+<a>A: These are variables declared with in a class, outside any method, with the static keyword.</a>
+</qa><qa>
+<q>Q: What is Singleton class?</q>
+<a>A: Singleton class control object creation, limiting the number to one but allowing the flexibility to create more objects if the situation changes.</a>
+</qa><qa>
+<q>Q: What do you mean by Constructor?</q>
+<a>A: Constructor gets invoked when a new object is created. Every class has a constructor. If we do not explicitly write a constructor for a class the java compiler builds a default constructor for that class.</a>
+</qa><qa>
+<q>Q: List the three steps for creating an Object for a class?</q>
+<a>A: An Object is first declared, then instantiated and then it is initialized.</a>
+</qa><qa>
+<q>Q: What is the default value of byte datatype in Java?</q>
+<a>A: Default value of byte datatype is 0.</a>
+</qa><qa>
+<q>Q: What is the default value of float and double datatype in Java?</q>
+<a>A: Default value of float and double datatype in different as compared to C/C++. For float its 0.0f and for double it’s 0.0d</a>
+</qa><qa>
+<q>Q: When a byte datatype is used?</q>
+<a>A: This data type is used to save space in large arrays, mainly in place of integers, since a byte is four times smaller than an int.</a>
+</qa><qa>
+<q>Q: What is a static variable?</q>
+<a>A: Class variables also known as static variables are declared with the static keyword in a class, but outside a method, constructor or a block.</a>
+</qa><qa>
+<q>Q: What do you mean by Access Modifier?</q>
+<a>A: Java provides access modifiers to set access levels for classes, variables, methods and constructors. A member has package or default accessibility when no accessibility modifier is specified.</a>
+</qa><qa>
+<q>Q: What is protected access modifier?</q>
+<a>A: Variables, methods and constructors which are declared protected in a superclass can be accessed only by the subclasses in other package or any class within the package of the protected members' class.</a>
+</qa><qa>
+<q>Q: What do you mean by synchronized Non Access Modifier?</q>
+<a>A: Java provides these modifiers for providing functionalities other than Access Modifiers, synchronized used to indicate that a method can be accessed by only one thread at a time.</a>
+</qa><qa>
+<q>Q: According to Java Operator precedence, which operator is considered to be with highest precedence?</q>
+<a>A: Postfix operators i.e () [] . is at the highest precedence.</a>
+</qa><qa>
+<q>Q: Variables used in a switch statement can be used with which datatypes?</q>
+<a>A: Variables used in a switch statement can only be a byte, short, int, or char.</a>
+</qa><qa>
+<q>Q: When parseInt() method can be used?</q>
+<a>A: This method is used to get the primitive data type of a certain String.</a>
+</qa><qa>
+<q>Q: Why is String class considered immutable?</q>
+<a>A: The String class is immutable, so that once it is created a String object cannot be changed. Since String is immutable it can safely be shared between many threads ,which is considered very important for multithreaded programming.</a>
+</qa><qa>
+<q>Q: Why is StringBuffer called mutable?</q>
+<a>A: The String class is considered as immutable, so that once it is created a String object cannot be changed. If there is a necessity to make alot of modifications to Strings of characters then StringBuffer should be used.</a>
+</qa><qa>
+<q>Q: What is the difference between StringBuffer and StringBuilder class?</q>
+<a>A: Use StringBuilder whenever possible because it is faster than StringBuffer. But, if thread safety is necessary then use StringBuffer objects.</a>
+</qa><qa>
+<q>Q: Which package is used for pattern matching with regular expressions?</q>
+<a>A: java.util.regex package is used for this purpose.</a>
+</qa><qa>
+<q>Q: java.util.regex consists of which classes?</q>
+<a>A: java.util.regex consists of three classes: Pattern class, Matcher class and PatternSyntaxException class.</a>
+</qa><qa>
+<q>Q: What is finalize() method?</q>
+<a>A: It is possible to define a method that will be called just before an object's final destruction by the garbage collector. This method is called finalize( ), and it can be used to ensure that an object terminates cleanly.</a>
+</qa><qa>
+<q>Q: What is an Exception?</q>
+<a>A: An exception is a problem that arises during the execution of a program. Exceptions are caught by handlers positioned along the thread's method invocation stack.</a>
+</qa><qa>
+<q>Q: What do you mean by Checked Exceptions?</q>
+<a>A: It is an exception that is typically a user error or a problem that cannot be foreseen by the programmer. For example, if a file is to be opened, but the file cannot be found, an exception occurs. These exceptions cannot simply be ignored at the time of compilation.</a>
+</qa><qa>
+<q>Q: Explain Runtime Exceptions?</q>
+<a>A: It is an exception that occurs that probably could have been avoided by the programmer. As opposed to checked exceptions, runtime exceptions are ignored at the time of compliation.</a>
+</qa><qa>
+<q>Q: Which are the two subclasses under Exception class?</q>
+<a>A: The Exception class has two main subclasses : IOException class and RuntimeException Class.</a>
+</qa><qa>
+<q>Q: When throws keyword is used?</q>
+<a>A: If a method does not handle a checked exception, the method must declare it using the throwskeyword. The throws keyword appears at the end of a method's signature.</a>
+</qa><qa>
+<q>Q: When throw keyword is used?</q>
+<a>A: An exception can be thrown, either a newly instantiated one or an exception that you just caught, by using throw keyword.</a>
+</qa><qa>
+<q>Q: How finally used under Exception Handling?</q>
+<a>A: The finally keyword is used to create a block of code that follows a try block. A finally block of code always executes, whether or not an exception has occurred.</a>
+</qa><qa>
+<q>Q: What things should be kept in mind while creating your own exceptions in Java?</q>
+<a>A: While creating your own exception:</a>
+<a>All exceptions must be a child of Throwable.</a>
+<a>If you want to write a checked exception that is automatically enforced by the Handle or Declare Rule, you need to extend the Exception class.</a>
+<a>You want to write a runtime exception, you need to extend the RuntimeException class.</a>
+</qa><qa>
+<q>Q: Define Inheritance?</q>
+<a>A: It is the process where one object acquires the properties of another. With the use of inheritance the information is made manageable in a hierarchical order.</a>
+</qa><qa>
+<q>Q: When super keyword is used?</q>
+<a>A: If the method overrides one of its superclass's methods, overridden method can be invoked through the use of the keyword super. It can be also used to refer to a hidden field</a>
+</qa><qa>
+<q>Q: What is Polymorphism?</q>
+<a>A: Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.</a>
+</qa><qa>
+<q>Q: What is Abstraction?</q>
+<a>A: It refers to the ability to make a class abstract in OOP. It helps to reduce the complexity and also improves the maintainability of the system.</a>
+</qa><qa>
+<q>Q: What is Abstract class</q>
+<a>A: These classes cannot be instantiated and are either partially implemented or not at all implemented. This class contains one or more abstract methods which are simply method declarations without a body.</a>
+</qa><qa>
+<q>Q: When Abstract methods are used?</q>
+<a>A: If you want a class to contain a particular method but you want the actual implementation of that method to be determined by child classes, you can declare the method in the parent class as abstract.</a>
+</qa><qa>
+<q>Q: What is Encapsulation?</q>
+<a>A: It is the technique of making the fields in a class private and providing access to the fields via public methods. If a field is declared private, it cannot be accessed by anyone outside the class, thereby hiding the fields within the class. Therefore encapsulation is also referred to as data hiding.</a>
+</qa><qa>
+<q>Q: What is the primary benefit of Encapsulation?</q>
+<a>A: The main benefit of encapsulation is the ability to modify our implemented code without breaking the code of others who use our code. With this Encapsulation gives maintainability, flexibility and extensibility to our code.</a>
+</qa><qa>
+<q>Q: What is an Interface?</q>
+<a>A: An interface is a collection of abstract methods. A class implements an interface, thereby inheriting the abstract methods of the interface.</a>
+</qa><qa>
+<q>Q: Give some features of Interface?</q>
+<a>A: It includes:</a>
+<a>Interface cannot be instantiated</a>
+<a>An interface does not contain any constructors.</a>
+<a>All of the methods in an interface are abstract.</a>
+</qa><qa>
+<q>Q: Define Packages in Java?</q>
+<a>A: A Package can be defined as a grouping of related types(classes, interfaces, enumerations and annotations ) providing access protection and name space management.</a>
+</qa><qa>
+<q>Q: Why Packages are used?</q>
+<a>A: Packages are used in Java in-order to prevent naming conflicts, to control access, to make searching/locating and usage of classes, interfaces, enumerations and annotations, etc., easier.</a>
+</qa><qa>
+<q>Q: What do you mean by Multithreaded program?</q>
+<a>A: A multithreaded program contains two or more parts that can run concurrently. Each part of such a program is called a thread, and each thread defines a separate path of execution.</a>
+</qa><qa>
+<q>Q: What are the two ways in which Thread can be created?</q>
+<a>A: Thread can be created by: implementing Runnable interface, extending the Thread class.</a>
+</qa><qa>
+<q>Q: What is an applet?</q>
+<a>A: An applet is a Java program that runs in a Web browser. An applet can be a fully functional Java application because it has the entire Java API at its disposal.</a>
+</qa><qa>
+<q>Q: An applet extend which class?</q>
+<a>A: An applet extends java.applet.Applet class.</a>
+</qa><qa>
+<q>Q: Explain garbage collection in Java?</q>
+<a>A: It uses garbage collection to free the memory. By cleaning those objects that is no longer reference by any of the program.</a>
+</qa><qa>
+<q>Q: Define immutable object?</q>
+<a>A: An immutable object can’t be changed once it is created.</a>
+</qa><qa>
+<q>Q: Explain the usage of this() with constructors?</q>
+<a>A: It is used with variables or methods and used to call constructer of same class.</a>
+</qa><qa>
+<q>Q: Explain Set Interface?</q>
+<a>A: It is a collection of element which cannot contain duplicate elements. The Set interface contains only methods inherited from Collection and adds the restriction that duplicate elements are prohibited.</a>
+</qa><qa>
+<q>Q: Explain TreeSet?</q>
+<a>A: It is a Set implemented when we want elements in a sorted order.</a>
+</qa><qa>
+<q>Q: What is Comparable Interface?</q>
+<a>A: It is used to sort collections and arrays of objects using the collections.sort() and java.utils. The objects of the class implementing the Comparable interface can be ordered.</a>
+</qa><qa>
+<q>Q: Difference between throw and throws?</q>
+<a>A: It includes:</a>
+<a>Throw is used to trigger an exception where as throws is used in declaration of exception.</a>
+<a>Without throws, Checked exception cannot be handled where as checked exception can be propagated with throws.</a>
+</qa><qa>
+<q>Q: Explain the following line used under Java Program: \n public static void main (String args[ ])</q>
+<a>A: The following shows the explanation individually:</a>
+<a>public: it is the access specifier.</a>
+<a>static: it allows main() to be called without instantiating a particular instance of a class.</a>
+<a>void: it affirns the compiler that no value is returned by main().</a>
+<a>main(): this method is called at the beginning of a Java program.</a>
+<a>String args[ ]: args parameter is an instance array of class String</a>
+</qa><qa>
+<q>Q: Define JRE i.e. Java Runtime Environment?</q>
+<a>A: Java Runtime Environment is an implementation of the Java Virtual Machine which executes Java programs. It provides the minimum requirements for executing a Java application;</a>
+</qa><qa>
+<q>Q: What is JAR file?</q>
+<a>A: JAR files is Java Archive fles and it aggregates many files into one. It holds Java classes in a library. JAR files are built on ZIP file format and have .jar file extension.</a>
+</qa><qa>
+<q>Q: What is a WAR file?</q>
+<a>A: This is Web Archive File and used to store XML, java classes, and JavaServer pages. which is used to distribute a collection of JavaServer Pages, Java Servlets, Java classes, XML files, static Web pages etc.</a>
+</qa><qa>
+<q>Q: Define JIT compiler?</q>
+<a>A: It improves the runtime performance of computer programs based on bytecode.</a>
+</qa><qa>
+<q>Q: What is the difference between object oriented programming language and object based programming language?</q>
+<a>A: Object based programming languages follow all the features of OOPs except Inheritance. JavaScript is an example of object based programming languages</a>
+</qa><qa>
+<q>Q: What is the purpose of default constructor?</q>
+<a>A: The java compiler creates a default constructor only if there is no constructor in the class.</a>
+</qa><qa>
+<q>Q: Can a constructor be made final?</q>
+<a>A: No, this is not possible.</a>
+</qa><qa>
+<q>Q: What is static block?</q>
+<a>A: It is used to initialize the static data member, It is excuted before main method at the time of classloading.</a>
+</qa><qa>
+<q>Q: Define composition?</q>
+<a>A: Holding the reference of the other class within some other class is known as composition.</a>
+</qa><qa>
+<q>Q: What is function overloading?</q>
+<a>A: If a class has multiple functions by same name but different parameters, it is known as Method Overloading.</a>
+</qa><qa>
+<q>Q: What is function overriding?</q>
+<a>A: If a subclass provides a specific implementation of a method that is already provided by its parent class, it is known as Method Overriding.</a>
+</qa><qa>
+<q>Q: Difference between Overloading and Overriding?</q>
+<a>A: Method overloading increases the readability of the program. Method overriding provides the specific implementation of the method that is already provided by its super class parameter must be different in case of overloading, parameter must be same in case of overriding.</a>
+</qa><qa>
+<q>Q: What is final class?</q>
+<a>A: Final classes are created so the methods implemented by that class cannot be overridden. It can’t be inherited.</a>
+</qa><qa>
+<q>Q: What is NullPointerException?</q>
+<a>A: A NullPointerException is thrown when calling the instance method of a null object, accessing or modifying the field of a null object etc.</a>
+</qa><qa>
+<q>Q: What are the ways in which a thread can enter the waiting state?</q>
+<a>A: A thread can enter the waiting state by invoking its sleep() method, by blocking on IO, by unsuccessfully attempting to acquire an object's lock, or by invoking an object's wait() method. It can also enter the waiting state by invoking its (deprecated) suspend() method.</a>
+</qa><qa>
+<q>Q: How does multi-threading take place on a computer with a single CPU?</q>
+<a>A: The operating system's task scheduler allocates execution time to multiple tasks. By quickly switching between executing tasks, it creates the impression that tasks execute sequentially.</a>
+</qa><qa>
+<q>Q: What invokes a thread's run() method?</q>
+<a>A: After a thread is started, via its start() method of the Thread class, the JVM invokes the thread's run() method when the thread is initially executed.</a>
+</qa><qa>
+<q>Q: Does it matter in what order catch statements for FileNotFoundException and IOException are written?</q>
+<a>A: Yes, it does. The FileNoFoundException is inherited from the IOException. Exception's subclasses have to be caught first.</a>
+</qa><qa>
+<q>Q: What is the difference between yielding and sleeping?</q>
+<a>A: When a task invokes its yield() method, it returns to the ready state. When a task invokes its sleep() method, it returns to the waiting state.</a>
+</qa><qa>
+<q>Q: Why Vector class is used?</q>
+<a>A: The Vector class provides the capability to implement a growable array of objects. Vector proves to be very useful if you don't know the size of the array in advance, or you just need one that can change sizes over the lifetime of a program.</a>
+</qa><qa>
+<q>Q: How many bits are used to represent Unicode, ASCII, UTF-16, and UTF-8 characters?</q>
+<a>A: Unicode requires 16 bits and ASCII require 7 bits. Although the ASCII character set uses only 7 bits, it is usually represented as 8 bits. UTF-8 represents characters using 8, 16, and 18 bit patterns. UTF-16 uses 16-bit and larger bit patterns.</a>
+</qa><qa>
+<q>Q: What are Wrapper classes?</q>
+<a>A: These are classes that allow primitive types to be accessed as objects. Example: Integer, Character, Double, Boolean etc.</a>
+</qa><qa>
+<q>Q: What is the difference between a Window and a Frame?</q>
+<a>A: The Frame class extends Window to define a main application window that can have a menu bar.</a>
+</qa><qa>
+<q>Q: Which package has light weight components?</q>
+<a>A: javax.Swing package. All components in Swing, except JApplet, JDialog, JFrame and JWindow are lightweight components.</a>
+</qa><qa>
+<q>Q: What is the difference between the paint() and repaint() methods?</q>
+<a>A: The paint() method supports painting via a Graphics object. The repaint() method is used to cause paint() to be invoked by the AWT painting thread.</a>
+</qa><qa>
+<q>Q: What is the purpose of File class?</q>
+<a>A: It is used to create objects that provide access to the files and directories of a local file system.</a>
+</qa><qa>
+<q>Q: What is the difference between the Reader/Writer class hierarchy and the InputStream/OutputStream class hierarchy?</q>
+<a>A: The Reader/Writer class hierarchy is character-oriented, and the InputStream/OutputStream class hierarchy is byte-oriented.</a>
+</qa><qa>
+<q>Q: Which class should you use to obtain design information about an object?</q>
+<a>A: The Class class is used to obtain information about an object's design and java.lang.Class class instance represent classes, interfaces in a running Java application.</a>
+</qa><qa>
+<q>Q: What is the difference between static and non-static variables?</q>
+<a>A: A static variable is associated with the class as a whole rather than with specific instances of a class. Non-static variables take on unique values with each object instance.</a>
+</qa><qa>
+<q>Q: What is Serialization and deserialization?</q>
+<a>A: Serialization is the process of writing the state of an object to a byte stream. Deserialization is the process of restoring these objects.</a>
+</qa><qa>
+<q>Q: What are use cases?</q>
+<a>A: It is part of the analysis of a program and describes a situation that a program might encounter and what behavior the program should exhibit in that circumstance.</a>
+</qa><qa>
+<q>Q: Explain the use of sublass in a Java program?</q>
+<a>A: Sub class inherits all the public and protected methods and the implementation. It also inherits all the default modifier methods and their implementation.</a>
+</qa><qa>
+<q>Q: How to add menushortcut to menu item?</q>
+<a>A: If there is a button instance called b1, you may add menu short cut by calling b1.setMnemonic('F'), so the user may be able to use Alt+F to click the button.</a>
+</qa><qa>
+<q>Q: Can you write a Java class that could be used both as an applet as well as an application?</q>
+<a>A: Yes, just add a main() method to the applet.</a>
+</qa><qa>
+<q>Q: What is the difference between Swing and AWT components?</q>
+<a>A: AWT components are heavy-weight, whereas Swing components are lightweight. Heavy weight components depend on the local windowing toolkit. For example, java.awt.Button is a heavy weight component, when it is running on the Java platform for Unix platform, it maps to a real Motif button.</a>
+</qa><qa>
+<q>Q: What's the difference between constructors and other methods?</q>
+<a>A: Constructors must have the same name as the class and can not return a value. They are only called once while regular methods could be called many times.</a>
+</qa><qa>
+<q>Q: Is there any limitation of using Inheritance?</q>
+<a>A: Yes, since inheritance inherits everything from the super class and interface, it may make the subclass too clustering and sometimes error-prone when dynamic overriding or dynamic overloading in some situation.</a>
+</qa><qa>
+<q>Q: When is the ArrayStoreException thrown?</q>
+<a>A: When copying elements between different arrays, if the source or destination arguments are not arrays or their types are not compatible, an ArrayStoreException will be thrown.</a>
+</qa><qa>
+<q>Q: Can you call one constructor from another if a class has multiple constructors?</q>
+<a>A: Yes, use this() syntax.</a>
+</qa><qa>
+<q>Q: What's the difference between the methods sleep() and wait()?</q>
+<a>A: The code sleep(2000); puts thread aside for exactly two seconds. The code wait(2000), causes a wait of up to two second. A thread could stop waiting earlier if it receives the notify() or notifyAll() call. The method wait() is defined in the class Object and the method sleep() is defined in the class Thread.</a>
+</qa><qa>
+<q>Q: When ArithmeticException is thrown?</q>
+<a>A: The ArithmeticException is thrown when integer is divided by zero or taking the remainder of a number by zero. It is never thrown in floating-point operations.</a>
+</qa><qa>
+<q>Q: What is a transient variable?</q>
+<a>A: A transient variable is a variable that may not be serialized during Serialization and which is initialized by its default value during de-serialization,</a>
+</qa><qa>
+<q>Q: What is synchronization?</q>
+<a>A: Synchronization is the capability to control the access of multiple threads to shared resources. synchronized keyword in java provides locking which ensures mutual exclusive access of shared resource and prevent data race.</a>
+</qa><qa>
+<q>Q: What is the Collections API?</q>
+<a>A: The Collections API is a set of classes and interfaces that support operations on collections of objects.</a>
+</qa><qa>
+<q>Q: Does garbage collection guarantee that a program will not run out of memory?</q>
+<a>A: Garbage collection does not guarantee that a program will not run out of memory. It is possible for programs to use up memory resources faster than they are garbage collected. It is also possible for programs to create objects that are not subject to garbage collection.</a>
+</qa><qa>
+<q>Q: The immediate superclass of the Applet class?</q>
+<a>A: Panel is the immediate superclass. A panel provides space in which an application can attach any other component, including other panels.</a>
+</qa><qa>
+<q>Q: Which Java operator is right associative?</q>
+<a>A: The = operator is right associative.</a>
+</qa><qa>
+<q>Q: What is the difference between a break statement and a continue statement?</q>
+<a>A: A break statement results in the termination of the statement to which it applies (switch, for, do, or while). A continue statement is used to end the current loop iteration and return control to the loop statement.</a>
+</qa><qa>
+<q>Q: If a variable is declared as private, where may the variable be accessed?</q>
+<a>A: A private variable may only be accessed within the class in which it is declared.</a>
+</qa><qa>
+<q>Q: What is the purpose of the System class?</q>
+<a>A: The purpose of the System class is to provide access to system resources.</a>
+</qa><qa>
+<q>Q: List primitive Java types?</q>
+<a>A: The eight primitive types are byte, char, short, int, long, float, double, and boolean.</a>
+</qa><qa>
+<q>Q: What is the relationship between clipping and repainting under AWT?</q>
+<a>A: When a window is repainted by the AWT painting thread, it sets the clipping regions to the area of the window that requires repainting.</a>
+</qa><qa>
+<q>Q: Which class is the immediate superclass of the Container class?</q>
+<a>A: Component class is the immediate super class.</a>
+</qa><qa>
+<q>Q: What class of exceptions are generated by the Java run-time system?</q>
+<a>A: The Java runtime system generates RuntimeException and Error exceptions.</a>
+</qa><qa>
+<q>Q: Under what conditions is an object's finalize() method invoked by the garbage collector?</q>
+<a>A: The garbage collector invokes an object's finalize() method when it detects that the object has become unreachable.</a>
+</qa><qa>
+<q>Q: How can a dead thread be restarted?</q>
+<a>A: A dead thread cannot be restarted.</a>
+</qa><qa>
+<q>Q: Which arithmetic operations can result in the throwing of an ArithmeticException?</q>
+<a>A: Integer / and % can result in the throwing of an ArithmeticException.</a>
+</qa><qa>
+<q>Q: Variable of the boolean type is automatically initialized as?</q>
+<a>A: The default value of the boolean type is false.</a>
+</qa><qa>
+<q>Q: Can try statements be nested?</q>
+<a>A: Yes</a>
+</qa><qa>
+<q>Q: What are ClassLoaders?</q>
+<a>A: A class loader is an object that is responsible for loading classes. The class ClassLoader is an abstract class.</a>
+</qa><qa>
+<q>Q: What is the difference between an Interface and an Abstract class?</q>
+<a>A: An abstract class can have instance methods that implement a default behavior. An Interface can only declare constants and instance methods, but cannot implement default behavior and all methods are implicitly abstract. An interface has all public members and no implementation.</a>
+</qa><qa>
+<q>Q: What will happen if static modifier is removed from the signature of the main method?</q>
+<a>A: Program throws "NoSuchMethodError" error at runtime .</a>
+</qa><qa>
+<q>Q: What is the default value of an object reference declared as an instance variable?</q>
+<a>A: Null, unless it is defined explicitly.</a>
+</qa><qa>
+<q>Q: Can a top level class be private or protected?</q>
+<a>A: No, a top level class can not be private or protected. It can have either "public" or no modifier.</a>
+</qa><qa>
+<q>Q: Why do we need wrapper classes?</q>
+<a>A: We can pass them around as method parameters where a method expects an object. It also provides utility methods.</a>
+</qa><qa>
+<q>Q: What is the difference between error and an exception?</q>
+<a>A: An error is an irrecoverable condition occurring at runtime. Such as OutOfMemory error. Exceptions are conditions that occur because of bad input etc. e.g. FileNotFoundException will be thrown if the specified file does not exist.</a>
+</qa><qa>
+<q>Q: Is it necessary that each try block must be followed by a catch block?</q>
+<a>A: It is not necessary that each try block must be followed by a catch block. It should be followed by either a catch block or a finally block.</a>
+</qa><qa>
+<q>Q: When a thread is created and started, what is its initial state?</q>
+<a>A: A thread is in the ready state as initial state after it has been created and started.</a>
+</qa><qa>
+<q>Q: What is the Locale class?</q>
+<a>A: The Locale class is used to tailor program output to the conventions of a particular geographic, political, or cultural region.</a>
+</qa><qa>
+<q>Q: What are synchronized methods and synchronized statements?</q>
+<a>A: Synchronized methods are methods that are used to control access to an object. A synchronized statement can only be executed after a thread has acquired the lock for the object or class referenced in the synchronized statement.</a>
+</qa><qa>
+<q>Q: What is runtime polymorphism or dynamic method dispatch?</q>
+<a>A: Runtime polymorphism or dynamic method dispatch is a process in which a call to an overridden method is resolved at runtime rather than at compile-time. In this process, an overridden method is called through the reference variable of a superclass.</a>
+</qa><qa>
+<q>Q: What is Dynamic Binding(late binding)?</q>
+<a>A: Binding refers to the linking of a procedure call to the code to be executed in response to the call. Dynamic binding means that the code associated with a given procedure call is not known until the time of the call at run-time.</a>
+</qa><qa>
+<q>Q: Can constructor be inherited?</q>
+<a>A: No, constructor cannot be inherited.</a>
+</qa><qa>
+<q>Q: What are the advantages of ArrayList over arrays?</q>
+<a>A: ArrayList can grow dynamically and provides more powerful insertion and search mechanisms than arrays.</a>
+</qa><qa>
+<q>Q: Why deletion in LinkedList is fast than ArrayList?</q>
+<a>A: Deletion in linked list is fast because it involves only updating the next pointer in the node before the deleted node and updating the previous pointer in the node after the deleted node.</a>
+</qa><qa>
+<q>Q: How do you decide when to use ArrayList and LinkedList?</q>
+<a>A: If you need to frequently add and remove elements from the middle of the list and only access the list elements sequentially, then LinkedList should be used. If you need to support random access, without inserting or removing elements from any place other than the end, then ArrayList should be used.</a>
+</qa><qa>
+<q>Q: What is a Values Collection View ?</q>
+<a>A: It is a collection returned by the values() method of the Map Interface, It contains all the objects present as values in the map.</a>
+</qa><qa>
+<q>Q: What is dot operator?</q>
+<a>A: The dot operator(.) is used to access the instance variables and methods of class objects.It is also used to access classes and sub-packages from a package.</a>
+</qa><qa>
+<q>Q: Where and how can you use a private constructor?</q>
+<a>A: Private constructor is used if you do not want other classes to instantiate the object and to prevent subclassing.T</a>
+</qa><qa>
+<q>Q: What is type casting?</q>
+<a>A: Type casting means treating a variable of one type as though it is another type.</a>
+</qa><qa>
+<q>Q: Describe life cycle of thread?</q>
+<a>A: A thread is a execution in a program. The life cycle of a thread include:</a>
+<a>Newborn state</a>
+<a>Runnable state</a>
+<a>Running state</a>
+<a>Blocked state</a>
+<a>Dead state</a>
+</qa><qa>
+<q>Q: What is the difference between the >> and >>> operators?</q>
+<a>A: The >> operator carries the sign bit when shifting right. The >>> zero-fills bits that have been shifted out.</a>
+</qa><qa>
+<q>Q: Which method of the Component class is used to set the position and size of a component?</q>
+<a>A: setBounds() method is used for this purpose.</a>
+</qa><qa>
+<q>Q: What is the range of the short type?</q>
+<a>A: The range of the short type is -(2^15) to 2^15 - 1.</a>
+</qa><qa>
+<q>Q: What is the immediate superclass of Menu?</q>
+<a>A: MenuItem class</a>
+</qa><qa>
+<q>Q: Does Java allow Default Arguments?</q>
+<a>A: No, Java does not allow Default Arguments.</a>
+</qa><qa>
+<q>Q: Which number is denoted by leading zero in java?</q>
+<a>A: Octal Numbers are denoted by leading zero in java, example: 06</a>
+</qa><qa>
+<q>Q: Which number is denoted by leading 0x or 0X in java?</q>
+<a>A: Hexadecimal Numbers are denoted by leading 0x or 0X in java, example: 0XF</a>
+</qa><qa>
+<q>Q: Break statement can be used as labels in Java?</q>
+<a>A: Yes, an example can be break one;</a>
+</qa><qa>
+<q>Q: Where import statement is used in a Java program?</q>
+<a>A: Import statement is allowed at the beginning of the program file after package statement.</a>
+</qa><qa>
+<q>Q: Explain suspend() method under Thread class></q>
+<a>A: It is used to pause or temporarily stop the execution of the thread.</a>
+</qa><qa>
+<q>Q: Explain isAlive() method under Thread class?</q>
+<a>A: It is used to find out whether a thread is still running or not.</a>
+</qa><qa>
+<q>Q: What is currentThread()?</q>
+<a>A: It is a public static method used to obtain a reference to the current thread.</a>
+</qa><qa>
+<q>Q: Explain main thread under Thread class execution?</q>
+<a>A: The main thread is created automatically and it begins to execute immediately when a program starts. It ia thread from which all other child threads originate.</a>
+</qa><qa>
+<q>Q: Life cycle of an applet includes which steps?</q>
+<a>A: Life cycle involves the following steps:</a>
+<a>Initialization</a>
+<a>Starting</a>
+<a>Stopping</a>
+<a>Destroying</a>
+<a>Painting</a>
+</qa><qa>
+<q>Q: Why is the role of init() method under applets?</q>
+<a>A: It initializes the applet and is the first method to be called.</a>
+</qa><qa>
+<q>Q: Which method is called by Applet class to load an image?</q>
+<a>A: getImage(URL object, filename) is used for this purpose.</a>
+</qa><qa>
+<q>Q: Define code as an attribute of Applet?</q>
+<a>A: It is used to specify the name of the applet class.</a>
+</qa><qa>
+<q>Q: Define canvas?</q>
+<a>A: It is a simple drawing surface which are used for painting images or to perform other graphical operations.</a>
+</qa><qa>
+<q>Q: Define Network Programming?</q>
+<a>A: It refers to writing programs that execute across multiple devices (computers), in which the devices are all connected to each other using a network.</a>
+</qa><qa>
+<q>Q: What is a Socket?</q>
+<a>A: Sockets provide the communication mechanism between two computers using TCP. A client program creates a socket on its end of the communication and attempts to connect that socket to a server.</a>
+</qa><qa>
+<q>Q: Advantages of Java Sockets?</q>
+<a>A: Sockets are flexible and sufficient. Efficient socket based programming can be easily implemented for general communications. It cause low network traffic.</a>
+</qa><qa>
+<q>Q: Disadvantages of Java Sockets?</q>
+<a>A: Socket based communications allows only to send packets of raw data between applications. Both the client-side and server-side have to provide mechanisms to make the data useful in any way.</a>
+</qa><qa>
+<q>Q: Which class is used by server applications to obtain a port and listen for client requests?</q>
+<a>A: java.net.ServerSocket class is used by server applications to obtain a port and listen for client requests</a>
+</qa><qa>
+<q>Q: Which class represents the socket that both the client and server use to communicate with each other?</q>
+<a>A: java.net.Socket class represents the socket that both the client and server use to communicate with each other.</a>
+</qa><qa>
+<q>Q: Why Generics are used in Java?</q>
+<a>A: Generics provide compile-time type safety that allows programmers to catch invalid types at compile time. Java Generic methods and generic classes enable programmers to specify, with a single method declaration, a set of related methods or, with a single class declaration, a set of related types.</a>
+</qa><qa>
+<q>Q: What environment variables do I need to set on my machine in order to be able to run Java programs?</q>
+<a>A: CLASSPATH and PATH are the two variables.</a>
+</qa><qa>
+<q>Q: Is there any need to import java.lang package?</q>
+<a>A: No, there is no need to import this package. It is by default loaded internally by the JVM.</a>
+</qa><qa>
+<q>Q: What is Nested top-level class?</q>
+<a>A: If a class is declared within a class and specify the static modifier, the compiler treats the class just like any other top-level class. Nested top-level class is an Inner class.</a>
+</qa><qa>
+<q>Q: What is Externalizable interface?</q>
+<a>A: Externalizable is an interface which contains two methods readExternal and writeExternal. These methods give you a control over the serialization mechanism.</a>
+</qa><qa>
+<q>Q: If System.exit (0); is written at the end of the try block, will the finally block still execute?</q>
+<a>A: No in this case the finally block will not execute because when you say System.exit (0); the control immediately goes out of the program, and thus finally never executes.</a>
+</qa><qa>
+<q>Q: What is daemon thread?</q>
+<a>A: Daemon thread is a low priority thread, which runs intermittently in the back ground doing the garbage collection operation for the java runtime system.</a>
+</qa><qa>
+<q>Q: Which method is used to create the daemon thread?</q>
+<a>A: setDaemon method is used to create a daemon thread.</a>
+</qa><qa>
+<q>Q: Which method must be implemented by all threads?</q>
+<a>A: All tasks must implement the run() method</a>
+</qa><qa>
+<q>Q: What is the GregorianCalendar class?</q>
+<a>A: The GregorianCalendar provides support for traditional Western calendars</a>
+</qa><qa>
+<q>Q: What is the SimpleTimeZone class?</q>
+<a>A: The SimpleTimeZone class provides support for a Gregorian calendar .</a>
+</qa><qa>
+<q>Q: What is the difference between the size and capacity of a Vector?</q>
+<a>A: The size is the number of elements actually stored in the vector, while capacity is the maximum number of elements it can store at a given instance of time.</a>
+</qa><qa>
+<q>Q: Can a vector contain heterogenous objects?</q>
+<a>A: Yes a Vector can contain heterogenous objects. Because a Vector stores everything in terms of Object.</a>
+</qa><qa>
+<q>Q: What is an enumeration?</q>
+<a>A: An enumeration is an interface containing methods for accessing the underlying data structure from which the enumeration is obtained. It allows sequential access to all the elements stored in the collection.</a>
+</qa><qa>
+<q>Q: What is difference between Path and Classpath?</q>
+<a>A: Path and Classpath are operating system level environment variales. Path is defines where the system can find the executables(.exe) files and classpath is used to specify the location of .class files.</a>
+</qa><qa>
+<q>Q: Can a class declared as private be accessed outside it's package?</q>
+<a>A: No, it's not possible to accessed outside it's package.</a>
+</qa><qa>
+<q>Q: What are the restriction imposed on a static method or a static block of code?</q>
+<a>A: A static method should not refer to instance variables without creating an instance and cannot use "this" operator to refer the instance.</a>
+</qa><qa>
+<q>Q: Can an Interface extend another Interface?</q>
+<a>A: Yes an Interface can inherit another Interface, for that matter an Interface can extend more than one Interface.</a>
+</qa><qa>
+<q>Q: Which object oriented Concept is achieved by using overloading and overriding?</q>
+<a>A: Polymorphism</a>
+</qa><qa>
+<q>Q: What is an object's lock and which object's have locks?</q>
+<a>A: An object's lock is a mechanism that is used by multiple threads to obtain synchronized access to the object. A thread may execute a synchronized method of an object only after it has acquired the object's lock.</a>
+</qa><qa>
+<q>Q: What is Downcasting?</q>
+<a>A: It is the casting from a general to a more specific type, i.e. casting down the hierarchy.</a>
+</qa><qa>
+<q>Q: What are order of precedence and associativity and how are they used?</q>
+<a>A: Order of precedence determines the order in which operators are evaluated in expressions. Associatity determines whether an expression is evaluated left-to-right or right-to-left.</a>
+</qa><qa>
+<q>Q: If a method is declared as protected, where may the method be accessed?</q>
+<a>A: A protected method may only be accessed by classes or interfaces of the same package or by subclasses of the class in which it is declared.</a>
+</qa><qa>
+<q>Q: What is the difference between inner class and nested class?</q>
+<a>A: When a class is defined within a scope of another class, then it becomes inner class. If the access modifier of the inner class is static, then it becomes nested class.</a>
+</qa><qa>
+<q>Q: What restrictions are placed on method overriding?</q>
+<a>A: Overridden methods must have the same name, argument list, and return type. The overriding method may not limit the access of the method it overrides.</a>
+</qa><qa>
+<q>Q: What is constructor chaining and how is it achieved in Java?</q>
+<a>A: A child object constructor always first needs to construct its parent. In Java it is done via an implicit call to the no-args constructor as the first statement.</a>
+</qa><qa>
+<q>Q: Can a double value be cast to a byte?</q>
+<a>A: Yes, a double value can be cast to a byte.</a>
+</qa><qa>
+<q>Q: How does a try statement determine which catch clause should be used to handle an exception?</q>
+<a>A: When an exception is thrown within the body of a try statement, the catch clauses of the try statement are examined in the order in which they appear. The first catch clause that is capable of handling the exception is executed. The remaining catch clauses are ignored.</a>
+</qa><qa>
+<q>Q: What will be the default values of all the elements of an array defined as an instance variable?</q>
+<a>A: If the array is an array of primitive types, then all the elements of the array will be initialized to the default value corresponding to that primitive type.</a>
+</qa><qa>
+</qa><qa>
+<q>Q. What is JVM? Why is Java called the ‘Platform Independent Programming Language’?</q>
+<a>A. htmlprojectsJVM, or the Java Virtual Machine, is an interpreter which accepts ‘Bytecode’ and executes it.</a>
+<a>Java has been termed as a ‘Platform Independent Language’ as it primarily works on the notion of ‘compile once, run everywhere’. Here’s a sequential step establishing the Platform independence feature in Java:</a>
+<a>The Java Compiler outputs Non-Executable Codes called ‘Bytecode’.</a>
+<a>Bytecode is a highly optimized set of computer instruction which could be executed by the Java Virtual Machine (JVM).</a>
+<a>The translation into Bytecode makes a program easier to be executed across a wide range of platforms, since all we need is a JVM designed for that particular platform.</a>
+<a>JVMs for various platforms might vary in configuration, those they would all understand the same set of Bytecode, thereby making the Java Program ‘Platform Independent’.</a>
+</qa><qa>
+<q>Q. What is the Difference between JDK and JRE?</q>
+<a>A.When asked typical Java Interview Questions most startup Java developers get confused with JDK and JRE. And eventually, they settle for ‘anything would do man, as long as my program runs!!’ Not quite right if you aspire to make a living and career out of Programming.</a>
+<a>The “JDK” is the Java Development Kit. I.e., the JDK is bundle of software that you can use to develop Java based software.</a>
+<a>The “JRE” is the Java Runtime Environment. I.e., the JRE is an implementation of the Java Virtual Machine which actually executes Java programs.</a>
+<a>Typically, each JDK contains one (or more) JRE’s along with the various development tools like the Java source compilers, bundling and deployment tools, debuggers, development libraries, etc.</a>
+</qa><qa>
+<q>Q. What does the ‘static’ keyword mean?</q>
+<a>A.We are sure you must be well-acquainted with the Java Basics. Now that we are settled with the initial concepts, let’s look into the Language specific offerings.</a>
+<a>Static variable is associated with a class and not objects of that class. For example:</a>
+<a>public class ExplainStatic {</a>
+<a>      public static String name = "Look I am a static variable";</a>
+<a>}</a>
+<a>We have another class where-in we intend to access this static variable just defined.</a>
+<a>public class Application {</a>
+<a>        public static void main(String[] args) {</a>
+<a>            System.out.println(ExplainStatic.name)</a>
+<a>        }</a>
+<a>}</a>
+<a>We don’t create object of the class ExplainStatic to access the static variable. We directly use the class name itself: ExplainStatic.name</a>
+</qa><qa>
+</qa><qa>
+<q>Q. What are the Data Types supported by Java? What is Autoboxing and Unboxing?</q>
+<a>A. This is one of the most common and fundamental Java interview questions. This is something you should have right at your finger-tips when asked. The eight Primitive Data types supported by Java are:</a>
+<a>Byte : 8-bit signed two’s complement integer. It has a minimum value of -128 and a maximum value of 127 (inclusive)</a>
+<a>Short : 16-bit signed two’s complement integer. It has a minimum value of -32,768 and a maximum value of 32,767 (inclusive).</a>
+<a>Int : 32-bit signed two’s complement integer. It has a minimum value of -2,147,483,648 and a maximum value of 2,147,483,647 (inclusive)</a>
+<a>Long : 64-bit signed two’s complement integer. It has a minimum value of -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807 (inclusive)</a>
+<a>Float</a>
+<a>Double</a>
+<a>Autoboxing: The Java compiler brings about an automatic transformation of primitive type (int, float, double etc.) into their object equivalents or wrapper type (Integer, Float, Double,etc) for the ease of compilation.</a>
+<a>Unboxing: The automatic transformation of wrapper types into their primitive equivalent is known as Unboxing.</a>
+</qa><qa>
+<q>Q. What is the difference between STRINGBUFFER and STRING?</q>
+<a>A.String object is immutable. i.e , the value stored in the String object cannot be changed. Consider the following code snippet:</a>
+<a>String myString = “Hello”;</a>
+<a>myString = myString + ” Guest”;</a>
+<a>When you print the contents of myString the output will be “Hello Guest”. Although we made use of the same object (myString), internally a new object was created in the process. That’s a performance issue.</a>
+<a>StringBuffer/StringBuilder objects are mutable: StringBuffer/StringBuilder objects are mutable; we can make changes to the value stored in the object. What this effectively means is that string operations such as append would be more efficient if performed using StringBuffer/StringBuilder objects than String objects.</a>
+<a>String str = “Be Happy With Your Salary.''</a>
+<a>str += “Because Increments are a myth";</a>
+<a>StringBuffer strbuf = new StringBuffer();</a>
+<a>strbuf.append(str);</a>
+<a>System.out.println(strbuf);</a>
+<a>The Output of the code snippet would be: Be Happy With Your Salary. Because Increments are a myth.</a>
+</qa><qa>
+<q>Q. What is Function Over-Riding and Over-Loading in Java?</q>
+<a>A.This is a very important concept in OOP (Object Oriented Programming) and is a must-know for every Java Programmer.</a>
+<a>Over-Riding: An override is a type of function which occurs in a class which inherits from another class. An override function “replaces” a function inherited from the base class, but does so in such a way that it is called even when an instance of its class is pretending to be a different type through polymorphism. That probably was a little over the top. The code snippet below should explain things better.</a>
+<a>public class Car {</a>
+<a>public static void main (String [] args) {</a>
+<a>Car a = new Car();</a>
+<a>Car b = new Ferrari(); //Car ref, but a Ferrari object</a>
+<a>a.start(); // Runs the Car version of start()</a>
+<a>b.start(); // Runs the Ferrari version of start()</a>
+<a>}</a>
+<a>}</a>
+<a>class Car {</a>
+<a>public void start() {</a>
+<a>System.out.println("This is a Generic start to any Car");</a>
+<a>}</a>
+<a>}</a>
+<a>class Ferrari extends Car {</a>
+<a>public void start() {</a>
+<a>System.out.println("Lets start the Ferrari and go out for a cool Party.");</a>
+<a>}</a>
+<a>}</a>
+<a>Over-Loading: Overloading is the action of defining multiple methods with the same name, but with different parameters. It is unrelated to either overriding or polymorphism. Functions in Java could be overloaded by two mechanisms ideally:</a>
+<a>Varying the number of arguments.</a>
+<a>Varying the Data Type.</a>
+<a>class CalculateArea{</a>
+<a>      void Area(int length){System.out.println(length*2);}</a>
+<a>      void Area(int length , int width){System.out.println(length*width);}</a>
+<a>      public static void main(String args[]){</a>
+<a>      CalculateArea obj=new CalculateArea();</a>
+<a>      obj.Area(10);   // Area of a Square</a>
+<a>      obj.Area(20,20);  // Area of a Rectangle</a>
+<a>      }</a>
+<a>}</a>
+</qa><qa>
+<q>Q. What is Constructors, Constructor Overloading in Java and Copy-Constructor?</q>
+<a>A.Constructors form the basics of OOPs, for starters.</a>
+<a>Constructor: The sole purpose of having Constructors is to create an instance of a class. They are invoked while creating an object of a class. Here are a few salient features of Java Constructors:</a>
+<a>Constructors can be public, private, or protected.</a>
+<a>If a constructor with arguments has been defined in a class, you can no longer use a default no-argument constructor – you have to write one.</a>
+<a>They are called only once when the class is being instantiated.</a>
+<a>They must have the same name as the class itself.</a>
+<a>They do not return a value and you do not have to specify the keyword void.</a>
+<a>If you do not create a constructor for the class, Java helps you by using a so called default no-argument constructor.</a>
+<a>public class Boss{</a>
+<a>     String name; </a>
+<a>     Boss(String input) { //This is the constructor</a>
+<a>        name = "Our Boss is also known as : " + input;</a>
+<a>    }</a>
+<a>public static void main(String args[]) {</a>
+<a>     Boss p1 = new Boss("Super-Man");</a>
+<a>    }</a>
+<a>}</a>
+<a>Constructor overloading: passing different number and type of variables as arguments all of which are private variables of the class. Example snippet could be as follows:</a>
+<a>public class Boss{</a>
+<a>   String name; </a>
+<a>   Boss(String input) { //This is the constructor</a>
+<a>        name = "Our Boss is also known as : " + input;</a>
+<a>   }</a>
+<a>   Boss() {</a>
+<a>        name = "Our Boss is a nice man. We don’t call him names.”;</a>
+<a>   }</a>
+<a>public static void main(String args[]) {</a>
+<a>      Boss p1 = new Boss("Super-Man");</a>
+<a>      Boss p2 = new Boss();</a>
+<a>   }</a>
+<a>}</a>
+<a>Copy Constructor: A copy constructor is a type of constructor which constructs the object of the class from another object of the same class. The copy constructor accepts a reference to its own class as a parameter.</a>
+<a>Note: Java Doesn’t support Copy Constructor. Nevertheless folks from C/C++ background often get confused when asked about Java Copy Constructors.</a>
+</qa><qa>
+</qa><qa>
+<q>Q. What is Java Exception Handling? What is the difference between Errors, Unchecked Exception and Checked Exception?</q>
+<a>A.Anything that’s not Normal is an exception. Exceptions are the customary way in Java to indicate to a calling method that an abnormal condition has occurred.</a>
+<a>In Java, exceptions are objects. When you throw an exception, you throw an object. You can’t throw just any object as an exception, however — only those objects whose classes descend from Throwable. Throwable serves as the base class for an entire family of classes, declared in java.lang, that your program can instantiate and throw. Here’s a hierarchical Exception class structure:</a>
+<a>java 8</a>
+<a>An Unchecked Exception inherits from RuntimeException (which extends from Exception). The JVM treats RuntimeException differently as there is no requirement for the application-code to deal with them explicitly.</a>
+<a>A Checked Exception inherits from the Exception-class. The client code has to handle the checked exceptions either in a try-catch clause or has to be thrown for the Super class to catch the same. A Checked Exception thrown by a lower class (sub-class) enforces a contract on the invoking class (super-class) to catch or throw it.</a>
+<a>Errors (members of the Error family) are usually thrown for more serious problems, such as OutOfMemoryError (OOM), that may not be so easy to handle.</a>
+<a> Exception handling needs special attention while designing large applications. So we would suggest you to spend some time brushing up your Java skills.</a>
+</qa><qa>
+<q>Q. What is the difference between Throw and Throws in Java Exception Handling (remember this queston?)</q>
+<a>A.Throws: A throws clause lists the types of exceptions that a method might throw, thereby warning the invoking method – ‘Dude. You need to handle this list of exceptions I might throw.’ Except those of type Error or RuntimeException, all other Exceptions or any of their subclasses, must be declared in the throws clause, if the method in question doesn’t implement a try…catch block. It is therefore the onus of the next-on-top method to take care of the mess.</a>
+<a>public void myMethod() throws PRException</a>
+<a>{..} </a>
+<a>This means the super function calling the function should be equipped to handle this exception.</a>
+<a>public void Callee()</a>
+<a>{</a>
+<a>try{</a>
+<a>   myMethod();</a>
+<a>}catch(PRException ex)</a>
+<a>{</a>
+<a>...handle Exception....</a>
+<a>}</a>
+<a>}</a>
+<a>Using the Throw: If the user wants to throw an explicit Exception, often customized, we use the Throw. The Throw clause can be used in any part of code where you feel a specific exception needs to be thrown to the calling method.</a>
+<a>try{</a>
+<a>if(age>100){throw new AgeBarException(); //Customized ExceptioN</a>
+<a>}else{</a>
+<a>....}</a>
+<a>}</a>
+<a>}catch(AgeBarException ex){</a>
+<a>...handle Exception.....</a>
+<a>}</a>
+</qa><qa>
+<q>Q. What is the Difference between byte stream and Character streams?</q>
+<a>A.Every Java Programmer deals with File Operations. To generate User reports, send attachments through mails and spill out data files from Java programs. And a sound knowledge on File Operation becomes even more important while dealing with Java questions.</a>
+<a>byte stream : For reading and writing binary data, byte stream is incorporated. Programs use byte streams to perform byte input and output.</a>
+<a>Performing InputStream operations or OutputStream operations means generally having a loop that reads the input stream and writes the output stream one byte at a time.</a>
+<a>You can use buffered I/O streams for an overhead reduction (overhead generated by each such request often triggers disk access, network activity, or some other operation that is relatively expensive).</a>
+<a>Character streams: Character streams work with the characters rather than the byte. In Java, characters are stored by following the Unicode (allows a unique number for every character) conventions. In such kind of storage, characters become the platform independent, program independent, language independent.</a>
+</qa><qa>
+<q>Q. What are FileInputStream and FileOutputStream ? Explain with an example to read and write into files.</q>
+<a>A.mysql vs mysqliFileInputStream : It contains the input byte from a file and implements an input stream.</a>
+<a>FileOutputStream : It uses for writing data to a file and also implements an output stream.</a>
+<a>public class FileHandling {</a>
+<a>public static void main(String [ ] args) throws IOException</a>
+<a>{</a>
+<a>FileInputStream inputStream = new FileInputStream ("Input.txt") ;</a>
+<a>FileOutputStream outputStream = new FileOutputStream("Output.txt",true) ;</a>
+<a>byte[] buffer = new byte[1024];</a>
+<a>//For larger files we specify a buffer size which defines the chunks size for data</a>
+<a>int bytesRead;</a>
+<a>while ((bytesRead = inputStream.read(buffer)) != -1)</a>
+<a>        outputStream.write(buffer, 0, bytesRead);</a>
+<a>inputStream.close() ;</a>
+<a>outputStream.close() ;</a>
+<a>}</a>
+<a>}</a>
+</qa><qa>
+<q>Q. What are FileReader and FileWriter ? Explain with an example to read and write into files.</q>
+<a>A.FileReader : The FileReader class makes it possible to read the contents of a file as a stream of characters. It works much like the FileInputStream, except the FileInputStream reads bytes, whereas the FileReader reads characters. The FileReader is intended to read text, in other words. One character may correspond to one or more bytes depending on the character encoding scheme.The FileReader object also lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user’s computer, using File or Blob objects to specify the file or data to read.</a>
+<a>how to write betterFileWriter : This class is used to write to character files. Creation of a FileWriter is not dependent on the file already existing. FileWriter will create the file before opening it for output when you create the object. Its write() methods allow you to write character(s) or Strings to a file. FileWriters are usually wrapped by higher-level Writer objects such as BufferedWriters or PrintWriters, which provide better performance and higher-level, more flexible methods to write data.</a>
+<a>Usage of FileWriter can be explained as follows :</a>
+<a>File file = new File("fileWrite2.txt");</a>
+<a>FileWriter fw = new FileWriter(file);</a>
+<a>for(int i=0;i<10;i++){</a>
+<a>fw.write("Soham is Just Awesome : "+i);</a>
+<a>fw.flush();</a>
+<a>}</a>
+<a>fw.close();</a>
+<a>Usage of FileWriter and FileReader used in conjunction is as follows:</a>
+<a>int c;</a>
+<a>FileReader fread = new FileReader("xanadu.txt");</a>
+<a>FileWriter fwrite = new FileWriter("characteroutput.txt");</a>
+<a>while ((c = fread.read()) != -1)</a>
+<a>       fwrite.write(c);</a>
+</qa><qa>
+<q>Q. What is the difference between ArrayList and LinkedList ?</q>
+<a>A.Please pay special attention as this is probably one of the most widely asked interview questions.</a>
+<a>We aren’t going to state the properties of each in this question. What we are looking for are the differences. The prime areas where the two stand apart are as follows :</a>
+<a>Arraylist</a>
+<a>Random access.</a>
+<a>Only objects can be added.</a>
+</qa><qa>
+<q>Q. Explain the difference between ITERATOR AND ENUMERATION INTERFACE with example.</q>
+<a>A.Iterators allow the caller to remove elements from the underlying collection during the iteration with well-defined semantics.</a>
+<a>Iterator actually adds one method that Enumeration doesn’t have: remove ().</a>
+<a>Whereas in case of Enumeration:</a>
+</qa><qa>
+<q>Q. What is the use of the ‘SimpleDateFormat’ and how can you use it to display the current system date in ‘yyyy/MM/DD HH:mm:ss’ format?</q>
+<a>A.SimpleDateFormat is one such concrete class which is widely used by Java developers for parsing and formatting of dates. This is also used to convert Dates to String and vice-versa.</a>
+<a>Literally every Enterprise level Java Application invariably uses the SimpleDateFormat for handling user dates. We ofcourse aren’t expecting Java interviewees to be absolutely spectacular with the syntaxes. But a basic know-how of this class is mandatory.</a>
+<a>public class CurrentSystemDate {</a>
+<a>public static void main(String[] args) {</a>
+<a>        SimpleDateFormat sysForm = new SimpleDateFormat("yyyy/MM/DD HH:mm:ss");</a>
+<a>        Date curdate= new Date();</a>
+<a>        System.out.println(sysForm.format(curdate));</a>
+<a>}</a>
+<a>}</a>
+</qa> -->
+</interview>

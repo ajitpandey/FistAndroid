@@ -50,7 +50,7 @@ public class SAXXMLHandler extends DefaultHandler {
         } else if (qName.equalsIgnoreCase("q")) {
         	interviewQuestAnsVo.setQuestion(tempVal);
         } else if (qName.equalsIgnoreCase("a")) {
-        	interviewQuestAnsVo.setAnswer(tempVal);
+        	interviewQuestAnsVo.addAnswer(tempVal);
         } else if (qName.equalsIgnoreCase("topic")) {
         	interviewQuestAnsVoList.setTopic(tempVal);
         }

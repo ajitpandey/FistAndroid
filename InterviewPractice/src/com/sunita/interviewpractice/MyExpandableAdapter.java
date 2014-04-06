@@ -42,8 +42,8 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-
-		//child = (ArrayList<String>) childtems.get(groupPosition);
+		InterviewQuestAnsVo interviewQuestAnsVo = interviewQuestAnsVoList.getInterviewQuestAnsVoList().get(groupPosition);
+		child = (ArrayList<String>) interviewQuestAnsVo.getAnswers();
 		
 
 		TextView textView = null;
@@ -53,9 +53,10 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
 		}
 
 		textView = (TextView) convertView.findViewById(R.id.textView1);
-		//textView.setText(child.get(childPosition));
-		InterviewQuestAnsVo interviewQuestAnsVo = interviewQuestAnsVoList.getInterviewQuestAnsVoList().get(childPosition); 
-		textView.setText(interviewQuestAnsVo.getAnswer());
+		textView.setText(child.get(childPosition));
+		textView.setSingleLine(false);
+		
+		//textView.setText(interviewQuestAnsVo.getAnswers().get(childPosition));
 
 		convertView.setOnClickListener(new OnClickListener() {
 
@@ -97,7 +98,9 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public int getChildrenCount(int groupPosition) {
-		return 1; //There will be only one answer for each question
+		//return 1; //There will be only one answer for each question
+		//return ((ArrayList<String>) childtems.get(groupPosition)).size();
+		return ((InterviewQuestAnsVo)interviewQuestAnsVoList.getInterviewQuestAnsVoList().get(groupPosition)).getAnswers().size();
 	}
 
 	@Override
