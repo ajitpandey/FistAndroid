@@ -1,3 +1,5 @@
+<interview>
+<topic>dbms</topic>
 <qa>
 <q>1. What are data and information, and how are they related in a database?</q>
 <a>Data is recorded facts and figures, and information is knowledge derived from data. A database stores data in such a way that information can be created.</a>
@@ -428,3 +430,4 @@
 <q>140. Explain snapshot replication.</q>
 <a>Snapshot replication can be used when an application does not require that the data always be current. These applications can be updated by periodic table copying or snapshots. As part of the snapshot effort, all of the data to be included in the snapshot is collected at a primary point. Then a read-only snapshot is taken and the snapshot is sent to each site so that the update can be made.</a>
 </qa>
+</interview>

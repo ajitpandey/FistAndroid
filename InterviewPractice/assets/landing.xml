@@ -1,19 +1,26 @@
 <landing>
     <link>
-    <text>Core Java</text>
-    <value>java_interview.xml</value>
-    </link>
-    <link>
-    <text>Advance Java</text>
-    <value>java_interview1.xml</value>
-    </link>
-    <link>
     <text>Interview Etiquette</text>
     <value>interviewetiquette.xml</value>
+    </link>
+    <link>
+    <text>Basic Java</text>
+    <value>basic_java_interview.xml</value>
     </link>
     <link>
     <text>Java</text>
     <value>java_interview_question.xml</value>
     </link>
+    <link>
+    <text>Basic DBMS</text>
+    <value>dbms_basic.xml</value>
+    </link>
+    <link>
+    <text>DBMS</text>
+    <value>dbms.xml</value>
+    </link>
+    
+    
+    
     
 </landing>

@@ -1,11 +1,12 @@
-
+<interview>
+<topic>basic java</topic>
+<qa>
 <q>1. What is the difference between a constructor and a method?</q>
 <a>A constructor is a member function of a class that is used to create objects of that class. It has the same name as the class itself, has no return type, and is invoked using the new operator.</a>
+<a>A method is an ordinary member function of a class. It has it own name, a return type (which may be void), and is invoked using the dot operator.</a>
 </qa><qa>
-<q>A method is an ordinary member function of a class. It has it own name, a return type (which may be void), and is invoked using the dot operator.</q>
-<a>2. What is the purpose of garbage collection in Java, and when is it used?</a>
-</qa><qa>
-<q>The purpose of garbage collection is to identify and discard objects that are no longer needed by a program so that their resources can be reclaimed and reused.</q>
+<q>2. What is the purpose of garbage collection in Java, and when is it used?</q>
+<a>The purpose of garbage collection is to identify and discard objects that are no longer needed by a program so that their resources can be reclaimed and reused.</a>
 <a>A Java object is subject to garbage collection when it becomes unreachable to the program in which it is used.</a>
 </qa><qa>
 <q>3. Describe synchronization in respect to multithreading.</q>
@@ -353,4 +354,5 @@
 <a>If the array is an array of primitive types, then all the elements of the array will be initialized to the default value corresponding to that primitive type.</a>
 <a>Example: All the elements of an array of int will be initialized to 0(zero), while that of boolean type will be initialized to false. Whereas if the array is an array of references (of any type), all the elements will be initialized to null.</a>
 </qa><qa>
-</qa><qa>
+</qa>
+</interview>

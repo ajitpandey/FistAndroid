@@ -82,6 +82,7 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
 		//((CheckedTextView) convertView).setText(parentItems.get(groupPosition));
 		((CheckedTextView) convertView).setText(interviewQuestAnsVo.getQuestion());
 		((CheckedTextView) convertView).setChecked(isExpanded);
+		((CheckedTextView) convertView).setBackgroundResource(R.drawable.buttonbg);
 
 		return convertView;
 	}

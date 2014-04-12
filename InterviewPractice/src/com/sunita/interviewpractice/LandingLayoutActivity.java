@@ -23,6 +23,7 @@ public class LandingLayoutActivity extends Activity {
 
 	
 	private AdView adView;
+	private AdView adView2;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -40,7 +41,9 @@ public class LandingLayoutActivity extends Activity {
 			e.printStackTrace();
 		}
 		
-		
+		if(StaticConstants.DISPLAY_ADD){
+        	addAd2();	
+        }
 		
 		//findViewById(R.id.btnLevel1).setOnClickListener(btnLevel1_OnClickListener);
 	}
@@ -88,5 +91,26 @@ public class LandingLayoutActivity extends Activity {
 
         // Load the adView with the ad request.
         adView.loadAd(adRequest);
+	}
+	
+	private void addAd2() {
+    	// Create the adView.
+        adView2 = new AdView(this);
+        adView2.setAdUnitId(StaticConstants.ADD_2);
+        adView2.setAdSize(AdSize.BANNER);
+        
+        
+     // Lookup your LinearLayout assuming it's been given
+        // the attribute android:id="@+id/mainLayout".
+        LinearLayout layout = (LinearLayout)findViewById(R.id.infoLinearLayout);
+
+        // Add the adView to it.
+        layout.addView(adView2);
+
+        // Initiate a generic request.
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Load the adView with the ad request.
+        adView2.loadAd(adRequest);
 	}
 }
