@@ -1,0 +1,356 @@
+
+<q>1. What is the difference between a constructor and a method?</q>
+<a>A constructor is a member function of a class that is used to create objects of that class. It has the same name as the class itself, has no return type, and is invoked using the new operator.</a>
+</qa><qa>
+<q>A method is an ordinary member function of a class. It has it own name, a return type (which may be void), and is invoked using the dot operator.</q>
+<a>2. What is the purpose of garbage collection in Java, and when is it used?</a>
+</qa><qa>
+<q>The purpose of garbage collection is to identify and discard objects that are no longer needed by a program so that their resources can be reclaimed and reused.</q>
+<a>A Java object is subject to garbage collection when it becomes unreachable to the program in which it is used.</a>
+</qa><qa>
+<q>3. Describe synchronization in respect to multithreading.</q>
+<a>With respect to multithreading, synchronization is the capability to control the access of multiple threads to shared resources.</a>
+<a>Without synchonization, it is possible for one thread to modify a shared variable while another thread is in the process of using or updating same shared variable. This usually leads to significant errors.</a>
+</qa><qa>
+<q>4. What is an abstract class?</q>
+<a>Abstract class must be extended/subclassed (to be useful). It serves as a template. A class that is abstract may not be instantiated (ie. you may not call its constructor), abstract class may contain static data.</a>
+<a>Any class with an abstract method is automatically abstract itself, and must be declared as such. A class may be declared abstract even if it has no abstract methods. This prevents it from being instantiated.</a>
+</qa><qa>
+<q>5. What is the difference between an Interface and an Abstract class?</q>
+<a>An abstract class can have instance methods that implement a default behavior. An Interface can only declare constants and instance methods, but cannot implement default behavior and all methods are implicitly abstract.</a>
+<a>An interface has all public members and no implementation. An abstract class is a class which may have the usual flavors of class members (private, protected, etc.), but has some abstract methods.</a>
+</qa><qa>
+<q>6. Explain different way of using thread?</q>
+<a>The thread could be implemented by using runnable interface or by inheriting from the Thread class. The former is more advantageous, 'cause when you are going for multiple inheritance, the only interface can help.</a>
+</qa><qa>
+<q>7. What is an Iterator?</q>
+<a>Some of the collection classes provide traversal of their contents via a java.util.Iterator interface. This interface allows you to walk through a collection of objects, operating on each object in turn.</a>
+<a>Remember when using Iterators that they contain a snapshot of the collection at the time the Iterator was obtained; generally it is not advisable to modify the collection itself while traversing an Iterator.</a>
+</qa><qa>
+<q>8. State the significance of public, private, protected, default modifiers both singly and in combination and state the effect of package relationships on declared items qualified by these modifiers.</q>
+<a>public: Public class is visible in other packages, field is visible everywhere (class must be public too)</a>
+<a>private : Private variables or methods may be used only by an instance of the same class that declares the variable or method, A private feature may only be accessed by the class that owns the feature.</a>
+<a>protected : Is available to all classes in the same package and also available to all subclasses of the class that owns the protected feature. This access is provided even to subclasses that reside in a different package from the class that owns the protected feature.</a>
+<a>What you get by default ie, without any access modifier (ie, public private or protected). It means that it is visible to all within a particular package.</a>
+</qa><qa>
+<q>9. What is static in java?</q>
+<a>Static means one per class, not one for each object no matter how many instance of a class might exist. This means that you can use them without creating an instance of a class.Static methods are implicitly final, because overriding is done based on the type of the object, and static methods are attached to a class, not an object.</a>
+<a>A static method in a superclass can be shadowed by another static method in a subclass, as long as the original method was not declared final. However, you can't override a static method with a nonstatic method. In other words, you can't change a static method into an instance method in a subclass.</a>
+</qa><qa>
+<q>10. What is final class?</q>
+<a>A final class can't be extended ie., final class may not be subclassed. A final method can't be overridden when its class is inherited. You can't change value of a final variable (is a constant).</a>
+</qa><qa>
+<q>11. What if the main() method is declared as private?</q>
+<a>The program compiles properly but at runtime it will give "main() method not public." message.</a>
+</qa><qa>
+<q>12. What if the static modifier is removed from the signature of the main() method?</q>
+<a>Program compiles. But at runtime throws an error "NoSuchMethodError".</a>
+</qa><qa>
+<q>13. What if I write static public void instead of public static void?</q>
+<a>Program compiles and runs properly.</a>
+</qa><qa>
+<q>14. What if I do not provide the String array as the argument to the method?</q>
+<a>Program compiles but throws a runtime error "NoSuchMethodError".</a>
+</qa><qa>
+<q>15. What is the first argument of the String array in main() method?</q>
+<a>The String array is empty. It does not have any element. This is unlike C/C++ where the first element by default is the program name.</a>
+</qa><qa>
+<q>16. If I do not provide any arguments on the command line, then the String array of main() method will be empty or null?</q>
+<a>It is empty. But not null.</a>
+</qa><qa>
+<q>17. How can one prove that the array is not null but empty using one line of code?</q>
+<a>Print args.length. It will print 0. That means it is empty. But if it would have been null then it would have thrown a NullPointerException on attempting to print args.length.</a>
+</qa><qa>
+<q>18. What environment variables do I need to set on my machine in order to be able to run Java programs?</q>
+<a>CLASSPATH and PATH are the two variables.</a>
+</qa><qa>
+<q>19. Can an application have multiple classes having main() method?</q>
+<a>Yes it is possible. While starting the application we mention the class name to be run. The JVM will look for the Main method only in the class whose name you have mentioned.</a>
+<a>Hence there is not conflict amongst the multiple classes having main() method.</a>
+</qa><qa>
+<q>20. Can I have multiple main() methods in the same class?</q>
+<a>No the program fails to compile. The compiler says that the main() method is already defined in the class.</a>
+</qa><qa>
+<q>21. Do I need to import java.lang package any time? Why ?</q>
+<a>No. It is by default loaded internally by the JVM.</a>
+</qa><qa>
+<q>22. Can I import same package/class twice? Will the JVM load the package twice at runtime?</q>
+<a>One can import the same package or same class multiple times. Neither compiler nor JVM complains about it. And the JVM will internally load the class only once no matter how many times you import the same class.</a>
+</qa><qa>
+<q>23. What are Checked and UnChecked Exception?</q>
+<a>A checked exception is some subclass of Exception (or Exception itself), excluding class RuntimeException and its subclasses. Making an exception checked forces client programmers to deal with the possibility that the exception will be thrown.</a>
+<a>Example: IOException thrown by java.io.FileInputStream's read() method·</a>
+<a>Unchecked exceptions are RuntimeException and any of its subclasses. Class Error and its subclasses also are unchecked. With an unchecked exception, however, the compiler doesn't force client programmers either to catch the exception or declare it in a throws clause. In fact, client programmers may not even know that the exception could be thrown.</a>
+<a>Example: StringIndexOutOfBoundsException thrown by String's charAt() method· Checked exceptions must be caught at compile time. Runtime exceptions do not need to be. Errors often cannot be.</a>
+</qa><qa>
+<q>24. What is Overriding?</q>
+<a>When a class defines a method using the same name, return type, and arguments as a method in its superclass, the method in the class overrides the method in the superclass.</a>
+<a>When the method is invoked for an object of the class, it is the new definition of the method that is called, and not the method definition from superclass. Methods may be overridden to be more public, not more private.</a>
+</qa><qa>
+<q>25. Are the imports checked for validity at compile time? Example: will the code containing an import such as java.lang.ABCD compile?</q>
+<a>Yes the imports are checked for the semantic validity at compile time. The code containing above line of import will not compile. It will throw an error saying, can not resolve symbol</a>
+<a>symbol : class ABCD</a>
+<a>location: package io</a>
+<a>import java.io.ABCD;</a>
+</qa><qa>
+<q>26. Does importing a package imports the subpackages as well? Example: Does importing com.MyTest.* also import com.MyTest.UnitTests.*?</q>
+<a>No you will have to import the subpackages explicitly. Importing com.MyTest.* will import classes in the package MyTest only. It will not import any class in any of it's subpackage.</a>
+</qa><qa>
+<q>27. What is the difference between declaring a variable and defining a variable?</q>
+<a>In declaration we just mention the type of the variable and it's name. We do not initialize it. But defining means declaration + initialization.</a>
+<a>Example: String s; is just a declaration while String s = new String ("abcd"); Or String s = "abcd"; are both definitions.</a>
+</qa><qa>
+<q>28. What is the default value of an object reference declared as an instance variable?</q>
+<a>The default value will be null unless we define it explicitly.</a>
+</qa><qa>
+<q>29. Can a top level class be private or protected?</q>
+<a>No. A top level class cannot be private or protected. It can have either "public" or no modifier. If it does not have a modifier it is supposed to have a default access.</a>
+<a>If a top level class is declared as private the compiler will complain that the "modifier private is not allowed here". This means that a top level class can not be private. Same is the case with protected.</a>
+</qa><qa>
+<q>30. What type of parameter passing does Java support?</q>
+<a>In Java the arguments are always passed by value.</a>
+</qa><qa>
+<q>31. Primitive data types are passed by reference or pass by value?</q>
+<a>Primitive data types are passed by value.</a>
+</qa><qa>
+<q>32. Objects are passed by value or by reference?</q>
+<a>Java only supports pass by value. With objects, the object reference itself is passed by value and so both the original reference and parameter copy both refer to the same object.</a>
+</qa><qa>
+<q>33. What is serialization?</q>
+<a>Serialization is a mechanism by which you can save the state of an object by converting it to a byte stream.</a>
+</qa><qa>
+<q>34. How do I serialize an object to a file?</q>
+<a>The class whose instances are to be serialized should implement an interface Serializable. Then you pass the instance to the ObjectOutputStream which is connected to a fileoutputstream. This will save the object to a file.</a>
+</qa><qa>
+<q>35. Which methods of Serializable interface should I implement?</q>
+<a>The serializable interface is an empty interface, it does not contain any methods. So we do not implement any methods.</a>
+</qa><qa>
+<q>36. How can I customize the seralization process? i.e. how can one have a control over the serialization process?</q>
+<a>Yes it is possible to have control over serialization process. The class should implement Externalizable interface. This interface contains two methods namely readExternal and writeExternal.</a>
+<a>You should implement these methods and write the logic for customizing the serialization process.</a>
+</qa><qa>
+<q>37. What is the common usage of serialization?</q>
+<a>Whenever an object is to be sent over the network, objects need to be serialized. Moreover if the state of an object is to be saved, objects need to be serilazed.</a>
+</qa><qa>
+<q>38. What is Externalizable interface?</q>
+<a>Externalizable is an interface which contains two methods readExternal and writeExternal. These methods give you a control over the serialization mechanism.</a>
+<a>Thus if your class implements this interface, you can customize the serialization process by implementing these methods.</a>
+</qa><qa>
+<q>39. When you serialize an object, what happens to the object references included in the object?</q>
+<a>The serialization mechanism generates an object graph for serialization. Thus it determines whether the included object references are serializable or not. This is a recursive process.</a>
+<a>Thus when an object is serialized, all the included objects are also serialized alongwith the original obect.</a>
+</qa><qa>
+<q>40. What one should take care of while serializing the object?</q>
+<a>One should make sure that all the included objects are also serializable. If any of the objects is not serializable then it throws a NotSerializableException.</a>
+</qa><qa>
+<q>41. What happens to the static fields of a class during serialization?</q>
+<a>There are three exceptions in which serialization doesnot necessarily read and write to the stream. These are</a>
+<a>1. Serialization ignores static fields, because they are not part of ay particular state state.</a>
+<a>2. Base class fields are only hendled if the base class itself is serializable.</a>
+<a>3. Transient fields.</a>
+</qa><qa>
+<q>42. Does Java provide any construct to find out the size of an object?</q>
+<a>No, there is not sizeof operator in Java. So there is not direct way to determine the size of an object directly in Java.</a>
+</qa><qa>
+<q>43. What are wrapper classes?</q>
+<a>Java provides specialized classes corresponding to each of the primitive data types. These are called wrapper classes.</a>
+<a>They are example: Integer, Character, Double etc.</a>
+</qa><qa>
+<q>44. Why do we need wrapper classes?</q>
+<a>It is sometimes easier to deal with primitives as objects. Moreover most of the collection classes store objects and not primitive data types. And also the wrapper classes provide many utility methods also.</a>
+<a>Because of these resons we need wrapper classes. And since we create instances of these classes we can store them in any of the collection classes and pass them around as a collection. Also we can pass them around as method parameters where a method expects an object.</a>
+</qa><qa>
+<q>45. What are checked exceptions?</q>
+<a>Checked exception are those which the Java compiler forces you to catch.</a>
+<a>Example: IOException are checked exceptions.</a>
+</qa><qa>
+<q>46. What are runtime exceptions?</q>
+<a>Runtime exceptions are those exceptions that are thrown at runtime because of either wrong input data or because of wrong business logic etc. These are not checked by the compiler at compile time.</a>
+</qa><qa>
+<q>47. What is the difference between error and an exception?</q>
+<a>An error is an irrecoverable condition occurring at runtime. Such as OutOfMemory error.</a>
+<a>These JVM errors and you can not repair them at runtime. While exceptions are conditions that occur because of bad input etc. Example: FileNotFoundException will be thrown if the specified file does not exist. Or a NullPointerException will take place if you try using a null reference.</a>
+<a>In most of the cases it is possible to recover from an exception (probably by giving user a feedback for entering proper values etc.).</a>
+</qa><qa>
+<q>48. How to create custom exceptions?</q>
+<a>Your class should extend class Exception, or some more specific type thereof.</a>
+</qa><qa>
+<q>49. If I want an object of my class to be thrown as an exception object, what should I do?</q>
+<a>The class should extend from Exception class. Or you can extend your class from some more precise exception type also.</a>
+</qa><qa>
+<q>50. If my class already extends from some other class what should I do if I want an instance of my class to be thrown as an exception object?</q>
+<a>One can not do anytihng in this scenarion. Because Java does not allow multiple inheritance and does not provide any exception interface as well.</a>
+</qa><qa>
+<q>51. How does an exception permeate through the code?</q>
+<a>An unhandled exception moves up the method stack in search of a matching When an exception is thrown from a code which is wrapped in a try block followed by one or more catch blocks, a search is made for matching catch block. If a matching type is found then that block will be invoked. If a matching type is not found then the exception moves up the method stack and reaches the caller method.</a>
+<a>Same procedure is repeated if the caller method is included in a try catch block. This process continues until a catch block handling the appropriate type of exception is found. If it does not find such a block then finally the program terminates.</a>
+</qa><qa>
+<q>52. What are the different ways to handle exceptions?</q>
+<a>There are two ways to handle exceptions,</a>
+<a>1. By wrapping the desired code in a try block followed by a catch block to catch the exceptions. and</a>
+<a>2. List the desired exceptions in the throws clause of the method and let the caller of the method hadle those exceptions.</a>
+</qa><qa>
+<q>53. Is it necessary that each try block must be followed by a catch block?</q>
+<a>It is not necessary that each try block must be followed by a catch block. It should be followed by either a catch block or a finally block. And whatever exceptions are likely to be thrown should be declared in the throws clause of the method.</a>
+</qa><qa>
+<q>54. If I write return at the end of the try block, will the finally block still execute?</q>
+<a>Yes even if you write return as the last statement in the try block and no exception occurs, the finally block will execute. The finally block will execute and then the control return.</a>
+</qa><qa>
+<q>55. If I write System.exit(0); at the end of the try block, will the finally block still execute?</q>
+<a>No. In this case the finally block will not execute because when you say System.exit(0); the control immediately goes out of the program, and thus finally never executes.</a>
+</qa><qa>
+<q>56. How are Observer and Observable used?</q>
+<a>Objects that subclass the Observable class maintain a list of observers. When an Observable object is updated it invokes the update() method of each of its observers to notify the observers that it has changed state. The Observer interface is implemented by objects that observe Observable objects.</a>
+</qa><qa>
+<q>57. What is synchronization and why is it important?</q>
+<a>With respect to multithreading, synchronization is the capability to control the access of multiple threads to shared resources.</a>
+<a>Without synchronization, it is possible for one thread to modify a shared object while another thread is in the process of using or updating that object's value. This often leads to significant errors.</a>
+</qa><qa>
+<q>58. How does Java handle integer overflows and underflows?</q>
+<a>It uses those low order bytes of the result that can fit into the size of the type allowed by the operation.</a>
+</qa><qa>
+<q>59. Does garbage collection guarantee that a program will not run out of memory?</q>
+<a>Garbage collection does not guarantee that a program will not run out of memory. It is possible for programs to use up memory resources faster than they are garbage collected. It is also possible for programs to create objects that are not subject to garbage collection.</a>
+</qa><qa>
+<q>60. What is the difference between preemptive scheduling and time slicing?</q>
+<a>Under preemptive scheduling, the highest priority task executes until it enters the waiting or dead states or a higher priority task comes into existence.</a>
+<a>Under time slicing, a task executes for a predefined slice of time and then reenters the pool of ready tasks. The scheduler then determines which task should execute next, based on priority and other factors.</a>
+</qa><qa>
+<q>61. When a thread is created and started, what is its initial state?</q>
+<a>A thread is in the ready state after it has been created and started.</a>
+</qa><qa>
+<q>62. What is the purpose of finalization?</q>
+<a>The purpose of finalization is to give an unreachable object the opportunity to perform any cleanup processing before the object is garbage collected.</a>
+</qa><qa>
+<q>63. What is the Locale class?</q>
+<a>The Locale class is used to tailor program output to the conventions of a particular geographic, political, or cultural region.</a>
+</qa><qa>
+<q>64. What is the difference between a while statement and a do statement?</q>
+<a>A while statement checks at the beginning of a loop to see whether the next loop iteration should occur.</a>
+<a>A do statement checks at the end of a loop to see whether the next iteration of a loop should occur. The do statement will always execute the body of a loop at least once.</a>
+</qa><qa>
+<q>65. What is the difference between static and non-static variables?</q>
+<a>A static variable is associated with the class as a whole rather than with specific instances of a class. Non-static variables take on unique values with each object instance.</a>
+</qa><qa>
+<q>66. How are this() and super() used with constructors?</q>
+<a>this() is used to invoke a constructor of the same class. super() is used to invoke a superclass constructor.</a>
+</qa><qa>
+<q>67. What is daemon thread and which method is used to create the daemon thread?</q>
+<a>Daemon thread is a low priority thread which runs intermittently in the back ground doing the garbage collection operation for the java runtime system.setDaemon method is used to create a daemon thread.</a>
+</qa><qa>
+<q>68. Can applets communicate with each other?</q>
+<a>At this point in time applets may communicate with other applets running in the same virtual machine. If the applets are of the same class, they can communicate via shared static variables. If the applets are of different classes, then each will need a reference to the same class with static variables. In any case the basic idea is to pass the information back and forth through a static variable.</a>
+<a>An applet can also get references to all other applets on the same page using the getApplets() method of java.applet.AppletContext. Once you get the reference to an applet, you can communicate with it by using its public members.</a>
+<a>It is conceivable to have applets in different virtual machines that talk to a server somewhere on the Internet and store any data that needs to be serialized there. Then, when another applet needs this data, it could connect to this same server. Implementing this is non-trivial.</a>
+</qa><qa>
+<q>69. What are the steps in the JDBC connection?</q>
+<a>While making a JDBC connection we go through the following steps :</a>
+<a>Step 1 : Register the database driver by using :</a>
+<a>Class.forName(\" driver classs for that specific database\" );</a>
+<a>Step 2 : Now create a database connection using :</a>
+<a>Connection con = DriverManager.getConnection(url,username,password);</a>
+<a>Step 3: Now Create a query using :</a>
+<a>Statement stmt = Connection.Statement(\"select * from TABLE NAME\");</a>
+<a>Step 4 : Exceute the query :</a>
+<a>stmt.exceuteUpdate();</a>
+</qa><qa>
+<q>70. How does a try statement determine which catch clause should be used to handle an exception?</q>
+<a>When an exception is thrown within the body of a try statement, the catch clauses of the try statement are examined in the order in which they appear. The first catch clause that is capable of handling the exceptionis executed. The remaining catch clauses are ignored.</a>
+</qa><qa>
+<q>71. Can an unreachable object become reachable again?</q>
+<a>An unreachable object may become reachable again. This can happen when the object's finalize() method is invoked and the object performs an operation which causes it to become accessible to reachable objects.</a>
+</qa><qa>
+<q>72. What method must be implemented by all threads?</q>
+<a>All tasks must implement the run() method, whether they are a subclass of Thread or implement the Runnable interface.</a>
+</qa><qa>
+<q>73. What are synchronized methods and synchronized statements?</q>
+<a>Synchronized methods are methods that are used to control access to an object. A thread only executes a synchronized method after it has acquired the lock for the method's object or class.</a>
+<a>Synchronized statements are similar to synchronized methods. A synchronized statement can only be executed after a thread has acquired the lock for the object or class referenced in the synchronized statement.</a>
+</qa><qa>
+<q>74. What is Externalizable?</q>
+<a>Externalizable is an Interface that extends Serializable Interface. And sends data into Streams in Compressed Format. It has two methods, writeExternal(ObjectOuput out) and readExternal(ObjectInput in).</a>
+</qa><qa>
+<q>75. What modifiers are allowed for methods in an Interface?</q>
+<a>Only public and abstract modifiers are allowed for methods in interfaces.</a>
+</qa><qa>
+<q>76. What are some alternatives to inheritance?</q>
+<a>Delegation is an alternative to inheritance.</a>
+<a>Delegation means that you include an instance of another class as an instance variable, and forward messages to the instance. It is often safer than inheritance because it forces you to think about each message you forward, because the instance is of a known class, rather than a new class, and because it doesn't force you to accept all the methods of the super class: you can provide only the methods that really make sense. On the other hand, it makes you write more code, and it is harder to re-use (because it is not a subclass).</a>
+</qa><qa>
+<q>77. What does it mean that a method or field is "static"?</q>
+<a>Static variables and methods are instantiated only once per class. In other words they are class variables, not instance variables. If you change the value of a static variable in a particular object, the value of that variable changes for all instances of that class.</a>
+<a>Static methods can be referenced with the name of the class rather than the name of a particular object of the class (though that works too). That's how library methods like System.out.println() work out is a static field in the java.lang.System class.</a>
+</qa><qa>
+<q>78. What is the difference between preemptive scheduling and time slicing?</q>
+<a>Under preemptive scheduling, the highest priority task executes until it enters the waiting or dead states or a higher priority task comes into existence. Under time slicing, a task executes for a predefined slice of time and then reenters the pool of ready tasks.</a>
+<a>The scheduler then determines which task should execute next, based on priority and other factors.</a>
+</qa><qa>
+<q>79. What is the catch or declare rule for method declarations?</q>
+<a>If a checked exception may be thrown within the body of a method, the method must either catch the exception or declare it in its throws clause.</a>
+</qa><qa>
+<q>80. Is Empty .java file a valid source file?</q>
+<a>Yes. An empty .java file is a perfectly valid source file.</a>
+</qa><qa>
+<q>81. Can a .java file contain more than one java classes?</q>
+<a>Yes. A .java file contain more than one java classes, provided at the most one of them is a public class.</a>
+</qa><qa>
+<q>82. Is String a primitive data type in Java?</q>
+<a>No. String is not a primitive data type in Java, even though it is one of the most extensively used object. Strings in Java are instances of String class defined in java.lang package.</a>
+</qa><qa>
+<q>83. Is main a keyword in Java?</q>
+<a>No. main is not a keyword in Java.</a>
+</qa><qa>
+<q>84. Is next a keyword in Java?</q>
+<a>No. next is not a keyword.</a>
+</qa><qa>
+<q>85. Is delete a keyword in Java?</q>
+<a>No. delete is not a keyword in Java. Java does not make use of explicit destructors the way C++ does.</a>
+</qa><qa>
+<q>86. Is exit a keyword in Java?</q>
+<a>No. To exit a program explicitly you use exit method in System object.</a>
+</qa><qa>
+<q>87. What happens if you dont initialize an instance variable of any of the primitive types in Java?</q>
+<a>Java by default initializes it to the default value for that primitive type. Thus an int will be initialized to 0(zero), a boolean will be initialized to false.</a>
+</qa><qa>
+<q>88. What will be the initial value of an object reference which is defined as an instance variable?</q>
+<a>The object references are all initialized to null in Java. However in order to do anything useful with these references, you must set them to a valid object, else you will get NullPointerExceptions everywhere you try to use such default initialized references.</a>
+</qa><qa>
+<q>89. What are the different scopes for Java variables?</q>
+<a>The scope of a Java variable is determined by the context in which the variable is declared. Thus a java variable can have one of the three scopes at any given point in time.</a>
+<a>1. Instance : - These are typical object level variables, they are initialized to default values at the time of creation of object, and remain accessible as long as the object accessible.</a>
+<a>2. Local : - These are the variables that are defined within a method. They remain accessbile only during the course of method excecution. When the method finishes execution, these variables fall out of scope.</a>
+<a>3. Static: - These are the class level variables. They are initialized when the class is loaded in JVM for the first time and remain there as long as the class remains loaded. They are not tied to any particular object instance.</a>
+</qa><qa>
+<q>90. What is the default value of the local variables?</q>
+<a>The local variables are not initialized to any default value, neither primitives nor object references. If you try to use these variables without initializing them explicitly, the java compiler will not compile the code. It will complain abt the local varaible not being initilized.</a>
+</qa><qa>
+<q>91. How many objects are created in the following piece of code?</q>
+<a>MyClass c1, c2, c3;</a>
+<a>c1 = new MyClass ();</a>
+<a>c3 = new MyClass ();</a>
+<a>Only 2 objects are created, c1 and c3. The reference c2 is only declared and not initialized.</a>
+</qa><qa>
+<q>92. Can a public class MyClass be defined in a source file named YourClass.java?</q>
+<a>No. The source file name, if it contains a public class, must be the same as the public class name itself with a .java extension.</a>
+</qa><qa>
+<q>93. Can main() method be declared final?</q>
+<a>Yes, the main() method can be declared final, in addition to being public static.</a>
+</qa><qa>
+<q>94. What is HashMap and Map?</q>
+<a>Map is an Interface and Hashmap is the class that implements Map.</a>
+</qa><qa>
+<q>95. Difference between HashMap and HashTable?</q>
+<a>The HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits nulls. (HashMap allows null values as key and value whereas Hashtable doesnt allow).</a>
+<a>HashMap does not guarantee that the order of the map will remain constant over time. HashMap is unsynchronized and Hashtable is synchronized.</a>
+</qa><qa>
+<q>96. Difference between Vector and ArrayList?</q>
+<a>Vector is synchronized whereas arraylist is not.</a>
+</qa><qa>
+<q>97. Difference between Swing and Awt?</q>
+<a>AWT are heavy-weight componenets. Swings are light-weight components. Hence swing works faster than AWT.</a>
+</qa><qa>
+<q>98. What will be the default values of all the elements of an array defined as an instance variable?</q>
+<a>If the array is an array of primitive types, then all the elements of the array will be initialized to the default value corresponding to that primitive type.</a>
+<a>Example: All the elements of an array of int will be initialized to 0(zero), while that of boolean type will be initialized to false. Whereas if the array is an array of references (of any type), all the elements will be initialized to null.</a>
+</qa><qa>
+</qa><qa>

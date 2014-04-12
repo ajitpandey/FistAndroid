@@ -27,7 +27,7 @@
 </qa><qa>
 <q>Q: List some Java keywords(unlike C, C++ keywords)?</q>
 <a>A: Some Java keywords are import, super, finally, etc.</a>
-</qa><!-- <qa>
+</qa> <qa>
 <q>Q: What do you mean by Object?</q>
 <a>A: Object is a runtime entity and it’s state is stored in fields and behavior is shown via methods. Methods operate on an object's internal state and serve as the primary mechanism for object-to-object communication.</a>
 </qa><qa>
@@ -805,7 +805,7 @@
 <a>outputStream.close() ;</a>
 <a>}</a>
 <a>}</a>
-</qa><qa>
+</qa><!-- <qa>
 <q>Q. What are FileReader and FileWriter ? Explain with an example to read and write into files.</q>
 <a>A.FileReader : The FileReader class makes it possible to read the contents of a file as a stream of characters. It works much like the FileInputStream, except the FileInputStream reads bytes, whereas the FileReader reads characters. The FileReader is intended to read text, in other words. One character may correspond to one or more bytes depending on the character encoding scheme.The FileReader object also lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user’s computer, using File or Blob objects to specify the file or data to read.</a>
 <a>how to write betterFileWriter : This class is used to write to character files. Creation of a FileWriter is not dependent on the file already existing. FileWriter will create the file before opening it for output when you create the object. Its write() methods allow you to write character(s) or Strings to a file. FileWriters are usually wrapped by higher-level Writer objects such as BufferedWriters or PrintWriters, which provide better performance and higher-level, more flexible methods to write data.</a>
@@ -823,7 +823,7 @@
 <a>FileWriter fwrite = new FileWriter("characteroutput.txt");</a>
 <a>while ((c = fread.read()) != -1)</a>
 <a>       fwrite.write(c);</a>
-</qa><qa>
+</qa> --><qa>
 <q>Q. What is the difference between ArrayList and LinkedList ?</q>
 <a>A.Please pay special attention as this is probably one of the most widely asked interview questions.</a>
 <a>We aren’t going to state the properties of each in this question. What we are looking for are the differences. The prime areas where the two stand apart are as follows :</a>
@@ -846,5 +846,5 @@
 <a>        System.out.println(sysForm.format(curdate));</a>
 <a>}</a>
 <a>}</a>
-</qa> -->
+</qa>
 </interview>

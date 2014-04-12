@@ -1,0 +1,326 @@
+<interview>
+<topic>DBMS Basic</topic>
+<qa>
+<q>1. What is database?</q>
+<a>A database is a logically coherent collection of data with some inherent meaning, representing some aspect of real world and which is designed, built and populated with data for a specific purpose.</a>
+</qa><qa>
+<q>2. What is DBMS?</q>
+<a>It is a collection of programs that enables user to create and maintain a database. In other words it is general-purpose software that provides the users with the processes of defining, constructing and manipulating the database for various applications.</a>
+</qa><qa>
+<q>3. What is a Database system?</q>
+<a>The database and DBMS software together is called as Database system.</a>
+</qa><qa>
+<q>4. What are the advantages of DBMS?</q>
+<a>Redundancy is controlled.</a>
+<a>Unauthorised access is restricted.</a>
+<a>Providing multiple user interfaces.</a>
+<a>Enforcing integrity constraints.</a>
+<a>Providing backup and recovery.</a>
+</qa><qa>
+<q>5. What are the disadvantage in File Processing System?</q>
+<a>Data redundancy and inconsistency.</a>
+<a>Difficult in accessing data.</a>
+<a>Data isolation.</a>
+<a>Data integrity.</a>
+<a>Concurrent access is not possible.</a>
+<a>Security Problems.</a>
+</qa><qa>
+<q>6. Describe the three levels of data abstraction?</q>
+<a>The are three levels of abstraction:</a>
+<a>Physical level: The lowest level of abstraction describes how data are stored.</a>
+<a>Logical level: The next higher level of abstraction, describes what data are stored in database and what relationship among those data.</a>
+<a>View level: The highest level of abstraction describes only part of entire database.</a>
+</qa><qa>
+<q>7. Define the "integrity rules"?</q>
+<a>There are two Integrity rules.</a>
+<a>Entity Integrity: States that "Primary key cannot have NULL value"</a>
+<a>Referential Integrity: States that "Foreign Key can be either a NULL value or should be Primary Key value of other relation.</a>
+</qa><qa>
+<q>8. What is extension and intension?</q>
+<a>Extension: It is the number of tuples present in a table at any instance. This is time dependent.</a>
+<a>Intension: It is a constant value that gives the name, structure of table and the constraints laid on it.</a>
+</qa><qa>
+<q>9. What is System R? What are its two major subsystems?</q>
+<a>System R was designed and developed over a period of 1974-79 at IBM San Jose Research Center. It is a prototype and its purpose was to demonstrate that it is possible to build a Relational System that can be used in a real life environment to solve real life problems, with performance at least comparable to that of existing system.</a>
+<a>Its two subsystems are</a>
+<a>Research Storage</a>
+<a>System Relational Data System.</a>
+</qa><qa>
+<q>10. How is the data structure of System R different from the relational structure?</q>
+<a>Unlike Relational systems in System R</a>
+<a>Domains are not supported</a>
+<a>Enforcement of candidate key uniqueness is optional</a>
+<a>Enforcement of entity integrity is optional</a>
+<a>Referential integrity is not enforced</a>
+</qa><qa>
+<q>11. What is Data Independence?</q>
+<a>Data independence means that "the application is independent of the storage structure and access strategy of data". In other words, The ability to modify the schema definition in one level should not affect the schema definition in the next higher level.</a>
+<a>Two types of Data Independence:</a>
+<a>Physical Data Independence: Modification in physical level should not affect the logical level.</a>
+<a>Logical Data Independence: Modification in logical level should affect the view level.</a>
+<a>NOTE: Logical Data Independence is more difficult to achieve</a>
+</qa><qa>
+<q>12. What is a view? How it is related to data independence?</q>
+<a>A view may be thought of as a virtual table, that is, a table that does not really exist in its own right but is instead derived from one or more underlying base table. In other words, there is no stored file that direct represents the view instead a definition of view is stored in data dictionary. </a>
+<a>Growth and restructuring of base tables is not reflected in views. Thus the view can insulate users from the effects of restructuring and growth in the database. Hence accounts for logical data independence.</a>
+</qa><qa>
+<q>13. What is Data Model?</q>
+<a>A collection of conceptual tools for describing data, data relationships data semantics and constraints.</a>
+</qa><qa>
+<q>14. What is E-R model?</q>
+<a>This data model is based on real world that consists of basic objects called entities and of relationship among these objects. Entities are described in a database by a set of attributes.</a>
+</qa><qa>
+<q>15. What is Object Oriented model?</q>
+<a>This model is based on collection of objects. An object contains values stored in instance variables with in the object. An object also contains bodies of code that operate on the object. These bodies of code are called methods. Objects that contain same types of values and the same methods are grouped together into classes.</a>
+</qa><qa>
+<q>16. What is an Entity?</q>
+<a>It is a 'thing' in the real world with an independent existence.</a>
+</qa><qa>
+<q>17. What is an Entity type?</q>
+<a>It is a collection (set) of entities that have same attributes.</a>
+</qa><qa>
+<q>18. What is an Entity set?</q>
+<a>It is a collection of all entities of particular entity type in the database.</a>
+</qa><qa>
+<q>19. What is an Extension of entity type?</q>
+<a>The collections of entities of a particular entity type are grouped together into an entity set.</a>
+</qa><qa>
+<q>20. What is Weak Entity set?</q>
+<a>An entity set may not have sufficient attributes to form a primary key, and its primary key compromises of its partial key and primary key of its parent entity, then it is said to be Weak Entity set.</a>
+</qa><qa>
+<q>21. What is an attribute?</q>
+<a>It is a particular property, which describes the entity.</a>
+</qa><qa>
+<q>22. What is a Relation Schema and a Relation?</q>
+<a>A relation Schema denoted by R(A1, A2, ..., An) is made up of the relation name R and the list of attributes Ai that it contains. A relation is defined as a set of tuples. Let r be the relation which contains set tuples (t1, t2, t3, ..., tn). Each tuple is an ordered list of n-values t=(v1,v2, ..., vn).</a>
+</qa><qa>
+<q>23. What is degree of a Relation?</q>
+<a>It is the number of attribute of its relation schema.</a>
+</qa><qa>
+<q>24. What is Relationship?</q>
+<a>It is an association among two or more entities.</a>
+</qa><qa>
+<q>25. What is Relationship set?</q>
+<a>The collection (or set) of similar relationships.</a>
+</qa><qa>
+<q>26. What is Relationship type?</q>
+<a>Relationship type defines a set of associations or a relationship set among a given set of entity types.</a>
+</qa><qa>
+<q>27. What is degree of Relationship type?</q>
+<a>It is the number of entity type participating.</a>
+</qa><qa>
+<q>28. What is DDL (Data Definition Language)?</q>
+<a>A data base schema is specifies by a set of definitions expressed by a special language called DDL.</a>
+</qa><qa>
+<q>29. What is VDL (View Definition Language)?</q>
+<a>It specifies user views and their mappings to the conceptual schema.</a>
+</qa><qa>
+<q>30. What is SDL (Storage Definition Language)?</q>
+<a>This language is to specify the internal schema. This language may specify the mapping between two schemas.</a>
+</qa><qa>
+<q>31. What is Data Storage - Definition Language?</q>
+<a>The storage structures and access methods used by database system are specified by a set of definition in a special type of DDL called data storage-definition language.</a>
+</qa><qa>
+<q>32. What is DML (Data Manipulation Language)?</q>
+<a>This language that enable user to access or manipulate data as organised by appropriate data model.</a>
+<a>Procedural DML or Low level: DML requires a user to specify what data are needed and how to get those data.</a>
+<a>Non-Procedural DML or High level: DML requires a user to specify what data are needed without specifying how to get those data.</a>
+</qa><qa>
+<q>33. What is DML Compiler?</q>
+<a>It translates DML statements in a query language into low-level instruction that the query evaluation engine can understand.</a>
+</qa><qa>
+<q>34. What is Query evaluation engine?</q>
+<a>It executes low-level instruction generated by compiler.</a>
+</qa><qa>
+<q>35. What is DDL Interpreter?</q>
+<a>It interprets DDL statements and record them in tables containing metadata.</a>
+</qa><qa>
+<q>36. What is Record-at-a-time?</q>
+<a>The Low level or Procedural DML can specify and retrieve each record from a set of records. This retrieve of a record is said to be Record-at-a-time.</a>
+</qa><qa>
+<q>37. What is Set-at-a-time or Set-oriented?</q>
+<a>The High level or Non-procedural DML can specify and retrieve many records in a single DML statement. This retrieve of a record is said to be Set-at-a-time or Set-oriented.</a>
+</qa><qa>
+<q>38. What is Relational Algebra?</q>
+<a>It is procedural query language. It consists of a set of operations that take one or two relations as input and produce a new relation.</a>
+</qa><qa>
+<q>39. What is Relational Calculus?</q>
+<a>It is an applied predicate calculus specifically tailored for relational databases proposed by E.F. Codd. E.g. of languages based on it are DSL ALPHA, QUEL.</a>
+</qa><qa>
+<q>40. How does Tuple-oriented relational calculus differ from domain-oriented relational calculus?</q>
+<a>The tuple-oriented calculus uses a tuple variables i.e., variable whose only permitted values are tuples of that relation. E.g. QUEL</a>
+<a>The domain-oriented calculus has domain variables i.e., variables that range over the underlying domains instead of over relation. E.g. ILL, DEDUCE.</a>
+</qa><qa>
+<q>41. What is normalization?</q>
+<a>It is a process of analysing the given relation schemas based on their Functional Dependencies (FDs) and primary key to achieve the properties</a>
+<a>(1).Minimizing redundancy, (2). Minimizing insertion, deletion and update anomalies.</a>
+</qa><qa>
+<q>42. What is Functional Dependency?</q>
+<a>A Functional dependency is denoted by X Y between two sets of attributes X and Y that are subsets of R specifies a constraint on the possible tuple that can form a relation state r of R. The constraint is for any two tuples t1 and t2 in r if t1[X] = t2[X] then they have t1[Y] = t2[Y]. This means the value of X component of a tuple uniquely determines the value of component Y.</a>
+</qa><qa>
+<q>43. What is Lossless join property?</q>
+<a>It guarantees that the spurious tuple generation does not occur with respect to relation schemas after decomposition.</a>
+</qa><qa>
+<q>44. What is 1 NF (Normal Form)?</q>
+<a>The domain of attribute must include only atomic (simple, indivisible) values.</a>
+</qa><qa>
+<q>45. What is Fully Functional dependency?</q>
+<a>It is based on concept of full functional dependency. A functional dependency X Y is full functional dependency if removal of any attribute A from X means that the dependency does not hold any more.</a>
+</qa><qa>
+<q>46. What is 2NF?</q>
+<a>A relation schema R is in 2NF if it is in 1NF and every non-prime attribute A in R is fully functionally dependent on primary key.</a>
+</qa><qa>
+<q>47. What is 3NF?</q>
+<a>A relation schema R is in 3NF if it is in 2NF and for every FD X A either of the following is true</a>
+<a>X is a Super-key of R.</a>
+<a>A is a prime attribute of R.</a>
+<a>In other words, if every non prime attribute is non-transitively dependent on primary key.</a>
+</qa><qa>
+<q>48. What is BCNF (Boyce-Codd Normal Form)?</q>
+<a>A relation schema R is in BCNF if it is in 3NF and satisfies an additional constraint that for every FD X A, X must be a candidate key.</a>
+</qa><qa>
+<q>49. What is 4NF?</q>
+<a>A relation schema R is said to be in 4NF if for every Multivalued dependency X Y that holds over R, one of following is true.</a>
+<a>1.) X is subset or equal to (or) XY = R.</a>
+<a>2.) X is a super key.</a>
+</qa><qa>
+<q>50. What is 5NF?</q>
+<a>A Relation schema R is said to be 5NF if for every join dependency {R1, R2, ..., Rn} that holds R, one the following is true 1.) Ri = R for some i.</a>
+<a>2.) The join dependency is implied by the set of FD, over R in which the left side is key of R.</a>
+</qa><qa>
+<q>51. What is Domain-Key Normal Form?</q>
+<a>A relation is said to be in DKNF if all constraints and dependencies that should hold on the the constraint can be enforced by simply enforcing the domain constraint and key constraint on the relation.</a>
+</qa><qa>
+<q>52. What are partial, alternate,, artificial, compound and natural key?</q>
+<a>Partial Key: It is a set of attributes that can uniquely identify weak entities and that are related to same owner entity. It is sometime called as Discriminator.</a>
+<a>Alternate Key: All Candidate Keys excluding the Primary Key are known as Alternate Keys.</a>
+<a>Artificial Key: If no obvious key, either stand alone or compound is available, then the last resort is to simply create a key, by assigning a unique number to each record or occurrence. Then this is known as developing an artificial key.</a>
+<a>Compound Key: If no single data element uniquely identifies occurrences within a construct, then combining multiple elements to create a unique identifier for the construct is known as creating a compound key.</a>
+<a>Natural Key: When one of the data elements stored within a construct is utilized as the primary key, then it is called the natural key.</a>
+</qa><qa>
+<q>53. What is indexing and what are the different kinds of indexing?</q>
+<a>Indexing is a technique for determining how quickly specific data can be found. </a>
+<a>Types:</a>
+<a>Binary search style indexing</a>
+<a>B-Tree indexing</a>
+<a>Inverted list indexing</a>
+<a>Memory resident table</a>
+<a>Table indexing</a>
+</qa><qa>
+<q>54. What is system catalog or catalog relation? How is better known as?</q>
+<a>A RDBMS maintains a description of all the data that it contains, information about every relation and index that it contains. This information is stored in a collection of relations maintained by the system called metadata. It is also called data dictionary.</a>
+</qa><qa>
+<q>55. What is meant by query optimization?</q>
+<a>The phase that identifies an efficient execution plan for evaluating a query that has the least estimated cost is referred to as query optimization.</a>
+</qa><qa>
+<q>56. What is durability in DBMS?</q>
+<a>Once the DBMS informs the user that a transaction has successfully completed, its effects should persist even if the system crashes before all its changes are reflected on disk. This property is called durability.</a>
+</qa><qa>
+<q>57. What do you mean by atomicity and aggregation?</q>
+<a>Atomicity: Either all actions are carried out or none are. Users should not have to worry about the effect of incomplete transactions. DBMS ensures this by undoing the actions of incomplete transactions.</a>
+<a>Aggregation: A concept which is used to model a relationship between a collection of entities and relationships. It is used when we need to express a relationship among relationships.</a>
+</qa><qa>
+<q>58. What is a Phantom Deadlock?</q>
+<a>In distributed deadlock detection, the delay in propagating local information might cause the deadlock detection algorithms to identify deadlocks that do not really exist. Such situations are called phantom deadlocks and they lead to unnecessary aborts.</a>
+</qa><qa>
+<q>59. What is a checkpoint and When does it occur?</q>
+<a>A Checkpoint is like a snapshot of the DBMS state. By taking checkpoints, the DBMS can reduce the amount of work to be done during restart in the event of subsequent crashes.</a>
+</qa><qa>
+<q>60. What are the different phases of transaction?</q>
+<a>Different phases are</a>
+<a>1.) Analysis phase,</a>
+<a>2.) Redo Phase,</a>
+<a>3.) Undo phase.</a>
+</qa><qa>
+<q>61. What do you mean by flat file database?</q>
+<a>It is a database in which there are no programs or user access languages. It has no cross-file capabilities but is user-friendly and provides user-interface management.</a>
+</qa><qa>
+<q>62. What is "transparent DBMS"?</q>
+<a>It is one, which keeps its Physical Structure hidden from user.</a>
+</qa><qa>
+<q>63. What is a query?</q>
+<a>A query with respect to DBMS relates to user commands that are used to interact with a data base. The query language can be classified into data definition language and data manipulation language.</a>
+</qa><qa>
+<q>64. What do you mean by Correlated subquery?</q>
+<a>Subqueries, or nested queries, are used to bring back a set of rows to be used by the parent query. Depending on how the subquery is written, it can be executed once for the parent query or it can be executed once for each row returned by the parent query. If the subquery is executed for each row of the parent, this is called a correlated subquery.</a>
+<a>A correlated subquery can be easily identified if it contains any references to the parent subquery columns in its WHERE clause. Columns from the subquery cannot be referenced anywhere else in the parent query. The following example demonstrates a non-correlated subquery.</a>
+<a>Example: Select * From CUST Where '10/03/1990' IN (Select ODATE From ORDER Where CUST.CNUM = ORDER.CNUM)</a>
+</qa><qa>
+<q>65. What are the primitive operations common to all record management systems?</q>
+<a>Addition, deletion and modification.</a>
+</qa><qa>
+<q>66. Name the buffer in which all the commands that are typed in are stored?</q>
+<a>Edit' Buffer.</a>
+</qa><qa>
+<q>67. What are the unary operations in Relational Algebra?</q>
+<a>PROJECTION and SELECTION.</a>
+</qa><qa>
+<q>68. Are the resulting relations of PRODUCT and JOIN operation the same?</q>
+<a>No.</a>
+<a>PRODUCT: Concatenation of every row in one relation with every row in another.</a>
+<a>JOIN: Concatenation of rows from one relation and related rows from another.</a>
+</qa><qa>
+<q>69. What is RDBMS KERNEL?</q>
+<a>Two important pieces of RDBMS architecture are the kernel, which is the software, and the data dictionary, which consists of the system-level data structures used by the kernel to manage the database You might think of an RDBMS as an operating system (or set of subsystems), designed specifically for controlling data access; its primary functions are storing, retrieving, and securing data. An RDBMS maintains its own list of authorized users and their associated privileges; manages memory caches and paging; controls locking for concurrent resource usage; dispatches and schedules user requests; and manages space usage within its table-space structures.</a>
+</qa><qa>
+<q>70. Name the sub-systems of a RDBMS.</q>
+<a>I/O, Security, Language Processing, Process Control, Storage Management, Logging and Recovery, Distribution Control, Transaction Control, Memory Management, Lock Management.</a>
+</qa><qa>
+<q>71. Which part of the RDBMS takes care of the data dictionary? How?</q>
+<a>Data dictionary is a set of tables and database objects that is stored in a special area of the database and maintained exclusively by the kernel.</a>
+</qa><qa>
+<q>72. What is the job of the information stored in data-dictionary?</q>
+<a>The information in the data dictionary validates the existence of the objects, provides access to them, and maps the actual physical storage location.</a>
+</qa><qa>
+<q>73. How do you communicate with an RDBMS?</q>
+<a>You communicate with an RDBMS using Structured Query Language (SQL).</a>
+</qa><qa>
+<q>74. Define SQL and state the differences between SQL and other conventional programming Languages.</q>
+<a>SQL is a nonprocedural language that is designed specifically for data access operations on normalized relational database structures. The primary difference between SQL and other conventional programming languages is that SQL statements specify what data operations should be performed rather than how to perform them.</a>
+</qa><qa>
+<q>75. Name the three major set of files on disk that compose a database in Oracle.</q>
+<a>There are three major sets of files on disk that compose a database. All the files are binary. These are</a>
+<a>1.) Database files </a>
+<a>2.) Control files</a>
+<a>3.) Redo logs</a>
+<a>The most important of these are the database files where the actual data resides. The control files and the redo logs support the functioning of the architecture itself. All three sets of files must be present, open, and available to Oracle for any data on the database to be useable. Without these files, you cannot access the database, and the database administrator might have to recover some or all of the database using a backup, if there is one.</a>
+</qa><qa>
+<q>76. What is database Trigger?</q>
+<a>A database trigger is a PL/SQL block that can defined to automatically execute for insert, update, and delete statements against a table. The trigger can e defined to execute once for the entire statement or once for every row that is inserted, updated, or deleted. For any one table, there are twelve events for which you can define database triggers. A database trigger can call database procedures that are also written in PL/SQL.</a>
+</qa><qa>
+<q>77. What are stored-procedures? And what are the advantages of using them?</q>
+<a>Stored procedures are database objects that perform a user defined operation. A stored procedure can have a set of compound SQL statements. A stored procedure executes the SQL commands and returns the result to the client. Stored procedures are used to reduce network traffic.</a>
+</qa><qa>
+<q>78. What is Storage Manager?</q>
+<a>It is a program module that provides the interface between the low-level data stored in database, application programs and queries submitted to the system.</a>
+</qa><qa>
+<q>79. What is Buffer Manager?</q>
+<a>It is a program module, which is responsible for fetching data from disk storage into main memory and deciding what data to be cache in memory.</a>
+</qa><qa>
+<q>80. What is Transaction Manager?</q>
+<a>It is a program module, which ensures that database, remains in a consistent state despite system failures and concurrent transaction execution proceeds without conflicting.</a>
+</qa><qa>
+<q>81. What is File Manager?</q>
+<a>It is a program module, which manages the allocation of space on disk storage and data structure used to represent information stored on a disk.</a>
+</qa><qa>
+<q>82. What is Authorization and Integrity manager?</q>
+<a>It is the program module, which tests for the satisfaction of integrity constraint and checks the authority of user to access data.</a>
+</qa><qa>
+<q>83. What are stand-alone procedures?</q>
+<a>Procedures that are not part of a package are known as stand-alone because they independently defined. A good example of a stand-alone procedure is one written in a SQL*Forms application. These types of procedures are not available for reference from other Oracle tools. Another limitation of stand-alone procedures is that they are compiled at run time, which slows execution.</a>
+</qa><qa>
+<q>84. What are cursors give different types of cursors?</q>
+<a>PL/SQL uses cursors for all database information accesses statements. The language supports the use two types of cursors</a>
+<a>1.) Implicit</a>
+<a>2.) Explicit</a>
+</qa><qa>
+<q>85. What is cold backup and hot backup (in case of Oracle)?</q>
+<a>Cold Backup: It is copying the three sets of files (database files, redo logs, and control file) when the instance is shut down. This is a straight file copy, usually from the disk directly to tape. You must shut down the instance to guarantee a consistent copy. If a cold backup is performed, the only option available in the event of data file loss is restoring all the files from the latest backup. All work performed on the database since the last backup is lost.</a>
+<a>Hot Backup: Some sites (such as worldwide airline reservations systems) cannot shut down the database while making a backup copy of the files. The cold backup is not an available option.</a>
+</qa><qa>
+<q>86. What is meant by Proactive, Retroactive and Simultaneous Update.</q>
+<a>Proactive Update: The updates that are applied to database before it becomes effective in real world.</a>
+<a>Retroactive Update: The updates that are applied to database after it becomes effective in real world.</a>
+<a>Simulatneous Update: The updates that are applied to database at the same time when it becomes effective in real world.</a>
+</qa>
+</interview>

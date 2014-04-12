@@ -30,6 +30,7 @@ public class SAXXMLParser {
  
         } catch (Exception ex) {
             Log.d("XML", "SAXXMLParser: parse() failed");
+            ex.printStackTrace();
         }
  
         // return Employee list
@@ -53,6 +54,7 @@ public class SAXXMLParser {
  
         } catch (Exception ex) {
             Log.d("XML", "SAXXMLParser: parse() failed");
+            ex.printStackTrace();
         }
  
         // return Employee list
