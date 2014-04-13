@@ -1,0 +1,642 @@
+What is Jquery?
+
+JQuery is Java Script library or Java Script Framework which helps in how to traverse HTML documents, do some cool animations, and add Ajax interaction to any web page. It mainly helps programmer to reduce lines of code as huge code written in Java Script, can be done easily with JQuery in few lines. 
+
+For detailed information, check below link. 
+http://bit.ly/v0QdsH 
+
+Click below link to get mostly asked jQuery interview question. 
+http://jquerybyexample.blogspot.com/2011/08/mostly-asked-jquery-interview-questions.html
+
+What does dollar Sign ($) means in JQuery?
+
+Dollar Sign is nothing but it's an alias for JQuery. Take a look at below jQuery code 
+
+$(document).ready(function(){
+
+});
+
+
+Over here $ sign can be replaced with "jQuery " keyword. 
+jQuery(document).ready(function(){
+
+});
+
+
+Click below link to get mostly asked jQuery interview question. 
+http://jquerybyexample.blogspot.com/2011/08/mostly-asked-jquery-interview-questions.html
+
+How is body onload() function is different from document.ready() function used in jQuery?
+
+Document.ready() function is different from body onload() function because off 2 reasons. 
+
+1. We can have more than one document.ready() function in a page where we can have only one onload function. 
+2. Document.ready() function is called as soon as DOM is loaded where body.onload() function is called when everything gets loaded on the page that includes DOM, images and all associated resources of the page. 
+
+Click below link to get mostly asked jQuery interview question. 
+http://jquerybyexample.blogspot.com/2011/08/mostly-asked-jquery-interview-questions.html
+
+What are the steps you need to follow to use jQuery in ASP.Net project?
+
+It's really simple. One just need to add reference of javascript file(.js). Go to Jquery.com and download the latest version of jQuery. When download is completed, there is a "jQuery-1.3.2.js" in the folder. Include this file 
+
+<script src="_scripts/jQuery-1.3.2.js" type="text/javascript"></script>
+
+and you good to go now for JQuery. 
+
+Note : 1.3.2 denotes the library version.. It can be vary depending upon the version of Jquery you download. 
+
+Click below link to get mostly asked jQuery interview question. 
+http://jquerybyexample.blogspot.com/2011/08/mostly-asked-jquery-interview-questions.html
+
+What is JQuery UI?
+
+JQuery UI is a library which is built on top of JQuery library. JQuery UI comes with cool widgets, effects and interaction mechanism. 
+
+See below page on this site. Date Picker control used in this page to select date is an example of JQuery UI. 
+
+http://www.dotnetfunda.com/misc/topperformers.aspx 
+
+Click below link to get mostly asked jQuery interview question. 
+http://jquerybyexample.blogspot.com/2011/08/mostly-asked-jquery-interview-questions.html
+
+What are features of JQuery or what can be done using JQuery?
+
+Features of Jquery 
+1. One can easily provide effects and can do animations. 
+2. Applying / Changing CSS. 
+3. Cool plugins. 
+4. Ajax support 
+5. DOM selection events 
+6. Event Handling 
+
+Click below link to get mostly asked jQuery interview question. 
+http://jquerybyexample.blogspot.com/2011/08/mostly-asked-jquery-interview-questions.html
+
+Name some of the methods of JQuery used to provide effects?
+
+Some of the common methods are : 
+
+1. Show() 
+2. Hide() 
+3. Toggle() 
+4. FadeIn() 
+5. FadeOut() 
+
+Visit my blog. 
+http://jquerybyexample.blogspot.com/
+
+JQuery is replacement of Java Script?
+
+NOTE: This is objective type question, Please click question title for correct answer.
+
+What are the different type of selectors in Jquery?
+
+There are 3 types of selectors in Jquery 
+1. CSS Selector 
+2. XPath Selector 
+3. Custom Selector 
+
+Visit my blog. 
+http://jquerybyexample.blogspot.com/
+
+What are the advantages of JQuery ?
+
+
+
+There are many advantages with JQuery. Some of them are : 
+
+. It is more like a JavaScript enhancement so there is no overhead in learning a new syntax. 
+
+. It has the ability to keep the code simple, readable, clear and reusable. 
+
+. It would eradicate the requirement for writing complex loops and DOM scripting library calls.
+
+How can you select all elements in a page using jQuery?
+
+To select all elements in a page, we can use all selectors, for that we need to use *(asterisk symbol). 
+
+<script language="javascript" type="text/javascript">
+
+         $("*").css("border", "2px dotted red"); 
+
+</script>
+
+
+The above code will select all elements of the web page and apply border width as 2 pixel, style as dotted and color as red. 
+
+
+Thanks and Regards 
+Akiii
+
+What is jQuery?
+
+jQuery is not a language but it is a well written JavaScript code, As quoted on official jQuery website “it is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.“ 
+
+In order to work with jQuery you should be aware of basics of JavaScript, HTML and CSS. 
+It was released in January 2006 at BarCamp NYC by John Resig. 
+
+Licensing: 
+It is free, open source software Dual-licensed under the MIT License and the GNU General Public License. Microsoft has integrated jQuery officially into its IDE Visual Studio 2010 and jQuery intellisense is available in Visual Studio 2010 now.
+
+Why jQuery?
+
+jQuery is very compact and well written JavaScript code that increases the productivity of the developer by enabling them to achieve critical UI functionality by writing very less amount of code. 
+
+It helps to 
+
+# Improve the performance of the application 
+# Develop most browser compatible web page 
+# Implement UI related critical functionality without writing hundreds of lines of codes 
+# Fast 
+# Extensible – jQuery can be extended to implement customized behavior 
+
+Other advantages of jQuery are 
+
+# No need to learn fresh new syntax's to use jQuery, knowing simple JavaScript syntax is enough 
+# Simple and Cleaner code, no need to write several lines of codes to achieve complex functionality.
+
+Where to download jQuery from?
+
+jQuery javascript file can be downloaded from jQuery Official website 
+
+http://www.jquery.com/
+
+How to use jQuery?
+
+jQuery usually comes as a single JavaScript file containing everything comes out of the box with jQuery. It can be included within a web page using the following mark-up: 
+
+To load local jQuery file 
+<script type="text/javascript" src="jQuery-1.4.1-min.js"></script>
+
+
+Ideally this markup is kept in under <head></head> tag of your web page, however you are free to keep anywhere you want.
+
+Do I need to refer jQuery file both in Master page/base page/template page and content page?
+
+No, master page/base page/ template page basically helps to create consistent layout for the page in the application. In case you have referred the jQuery file in master page/base page/ template page that cause rendering the file in the browser, you do not need to refer jQuery file the content page again. 
+
+In summary, there should not be more than one <script> tag with jQuery file reference in the source code of the rendered web page in the browser.
+
+What is the difference between jQuery-x.x.x.js and jQuery.x.x.x-min.js
+
+In terms of functionality, there is no difference between the jQuery-x.x.x.js and jQuery-x.x.x-min.js (also called minified version). However this can play a vital role in the performance of the web page. 
+
+How it affects the performance? 
+jQuery-1.4.4.js file size is 178 KB as against its minified version jQuery-1.4.4-min.js that is only 76.7 KB in size. So when your page loads in the client?s browser if you are not using minified version, it loads 178 KB file that takes more time to load than 76.7 KB.
+
+Which version of jQuery file should be used?
+
+In most of the recent releases so far, the core functionality of jQuery remains same however some more cool and better features are added. Ideally you should use the latest jQuery files available on the jQuery.com website. By doing this you ensure that your earlier functionality will still work and you can use new features available as part of the new release.
+
+What is CDN?
+
+CDN Stands for Content Distribution Network or also called Content Delivery Network is a group of computers placed at various points connected with network containing copies of data files to maximize bandwidth in accessing the data. In CDN a client access a copy of data nearer to the client location rather than all clients accessing 
+from the one particular server. This helps to achieve better performance of data retrieval by client. 
+
+There are two leading CDNs available that hosts jQuery files. 
+
+Microsoft - To load jQuery from Microsoft AJAX CDN 
+jQuery file can be loaded from Microsoft AJAX CDN. For more details, go to http://www.asp.net/ajaxlibrary/cdn.ashx. You will need to keep following tags in your page. 
+
+<script type="text/javascript" language="Javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.1.min.js"></script>
+
+
+Google - To load jQuery from Google Libraries API 
+
+jQuery file can be loaded from Google CDN for more details, go to http://code.google.com/apis/libraries/devguide.html. You will need to keep following tag in your page. 
+<script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+
+Why to load jQuery file from CDN?
+
+You may ask that if we can load the jQuery file from our own server why to load it from the CDNs. The answer is logical and very simple. The browser behavior is that whenever it loads any webpage, it keeps related files (eg. Javascript file, CSS file and Images) used for that page into its cache (also called history). When next time the user browses any web page, browser loads only those files that are new or modified and is not available in the browser cache or history. In this way, browser improves its performance and loads the page. 
+
+The possibility is that if more and more websites are using CDNs, the user might have already browsed some other web pages that is using CDNs jQuery file and that file may have into browser cache; so when user browse your page and you are also using CDNs file, the older cached version of jQuery file will be used. In this way your page will load faster as browser will not have to load the jQuery file for your page again. 
+
+The benefit 
+1. Faster page load as jQuery file need not to be downloaded 
+2. Saves your bandwidth as jQuery file is not loaded from your server 
+3. Scalable - generally CDNs place these files on the servers located at different geographical locations of the world so that they load faster so irrespective of from where your user is browsing your page, your application runs well.
+
+
+
+
+
+
+
+
+1) What is jQuery Selectors? Give some examples.
+
+jQuery Selectors are used to select one or a group of HTML elements from your web page.
+jQuery support all the CSS selectors as well as many additional custom selectors.
+jQuery selectors always start with dollar sign and parentheses: $()
+There are three building blocks to select the elements in a web document.
+1) Select elements by tag name
+
+Example: $(div)
+It will select all the div elements in the document.
+
+2) Select elements by ID
+
+Example: $(#xyzid”)
+It will select single element that has an ID of xyzid
+
+3) Select elements by class
+Example: $(“.xyzclass”)
+It will select all the elements having class xyzclass
+
+2) How can we give face effect in jQuery?
+
+In jQuery we have three methods to give the fade effect to elements: fadeIn, fadeOut and fadeTo
+This methods change the opacity of element with animation.
+Syntax:
+
+$(selector).fadeIn(speed,callback)
+$(selector).fadeOut(speed,callback)
+$(selector).fadeTo(speed,opacity,callback)
+
+“speed” can be one of following values : “slow”, “fast”, “normal” or milliseconds
+“opacity” specify the value that allows the fading to given opacity.
+“callback” is the function which we want to run once the fading effect is complete.
+For example
+
+$("clickme").click(function(){
+$("mydiv").fadeTo("slow",0.50);
+});
+
+$("clickme").click(function(){
+$("mydiv").fadeOut(3000);
+});.
+
+3) Explain the animate function.
+
+-The animate function is used to apply the custom animation effect to elements.
+
+-Syntax:
+
+$(selector).animate({params}, [duration], [easing], [callback])
+
+“param” defines the CSS properties on which you want to apply the animation.
+“duration” specify how long the animation will run. It can be one of following values : “slow”, “fast”, “normal” or milliseconds
+“easing” is the string which specify the function for the transition.
+“callback” is the function which we want to run once the animation effect is complete.
+For example
+
+<div id="clickToAnimate">
+Click Me
+</div>
+<div id="mydiv" style=”width:200px; height:300px; position: relative; right: 20px;">
+</div>
+
+Following is the jQuery to animate opacity, left offset, and height of the mydiv element
+
+$('# clickToAnimate’).click(function() {
+$('#book').animate({
+opacity: 0.30,
+left: '+=20',
+height: 'toggle'
+}, 3000, function() {
+// run after the animation complete.
+});
+});
+
+4) What is .siblings() method in jQuery?
+
+When we want to fetch siblings of every elements in the set of matched elements then we can use siblings() method.
+We filter the elements fetched by an optional selector.
+Syntax : .siblings( [selector])
+“selector” is the selector expression which specify the matched elements.
+For example
+
+<ul>
+<li> item 1 </li>
+<li id=”second_item”> item 2 </li>
+<li class=”myitem”> item 3 </li>
+<li class=”myitem”> item 4 </li>
+</ul>
+
+Now we want to find the siblings of the element of id “second_item” and change the text color to Blue :
+
+$(‘li.second_item’).siblings().css(‘color’,’blue’);
+
+If we want specific sibling elements for example the elements having class “myitem” then we can pass a optional selector:
+$(‘li.second_item’).siblings(‘.myitem’).css(‘color’,’blue’);
+
+5) Explain width() vs css(‘width’).
+
+In jQuery, there are two way to change the width of an element.
+One way is using .css(‘width’) and other way is using .width().
+For example
+
+$(‘#mydiv’).css(‘width’,’300px’);
+$(‘#mydiv’).width(100);
+
+The difference in .css(‘width’) and .width() is the data type of value we specify or return from the both functions.
+In .css(‘width’) we have to add “px” in the width value while in .width() we don’t have to add.
+When you want to get the width of “mydiv” element then .css(‘width’) will return ‘300px’ while .width() will return only integer value 300.
+6) What is the use of jQuery.data()?
+
+jQuery.data() is used to set/return arbitrary data to/from an element.
+Syntax: jQuery.data(element, key, value)
+“element” is the DOM element to which the data is associated.
+“key” is an arbitrary name of the piece of data.
+“value” is value of the specified key.
+Suppose we want to set the data for a span element:
+jQuery.data(span, “item”, { val1: 10, val2: "myitem" });
+
+If we want to retrieve the data related to div element and set it to label’s data:
+
+$("label:val1").text(jQuery.data(div, "item").val1);
+$("label:val2").text(jQuery.data(div, "item").val2);
+
+7) Explain bind() vs live() vs delegate() methods.
+
+-The bind() method will not attach events to those elements which are added after DOM is loaded while live() and delegate() methods attach events to the future elements also.
+-The difference between live() and delegate() methods is live() function will not work in chaining. It will work only on an selector or an element while delegate() method can work in chaining.
+
+For example
+$(document).ready(function(){
+$("#myTable").find("tr").live("click",function(){
+alert($(this).text());
+});
+});
+
+Above code will not work using live() method. But using delegate() method we can accomplish this.
+
+$(document).ready(function(){
+$("#dvContainer")children("table").delegate("tr","click",function(){
+alert($(this).text());
+});
+});
+
+8) Explain the each() function.
+
+-The each() function specify the function to be called for every matched element.
+
+Syntax:
+
+$(selector).each(function (index, element))
+
+“index” is the index position of the selector.
+“selector” specifies the current selector where we can use “this” selector also.
+In the case when we need to stop the each loop early then we can use “return false;”
+For example
+
+$("#clickme").click(function(){
+$("li").each(function(){
+document.write($(this).text())
+});
+});
+This will write the text for each “li” element.
+
+9) Explain slideToggle() effect.
+
+-slideToggle() effect is used to give animated sliding effect to an element. 
+
+Syntax:
+
+slideToggle([ duration] [, easing] [, callback])
+
+“duration” is the number specifying how long the animation will run.
+“easing” is the string which specify the function for the transition.
+“callback” is the function which we want to run once the animation is complete.
+If the element is visible then this effect will slide the element up side and make it completely hidden. If the element is hidden then slideToggle() effect will slide it down side and make it visible.
+We can specify the toggle speed with this effect.
+For example
+
+$("#clickme").click(function(){
+$("#mydiv").slideToggle(“slow”, function(){
+//run after the animation is complete.
+});
+});
+
+10) What is difference between $(this) and ‘this’ in jQuery?
+
+Refer the following example
+
+$(document).ready(function(){
+$(‘#clickme’).click(function(){
+alert($(this).text());
+alert(this.innerText);
+});
+});
+
+-this and $(this) references the same element but the difference is that “this” is used in traditional way but when “this” is used with $() then it becomes a jQuery object on which we can use the functions of jQuery.
+-In the example given, when only “this” keyword is used then we can use the jQuery text() function to get the text of the element, because it is not jQuery object. Once the “this” keyword is wrapped in $() then we can use the jQuery function text() to get the text of the element.
+
+11) What is the use of param() method.
+
+The param() method is used to represent an array or an object in serialize manner.
+While making an ajax request we can use these serialize values in the query strings of URL.
+Syntax: $.param(object | array, boolValue)
+“object | array” specifies an array or an object to be serialized.
+“boolValue” specifies whether to use the traditional style of param serialization or not.
+For example:
+
+personObj=new Object();
+empObject.name="Arpit";
+empObject.age="24";
+empObject.dept=”IT”;
+$("#clickme").click(function(){
+$("span").text($.param(empObject));
+});
+It will set the text of span to “name=Arpit&age=24&dep=IT”
+
+12) What is jQuery.holdReady() function?
+
+-By using jQuery.holdReady() function we can hold or release the execution of jQuery’s ready event.
+-This method should be call before we run ready event.
+-To delay the ready event, we have to call
+
+jQuery.holdReady(true);
+
+-When we want to release the ready event then we have to call
+jQuery.holdReady(false);
+-This function is helpful when we want to load any jQuery plugins before the execution of ready event.
+
+For example
+
+$.holdReady(true);
+$.getScript("xyzplugin.js", function() {
+$.holdReady(false);
+});
+
+13) Explain .empty() vs .remove() vs .detach().
+
+-.empty() method is used to remove all the child elements from matched elements.
+-.remove() method is used to remove all the matched element. This method will remove all the jQuery data associated with the matched element.
+-.detach() method is same as .remove() method except that the .detach() method doesn’t remove jQuery data associated with the matched elements.
+-.remove() is faster than .empty() or .detach() method.
+
+Syntax:
+
+$(selector).empty();
+$(selector).remove();
+$(selector).detach();
+
+14) How to read, write and delete cookies in jQuery?
+
+-To deal with cookies in jQuery we have to use the Dough cookie plugin.
+-Dough is easy to use and having powerful features.
+-Create cookie
+
+$.dough("cookie_name", "cookie_value");
+
+Read Cookie
+$.dough("cookie_name");
+Delete cookie
+$.dough("cookie_name", "remove");
+
+15) Is window.onload is different from document.ready()?
+
+- The window.onload() is Java script function and document.ready() is jQuery event which are called when page is loaded.
+- The difference is that document.ready() is called after the DOM is loaded without waiting for all the contents to get loaded. While window.onload() function waits until the contents of page is loaded.
+- Suppose there is very large image on a page, at that time window.onload() will wait until that image is loaded totally.
+- So while using the window.onlaod() function the execution will be slow, but the document.ready() will not wait until the image is loaded.
+
+16) What is Chaining in jQuery?
+
+- Chaining is very powerful feature of jQuery.
+- Chaining means specifying multiple function and/or selectors to an element.
+- Examine the below example
+
+$(document).ready(function(){
+$('#mydiv').css('color', 'blue');
+$('#mydiv').addClass('myclass');
+$('#mydiv').fadeIn('fast');
+}
+
+By using chaining we can write above code as follows
+
+$(document).ready(function(){
+$('#mydiv').css('color', 'blue').addClass('myclass').fadeIn('fast');
+});
+
+-Advantage of chaining is that it makes your code simple and simple to manage.
+-The execution becomes faster because the code search for the element only once.
+
+17) What is difference between sorting string array and sorting numerical array in jQuery?
+
+The sort method is used to sort any array elements. It sorts the string elements alphabetically.
+
+For example
+
+$(document).ready(function(){
+var mylist = [ “Apple”,”Orange”,”Banana”];
+mylist = mylist.sort();
+$(“#mydiv”).html(list.join(“”));
+});
+
+It will give following output
+Apple
+Banana
+Orange
+
+Now we declare a numerical array and use sort() method to sort its elements.
+
+$(document).ready(function(){
+var mylist = [ “20”,”3””100”,”50”];
+mylist = mylist.sort();
+$(“#mydiv”).html(list.join(“”));
+});
+
+It will give following output
+100
+20
+3
+50
+
+18) What is difference between prop and attr?
+
+In jQuery both prop() and attr() function is used to set/get the value of specified property of an element.
+The difference in both the function is that attr() returns the default value of the property while the prop() returns the current value of the property.
+For example
+
+<input value="My Value" type="text"/> 
+
+$('input').prop('value', 'Changed Value');
+
+-.attr('value') will return 'My Value' 
+-.prop('value') will return 'Changed Value'
+
+19) How to always reference latest version of jQuery?
+
+When you reference the jQuery on your web page, you have to specify the version number also.
+
+<script type=”text/javascript”
+src=”http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js”>
+</script>
+
+Above code will always load the 1.5.1 version of jQuery. If you reference the latest jQuery then you don’t need to change the code every time the new version of jQuery is released.
+
+To achieve this you have to use following code
+<script type=”text/javascript”
+src=”http://code.jquery.com/jquery-latest.min.js”>
+</script>
+
+This code will always reference the latest version of jQuery in your page.
+
+20) What is resize() function in jQuery?
+
+The resize() function is called whenever the browser size is changed. This event can be only used with $(window).
+
+Syntax:
+
+.resize([event_data], handler(event_object))
+
+-The “event_data” is the data to be sent to the handler.
+-The “handler(event_object)” is a function to be called each time when the window is resized.
+
+For example
+
+$(window).resize(function() {
+$('#message).text('window is resized to ' + $(window).width() + ‘x’ + $(window).height());
+});
+
+
+21.What is jQuery?
+
+Latest answer: jQuery is a lightweight JavaScript library that emphasizes interaction between JavaScript and HTML.............
+Read answer
+
+22.Advantages of jQuery
+
+Latest answer: The advantages of using jQuery are: JavaScript enhancement without the overhead of learning new syntax............
+Read answer
+
+23.Explain the features of jQuery.
+
+Latest answer: Features of jQuery are :
+
+Effects and animations
+Ajax
+Extensibility.............
+Read answer
+24.Explain the concepts of "$ function" in jQuery with an example.
+
+Latest answer: The type of a function is "function".
+There are a lot of anonymous functions is jquery...............
+Read answer
+
+25.Why is jQuery better than javascript?
+
+Latest answer: jQuery is great library for developing ajax based application. 
+It helps the programmers to keep code simple and concise and reusable..............
+Read answer
+
+26.Explain how jQuery Works.
+
+Latest answer: <html>
+     <head>
+     <script type="text/javascript" src="jquery.js"></script>
+     <script type="text/javascript">................
+Read answer
+
+27.When can you use jQuery? 
+
+Latest answer: JQuery can be used to
+
+apply CSS
+call functions on events
+traverse the documents...................
