@@ -26,9 +26,9 @@ public class MainActivity extends ExpandableListActivity{
 		super.onCreate(savedInstanceState);
 
 
-		/*if(StaticConstants.DISPLAY_ADD){
+		if(StaticConstants.DISPLAY_ADD){
         	addAd();	
-        }*/
+        }
 		
 		// this is not really  necessary as ExpandableListActivity contains an ExpandableList
 		//setContentView(R.layout.main);

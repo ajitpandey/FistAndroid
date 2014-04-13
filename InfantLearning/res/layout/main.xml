@@ -1,22 +1,9 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:background="#6599FF"
-    android:layout_height="match_parent"
-    tools:context="com.sunita.infantlearning.MainActivity"
-    tools:ignore="MergeRootFrame" >
-    
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="49dp"
-        android:background="@drawable/a"
-         />
-    
-    </FrameLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:orientation="horizontal"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+ android:id="@+id/linearLayout1"
+ >
+ 
+ </LinearLayout>
 

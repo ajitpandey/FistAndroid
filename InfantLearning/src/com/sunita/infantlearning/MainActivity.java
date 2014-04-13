@@ -1,87 +1,49 @@
 package com.sunita.infantlearning;
 
+import android.app.Activity;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
+import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
+	private LinearLayout linearLayout;
 
+	  private DisplayMetrics displayMetrics = new DisplayMetrics();
+	  private Integer fontSize = 40;
+	  private int fontColour = Color.GREEN;
+	  private int minusDpxWidth = 30;
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+	public void onCreate(Bundle savedInstanceState) {
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.main);
+	    
+	    linearLayout = (LinearLayout)findViewById(R.id.linearLayout1);
+	    String[] strArr = new String[]{"A","B","C","D","E","F","G"," H","I","J","K","L","M","N","O","P","Q"};
+		for(String str : strArr){
+			TextView txt = new TextView(this);
+			txt.setText(str);
+	        //txt.setMaxWidth(displayMetrics.widthPixels - minusDpxWidth);
+	        txt.setTextColor(fontColour);
+	        txt.setTextSize(fontSize);
+	        //txt.setWidth(10);
+	        //txt.setMaxWidth(30);
+	        //txt.setMaxEms(3);
+	        txt.setEms(1);
+	        //txt.set
+	        txt.setBackgroundDrawable(getResources().getDrawable(R.drawable.back));
+	        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a);
 
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
-		
-		
-		
-		 final MediaPlayer mp = MediaPlayer.create(this, R.raw.a);
-
-	        ImageButton play_button = (ImageButton)this.findViewById(R.id.imageButton1);
-	        play_button.setOnClickListener(new View.OnClickListener() {
+	        txt.setOnClickListener(new View.OnClickListener() {
 	            public void onClick(View v) {
 	                //Log.v(TAG, "Playing sound...");
 	                mp.start();
 	            }
 	        });
-	        play_button.setOnHoverListener(new View.OnHoverListener() {
-				
-				@Override
-				public boolean onHover(View arg0, MotionEvent arg1) {
-					// TODO Auto-generated method stub
-					mp.start();
-					return false;
-				}
-			});
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
-
-		public PlaceholderFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main, container,
-					false);
-			return rootView;
+	        linearLayout.addView(txt);
 		}
 	}
-
 }
