@@ -43,27 +43,6 @@ public class MainActivity extends Activity {
         rawHeight = displayMetrics.heightPixels;
 	    fontSize = rawHeight/23;
         
-	    /*Display display = getWindowManager().getDefaultDisplay();     
-	    Method mGetRawH;
-	    Method mGetRawW;
-	    try {
-			mGetRawH = Display.class.getMethod("getRawHeight");
-			mGetRawW = Display.class.getMethod("getRawWidth");
-			rawWidth = (Integer) mGetRawW.invoke(display);
-			rawHeight = (Integer) mGetRawH.invoke(display);
-		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 	    
 	    populateHasMap();
 	    linearLayout = (LinearLayout)findViewById(R.id.linearLayout1);
@@ -82,12 +61,13 @@ public class MainActivity extends Activity {
 		for(String str : strArr){
 			TextView txt = new TextView(this);
 			txt.setText(str);
-			System.out.println(displayMetrics.widthPixels + " - " +displayMetrics.widthPixels/4 + " * " + displayMetrics.heightPixels + " - " + displayMetrics.heightPixels/7);
-			System.out.println(rawWidth + " - " +rawWidth/4 + " * " + rawHeight + " - " + rawHeight/7);
+			//System.out.println(displayMetrics.widthPixels + " - " +displayMetrics.widthPixels/4 + " * " + displayMetrics.heightPixels + " - " + displayMetrics.heightPixels/7);
+			//System.out.println(rawWidth + " - " +rawWidth/4 + " * " + rawHeight + " - " + rawHeight/7);
 	        txt.setWidth(rawWidth/4);
 	        txt.setWidth(rawHeight/7);
 	        txt.setTextColor(fontColour);
-	        txt.setTextSize(TypedValue.COMPLEX_UNIT_SP,fontSize);
+	        //txt.setTextSize(TypedValue.COMPLEX_UNIT_SP,fontSize);
+	        txt.setTextSize(fontSize);
 	        txt.setGravity(Gravity.CENTER_HORIZONTAL);
 	        txt.setBackgroundDrawable(getResources().getDrawable(R.drawable.back));
 	        final MediaPlayer mp = MediaPlayer.create(this, getId(str.toLowerCase(), R.raw.class));
