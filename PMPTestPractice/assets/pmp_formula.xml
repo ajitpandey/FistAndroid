@@ -1,0 +1,120 @@
+<interview>
+<topic>basic java</topic>
+<qa>
+<q>No. of Communication Channels</q>
+<a>n (n-1)/2</a>
+<a>n = number of members in the team</a>
+<a>n should include the project manager</a>
+<a>e.g. if the no. of team members increase from 4 to 5, the increase in communication channels:</a>
+<a>5(5-1)/2 – 4(4-1)/2 = 4</a>
+</qa><qa>
+<q>Schedule Performance Index (SPI)</q>
+<a>SPI = EV/PV</a>
+<a>EV = Earned Value</a>
+<a>PV = Planned Value</a>
+<a>< 1    behind schedule</a>
+<a>= 1    on schedule</a>
+<a>> 1    ahead of schedule</a>
+</qa><qa>
+<q>Cost Performance Index (CPI)</q>
+<a>CPI = EV/AC</a>
+<a>EV = Earned Value</a>
+<a>AC = Actual Cost</a>
+<a>< 1    Over budget</a>
+<a>= 1    On budget</a>
+<a>> 1    Under budget</a>
+<a>sometimes the term ‘cumulative CPI’ would be shown, which actually is the CPI up to that moment</a>
+</qa><qa>
+<q>Schedule Variance (SV)</q>
+<a>SV = EV – PV</a>
+<a>EV = Earned Value</a>
+<a>PV = Planned Value</a>
+<a>< 0    Behind schedule</a>
+<a>= 0    On schedule</a>
+<a>> 0    Ahead of schedule</a>
+</qa><qa>
+<q>Cost Variance (CV)</q>
+<a>CV = EV – AC</a>
+<a>EV = Earned Value</a>
+<a>AC = Actual Cost</a>
+<a>< 0    Over budget</a>
+<a>= 0    On budget</a>
+<a>> 0    Budget budget</a>
+</qa><qa>
+<q>Estimate at Completion (EAC) if original is flawed</q>
+<a>EAC = AC + New ETC</a>
+<a>AC = Actual Cost</a>
+<a>New ETC = New Estimate to Completion</a>
+<a>if the original estimate is based on wrong data/assumptions or circumstances have changed</a>
+</qa><qa>
+<q>Estimate at Completion (EAC) if BAC remains the same</q>
+<a>EAC = AC + BAC – EV</a>
+<a>AC = Actual Cost</a>
+<a>BAC = Budget at completion</a>
+<a>EV = Earned Value</a>
+<a>the variance is caused by a one-time event and is not likely to happen again</a>
+</qa><qa>
+<q>Estimate at Completion (EAC) if CPI remains the same</q>
+<a>EAC = BAC/CPI</a>
+<a>BAC = Budget at completion</a>
+<a>CPI = Cost performance index</a>
+<a>if the CPI would remain the same till end of project, i.e. the original estimation is not accurate</a>
+</qa><qa>
+<q>Estimate at Completion (EAC) if substandard performance continues</q>
+<a>EAC = AC + (BAC -EV)/(CPI*SPI)</a>
+<a>AC = Actual Cost</a>
+<a>BAC = Budget at completion</a>
+<a>EV = Earned Value</a>
+<a>CPI = Cost Performance Index</a>
+<a>SPI = Schedule Performance Index</a>
+<a>use when the question gives all the values (AC, BAC, EV, CPI and SPI), otherwise, this formula is not likely to be used</a>
+</qa><qa>
+<q>To-Complete Performance Index (TCPI)</q>
+<a>TCPI = (BAC – EV)/(BAC – AC)</a>
+<a>BAC = Budget at completion</a>
+<a>EV = Earned value</a>
+<a>AC = Actual Cost</a>
+<a>TCPI = Remaining Work/Remaining Funds</a>
+<a>BAC = Budget at completion</a>
+<a>EV = Earned value</a>
+<a>CPI = Cost performance index</a>
+<a>< 1    Under budget</a>
+<a>= 1    On budget</a>
+<a>> 1    Over budget</a>
+</qa><qa>
+<q>Estimate to Completion </q>
+<a>ETC = EAC -AC</a>
+<a>EAC = Estimate at Completion</a>
+<a>AC = Actual Cost</a>
+</qa><qa>
+<q>Variance at Completion</q>
+<a>VAC = BAC – EAC</a>
+<a>BAC = Budget at completion</a>
+<a>EAC = Estimate at Completion</a>
+<a>< 0    Under budget</a>
+<a>= 0    On budget</a>
+<a>> 0    Over budget</a>
+</qa><qa>
+<q>PERT Estimation</q>
+<a>(O + 4M + P)/6</a>
+<a>O= Optimistic estimate</a>
+<a>M= Most Likely estimate</a>
+<a>P= Pessimistic estimate</a>
+</qa><qa>
+<q>Standard Deviation</q>
+<a>(P – O)/6</a>
+<a>O= Optimistic estimate</a>
+<a>P= Pessimistic estimate</a>
+<a>this is a rough estimate for the standard deviation</a>
+</qa><qa>
+<q>Float/Slack</q>
+<a>LS – ES</a>
+<a>LS = Late start</a>
+<a>ES = Early start</a>
+<a>LF – EF</a>
+<a>LF = Late finish</a>
+<a>EF = Early finish</a>
+<a>= 0    On critical path</a>
+<a>< 0    Behind schedule</a>
+</qa>
+</interview>

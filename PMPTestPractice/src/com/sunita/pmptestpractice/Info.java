@@ -85,8 +85,7 @@ public class Info extends Activity //implements OnClickListener
     final OnClickListener btnLevel2_OnClickListener = new OnClickListener() {
         public void onClick(final View v) {
         	//invoke the Info activity
-				Intent main = new Intent(getApplicationContext(), MainActivity.class);
-				main.putExtra("appLevel", StaticConstants.ACTIVITY_TEST);
+				Intent main = new Intent(getApplicationContext(), FormulaActivity.class);
 	    		startActivity(main);        
         }
     };

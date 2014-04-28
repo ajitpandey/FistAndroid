@@ -18,11 +18,10 @@
         android:description="@string/aboutUsAppText"
         android:icon="@drawable/icon3"
         android:label="@string/app_name"
-        
         android:theme="@style/AppTheme" >
-        
+
         <!-- android:logo="@drawable/aj_flashcard" -->
-        
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -39,8 +38,8 @@
         <activity
             android:name="com.sunita.pmptestpractice.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
@@ -56,6 +55,10 @@
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <activity
+            android:name="com.sunita.pmptestpractice.FormulaActivity"
+            android:label="@string/title_activity_formula" >
+        </activity>
     </application>
 
 </manifest>

@@ -30,8 +30,11 @@ import android.content.Context;
 import android.os.Environment;
 import android.util.Xml;
 
+import com.sunita.pmptestpractice.FormulaActivity;
 import com.sunita.pmptestpractice.MainActivity;
 import com.sunita.pmptestpractice.util.PrintSysout;
+import com.sunita.pmptestpractice.vo.InterviewQuestAnsVo;
+import com.sunita.pmptestpractice.vo.InterviewQuestAnsVoList;
 import com.sunita.pmptestpractice.vo.QuestionAnswerVo;
 import com.sunita.pmptestpractice.vo.TestResult;
 
@@ -346,5 +349,75 @@ public class CreateXMLFile {
         }
     	//PrintSysout.printSysout("switch - 4 - " + voList.size());
         return voList;
+	}
+    
+    public static InterviewQuestAnsVoList getIntQuestionAnswerList(FormulaActivity activity, String assetFileName) {
+		InterviewQuestAnsVoList interviewQuestAnsVoList = null;
+    	XmlPullParserFactory pullParserFactory;
+		try {
+			pullParserFactory = XmlPullParserFactory.newInstance();
+			XmlPullParser parser = pullParserFactory.newPullParser();
+
+			    //InputStream in_s = getApplicationContext().getAssets().open(level);
+			InputStream in_s = activity.getAssets().open(assetFileName);
+		        parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
+	            parser.setInput(in_s, null);
+
+	            //PrintSysout.printSysout("step - 1");
+	            interviewQuestAnsVoList = parseInterviewQuestAnsVoListXML(parser);
+	            //PrintSysout.printSysout("step - 2");
+		} catch (XmlPullParserException e) {
+
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return interviewQuestAnsVoList;
+	}
+    
+    private static InterviewQuestAnsVoList parseInterviewQuestAnsVoListXML(XmlPullParser parser) throws XmlPullParserException,IOException
+	{
+        int eventType = parser.getEventType();
+        InterviewQuestAnsVoList interviewQuestAnsVoList = null;
+        InterviewQuestAnsVo interviewQuestAnsVo = null; 
+        //PrintSysout.printSysout("eventType - " + eventType);
+        
+        while (eventType != XmlPullParser.END_DOCUMENT){
+            String name = null;
+            
+            switch (eventType){
+                case XmlPullParser.START_DOCUMENT:
+                	interviewQuestAnsVoList = new InterviewQuestAnsVoList();
+                	//PrintSysout.printSysout("switch - 1");
+                    break;
+                case XmlPullParser.START_TAG:
+                	name = parser.getName();
+                	//PrintSysout.printSysout("switch - 2 - " + name);
+                	if (name.equals("topic")){
+                		interviewQuestAnsVoList.setTopic(parser.nextText());
+                    	//PrintSysout.printSysout("questionAnswerVo : " + questionAnswerVo);
+                    } else if (name.equals("qa")){
+                    	interviewQuestAnsVo = new InterviewQuestAnsVo();
+                    	//PrintSysout.printSysout("questionAnswerVo : " + questionAnswerVo);
+                    } else if (interviewQuestAnsVo != null){
+                        if (name.equals("q")){
+                        	interviewQuestAnsVo.setQuestion(parser.nextText());
+                        } else if (name.equals("a")){
+                        	interviewQuestAnsVo.addAnswer(parser.nextText());
+                        } 
+                    }
+                    break;
+                case XmlPullParser.END_TAG:
+                    name = parser.getName();
+                	//PrintSysout.printSysout("switch - 3 - " + name);
+                    if (name.equalsIgnoreCase("qa") && interviewQuestAnsVo != null){
+                    	interviewQuestAnsVoList.addInterQAVo(interviewQuestAnsVo);
+                    } 
+            }
+            eventType = parser.next();
+        }
+    	//PrintSysout.printSysout("switch - 4 - " + voList.size());
+        return interviewQuestAnsVoList;
 	}
 }

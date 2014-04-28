@@ -38,14 +38,15 @@
         android:id="@+id/btnLevel1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/level1" />
+        android:text="@string/level1"
+        android:background="@drawable/buttonbg" />
 
     <Button
         android:id="@+id/btnLevel2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/level2"
-        android:visibility="gone" />
+        android:background="@drawable/buttonbg" />
 
     <Button
         android:id="@+id/btnLevel3"
@@ -65,7 +66,8 @@
         android:id="@+id/btnAboutUs"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/aboutUs" />
+        android:text="@string/aboutUs"
+        android:background="@drawable/buttonbg" />
 
 </LinearLayout> <!-- </RelativeLayout> -->
 </ScrollView>

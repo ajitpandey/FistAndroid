@@ -353,6 +353,5 @@
 <q>98. What will be the default values of all the elements of an array defined as an instance variable?</q>
 <a>If the array is an array of primitive types, then all the elements of the array will be initialized to the default value corresponding to that primitive type.</a>
 <a>Example: All the elements of an array of int will be initialized to 0(zero), while that of boolean type will be initialized to false. Whereas if the array is an array of references (of any type), all the elements will be initialized to null.</a>
-</qa><qa>
 </qa>
 </interview>
