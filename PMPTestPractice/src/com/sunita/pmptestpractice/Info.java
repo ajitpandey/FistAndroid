@@ -86,6 +86,7 @@ public class Info extends Activity //implements OnClickListener
         public void onClick(final View v) {
         	//invoke the Info activity
 				Intent main = new Intent(getApplicationContext(), FormulaActivity.class);
+				main.putExtra("filename", "pmp_formula.xml");
 	    		startActivity(main);        
         }
     };

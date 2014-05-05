@@ -393,7 +393,7 @@ public class CreateXMLFile {
                     break;
                 case XmlPullParser.START_TAG:
                 	name = parser.getName();
-                	//PrintSysout.printSysout("switch - 2 - " + name);
+                	PrintSysout.printSysout("switch start tag - 2 - " + name);
                 	if (name.equals("topic")){
                 		interviewQuestAnsVoList.setTopic(parser.nextText());
                     	//PrintSysout.printSysout("questionAnswerVo : " + questionAnswerVo);
@@ -401,8 +401,11 @@ public class CreateXMLFile {
                     	interviewQuestAnsVo = new InterviewQuestAnsVo();
                     	//PrintSysout.printSysout("questionAnswerVo : " + questionAnswerVo);
                     } else if (interviewQuestAnsVo != null){
+                    	PrintSysout.printSysout("------interviewQuestAnsVo");
                         if (name.equals("q")){
-                        	interviewQuestAnsVo.setQuestion(parser.nextText());
+                        	String str = parser.nextText();
+                        	PrintSysout.printSysout("Q : " + str );
+                        	interviewQuestAnsVo.setQuestion(str);
                         } else if (name.equals("a")){
                         	interviewQuestAnsVo.addAnswer(parser.nextText());
                         } 
@@ -410,7 +413,7 @@ public class CreateXMLFile {
                     break;
                 case XmlPullParser.END_TAG:
                     name = parser.getName();
-                	//PrintSysout.printSysout("switch - 3 - " + name);
+                	PrintSysout.printSysout("switch end tag - 3 - " + name);
                     if (name.equalsIgnoreCase("qa") && interviewQuestAnsVo != null){
                     	interviewQuestAnsVoList.addInterQAVo(interviewQuestAnsVo);
                     } 

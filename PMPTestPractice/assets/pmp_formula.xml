@@ -12,34 +12,34 @@
 <a>SPI = EV/PV</a>
 <a>EV = Earned Value</a>
 <a>PV = Planned Value</a>
-<a>< 1    behind schedule</a>
+<a>&lt; 1    behind schedule</a>
 <a>= 1    on schedule</a>
-<a>> 1    ahead of schedule</a>
+<a>&gt; 1    ahead of schedule</a>
 </qa><qa>
 <q>Cost Performance Index (CPI)</q>
 <a>CPI = EV/AC</a>
 <a>EV = Earned Value</a>
 <a>AC = Actual Cost</a>
-<a>< 1    Over budget</a>
+<a>&lt; 1    Over budget</a>
 <a>= 1    On budget</a>
-<a>> 1    Under budget</a>
+<a>&gt; 1    Under budget</a>
 <a>sometimes the term ‘cumulative CPI’ would be shown, which actually is the CPI up to that moment</a>
 </qa><qa>
 <q>Schedule Variance (SV)</q>
 <a>SV = EV – PV</a>
 <a>EV = Earned Value</a>
 <a>PV = Planned Value</a>
-<a>< 0    Behind schedule</a>
+<a>&lt; 0    Behind schedule</a>
 <a>= 0    On schedule</a>
-<a>> 0    Ahead of schedule</a>
+<a>&gt; 0    Ahead of schedule</a>
 </qa><qa>
 <q>Cost Variance (CV)</q>
 <a>CV = EV – AC</a>
 <a>EV = Earned Value</a>
 <a>AC = Actual Cost</a>
-<a>< 0    Over budget</a>
+<a>&lt; 0    Over budget</a>
 <a>= 0    On budget</a>
-<a>> 0    Budget budget</a>
+<a>&gt; 0    Budget budget</a>
 </qa><qa>
 <q>Estimate at Completion (EAC) if original is flawed</q>
 <a>EAC = AC + New ETC</a>
@@ -78,9 +78,9 @@
 <a>BAC = Budget at completion</a>
 <a>EV = Earned value</a>
 <a>CPI = Cost performance index</a>
-<a>< 1    Under budget</a>
+<a>&lt; 1    Under budget</a>
 <a>= 1    On budget</a>
-<a>> 1    Over budget</a>
+<a>&gt; 1    Over budget</a>
 </qa><qa>
 <q>Estimate to Completion </q>
 <a>ETC = EAC -AC</a>
@@ -91,9 +91,9 @@
 <a>VAC = BAC – EAC</a>
 <a>BAC = Budget at completion</a>
 <a>EAC = Estimate at Completion</a>
-<a>< 0    Under budget</a>
+<a>&lt; 0    Under budget</a>
 <a>= 0    On budget</a>
-<a>> 0    Over budget</a>
+<a>&gt; 0    Over budget</a>
 </qa><qa>
 <q>PERT Estimation</q>
 <a>(O + 4M + P)/6</a>
@@ -115,6 +115,6 @@
 <a>LF = Late finish</a>
 <a>EF = Early finish</a>
 <a>= 0    On critical path</a>
-<a>< 0    Behind schedule</a>
+<a>&lt; 0    Behind schedule</a>
 </qa>
 </interview>

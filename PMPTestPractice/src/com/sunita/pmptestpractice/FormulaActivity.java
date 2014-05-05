@@ -13,6 +13,7 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.sunita.pmptestpractice.constant.StaticConstants;
 import com.sunita.pmptestpractice.file.io.CreateXMLFile;
+import com.sunita.pmptestpractice.util.PrintSysout;
 import com.sunita.pmptestpractice.vo.InterviewQuestAnsVoList;
 
 public class FormulaActivity extends ExpandableListActivity{
@@ -23,7 +24,7 @@ public class FormulaActivity extends ExpandableListActivity{
 
 		super.onCreate(savedInstanceState);
 
-
+		PrintSysout.printSysout("-----FormulaActivity----");
 		if(StaticConstants.DISPLAY_ADD){
         	addAd();	
         }
@@ -49,6 +50,8 @@ public class FormulaActivity extends ExpandableListActivity{
 		InterviewQuestAnsVoList interviewQuestAnsVoList;
 		try {
 			interviewQuestAnsVoList = CreateXMLFile.getIntQuestionAnswerList(this, fileName);
+			PrintSysout.printSysout(interviewQuestAnsVoList.getTopic());
+			PrintSysout.printSysout(interviewQuestAnsVoList.getInterviewQuestAnsVoList().size());
 			MyExpandableAdapter adapter = new MyExpandableAdapter(interviewQuestAnsVoList);
 			adapter.setInflater((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE), this);
 			expandableList.setAdapter(adapter);
@@ -59,13 +62,14 @@ public class FormulaActivity extends ExpandableListActivity{
 		}
 		
 
+		PrintSysout.printSysout("-----FormulaActivity-2---");
 		
 	}
 	
 	
 	
 	private void addAd() {
-    	// Create the adView.
+    	/*// Create the adView.
         adView = new AdView(this);
         adView.setAdUnitId(StaticConstants.ADD_1);
         adView.setAdSize(AdSize.BANNER);
@@ -80,6 +84,6 @@ public class FormulaActivity extends ExpandableListActivity{
         AdRequest adRequest = new AdRequest.Builder().build();
 
         // Load the adView with the ad request.
-        adView.loadAd(adRequest);
+        adView.loadAd(adRequest);*/
 	}
 }
