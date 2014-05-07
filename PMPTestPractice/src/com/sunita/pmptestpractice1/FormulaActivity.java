@@ -1,4 +1,4 @@
-package com.sunita.pmptestpractice;
+package com.sunita.pmptestpractice1;
 
 import android.app.ExpandableListActivity;
 import android.content.Context;
@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.sunita.pmptestpractice.constant.StaticConstants;
-import com.sunita.pmptestpractice.file.io.CreateXMLFile;
-import com.sunita.pmptestpractice.util.PrintSysout;
-import com.sunita.pmptestpractice.vo.InterviewQuestAnsVoList;
+import com.sunita.pmptestpractice1.constant.StaticConstants;
+import com.sunita.pmptestpractice1.file.io.CreateXMLFile;
+import com.sunita.pmptestpractice1.util.PrintSysout;
+import com.sunita.pmptestpractice1.vo.InterviewQuestAnsVoList;
 
 public class FormulaActivity extends ExpandableListActivity{
 
@@ -26,7 +26,7 @@ public class FormulaActivity extends ExpandableListActivity{
 
 		PrintSysout.printSysout("-----FormulaActivity----");
 		if(StaticConstants.DISPLAY_ADD){
-        	addAd();	
+        	//addAd();	
         }
 		
 		// this is not really  necessary as ExpandableListActivity contains an ExpandableList
@@ -69,14 +69,14 @@ public class FormulaActivity extends ExpandableListActivity{
 	
 	
 	private void addAd() {
-    	/*// Create the adView.
+    	// Create the adView.
         adView = new AdView(this);
         adView.setAdUnitId(StaticConstants.ADD_1);
         adView.setAdSize(AdSize.BANNER);
         
         
         LinearLayout layout = (LinearLayout)findViewById(R.id.mainLinearLayout);
-        layout = (LinearLayout)findViewById(R.id.groupLinearLayout);
+        //layout = (LinearLayout)findViewById(R.id.groupLinearLayout);
         // Add the adView to it.
         layout.addView(adView);
 
@@ -84,6 +84,6 @@ public class FormulaActivity extends ExpandableListActivity{
         AdRequest adRequest = new AdRequest.Builder().build();
 
         // Load the adView with the ad request.
-        adView.loadAd(adRequest);*/
+        adView.loadAd(adRequest);
 	}
 }

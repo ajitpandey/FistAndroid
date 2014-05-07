@@ -1,4 +1,4 @@
-package com.sunita.pmptestpractice;
+package com.sunita.pmptestpractice1;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,8 +11,8 @@ import android.widget.LinearLayout;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.sunita.pmptestpractice.constant.StaticConstants;
-import com.sunita.pmptestpractice.util.SaveDataToFile;
+import com.sunita.pmptestpractice1.constant.StaticConstants;
+import com.sunita.pmptestpractice1.util.SaveDataToFile;
 
 
 public class Info extends Activity //implements OnClickListener
@@ -95,8 +95,8 @@ public class Info extends Activity //implements OnClickListener
     final OnClickListener btnLevel3_OnClickListener = new OnClickListener() {
         public void onClick(final View v) {
         	//invoke the Info activity
-				Intent main = new Intent(getApplicationContext(), ResultListActivity.class);
-				main.putExtra("appLevel", StaticConstants.ACTIVITY_RESULT_LIST);
+				Intent main = new Intent(getApplicationContext(), FormulaActivity.class);
+				main.putExtra("filename", "pmp_glossary.xml");
 	    		startActivity(main);        
         }
     };

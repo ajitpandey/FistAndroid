@@ -1,0 +1,750 @@
+﻿<interview>
+<topic>Glossary</topic>
+<qa>
+<q>Acceptance</q>
+<a>This is a response to a risk event, generally made when the probability of the event and/or its impact are small. It is used when mitigation, transference, or avoidance are not selected.</a>
+</qa><qa>
+<q>Active listening</q>
+<a>This occurs when the receiver confirms the message is being received. It can be done by way of feedback, questions, prompts for clarity, and other signs of having received the message.</a>
+</qa><qa>
+<q>Activity list</q>
+<a>An output of the activity definition process that includes all of the activities to be performed within the project.</a>
+</qa><qa>
+<q>Activity on arrow</q>
+<a>A network diagramming method where the arrows in the arrow diagramming method network diagram represent the activities within the project. </a>
+</qa><qa>
+<q>Activity on node</q>
+<a>A network diagramming method where the nodes in a project network diagram represent the activities.</a>
+</qa><qa>
+<q>Activity sequencing</q>
+<a>A process for setting the order of activities within the project schedule.</a>
+</qa><qa>
+<q>Actual cost (AC)</q>
+<a>Used in earned value measurements; the actual cost of the work performed.</a>
+</qa><qa>
+<q>Administrative closure</q>
+<a>The documenting of the project results and the acceptance of the product by the customer or the project sponsor. Administrative closure is also needed if a project is terminated. </a>
+</qa><qa>
+<q>Analogous estimating</q>
+<a>This relies on historical information to predict estimates for current projects. Analogous estimating is also known as top-down estimating and is a form of expert judgment.</a>
+</qa><qa>
+<q>Application areas</q>
+<a>These are the areas of business, industry, and trade about which the project manager may need special knowledge. Common application areas include legal issues, technical issues, engineering information, and manufacturing information</a>
+</qa><qa>
+<q>Assumptions</q>
+<a>Beliefs considered to be true, real, or certain for the sake of planning. </a>
+</qa><qa>
+<q>Avoidance</q>
+<a>This is one response to a risk event. The risk is avoided by planning a different technique to remove the risk from the project.</a>
+</qa><qa>
+<q>Benchmarking</q>
+<a>A process of using prior projects within, or external to, the performing organization to compare and set quality standards for processes and results. </a>
+</qa><qa>
+<q>Benefit measurement methods</q>
+<a>Used in comparing the value of one project against the value, or benefits, of another; often used in project selection models. </a>
+</qa><qa>
+<q>Benefit/cost analysis</q>
+<a>The process of determining the pros and cons of any project, process, product, or activity. </a>
+</qa><qa>
+<q>Benefit/cost ratios</q>
+<a>These models examine the cost-to-benefit ratio. </a>
+</qa><qa>
+<q>Bid</q>
+<a>A document from the seller to the buyer. Used when price is the determining factor in the decision-making process. </a>
+</qa><qa>
+<q>Bidder conference (also called contractor or vendor conference)</q>
+<a>A meeting with prospective sellers to ensure all sellers have a clear understanding of the product or service to be procured. Bidder conferences allow sellers to query the buyer on the details of the product to help ensure that the proposal the seller creates is adequate and appropriate for the proposed agreement. </a>
+</qa><qa>
+<q>Bill of materials (BOM)</q>
+<a>A hierarchy of the materials needed to complete the project. </a>
+</qa><qa>
+<q>Bottom-up estimating</q>
+<a>A technique where an estimate for each component in the WBS is developed and then totaled for an overall project budget. This is the longest method to complete, but it provides the most accurate estimate.</a>
+</qa><qa>
+<q>Brainstorming</q>
+<a>The most common approach to risk identification; it is performed by a project team to identify the risks within the project. A multidisciplinary team, hosted by a project facilitator, can also perform brainstorming. </a>
+</qa><qa>
+<q>Budget at completion (BAC)</q>
+<a>The predicted budget for the project; what the project should cost when it is completed.</a>
+</qa><qa>
+<q>Cause-and-effect diagrams (also called Ishikawa diagrams and fishbone diagrams)</q>
+<a>Used for root cause analysis of what factors are creating the risks within the project. The goal is to identify and treat the root of the problem, not the symptom. </a>
+</qa><qa>
+<q>Centralized contracting</q>
+<a>All contracts for all projects need to be approved through a central contracting unit within the performing organization. </a>
+</qa><qa>
+<q>Change Control Board</q>
+<a>A board that determines the validity and need of (thus approving or denying) project change requests. </a>
+</qa><qa>
+<q>Change Control System </q>
+<a>A system to formally accept, review, and act upon project change requests. </a>
+</qa><qa>
+<q>Chart of accounts </q>
+<a>A coding system used by the performing organization’s accounting system to account for the project work. </a>
+</qa><qa>
+<q>Checklists </q>
+<a>A listing of activities that employees check to ensure the work has been completed consistently; used in quality control. </a>
+</qa><qa>
+<q>Claim </q>
+<a>Generally unpleasant. It describes a disagreement between the buyer and the seller—or vice versa—regarding a change to the project work. Generally, the disagreement centers on the change, why it happens, and which party is responsible for the financial ramifications of the change. </a>
+</qa><qa>
+<q>Closing </q>
+<a>The period when a project or phase moves through formal acceptance to bring the project or phase to an orderly conclusion.</a>
+</qa><qa>
+<q>Code of accounts </q>
+<a>The numbering systems used within the WBS and the WBS dictionary to identify the components within the project.</a>
+</qa><qa>
+<q>Coercive power </q>
+<a>The type of power that comes with the authority to discipline the project team members. This is also known as “penalty power.” Generally used to describe the power structure when the team is afraid of the project manager. </a>
+</qa><qa>
+<q>Collective bargaining agreements </q>
+<a>These are contractual agreements initiated by employee groups, unions, or other labor organizations; they may act as a constraint on the project. </a>
+</qa><qa>
+<q>Communication channel formula </q>
+<a>A formula to predict the number of communication channels within a project; the formula is N(N – 1)/2, where N represents the number of stakeholders. </a>
+</qa><qa>
+<q>Communications management plan </q>
+<a>A plan that documents and organizes the stakeholder needs for communication. This plan covers the communications system, its documentation, the flow of communication, modalities of communication, schedules for communications, information retrieval, and any other stakeholder requirements for communications. </a>
+</qa><qa>
+<q>Compromising </q>
+<a>A conflict resolution method; this approach requires both parties to give up something. The decision ultimately made is a blend of both sides of the argument. Because neither party completely wins, it is considered a lose-lose solution. </a>
+</qa><qa>
+<q>Configuration management </q>
+<a>Activities focusing on controlling the characteristics of a product or service. A documented process of controlling the features, attributes, and technical configuration of any product or service. Sometimes considered a rigorous Change Control System. </a>
+</qa><qa>
+<q>Constrained optimization methods </q>
+<a>These are complex mathematical formulas and algorithms that are used to predict the success of projects, the variables within projects, and the tendencies to move forward with selected project investments. Examples include linear programming, integer algorithms, and multi-objective programming. </a>
+</qa><qa>
+<q>Constraints </q>
+<a>Any influence on the project that may limit the options of the project team in performing the project work.</a>
+</qa><qa>
+<q>Contingency reserve </q>
+<a>A time or dollar amount allotted as a response to risk events that may occur within a project.</a>
+</qa><qa>
+<q>Contract </q>
+<a>A legal, binding agreement, preferably written, between a buyer and seller detailing the requirements and obligations of both parties. Must include an offer, an acceptance, and a consideration. </a>
+</qa><qa>
+<q>Contract administration </q>
+<a>The process of ensuring that the buyer and seller both perform to the specifications within the contract. </a>
+</qa><qa>
+<q>Contract Change </q>
+<a>Control System Defines the procedures for how contracts may be changed. Includes the paperwork, tracking, conditions, dispute resolution procedures, and the procedures for getting the changes approved within the performing organization. </a>
+</qa><qa>
+<q>Contract closeout </q>
+<a>A process for confirming that the obligations of the contract were met as expected. The project manager, the customer, key stakeholder, and, in some instances, the seller complete the product verification together to confirm the contract has been completed. </a>
+</qa><qa>
+<q>Contract file </q>
+<a>A complete indexed set of records of the procurement process incorporated into the administrative closure process. These records include financial information as well as information on the performance and acceptance of the procured work. </a>
+</qa><qa>
+<q>Control account plans </q>
+<a>A control tool within the project that represents the integration of the project scope, the project schedule, and the budget. It allows management to measure the progress of a project. </a>
+</qa><qa>
+<q>Control charts </q>
+<a>These illustrate the performance of a project over time. They map the results of inspections against a chart. Control charts are typically used in projects or operations that have repetitive activities such as manufacturing, test series, or help desk functions. Upper and lower control limits indicate whether values are in control or out of control. </a>
+</qa><qa>
+<q>Controlling </q>
+<a>Process in which the project is controlled and managed; the project manager controls the project scope and changes and monitors changes to the project budget, schedule, and scope by comparing plans to actual results and taking corrective action as necessary.</a>
+</qa><qa>
+<q>Core processes </q>
+<a>These processes are common to all projects. The core processes are scope planning, scope definition, activity definition, resource planning, activity sequencing, activity duration estimation, cost estimating, risk management planning, schedule development, cost budgeting, and project plan development. </a>
+</qa><qa>
+<q>Cost baseline </q>
+<a>This shows what the project is expected to spend. It’s usually shown in an S-curve and allows the project manager and management to predict when the project will be spending monies and over what duration. The purpose of the cost baseline is to measure and predict project performance. </a>
+</qa><qa>
+<q>Cost budgeting </q>
+<a>A process of assigning a cost to an individual work package. This process shows costs over time. The cost budget results in an S-curve that becomes the cost baseline for the project. </a>
+</qa><qa>
+<q>Cost change control </q>
+<a>This is part of the integrated change control system and documents the procedures to request, approve, and incorporate changes to project costs. </a>
+</qa><qa>
+<q>Cost control </q>
+<a>An active process to control the causes of cost changes, to document cost changes, and to monitor cost fluctuations within the project. When changes occur, the cost baseline must be updated. </a>
+</qa><qa>
+<q>Cost estimating </q>
+<a>The process of calculating the costs, by category, of the identified resources to complete the project work. </a>
+</qa><qa>
+<q>Cost of conformance </q>
+<a>The cost of completing the project work to satisfy the project scope and the expected level of quality. Examples include training, safety measures, and quality management activities. </a>
+</qa><qa>
+<q>Cost of quality </q>
+<a>The cost of quality is the expense of all the activities within a project to meet quality objectives. </a>
+</qa><qa>
+<q>Cost of poor quality </q>
+<a>The cost of completing the project work without meeting the quality standards. The biggest issue here is the money lost by having to redo the project work; it’s always more cost-effective to do the work right the first time. Other nonconformance costs are loss of sales, loss of customers, downtime, and corrective actions to fix problems caused by the incorrect work.</a>
+</qa><qa>
+<q>Cost performance index (CPI) </q>
+<a>An index that measures how well the project is performing on cost: CPI = EV/AC. </a>
+</qa><qa>
+<q>Cost variance </q>
+<a>The cost variance (CV) is the difference between the earned value (EV) and the actual cost (AC). </a>
+</qa><qa>
+<q>Cost-reimbursable contracts </q>
+<a>A contract that pays the seller for the product. In the payment to the seller, there is a profit margin that’s the difference between the actual costs of the product and the sales amount. </a>
+</qa><qa>
+<q>Critical chain method </q>
+<a>A scheduling approach that considers the availability of the resources needed to complete the project work. Unavailable resources may cause the network diagram to be reconfigured or the project duration to take longer than originally planned. </a>
+</qa><qa>
+<q>Critical path method (CPM) </q>
+<a>The CPM is the most common approach to calculating when a project may finish. It uses a “forward” and “backward” path to reveal which activities are considered critical, and which contain float. If activities on the critical path are delayed, the project end date will be delayed. </a>
+</qa><qa>
+<q>Crashing </q>
+<a>This is the addition of more resources to activities on the critical path in order to complete the project earlier. Crashing results in higher project costs. </a>
+</qa><qa>
+<q>Decision tree analysis </q>
+<a>A type of analysis that determines which of two decisions is the best. The decision tree assists in calculating the value of the decision and determining which decision costs the least. </a>
+</qa><qa>
+<q>Decoder </q>
+<a>This is a part of the communications model; it is the inverse of the encoder. If a message is encoded, a decoder translates it back to a usable format. </a>
+</qa><qa>
+<q>Defect repair </q>
+<a>An identified defect in a project component that needs to be repaired or replaced. </a>
+</qa><qa>
+<q>Deliverable </q>
+<a>The outcome of a project or project phase; a deliverable of a project can be a product or service.</a>
+</qa><qa>
+<q>Delphi Technique </q>
+<a>A method to query experts anonymously on foreseeable risks within the project, a phase of the project, or one of its components. The results of the survey are analyzed and organized and then circulated to the experts. Several rounds of anonymous discussions can be held using the Delphi Technique. The goal is to gain a consensus on project risks, and the anonymous nature of the process ensures that no one expert’s advice overtly influences the opinion of any other participant. </a>
+</qa><qa>
+<q>Design of experiments </q>
+<a>This relies on statistical “what-if” scenarios to determine which variables within a project will result in the best outcome; it can also be employed to eliminate a defect. The design of experiments approach is most often used on the product of the project, rather than the project itself. </a>
+</qa><qa>
+<q>Direct costs </q>
+<a>Costs incurred by the project in order for it to exist. Examples include the equipment needed to complete the project work, the salaries of the project team, and other expenses tied directly to the project’s existence. </a>
+</qa><qa>
+<q>Discretionary dependencies </q>
+<a>The preferred order of activities. Project managers should adhere to the order at their “discretion” and should document the logic behind the ordering. Discretionary dependencies have activities happen in a preferred order because of best practices, conditions unique to the project work, or external events. This is also known as soft logic. </a>
+</qa><qa>
+<q>Dummy activity </q>
+<a>An activity with no duration used in the arrow diagramming method to represent logical relationships between project activities.</a>
+</qa><qa>
+<q>Earned value (EV) </q>
+<a>The value of the work that has been completed and the budget for that work, the equation for which is EV = %complete × BAC. </a>
+</qa><qa>
+<q>Earned value management </q>
+<a>Earned value management integrates scope, schedule, and cost to give an objective, scalable point-in-time assessment of the project. EVM calculates the performance of the project and compares current performance against planned. EVM can also be a harbinger of things to come. Results early in the project can predict the likelihood of the project’s success or failure. </a>
+</qa><qa>
+<q>Effective listening </q>
+<a>The receiver is involved in the listening experience by paying attention to visual cues given by the speaker, as well as paralingual intentions, and by asking relevant questions.</a>
+</qa><qa>
+<q>Encoder </q>
+<a>Part of the communications model; the device or technology that packages the message to travel over the medium. </a>
+</qa><qa>
+<q>Enhance </q>
+<a>To enhance a risk is to attempt to modify its probability and/or its impact in order to realize the most gains from the identified risk. </a>
+</qa><qa>
+<q>Enterprise environmental factors </q>
+<a>All of the environmental factors that influence the project’s success. This includes the culture, organizational structure, project resources, commercial databases, market conditions, and any project manager software used within the project. It’s essentially the environment and conditions within which the project must operate. </a>
+</qa><qa>
+<q>Estimate at completion (EAC) </q>
+<a>A hypothesis of what the total cost of the project will be. Before the project begins, the project manager completes an estimate for the project deliverables based on the WBS. As the project progresses, there will likely be some variances between what the cost estimate was and what the actual cost is. The EAC is calculated to predict what the new estimate at completion will be. </a>
+</qa><qa>
+<q>Estimate to complete (ETC) </q>
+<a>Represents how much more money is needed to complete the project work. Its formula is ETC = EAC − AC. </a>
+</qa><qa>
+<q>Estimating publications </q>
+<a>Typically, a commercial reference to help the project estimator confirm and predict the accuracy of estimates. If a project manager elects to use one of these commercial databases, the estimate should include a pointer to this document for future reference and verification. </a>
+</qa><qa>
+<q>Evaluation criteria </q>
+<a>Used to rate and score proposals from sellers. In some instances, such as a bid or quote, the evaluation criterion is focused just on the price the seller offers. In other instances, such as a proposal, the evaluation criteria can be multiple values: experience, references, certifications, and more. </a>
+</qa><qa>
+<q>Executing </q>
+<a>Action in which the project plans are carried out or executed.</a>
+<a>The project manager coordinates people and other resources to complete the plan. </a>
+</qa><qa>
+<q>Expectancy </q>
+<a>Theory People will behave on the basis of what they expect as a result of their behavior. In other words, people will work in relation to the expected reward of their work.</a>
+</qa><qa>
+<q>Expert power </q>
+<a>A type of power where the authority of the project manager comes from experience with the area that the project focuses on. </a>
+</qa><qa>
+<q>Exploit </q>
+<a>Action where the organization wants to ensure that the identified risk does happen to realize the positive impact associated with the risk event.</a>
+</qa><qa>
+<q>Facilitating processes </q>
+<a>These processes support the project management core processes. They are done as needed throughout the project. The facilitating processes are quality planning, communications planning, organizational planning, staff acquisition, risk identification, qualitative risk analysis, quantitative risk analysis, risk response planning, procurement planning, and solicitation planning. </a>
+</qa><qa>
+<q>Fast tracking </q>
+<a>Doing activities in parallel that are normally done sequentially. </a>
+</qa><qa>
+<q>Feedback </q>
+<a>A response, question for clarification, or other confirmation once a sent message is received. </a>
+</qa><qa>
+<q>Finish No Earlier Than (FNET) </q>
+<a>This somewhat unusual constraint requires the activity to be in motion up until the predetermined date. </a>
+</qa><qa>
+<q>Finish No Later Than (FNLT) </q>
+<a>This constraint requires the project or activity to finish by a predetermined date. </a>
+</qa><qa>
+<q>Finish-to-Finish </q>
+<a>This relationship means Task A must complete before Task B can complete. Ideally, two tasks must finish at exactly the same time, but this is not always the case. </a>
+</qa><qa>
+<q>Finish-to-Start </q>
+<a>This relationship means Task A must complete before Task B can begin. This is the most common relationship. </a>
+</qa><qa>
+<q>Fixed-price contracts </q>
+<a>Fixed-price contracts are also known as firm-fixed-price and lump-sum contracts. These contracts have a preset price that the vendor must adhere to in both performing the work and providing materials. </a>
+</qa><qa>
+<q>Float </q>
+<a>The amount of time a task can be delayed without delaying the project’s completion. Technically, there are three different types of float: Free float is the total time a single activity can be delayed without delaying the early start of any successor activities. Total float is the total time an activity can be delayed without delaying project completion. Project float is the total time the project can be delayed without passing the customer’s expected completion date. </a>
+</qa><qa>
+<q>Flowchart </q>
+<a>A chart that illustrates how the parts of a system occur in sequence. </a>
+</qa><qa>
+<q>Force majeure </q>
+<a>A powerful and unexpected event, such as a hurricane or other disaster. </a>
+</qa><qa>
+<q>Forcing </q>
+<a>A conflict resolution method where one person dominates or forces their point of view or solution to a conflict. </a>
+</qa><qa>
+</qa><qa>
+<q>Forecasting </q>
+<a>An educated estimate of how long the project will take to complete. Can also refer to how much the project may cost to complete. </a>
+</qa><qa>
+<q>Formal power </q>
+<a>The type of power where the project manager has been assigned by senior management to be in charge of the project. </a>
+</qa><qa>
+<q>Fragnets (also called subnets) </q>
+<a>Portions of a network diagram that branch off the project and are not on the critical path. </a>
+</qa><qa>
+<q>Free float </q>
+<a>The total time a single activity can be delayed without delaying the early start of any successor activities. </a>
+</qa><qa>
+<q>Functional structure </q>
+<a>An organizational structure that groups staff members according to their area of expertise (sales, marketing, construction, and so on). Functional structures require the project team members to report directly to the functional manager. In this type of structure, the project manager’s authority and decision-making ability is less than the functional manager’s. </a>
+</qa><qa>
+<q>Future value </q>
+<a>A formula to calculate the future value of present money.</a>
+</qa><qa>
+<q>Hard logic </q>
+<a>The logical relationship between activities based on the type of work. For example, the foundation of a house must be created before the frame of the house can be built. This is also known as mandatory dependency.</a>
+</qa><qa>
+<q>Herzberg’s Theory of Motivation </q>
+<a>This posits that there are two catalysts for workers: hygiene agents and motivating agents. Hygiene agents do nothing to motivate employees, but their absence can demotivate workers. Hygiene agents are the expectations all workers have, such as job security, paychecks, clean and safe working conditions, a sense of belonging, civil working relationships, and other basic attributes associated with employment. Motivating agents are components such as reward, recognition, promotion, and other values that encourage individuals to succeed. </a>
+</qa><qa>
+<q>Historical information </q>
+<a>Information the project may use from previous projects. </a>
+</qa><qa>
+<q>Indirect costs </q>
+<a>Costs attributed to the cost of doing business. Examples include utilities, office space, and other overhead costs. </a>
+</qa><qa>
+<q>Influence diagram </q>
+<a>An influence diagram charts out a decision problem. It identifies all of the elements, variables, decisions, and objectives and how each factor may influence another. </a>
+</qa><qa>
+<q>Initiating </q>
+<a>This process group begins the project. The business needs are identified, and a product description is created. The project charter is written, and the project manager is selected. </a>
+</qa><qa>
+<q>Internal rate of return (IRR) </q>
+<a>The IRR is a complex formula to calculate when the present value of the cash inflow equals the original investment.</a>
+</qa><qa>
+<q>Interviewing </q>
+<a>Interviewing subject-matter experts and project stakeholders is an approach to identify risks on the current project based on the interviewees’ experience. </a>
+</qa><qa>
+<q>Invitation for bid </q>
+<a>A document from the buyer to the seller. Requests that the seller provide a price for the procured product or service. </a>
+</qa><qa>
+<q>ISO 9000 </q>
+<a>An international standard that helps organizations follow their own quality procedures. ISO 9000 is not a quality system, but a method of following procedures created by an organization.</a>
+</qa><qa>
+<q>Kill point </q>
+<a>The end of the project phase where the project can be terminated on the basis of the experiences of the previous phase or the outcome of the project phase.</a>
+</qa><qa>
+<q>Lag </q>
+<a>Positive time added to a task to move it away from the project start date; lag is adding time between activities. </a>
+</qa><qa>
+<q>Lead </q>
+<a>Negative time added to a task to bring it closer to the project start date; lead is subtracting time between activities. </a>
+</qa><qa>
+<q>Lessons learned </q>
+<a>An ongoing documentation of things the project manager and project team have learned throughout the project. Lessons learned are supplied to other project teams and project managers to apply to their ongoing projects. They are documented throughout the project, not just at the end of the project. </a>
+</qa><qa>
+<q>Letter of intent </q>
+<a>Expresses the intent of the buyer to procure products or services from the seller. Not the equivalent to a contract. </a>
+</qa><qa>
+<q>Make-or-buy analysis </q>
+<a>Used in determining what part of the project scope to make and what part to purchase. </a>
+</qa><qa>
+<q>Management by Projects </q>
+<a>This approach characterizes organizations that manage their operations as projects. These project-centric entities could manage any level of their work as a project. Such organizations apply general business skills to each project to determine their value, efficiency, and, ultimately, their return on investment. </a>
+</qa><qa>
+<q>Mandatory dependencies </q>
+<a>This refers to the logical relationship between activities based on the type of work. For example, the foundation of a house must be created before the frame of the house can be built. This is also known as hard logic. </a>
+</qa><qa>
+<q>Maslow’s Hierarchy of Needs </q>
+<a>A theory stating there are five layers of needs for all humans: physiological, safety, social, esteem, and the crowning jewel, self-actualization. </a>
+</qa><qa>
+<q>Matrix structures </q>
+<a>An organizational structure. There are three matrix structures: weak, balanced, and strong. The different structures are reflective of the project manager’s authority in relation to the functional manager’s authority. </a>
+</qa><qa>
+<q>McGregor’s Theory of X and Y </q>
+<a>This theory states that “X” people are lazy, don’t want to work, and need to be micromanaged. “Y” people, on the other hand, are self-led, motivated, and strive for accomplishments.</a>
+</qa><qa>
+<q>Medium </q>
+<a>Part of the communications model—the path the message takes from the sender to the receiver. This is the modality in which the communication travels, and typically refers to an electronic model, such as e-mail or the telephone. </a>
+</qa><qa>
+<q>Mitigation </q>
+<a>Reducing the probability or impact of a risk. </a>
+</qa><qa>
+<q>Monte Carlo analysis </q>
+<a>Predicts how scenarios may work out given any number of variables. The process doesn’t actually generate a specific answer, but a range of possible answers. When Monte Carlo is applied to a schedule, it can present, for example, the optimistic completion date, the pessimistic completion date, and the most likely completion date for each activity in the project. </a>
+</qa><qa>
+<q>Net present value NPV </q>
+<a>calculates the present value of monies returned on a project for each time period the project lasts. </a>
+</qa><qa>
+<q>Nonverbal communication </q>
+<a>Approximately 55 percent of oral communication is nonverbal. Facial expressions, hand gestures, and body language contribute to the message.</a>
+</qa><qa>
+<q>Operational definitions </q>
+<a>The quantifiable terms and values used to measure a process, activity, or work result. Operational definitions are also known as metrics. </a>
+</qa><qa>
+<q>Organizational </q>
+<a>process assets Describes the organization’s assets that may influence how the project is managed. This includes existing project plan templates, policies, procedures, and guidelines. The most evident organizational process asset is the lessons learned documentation and historical information from previous projects. </a>
+</qa><qa>
+<q>Ouchi’s Theory Z </q>
+<a>This theory posits that workers are motivated by a sense of commitment, opportunity, and advancement. Thus, employees will work if they are challenged and motivated. </a>
+</qa><qa>
+<q>Paralingual </q>
+<a>The pitch, tone, and inflections in the sender’s voice that affect the message being sent. </a>
+</qa><qa>
+<q>Parametric modeling </q>
+<a>A mathematical model based on known parameters to predict the cost of a project. The parameters in the model can vary based on the type of work being done. A parameter can be cost per cubic yard, cost per unit, and so on. </a>
+</qa><qa>
+<q>Pareto diagrams </q>
+<a>A Pareto diagram is related to Pareto’s Law: 80 percent of the problems come from 20 percent of the issues (this is also known as the “80/20 rule”). A Pareto diagram illustrates problems by assigned cause, from smallest to largest. </a>
+</qa><qa>
+<q>Planned value (PV) </q>
+<a>The worth of the work that should be completed by a specific time in the project schedule. </a>
+</qa><qa>
+<q>Planning </q>
+<a>This process group is iterative. All planning throughout the project is handled within the planning process group. </a>
+</qa><qa>
+<q>Planning package </q>
+<a>A WBS package that represents planning for this section of the WBS. It is located under the control account within a WBS. </a>
+</qa><qa>
+<q>PMBOK Guide </q>
+<a>Project Management Body of Knowledge (PMBOK), which includes all knowledge and practices within the endeavor of project management. </a>
+</qa><qa>
+<q>PMIS </q>
+<a>Project management information system (PMIS) is typically a computer-program to assist in project management activities, recordkeeping, and forecasting. </a>
+</qa><qa>
+<q>Precedence diagramming method </q>
+<a>The most common method of arranging the project work visually. The PDM puts the activities in boxes, called nodes, and connects the boxes with arrows. The arrows represent the relationship and the dependencies of the work packages.</a>
+</qa><qa>
+<q>Present value </q>
+<a>A formula to calculate the present value of future money. </a>
+</qa><qa>
+<q>Problem solving </q>
+<a>The ability to determine the best solution for a problem in a quick and efficient manner. </a>
+</qa><qa>
+<q>Process adjustments </q>
+<a>When quality is lacking, process adjustments are needed for immediate corrective actions or for future preventive actions to ensure that quality improves. Process adjustments may qualify for a change request and be funneled through the Change Control System as part of integration management.</a>
+</qa><qa>
+<q>Process groups </q>
+<a>The five process groups—initiation, planning, executing, controlling, and closing—comprise projects and project phases. These five process groups have sets of actions that move the project forward towards completion.</a>
+</qa><qa>
+<q>Procurement </q>
+<a>Procurement is the process of a seller soliciting, selecting, and paying for products or services from a buyer. </a>
+</qa><qa>
+<q>Procurement audits </q>
+<a>The successes and failures within the procurement process are reviewed from procurement planning through contract administration. The intent of the audit is to learn from what worked and what did not work during the procurement processes. </a>
+</qa><qa>
+<q>Procurement management plan </q>
+<a>This subsidiary project plan documents the decisions made in the procurement planning processes. It specifies how the remaining procurement activities will be managed. </a>
+</qa><qa>
+<q>Product scope </q>
+<a>The attributes and characteristics of the deliverables the project is creating. </a>
+</qa><qa>
+<q>Program Evaluation and Review Technique (PERT) </q>
+<a>A scheduling tool that uses a weighted average formula to predict the length of activities and the project. Specifically, the PERT formula is (O + 4ML + P)/6. </a>
+</qa><qa>
+<q>Programs </q>
+<a>A collection of related projects working in alignment towards a common cause. </a>
+</qa><qa>
+<q>Progress reports </q>
+<a>These provide current information on the project work completed to date. </a>
+</qa><qa>
+<q>Progressive elaboration </q>
+<a>The process of providing or discovering greater levels of detail as the project moves toward completion. </a>
+</qa><qa>
+<q>Project </q>
+<a>A temporary endeavor undertaken to create a unique product or service. </a>
+</qa><qa>
+<q>Project baselines </q>
+<a>The accepted plans against which actual results are compared to identify variances.</a>
+</qa><qa>
+<q>Project calendar </q>
+<a>A calendar that defines the working times for the project. For example, a project may require the project team to work nights and weekends so as not to disturb the ongoing operations of the organization during working hours. In addition, the project calendar accounts for holidays, working hours, and work shifts that the project will cover. </a>
+</qa><qa>
+<q>Project charter </q>
+<a>The charter authorizes the project, the project manager, and the required resources to complete the project work. </a>
+</qa><qa>
+<q>Project calendar </q>
+<a>The calendar in which project work may take place; generally defines the working hours, days of the week, and any holidays. </a>
+</qa><qa>
+<q>Project framework </q>
+<a>The structure and fundamentals of project management. The project framework is composed of nine knowledge areas: project integration management, project scope management, project time management, project cost management, project quality management, project human resources management, project communications management, project risk management, project procurement management, and five processes: initiation, planning, executing, controlling, and closing. </a>
+</qa><qa>
+<q>Project integration management </q>
+<a>The day-to-day actions of the project manager to ensure that all parts of the project work together. Composed of project plan development, project plan execution, and integrated change control. </a>
+</qa><qa>
+<q>Project life cycle </q>
+<a>The duration of the project, composed of all the individual project phases within the project. </a>
+</qa><qa>
+<q>Project manager </q>
+<a>The individual accountable for all aspects of a project. </a>
+</qa><qa>
+<q>Project phases </q>
+<a>Projects are broken down into manageable sections. A project phase is the logical segmentation of the work to an identifiable point within the project. Phases can be viewed as completion of work to a specified date, the actual completion of work, or other milestone. </a>
+</qa><qa>
+<q>Project plan </q>
+<a>The project plan is a collection of documents that is developed with the project team, stakeholders, and management. It is the guide to how the project should flow and how the project will be managed. It also reflects the values and priorities of, and the conditions influencing, the project. </a>
+</qa><qa>
+<q>Project portfolio management </q>
+<a>A management process to select the projects that should be invested in. Specifically, it is the selection process based on the need, profitability, and affordability of the proposed projects. </a>
+</qa><qa>
+<q>Project scope </q>
+<a>The work that has to be done in order to create the product. The project scope is concerned with the work—and only the required work—to complete the project. </a>
+</qa><qa>
+<q>Project scope management </q>
+<a>Project scope management, according to the PMBOK, is “the processes to ensure that the project includes all of the work required, and only the work required, to complete the project successfully.” </a>
+</qa><qa>
+<q>Project slack </q>
+<a>The total time the project can be delayed without passing the customer’s expected completion date. </a>
+</qa><qa>
+<q>Projectized structure </q>
+<a>An organizational structure where the project manager has the greatest amount of authority. The project team is assigned to the project on a full-time basis. When the project is complete, the project team members move on to other assignments within the organization. </a>
+</qa><qa>
+<q>Proposal </q>
+<a>A document from the seller to the buyer, responding to a request for proposal or other procurement documents. </a>
+</qa><qa>
+<q>Qualified seller list </q>
+<a>The performing organization may have lists of qualified sellers, preferred sellers, or approved sellers. The qualified sellers list generally contains contact information, a history of past experience with the seller, and other pertinent information. </a>
+</qa><qa>
+<q>Qualitative risk analysis </q>
+<a>An examination and prioritization of the risks based on their probability of occurring and the impact on the project if they do occur. Qualitative risk analysis guides the risk reaction process.</a>
+</qa><qa>
+<q>Quality assurance </q>
+<a>A process in which overall performance is evaluated to ensure the project meets the relevant quality standards. </a>
+</qa><qa>
+<q>Quality audits </q>
+<a>A quality audit is a process to confirm that the quality processes are performing correctly on the current project. The quality audit determines how to make things better for the project, as well as other projects within the organization. Quality audits measure the project’s ability to maintain the expected level of quality. </a>
+</qa><qa>
+<q>Quality control </q>
+<a>A process in which the work results are monitored to see if they meet relevant quality standards. </a>
+</qa><qa>
+<q>Quality management plan </q>
+<a>This document describes how the project manager and the project team will fulfill the quality policy. In an ISO 9000 environment, the quality management plan is referred to as the “project quality system.” </a>
+</qa><qa>
+<q>Quality policy </q>
+<a>The formal policy an organization follows to achieve a preset standard of quality. The quality policy of the organization may follow a formal approach, such as ISO 9000, Six Sigma, or total quality management (TQM), or it may have its own direction and approach. The project team should either adapt the quality policy of the organization to guide the project implementation or create its own policy if one does not exist within the performing organization. </a>
+</qa><qa>
+<q>Quantitative estimating </q>
+<a>Estimating on the basis of mathematical formulas to predict how long an activity will take or how much it will cost, using the quantities, units, or other metric of work to be completed. </a>
+</qa><qa>
+<q>Quantitative risk analysis </q>
+<a>A numerical assessment of the probability and impact of the identified risks. Quantitative risk analysis also creates an overall risk score for the project. </a>
+</qa><qa>
+<q>Quote (or quotation) </q>
+<a>A document from the seller to the buyer; used when price is the determining factor in the decision-making process.</a>
+<a>Receiver Part of the communications model: the recipient of the message.</a>
+</qa><qa>
+<q>Referent power </q>
+<a>Power that is present when the project team is attracted to, or wants to work on the project with, the project manager. Referent power also exists when the project manager references another more powerful person, such as the CEO. </a>
+</qa><qa>
+<q>Request for proposal </q>
+<a>A document from the buyer to the seller that asks the seller to provide a proposal for completing the procured work or for providing the procured product. </a>
+</qa><qa>
+<q>Request for quote </q>
+<a>A document from the buyer to the seller asking the seller to provide a price for the procured product or service. </a>
+</qa><qa>
+<q>Residual risks </q>
+<a>Risks that are left over after mitigation, transference, and avoidance. These are generally accepted risks. Management may elect to add contingency costs and time to account for the residual risks within the project. </a>
+</qa><qa>
+<q>Resource calendar </q>
+<a>The resource calendar shows when resources, such as project team members, consultants, and SMEs, are available to work on the project. It takes into account vacations, other commitments within the organization, restrictions on contracted work, overtime issues, and so on. </a>
+</qa><qa>
+<q>Resource histogram </q>
+<a>A bar chart reflecting when individual employees, groups, or communities are involved in a project. Often used by management to see when employees are most or least active in a project. </a>
+</qa><qa>
+<q>Resource leveling heuristics </q>
+<a>A method to flatten the schedule when resources are overallocated or allocated unevenly. Resource leveling can be applied in different methods to accomplish different goals. One of the most common methods is to ensure that workers are not overextended on activities. </a>
+</qa><qa>
+<q>Responsibility </q>
+<a>Who decides what in a project. </a>
+</qa><qa>
+<q>Return on investment (ROI) </q>
+<a>The project’s financial return in proportion to the amount of monies invested in the project. </a>
+</qa><qa>
+<q>Reward power </q>
+<a>The project manager’s authority to reward the project team.</a>
+</qa><qa>
+<q>Risk </q>
+<a>An unplanned event that can have a positive or negative influence on the project success. </a>
+</qa><qa>
+<q>Risk categories </q>
+<a>These help organize, rank, and isolate risks within the project. </a>
+</qa><qa>
+<q>Risk database </q>
+<a>A database of recognized risks; the planned response and the outcome of the risk should be documented and recorded in an organization-wide risk database. The risk database can serve other project managers as historical information. Over time, the risk database can become a Risk Lessons Learned program. </a>
+</qa><qa>
+<q>Risk management plan </q>
+<a>A subsidiary project plan for determining how risks will be identified, how quantitative and qualitative analysis will be completed, how risk response planning will happen, how risks will be monitored, and how ongoing risk management activities will occur throughout the project life cycle. </a>
+</qa><qa>
+<q>Risk owners </q>
+<a>The individuals or groups responsible for a risk response.</a>
+<a>Role Who does what in a project. </a>
+</qa><qa>
+<q>Scales of probability and impact </q>
+<a>Each risk is assessed according to its likelihood and its impact. There are two approaches to ranking risks: Cardinal scales identify the probability and impact by a numerical value, ranging from .01 as very low to 1.0 as certain. Ordinal scales, on the other hand, identify and rank the risks descriptively from “very high” to “very unlikely.” </a>
+</qa><qa>
+<q>Schedule control </q>
+<a>Part of integrated change management, schedule control is concerned with three processes: the project manager confirms that any schedule changes are agreed upon; the project manager examines the work results and conditions to know if the schedule has changed; and the project manager manages the actual change in the schedule. </a>
+</qa><qa>
+<q>Schedule management plan </q>
+<a>A subsidiary plan of the overall project plan. It is used to control changes to the schedule. A formal schedule management plan has procedures that control how changes to the project plan can be proposed, accounted for, and then implemented.</a>
+</qa><qa>
+<q>Schedule performance index (SPI) </q>
+<a>The SPI reveals the efficiency of work. The closer the quotient is to 1, the better. Its equation is SPI = EV/PV. </a>
+</qa><qa>
+<q>Schedule variance </q>
+<a>The difference between the planned work and the earned work. </a>
+</qa><qa>
+<q>Scope statement </q>
+<a>A document that describes the work, and only the required work, to meet the project objectives. The scope statement establishes a common vision among the project stakeholders to establish the point and purpose of the project work. It is used as a baseline against which all future project decisions are made to determine if proposed changes or work-results are aligned with expectations. </a>
+</qa><qa>
+<q>Scope verification </q>
+<a>The process of the project customer accepting the project deliverables. Scope verification happens at the end of each project phase and at the end of the project. Scope verification is the process of ensuring the deliverables the project creates are in alignment with the project scope. </a>
+</qa><qa>
+<q>Scoring models (also called weighted scoring models) </q>
+<a>These models use a common set of values for all of the projects up for selection. Each value has a weight: assigned values of high importance have a high weight, while values of lesser importance have a lesser weight. The projects are measured against these values and assigned scores according to how well they match the predefined values. The projects with high scores take priority over projects will lesser scores. </a>
+</qa><qa>
+<q>Secondary risks </q>
+<a>Risks that stem from risk responses. For example, the response of transference may call for hiring a third party to manage an identified risk. A secondary risk caused by the solution is the failure of the third party to complete its assignment as scheduled. Secondary risks must be identified, analyzed, and planned for just as any identified risk. </a>
+</qa><qa>
+<q>Sender </q>
+<a>Part of the communications model: the person or group delivering the message to the receiver. </a>
+</qa><qa>
+<q>Sensitivity analysis </q>
+<a>This examines each project risk on its own merit to assess the impact on the project. All other risks in the project are set at a baseline value.</a>
+</qa><qa>
+<q>Share </q>
+<a>Sharing is nice. When sharing the risk, ownership is transferred to the organization that can most capitalize on the risk opportunity. </a>
+</qa><qa>
+<q>“Should cost” estimates (also known as independent estimates) </q>
+<a>These estimates are created by the performing organization to predict what the cost of the procured product should be. If there is a significant difference between what the organization has predicted and what the sellers have proposed, either the statement of work was inadequate or the sellers have misunderstood the requirements. </a>
+</qa><qa>
+<q>Simulation </q>
+<a>These allow the project team to play “what-if” games without affecting any areas of production. </a>
+</qa><qa>
+<q>Single source </q>
+<a>A specific seller that the performing organization prefers to contract with. </a>
+</qa><qa>
+<q>Smoothing </q>
+<a>A conflict resolution method that “smoothes” out the conflict by minimizing its size. It is a temporary solution, but it can calm team relations and reduce the boisterousness of discussions. Smoothing may be acceptable when time is of the essence or any of the proposed solutions will work. </a>
+</qa><qa>
+<q>Soft logic (also known as discretionary dependency) </q>
+<a>The preferred order of activities. Project managers should use these relationships at their “discretion” and document the logic behind making soft logic decisions. Discretionary dependencies allow activities to happen in a preferred order because of best practices, conditions unique to the project work, or external events. </a>
+</qa><qa>
+<q>Sole source </q>
+<a>The only qualified seller that exists in the marketplace. </a>
+</qa><qa>
+<q>Staffing management plan </q>
+<a>This subsidiary plan documents how project team members will be brought onto the project and excused from it. </a>
+</qa><qa>
+<q>Stakeholders </q>
+<a>The individuals, groups, and communities that have a vested interest in the outcome of a project. Examples include the project manager, the project team, the project sponsor, customers, clients, vendors, and communities.</a>
+</qa><qa>
+<q>Start No Earlier Than (SNET) </q>
+<a>This constraint requires that the project or activity not start earlier than the predetermined date. </a>
+</qa><qa>
+<q>Start No Later Than (SNLT) </q>
+<a>This constraint requires that the activity begin by a predetermined date. </a>
+</qa><qa>
+<q>Start-to-Finish </q>
+<a>This relationship requires that Task A start so that Task B may finish; it is unusual and is rarely used. </a>
+</qa><qa>
+<q>Start-to-Start </q>
+<a>This relationship means Task A must start before Task B can start. This relationship allows both activities to happen in tandem. </a>
+</qa><qa>
+<q>Statement of work (SOW) </q>
+<a>This fully describes the work to be completed, the product to be supplied, or both. The SOW becomes part of the contract between the buyer and the seller. The SOW is typically created as part of the procurement planning process and is used by the seller to determine whether it can meet the project’s requirements. </a>
+</qa><qa>
+<q>Statistical sampling </q>
+<a>A process of choosing a percentage of results at random for inspection. Statistical sampling can reduce the costs of quality control. </a>
+</qa><qa>
+<q>Status reports </q>
+<a>These provide current information on the project cost, budget, scope, and other relevant information. </a>
+</qa><qa>
+<q>Status review meetings </q>
+<a>Regularly scheduled meetings to record the status of the project work. These commonly employed meetings provide a formal avenue for the project manager to query the team on the status of its work, record delays and slippage, and to forecast what work is about to begin. </a>
+</qa><qa>
+<q>Subnets (also called fragnets) </q>
+<a>Portions of a network diagram that branch off the project and are not on the critical path. </a>
+</qa><qa>
+<q>Subproject </q>
+<a>A subproject exists under a parent project but follows its own schedule to completion. Subprojects may be outsourced, assigned to other project managers, or managed by the parent project manager but with a different project team.</a>
+</qa><qa>
+<q>Supporting detail </q>
+<a>Any information that supports decisions—including the logic employed and rationales—and the project plan as a whole. Supporting detail can include books, articles, web sites, vendor information, test results, historical information, and many other information sources. </a>
+</qa><qa>
+<q>System or process flowcharts </q>
+<a>These show the relation between components and how the overall process works. They are useful for identifying risks between system components.</a>
+</qa><qa>
+<q>Three point estimate </q>
+<a>An estimate that uses optimistic, most likely, and pessimistic values to determine the cost or duration of a project component. </a>
+</qa><qa>
+<q>Time value of money </q>
+<a>An economic model to predict what the future fiscal value may be, given the current fiscal value. The time value of money can also reverse-engineer what predicted monies are worth in today’s value. </a>
+</qa><qa>
+<q>Time-and-materials (T and M) contract </q>
+<a>A contract type where the seller charges the buyer for both the time and the materials for the work completed. T and M contracts should have a not-to-exceed clause (NTE) in order to contain costs. </a>
+</qa><qa>
+<q>Total slack </q>
+<a>The total time an activity can be delayed without delaying the project’s completion. </a>
+</qa><qa>
+<q>Top-down estimating </q>
+<a>A technique that bases the current project’s estimate on the total of a similar project. A percentage of the similar project’s total cost may be added to–or subtracted from–the total, depending on the size of the current project. </a>
+</qa><qa>
+<q>Transference </q>
+<a>A response to risks in which the responsibility and ownership of the risk is transferred to another party (for example, through insurance). </a>
+</qa><qa>
+<q>Trend analysis </q>
+<a>Trend analysis is taking past results to predict future performance. </a>
+</qa><qa>
+<q>Triggers </q>
+<a>Warning signs or symptoms that a risk has occurred or is about to occur (for example, a vendor failed to complete its portion of the project as scheduled). </a>
+</qa><qa>
+<q>Utility Function </q>
+<a>A person’s willingness to accept risk.</a>
+</qa><qa>
+<q>Value added change </q>
+<a>A change that positively impacts either the scope, schedule, or cost of a project without adversely impacting the other two aspects. </a>
+</qa><qa>
+<q>Variance </q>
+<a>The difference between what was planned and what was experienced; typically, used for costs and schedules. </a>
+</qa><qa>
+<q>Variance at completion </q>
+<a>The difference between the BAC and the EAC. Its formula is VAC = BAC − EAC. </a>
+</qa><qa>
+<q>War room </q>
+<a>A centralized office or locale for the project manager and the project team to work on the project. It can house information on the project, including documentation and support materials. It allows the project team to work in close proximity. </a>
+</qa><qa>
+<q>Withdrawal </q>
+<a>A conflict resolution method that is used when the issue is not important or the project manager is out-ranked. The project manager pushes the issue aside for later resolution. It can also be used as a method for cooling down.</a>
+<a>The conflict is not resolved, and it is considered a yield-lose solution. </a>
+</qa><qa>
+<q>Work authorization system </q>
+<a>A tool that can oversee the organization, sequence, and official authorization needed to begin a piece of the project work. </a>
+</qa><qa>
+<q>Work breakdown structure (WBS) </q>
+<a>The WBS is a deliverable-orientated collection of project components. Work that isn’t in the WBS isn’t in the project. The point of the WBS is to organize and define the project scope.</a>
+</qa><qa>
+<q>Work breakdown structure dictionary </q>
+<a>A reference tool to explain the WBS components, the nature of the work package, the assigned resources, and the time and billing estimates for each element. </a>
+</qa><qa>
+<q>Work breakdown structure template </q>
+<a>A master WBS that is used in organizations as a starting point in defining the work for a particular project. This approach is recommended, as most projects in an organization are similar in their project life cycles, and the approach can be adapted to fit a given project. </a>
+</qa><qa>
+<q>Workarounds </q>
+<a>Workarounds are unplanned responses to risks that were not identified or accepted.</a>
+</qa>
+</interview>

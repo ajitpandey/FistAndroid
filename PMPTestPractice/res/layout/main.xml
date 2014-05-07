@@ -5,9 +5,16 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:id="@+id/mainLinearLayout" >
-
+<com.google.ads.adview
+            android:id="@+id/adView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adsize="BANNER"
+            ads:adunitid="ca-app-pub-4300070308662571/2467683040"
+            ads:loadadoncreate="true" >
+        </com.google.ads.adview>
     <RelativeLayout
-        android:id="@+id/mainLinearLayout"
+        android:id="@+id/mainLinearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
@@ -21,13 +28,6 @@
                 android:layout_width="match_parent"
             android:layout_height="wrap_content"
                 android:groupIndicator="@null" />   
-<com.google.ads.adview
-            android:id="@+id/adView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            ads:adsize="BANNER"
-            ads:adunitid="ca-app-pub-4300070308662571/2467683040"
-            ads:loadadoncreate="true" >
-        </com.google.ads.adview>
+
     </RelativeLayout>
 </LinearLayout>

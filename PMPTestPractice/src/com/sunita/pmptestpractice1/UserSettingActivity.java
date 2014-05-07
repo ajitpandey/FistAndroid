@@ -1,4 +1,4 @@
-package com.sunita.pmptestpractice;
+package com.sunita.pmptestpractice1;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

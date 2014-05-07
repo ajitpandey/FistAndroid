@@ -1,4 +1,4 @@
-package com.sunita.pmptestpractice;
+package com.sunita.pmptestpractice1;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,15 +36,15 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.sunita.pmptestpractice.constant.StaticConstants;
-import com.sunita.pmptestpractice.file.io.CreateXMLFile;
-import com.sunita.pmptestpractice.util.DrawableBitmap;
-import com.sunita.pmptestpractice.util.PrintSysout;
-import com.sunita.pmptestpractice.util.SaveDataToFile;
-import com.sunita.pmptestpractice.util.StringUtil;
-import com.sunita.pmptestpractice.vo.QuestionAnswerVo;
-import com.sunita.pmptestpractice.vo.RawStringContent;
-import com.sunita.pmptestpractice.vo.TestResult;
+import com.sunita.pmptestpractice1.constant.StaticConstants;
+import com.sunita.pmptestpractice1.file.io.CreateXMLFile;
+import com.sunita.pmptestpractice1.util.DrawableBitmap;
+import com.sunita.pmptestpractice1.util.PrintSysout;
+import com.sunita.pmptestpractice1.util.SaveDataToFile;
+import com.sunita.pmptestpractice1.util.StringUtil;
+import com.sunita.pmptestpractice1.vo.QuestionAnswerVo;
+import com.sunita.pmptestpractice1.vo.RawStringContent;
+import com.sunita.pmptestpractice1.vo.TestResult;
 
 public class MainActivity extends Activity  implements OnClickListener {
 	private AdView adView;

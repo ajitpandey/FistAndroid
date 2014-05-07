@@ -1,4 +1,4 @@
-package com.sunita.pmptestpractice;
+package com.sunita.pmptestpractice1;
 
 
 
@@ -14,8 +14,8 @@ import android.widget.CheckedTextView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sunita.pmptestpractice.vo.InterviewQuestAnsVo;
-import com.sunita.pmptestpractice.vo.InterviewQuestAnsVoList;
+import com.sunita.pmptestpractice1.vo.InterviewQuestAnsVo;
+import com.sunita.pmptestpractice1.vo.InterviewQuestAnsVoList;
 
 public class MyExpandableAdapter extends BaseExpandableListAdapter {
 

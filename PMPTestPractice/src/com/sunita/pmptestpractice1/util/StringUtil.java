@@ -1,11 +1,11 @@
-package com.sunita.pmptestpractice.util;
+package com.sunita.pmptestpractice1.util;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.sunita.pmptestpractice.vo.RawStringContent;
+import com.sunita.pmptestpractice1.vo.RawStringContent;
 
 public class StringUtil {
 

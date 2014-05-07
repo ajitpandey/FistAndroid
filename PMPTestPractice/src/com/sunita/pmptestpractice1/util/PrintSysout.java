@@ -1,4 +1,4 @@
-package com.sunita.pmptestpractice.util;
+package com.sunita.pmptestpractice1.util;
 
 public class PrintSysout {
 	public static void printSysout(int str){

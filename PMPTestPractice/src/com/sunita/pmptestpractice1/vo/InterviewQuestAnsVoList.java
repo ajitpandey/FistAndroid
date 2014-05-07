@@ -1,4 +1,4 @@
-package com.sunita.pmptestpractice.vo;
+package com.sunita.pmptestpractice1.vo;
 
 import java.util.ArrayList;
 import java.util.List;
