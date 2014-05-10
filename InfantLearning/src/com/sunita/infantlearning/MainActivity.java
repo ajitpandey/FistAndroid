@@ -8,9 +8,6 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -19,35 +16,48 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
 public class MainActivity extends Activity {
 	private LinearLayout linearLayout;
-
-	  private DisplayMetrics displayMetrics = new DisplayMetrics();
-	  private Integer fontSize = 40;
+	private AdView adView;
+	  //private DisplayMetrics displayMetrics = new DisplayMetrics();
+	  private final Integer fontSize1 = 36;
 	  private int fontColour = Color.GREEN;
-	  private int minusDpxWidth = 30;
+	  //private int minusDpxWidth = 45;
+	  private int columnCount = 6;
 	  private Map<String, String> audioMap = new HashMap<String, String>();
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.main);
 
+	    
+	    
 	    //final DisplayMetrics metrics = new DisplayMetrics(); 
-	    Display display = getWindowManager().getDefaultDisplay();     
-	    display.getRealMetrics(displayMetrics);
+	    //Display display = getWindowManager().getDefaultDisplay();     
+	    //display.getRealMetrics(displayMetrics);
 
-	    int rawWidth = 40;
-	    int rawHeight = 40;
+	    //int rawWidth = 40;
+	    //int rawHeight = 40;
 		
-        rawWidth = displayMetrics.widthPixels;
-        rawHeight = displayMetrics.heightPixels;
-	    fontSize = rawHeight/23;
+        //rawWidth = displayMetrics.widthPixels;
+        //rawHeight = displayMetrics.heightPixels;
+        //PrintSysout.printSysout("RawWidth : " + rawWidth + " ,  RawHeight : " + rawHeight);
+	    //fontSize = rawHeight/23;
+        Integer fontSize = (int) (fontSize1 * getResources().getDisplayMetrics().density);
         
+	    //PrintSysout.printSysout("FontSize : " + fontSize);
 	    
 	    populateHasMap();
 	    linearLayout = (LinearLayout)findViewById(R.id.linearLayout1);
 	    TableLayout tb = new TableLayout(this);
-	    tb.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+	    //tb.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+	    //tb.setOrientation(LinearLayout.VERTICAL);
+	    //tb.setGravity(Gravity.TOP);
+	    
         //tb.setStretchAllColumns(true);
 	    linearLayout.addView(tb);
 	    linearLayout.setGravity(Gravity.CENTER);
@@ -63,8 +73,8 @@ public class MainActivity extends Activity {
 			txt.setText(str);
 			//System.out.println(displayMetrics.widthPixels + " - " +displayMetrics.widthPixels/4 + " * " + displayMetrics.heightPixels + " - " + displayMetrics.heightPixels/7);
 			//System.out.println(rawWidth + " - " +rawWidth/4 + " * " + rawHeight + " - " + rawHeight/7);
-	        txt.setWidth(rawWidth/4);
-	        txt.setWidth(rawHeight/7);
+	        //txt.setWidth(rawWidth/4);
+	        //txt.setWidth(rawHeight/7);
 	        txt.setTextColor(fontColour);
 	        //txt.setTextSize(TypedValue.COMPLEX_UNIT_SP,fontSize);
 	        txt.setTextSize(fontSize);
@@ -82,14 +92,18 @@ public class MainActivity extends Activity {
 	        	tr.setGravity(Gravity.CENTER);
 	        	tb.addView(tr);
 	        	counter++;
-	        }else if(counter >= 4){
+	        }else if(counter >= columnCount){
 	        	counter = 1;
-	        }else if(counter > 1 && counter < 4){
+	        }else if(counter > 1 && counter < columnCount){
 	        	counter++;
 	        }
 	        
 	        tr.addView(txt);
 		}
+		
+		if(StaticConstants.DISPLAY_ADD){
+        	addAd();	
+        }
 	}
 
 	public int getId(String resourceName, Class<?> c) {
@@ -130,5 +144,23 @@ public class MainActivity extends Activity {
 		audioMap.put("Y", "y.mp3");
 		audioMap.put("Z", "z.mp3");
 		
+	}
+	private void addAd() {
+    	// Create the adView.
+        adView = new AdView(this);
+        adView.setAdUnitId(StaticConstants.ADD_1);
+        adView.setAdSize(AdSize.BANNER);
+        
+        
+        LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout1);
+        //layout = (LinearLayout)findViewById(R.id.groupLinearLayout);
+        // Add the adView to it.
+        layout.addView(adView);
+
+        // Initiate a generic request.
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Load the adView with the ad request.
+        adView.loadAd(adRequest);
 	}
 }
