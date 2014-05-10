@@ -34,23 +34,8 @@ public class MainActivity extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.main);
 
-	    
-	    
-	    //final DisplayMetrics metrics = new DisplayMetrics(); 
-	    //Display display = getWindowManager().getDefaultDisplay();     
-	    //display.getRealMetrics(displayMetrics);
-
-	    //int rawWidth = 40;
-	    //int rawHeight = 40;
-		
-        //rawWidth = displayMetrics.widthPixels;
-        //rawHeight = displayMetrics.heightPixels;
-        //PrintSysout.printSysout("RawWidth : " + rawWidth + " ,  RawHeight : " + rawHeight);
-	    //fontSize = rawHeight/23;
-        Integer fontSize = (int) (fontSize1 * getResources().getDisplayMetrics().density);
+	    Integer fontSize = (int) (fontSize1 * getResources().getDisplayMetrics().density);
         
-	    //PrintSysout.printSysout("FontSize : " + fontSize);
-	    
 	    populateHasMap();
 	    linearLayout = (LinearLayout)findViewById(R.id.linearLayout1);
 	    TableLayout tb = new TableLayout(this);
