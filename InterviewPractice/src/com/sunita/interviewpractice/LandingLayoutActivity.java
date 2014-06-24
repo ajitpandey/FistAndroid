@@ -58,6 +58,7 @@ public class LandingLayoutActivity extends Activity {
 			btn.setBackgroundColor(Color.TRANSPARENT);
 			btn.setBackgroundResource(R.drawable.buttonbg);
 			btn.setText(landingVo.getText());
+			btn.setHeight(30);
 			linearLayout.addView(btn);
 			//Adding click listner
 			btn.setOnClickListener(new OnClickListener() {

@@ -1,0 +1,374 @@
+<interview>
+<topic>SQL Server Basic</topic>
+<qa>
+<q>1. What is RDBMS?</q>
+<a>Relational Data Base Management Systems (RDBMS) are database management systems that maintain data records and indices in tables. Relationships may be created and maintained across and among the data and tables. In a relational database, relationships between data items are expressed by means of tables. Interdependencies among these tables are expressed by data values rather than by pointers. This allows a high degree of data independence. An RDBMS has the capability to recombine the data items from different files, providing powerful tools for data usage.</a>
+</qa><qa>
+<q>2. What are the properties of the Relational tables?</q>
+<a>Relational tables have six properties:</a>
+<a>Values are atomic.</a>
+<a>Column values are of the same kind.</a>
+<a>Each row is unique.</a>
+<a>The sequence of columns is insignificant.</a>
+<a>The sequence of rows is insignificant.</a>
+<a>Each column must have a unique name.</a>
+</qa>
+<qa>
+<q>3. What is Normalization?</q>
+<a>Database normalization is a data design and organization process applied to data structures based on rules that help building relational databases. In relational database design, the process of organizing data to minimize redundancy is called normalization. Normalization usually involves dividing a database into two or more tables and defining relationships between the tables. The objective is to isolate data so that additions, deletions, and modifications of a field can be made in just one table and then propagated through the rest of the database via the defined relationships.</a>
+</qa><qa>
+<q>4. What is De-normalization?</q>
+<a>De-normalization is the process of attempting to optimize the performance of a database by adding redundant data. It is sometimes necessary because current DBMSs implement the relational model poorly. A true relational DBMS would allow for a fully normalized database at the logical level, while providing physical storage of data that is tuned for high performance. De-normalization is a technique to move from higher to lower normal forms of database modeling in order to speed up database access.</a>
+</qa><qa>
+<q>5. What are different normalization forms?</q>
+<a>1NF: Eliminate Repeating Groups Make a separate table for each set of related attributes, and give each table a primary key. Each field contains at most one value from its attribute domain.</a>
+<a>2NF: Eliminate Redundant Data If an attribute depends on only part of a multi-valued key, remove it to a separate table.</a>
+<a>3NF: Eliminate Columns Not Dependent On Key If attributes do not contribute to a description of the key, remove them to a separate table. All attributes must be directly dependent on the primary key.</a>
+<a>BCNF: Boyce-Codd Normal Form If there are non-trivial dependencies between candidate key attributes, separate them out into distinct tables.</a>
+<a>4NF: Isolate Independent Multiple Relationships No table may contain two or more 1:n or n:m relationships that are not directly related.</a>
+<a>5NF: Isolate Semantically Related Multiple Relationships There may be practical constrains on information that justify separating logically related many-to-many relationships.</a>
+<a>ONF: Optimal Normal Form A model limited to only simple (elemental) facts, as expressed in Object Role Model notation.</a>
+<a>DKNF: Domain-Key Normal Form A model free from all modification anomalies is said to be in DKNF.</a>
+<a>Remember, these normalization guidelines are cumulative. For a database to be in 3NF, it must first fulfill all the criteria of a 2NF and 1NF database.</a>
+</qa><qa>
+<q>6. What is Stored Procedure?</q>
+<a>A stored procedure is a named group of SQL statements that have been previously created and stored in the server database. Stored procedures accept input parameters so that a single procedure can be used over the network by several clients using different input data. And when the procedure is modified, all clients automatically get the new version. Stored procedures reduce network traffic and improve performance. Stored procedures can be used to help ensure the integrity of the database.</a>
+<a>e.g. sp_helpdb, sp_renamedb, sp_depends etc.</a>
+</qa><qa>
+<q>7. What is Trigger?</q>
+<a>A trigger is a SQL procedure that initiates an action when an event (INSERT, DELETE or UPDATE) occurs. Triggers are stored in and managed by the DBMS. Triggers are used to maintain the referential integrity of data by changing the data in a systematic fashion. A trigger cannot be called or executed; DBMS automatically fires the trigger as a result of a data modification to the associated table. Triggers can be viewed as similar to stored procedures in that both consist of procedural logic that is stored at the database level. Stored procedures, however, are not event-drive and are not attached to a specific table as triggers are. Stored procedures are explicitly executed by invoking a CALL to the procedure while triggers are implicitly executed. In addition, triggers can also execute stored procedures.</a>
+</qa><qa>
+<q>8. What is Nested Trigger?</q>
+<a>A trigger can also contain INSERT, UPDATE and DELETE logic within itself, so when the trigger is fired because of data modification it can also cause another data modification, thereby firing another trigger. A trigger that contains data modification logic within itself is called a nested trigger.</a>
+</qa><qa>
+<q>9. What is View?</q>
+<a>A simple view can be thought of as a subset of a table. It can be used for retrieving data, as well as updating or deleting rows. Rows updated or deleted in the view are updated or deleted in the table the view was created with. It should also be noted that as data in the original table changes, so does data in the view, as views are the way to look at part of the original table. The results of using a view are not permanently stored in the database. The data accessed through a view is actually constructed using standard T-SQL select command and can come from one to many different base tables or even other views.</a>
+</qa><qa>
+<q>10. What is Index?</q>
+<a>An index is a physical structure containing pointers to the data. Indices are created in an existing table to locate rows more quickly and efficiently. It is possible to create an index on one or more columns of a table, and each index is given a name. The users cannot see the indexes; they are just used to speed up queries. Effective indexes are one of the best ways to improve performance in a database application. A table scan happens when there is no index available to help a query. In a table scan SQL Server examines every row in the table to satisfy the query results. Table scans are sometimes unavoidable, but on large tables, scans have a terrific impact on performance.</a>
+</qa><qa>
+<q>11. What is a Linked Server?</q>
+<a>Linked Servers is a concept in SQL Server by which we can add other SQL Server to a Group and query both the SQL Server dbs using T-SQL Statements. With a linked server, you can create very clean, easy to follow, SQL statements that allow remote data to be retrieved, joined and combined with local data. Stored Procedure sp_addlinkedserver, sp_addlinkedsrvlogin will be used add new Linked Server.</a>
+</qa><qa>
+<q>12. What is Cursor?</q>
+<a>Cursor is a database object used by applications to manipulate data in a set on a row-by- row basis, instead of the typical SQL commands that operate on all the rows in the set at one time. </a>
+<a>In order to work with a cursor we need to perform some steps in the following order:</a>
+<a>Declare cursor</a>
+<a>Open cursor</a>
+<a>Fetch row from the cursor</a>
+<a>Process fetched row</a>
+<a>Close cursor</a>
+<a>Deallocate cursor</a>
+</qa><qa>
+<q>13. What is Collation?</q>
+<a>Collation refers to a set of rules that determine how data is sorted and compared. Character data is sorted using rules that define the correct character sequence, with options for specifying case sensitivity, accent marks, kana character types and character width.</a>
+</qa><qa>
+<q>14. What is Difference between Function and Stored Procedure?</q>
+<a>UDF can be used in the SQL statements anywhere in the WHERE/HAVING/SELECT section where as Stored procedures cannot be. UDFs that return tables can be treated as another rowset. This can be used in JOINs with other tables. Inline UDF's can be thought of as views that take parameters and can be used in JOINs and other Rowset operations.</a>
+</qa><qa>
+<q>15. What is sub-query? Explain properties of sub-query?</q>
+<a>Sub-queries are often referred to as sub-selects, as they allow a SELECT statement to be executed arbitrarily within the body of another SQL statement. A sub-query is executed by enclosing it in a set of parentheses. Sub-queries are generally used to return a single row as an atomic value, though they may be used to compare values against multiple rows with the IN keyword.</a>
+<a>A subquery is a SELECT statement that is nested within another T-SQL statement. A subquery SELECT statement if executed independently of the T-SQL statement, in which it is nested, will return a resultset. Meaning a subquery SELECT statement can standalone and is not depended on the statement in which it is nested. A subquery SELECT statement can return any number of values, and can be found in, the column list of a SELECT statement, a FROM, GROUP BY, HAVING, and/or ORDER BY clauses of a T-SQL statement. A Subquery can also be used as a parameter to a function call. Basically a subquery can be used anywhere an expression can be used.</a>
+</qa><qa>
+<q>16. What are different Types of Join?</q>
+<a>Cross Join A cross join that does not have a WHERE clause produces the Cartesian product of the tables involved in the join. The size of a Cartesian product result set is the number of rows in the first table multiplied by the number of rows in the second table. The common example is when company wants to combine each product with a pricing table to analyze each product at each price.</a>
+<a>Inner Join A join that displays only the rows that have a match in both joined tables is known as inner Join. This is the default type of join in the Query and View Designer.</a>
+<a>Outer Join A join that includes rows even if they do not have related rows in the joined table is an Outer Join. You can create three different outer join to specify the unmatched rows to be included:</a>
+<a>Left Outer Join: In Left Outer Join all rows in the first-named table i.e. "left" table, which appears leftmost in the JOIN clause are included. Unmatched rows in the right table do not appear.</a>
+<a>Right Outer Join: In Right Outer Join all rows in the second-named table i.e. "right" table, which appears rightmost in the JOIN clause are included. Unmatched rows in the left table are not included.</a>
+<a>Full Outer Join: In Full Outer Join all rows in all joined tables are included, whether they are matched or not.</a>
+<a>Self Join This is a particular case when one table joins to itself, with one or two aliases to avoid confusion. A self join can be of any type, as long as the joined tables are the same. A self join is rather unique in that it involves a relationship with only one table. The common example is when company has a hierarchal reporting structure whereby one member of staff reports to another. Self Join can be Outer Join or Inner Join.</a>
+</qa><qa>
+<q>17. What are primary keys and foreign keys?</q>
+<a>Primary keys are the unique identifiers for each row. They must contain unique values and cannot be null. Due to their importance in relational databases, Primary keys are the most fundamental of all keys and constraints. A table can have only one Primary key. Foreign keys are both a method of ensuring data integrity and a manifestation of the relationship between tables.</a>
+</qa><qa>
+<q>18. What is User Defined Functions? What kind of User-Defined Functions can be created?</q>
+<a>User-Defined Functions allow defining its own T-SQL functions that can accept 0 or more parameters and return a single scalar data value or a table data type.</a>
+<a>Different Kinds of User-Defined Functions created are:</a>
+<a>Scalar User-Defined Function A Scalar user-defined function returns one of the scalar data types. Text, ntext, image and timestamp data types are not supported. These are the type of user-defined functions that most developers are used to in other programming languages. You pass in 0 to many parameters and you get a return value.</a>
+<a>Inline Table-Value User-Defined Function An Inline Table-Value user-defined function returns a table data type and is an exceptional alternative to a view as the user-defined function can pass parameters into a T-SQL select command and in essence provide us with a parameterized, non-updateable view of the underlying tables.</a>
+<a>Multi-statement Table-Value User-Defined Function A Multi-Statement Table-Value user-defined function returns a table and is also an exceptional alternative to a view as the function can support multiple T-SQL statements to build the final result where the view is limited to a single SELECT statement. Also, the ability to pass parameters into a TSQL select command or a group of them gives us the capability to in essence create a parameterized, non-updateable view of the data in the underlying tables. Within the create function command you must define the table structure that is being returned. After creating this type of user-defined function, It can be used in the FROM clause of a T-SQL command unlike the behavior found when using a stored procedure which can also return record sets.</a>
+</qa><qa>
+<q>19. What is Identity?</q>
+<a>Identity (or AutoNumber) is a column that automatically generates numeric values. A start and increment value can be set, but most DBA leave these at 1. A GUID column also generates numbers; the value of this cannot be controlled. Identity/GUID columns do not need to be indexed.</a>
+</qa><qa>
+<q>20. What is DataWarehousing?</q>
+<a>Subject-oriented, meaning that the data in the database is organized so that all the data elements relating to the same real-world event or object are linked together;</a>
+<a>Time-variant, meaning that the changes to the data in the database are tracked and recorded so that reports can be produced showing changes over time;</a>
+<a>Non-volatile, meaning that data in the database is never over-written or deleted, once committed, the data is static, read-only, but retained for future reporting.</a>
+<a>Integrated, meaning that the database contains data from most or all of an organization's operational applications, and that this data is made consistent.</a>
+</qa><qa>
+<q>1. Which TCP/IP port does SQL Server run on? How can it be changed?</q>
+<a>SQL Server runs on port 1433. It can be changed from the Network Utility TCP/IP properties.</a>
+</qa><qa>
+<q>2. What are the difference between clustered and a non-clustered index?</q>
+<a>A clustered index is a special type of index that reorders the way records in the table are physically stored. Therefore table can have only one clustered index. The leaf nodes of a clustered index contain the data pages.</a>
+<a>A non clustered index is a special type of index in which the logical order of the index does not match the physical stored order of the rows on disk. The leaf node of a non clustered index does not consist of the data pages. Instead, the leaf nodes contain index rows.</a>
+</qa><qa>
+<q>3. What are the different index configurations a table can have?</q>
+<a>A table can have one of the following index configurations:</a>
+<a>No indexes</a>
+<a>A clustered index</a>
+<a>A clustered index and many nonclustered indexes</a>
+<a>A nonclustered index</a>
+<a>Many nonclustered indexes</a>
+</qa><qa>
+<q>4. What are different types of Collation Sensitivity?</q>
+<a>Case sensitivity - A and a, B and b, etc.</a>
+<a>Accent sensitivity</a>
+<a>Kana Sensitivity - When Japanese kana characters Hiragana and Katakana are treated differently, it is called Kana sensitive.</a>
+<a>Width sensitivity - A single-byte character (half-width) and the same character represented as a double-byte character (full-width) are treated differently than it is width sensitive.</a>
+</qa><qa>
+<q>5. What is OLTP (Online Transaction Processing)?</q>
+<a>In OLTP - online transaction processing systems relational database design use the discipline of data modeling and generally follow the Codd rules of data normalization in order to ensure absolute data integrity. Using these rules complex information is broken down into its most simple structures (a table) where all of the individual atomic level elements relate to each other and satisfy the normalization rules.</a>
+</qa><qa>
+<q>6. What's the difference between a primary key and a unique key?</q>
+<a>Both primary key and unique key enforces uniqueness of the column on which they are defined. But by default primary key creates a clustered index on the column, where are unique creates a nonclustered index by default. Another major difference is that, primary key doesn't allow NULLs, but unique key allows one NULL only.</a>
+</qa><qa>
+<q>7. What is difference between DELETE and TRUNCATE commands?</q>
+<a>Delete command removes the rows from a table based on the condition that we provide with a WHERE clause. Truncate will actually remove all the rows from a table and there will be no data in the table after we run the truncate command.</a>
+<a>TRUNCATE:</a>
+<a>TRUNCATE is faster and uses fewer system and transaction log resources than DELETE.</a>
+<a>TRUNCATE removes the data by deallocating the data pages used to store the table's data, and only the page deallocations are recorded in the transaction log.</a>
+<a>TRUNCATE removes all rows from a table, but the table structure, its columns, constraints, indexes and so on, remains. The counter used by an identity for new rows is reset to the seed for the column.</a>
+<a>You cannot use TRUNCATE TABLE on a table referenced by a FOREIGN KEY constraint. Because TRUNCATE TABLE is not logged, it cannot activate a trigger.</a>
+<a>TRUNCATE cannot be rolled back.</a>
+<a>TRUNCATE is DDL Command.</a>
+<a>TRUNCATE Resets identity of the table</a>
+<a>DELETE:</a>
+<a>DELETE removes rows one at a time and records an entry in the transaction log for each deleted row.</a>
+<a>If you want to retain the identity counter, use DELETE instead. If you want to remove table definition and its data, use the DROP TABLE statement.</a>
+<a>DELETE Can be used with or without a WHERE clause</a>
+<a>DELETE Activates Triggers.</a>
+<a>DELETE can be rolled back.</a>
+<a>DELETE is DML Command.</a>
+<a>DELETE does not reset identity of the table.</a>
+<a>Note: DELETE and TRUNCATE both can be rolled back when surrounded by TRANSACTION if the current session is not closed. If TRUNCATE is written in Query Editor surrounded by TRANSACTION and if session is closed, it can not be rolled back but DELETE can be rolled back.</a>
+</qa><qa>
+<q>8. When is the use of UPDATE_STATISTICS command?</q>
+<a>This command is basically used when a large processing of data has occurred. If a large amount of deletions any modification or Bulk Copy into the tables has occurred, it has to update the indexes to take these changes into account. UPDATE_STATISTICS updates the indexes on these tables accordingly.</a>
+</qa><qa>
+<q>9. What is the difference between a HAVING CLAUSE and a WHERE CLAUSE?</q>
+<a>They specify a search condition for a group or an aggregate. But the difference is that HAVING can be used only with the SELECT statement. HAVING is typically used in a GROUP BY clause. When GROUP BY is not used, HAVING behaves like a WHERE clause. Having Clause is basically used only with the GROUP BY function in a query whereas WHERE Clause is applied to each row before they are part of the GROUP BY function in a query.</a>
+</qa><qa>
+<q>10. What are the properties and different Types of Sub-Queries?</q>
+<a>Properties of Sub-Query</a>
+<a>A sub-query must be enclosed in the parenthesis.</a>
+<a>A sub-query must be put in the right hand of the comparison operator, and</a>
+<a>A sub-query cannot contain an ORDER-BY clause.</a>
+<a>A query can contain more than one sub-query.</a>
+<a>Types of Sub-Query</a>
+<a>Single-row sub-query, where the sub-query returns only one row.</a>
+<a>Multiple-row sub-query, where the sub-query returns multiple rows,. and</a>
+<a>Multiple column sub-query, where the sub-query returns multiple columns</a>
+</qa><qa>
+<q>11. What is SQL Profiler?</q>
+<a>SQL Profiler is a graphical tool that allows system administrators to monitor events in an instance of Microsoft SQL Server. You can capture and save data about each event to a file or SQL Server table to analyze later. For example, you can monitor a production environment to see which stored procedures are hampering performances by executing too slowly.</a>
+<a>Use SQL Profiler to monitor only the events in which you are interested. If traces are becoming too large, you can filter them based on the information you want, so that only a subset of the event data is collected. Monitoring too many events adds overhead to the server and the monitoring process and can cause the trace file or trace table to grow very large, especially when the monitoring process takes place over a long period of time.</a>
+</qa><qa>
+<q>12. What are the authentication modes in SQL Server? How can it be changed?</q>
+<a>Windows mode and Mixed Mode - SQL and Windows. To change authentication mode in SQL Server click Start, Programs, Microsoft SQL Server and click SQL Enterprise Manager to run SQL Enterprise Manager from the Microsoft SQL Server program group. Select the server then from the Tools menu select SQL Server Configuration Properties, and choose the Security page.</a>
+</qa><qa>
+<q>13. Which command using Query Analyzer will give you the version of SQL server and operating system?</q>
+<a>SELECT SERVERPROPERTY ('productversion'), SERVERPROPERTY ('productlevel'), SERVERPROPERTY ('edition').</a>
+</qa><qa>
+<q>14. What is SQL Server Agent?</q>
+<a>SQL Server agent plays an important role in the day-to-day tasks of a database administrator (DBA). It is often overlooked as one of the main tools for SQL Server management. Its purpose is to ease the implementation of tasks for the DBA, with its full- function scheduling engine, which allows you to schedule your own jobs and scripts.</a>
+</qa><qa>
+<q>15. Can a stored procedure call itself or recursive stored procedure? How much level SP nesting is possible?</q>
+<a>Yes. Because Transact-SQL supports recursion, you can write stored procedures that call themselves. Recursion can be defined as a method of problem solving wherein the solution is arrived at by repetitively applying it to subsets of the problem. A common application of recursive logic is to perform numeric computations that lend themselves to repetitive evaluation by the same processing steps. Stored procedures are nested when one stored procedure calls another or executes managed code by referencing a CLR routine, type, or aggregate. You can nest stored procedures and managed code references up to 32 levels.</a>
+</qa><qa>
+<q>16. What is Log Shipping?</q>
+<a>Log shipping is the process of automating the backup of database and transaction log files on a production SQL server, and then restoring them onto a standby server. Enterprise Editions only supports log shipping. In log shipping the transactional log file from one server is automatically updated into the backup database on the other server. If one server fails, the other server will have the same db and can be used this as the Disaster Recovery plan. The key feature of log shipping is that it will automatically backup transaction logs throughout the day and automatically restore them on the standby server at defined interval.</a>
+</qa><!-- <qa>
+<q>17. Name 3 ways to get an accurate count of the number of records in a table?</q>
+<a>SELECT * FROM table1 </a>
+<a>SELECT COUNT(*) FROM table1 </a>
+<a>SELECT rows FROM sysindexes WHERE id = OBJECT_ID(table1) AND indid < 2</a>
+</qa> --><qa>
+<q>18. What does it mean to have QUOTED_IDENTIFIER ON? What are the implications of having it OFF?</q>
+<a>When SET QUOTED_IDENTIFIER is ON, identifiers can be delimited by double quotation marks, and literals must be delimited by single quotation marks. When SET QUOTED_IDENTIFIER is OFF, identifiers cannot be quoted and must follow all Transact-SQL rules for identifiers.</a>
+</qa><qa>
+<q>19. What is the difference between a Local and a Global temporary table?</q>
+<a>A local temporary table exists only for the duration of a connection or, if defined inside a compound statement, for the duration of the compound statement.</a>
+<a>A global temporary table remains in the database permanently, but the rows exist only within a given connection. When connection is closed, the data in the global temporary table disappears. However, the table definition remains with the database for access when database is opened next time.</a>
+</qa><qa>
+<q>20. What is the STUFF function and how does it differ from the REPLACE function?</q>
+<a>STUFF function is used to overwrite existing characters. Using this syntax, STUFF (string_expression, start, length, replacement_characters), string_expression is the string that will have characters substituted, start is the starting position, length is the number of characters in the string that are substituted, and replacement_characters are the new characters interjected into the string. REPLACE function to replace existing characters of all occurrences. Using the syntax REPLACE (string_expression, search_string, replacement_string), where every incidence of search_string found in the string_expression will be replaced with replacement_string.</a>
+</qa><qa>
+<q>21. What is PRIMARY KEY?</q>
+<a>A PRIMARY KEY constraint is a unique identifier for a row within a database table. Every table should have a primary key constraint to uniquely identify each row and only one primary key constraint can be created for each table. The primary key constraints are used to enforce entity integrity.</a>
+</qa><qa>
+<q>22. What is UNIQUE KEY constraint?</q>
+<a>A UNIQUE constraint enforces the uniqueness of the values in a set of columns, so no duplicate values are entered. The unique key constraints are used to enforce entity integrity as the primary key constraints.</a>
+</qa><qa>
+<q>23. What is FOREIGN KEY?</q>
+<a>A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values. A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would leave rows with foreign key values when there are no primary keys with that value. The foreign key constraints are used to enforce referential integrity.</a>
+</qa><qa>
+<q>24. What is CHECK Constraint?</q>
+<a>A CHECK constraint is used to limit the values that can be placed in a column. The check constraints are used to enforce domain integrity.</a>
+</qa><qa>
+<q>25. What is NOT NULL Constraint?</q>
+<a>A NOT NULL constraint enforces that the column will not accept null values. The not null constraints are used to enforce domain integrity, as the check constraints.</a>
+</qa><qa>
+<q>26. How to get @@ERROR and @@ROWCOUNT at the same time?</q>
+<a>If @@Rowcount is checked after Error checking statement then it will have 0 as the value of @@Recordcount as it would have been reset. And if @@Recordcount is checked before the error-checking statement then @@Error would get reset. To get @@error and @@rowcount at the same time do both in same statement and store them in local variable.</a>
+<a>SELECT @RC = @@ROWCOUNT, @ER = @@ERROR</a>
+</qa><qa>
+<q>27. What is a Scheduled Jobs or What is a Scheduled Tasks?</q>
+<a>Scheduled tasks let user automate processes that run on regular or predictable cycles. User can schedule administrative tasks, such as cube processing, to run during times of slow business activity. User can also determine the order in which tasks run by creating job steps within a SQL Server Agent job. E.g. back up database, Update Stats of Tables. Job steps give user control over flow of execution. If one job fails, user can configure SQL Server Agent to continue to run the remaining tasks or to stop execution.</a>
+</qa><qa>
+<q>28. What are the advantages of using Stored Procedures?</q>
+<a>Stored procedure can reduced network traffic and latency, boosting application performance.</a>
+<a>Stored procedure execution plans can be reused, staying cached in SQL Server's memory, reducing server overhead.</a>
+<a>Stored procedures help promote code reuse.</a>
+<a>Stored procedures can encapsulate logic. You can change stored procedure code without affecting clients.</a>
+<a>Stored procedures provide better security to your data.</a>
+</qa><qa>
+<q>29. What is a table called, if it has neither Cluster nor Non-cluster Index? What is it used for?</q>
+<a>Unindexed table or Heap. Microsoft Press Books and Book on Line (BOL) refers it as Heap. A heap is a table that does not have a clustered index and, therefore, the pages are not linked by pointers. The IAM pages are the only structures that link the pages in a table together. Unindexed tables are good for fast storing of data. Many times it is better to drop all indexes from table and then do bulk of inserts and to restore those indexes after that.</a>
+</qa><qa>
+<q>30. Can SQL Servers linked to other servers like Oracle?</q>
+<a>SQL Server can be linked to any server provided it has OLE-DB provider from Microsoft to allow a link. E.g. Oracle has an OLE-DB provider for oracle that Microsoft provides to add it as linked server to SQL Server group.</a>
+</qa><qa>
+<q>31. What is BCP? When does it used?</q>
+<a>BulkCopy is a tool used to copy huge amount of data from tables and views. BCP does not copy the structures same as source to destination. BULK INSERT command helps to import a data file into a database table or view in a user-specified format.</a>
+</qa><qa>
+<q>32. How to implement one-to-one, one-to-many and many-to-many relationships while designing tables?</q>
+<a>One-to-One relationship can be implemented as a single table and rarely as two tables with primary and foreign key relationships. One-to-Many relationships are implemented by splitting the data into two tables with primary key and foreign key relationships. Many-to-Many relationships are implemented using a junction table with the keys from both the tables forming the composite primary key of the junction table.</a>
+</qa><qa>
+<q>33. What is an execution plan? When would you use it? How would you view the execution plan?</q>
+<a>An execution plan is basically a road map that graphically or textually shows the data retrieval methods chosen by the SQL Server query optimizer for a stored procedure or ad- hoc query and is a very useful tool for a developer to understand the performance characteristics of a query or stored procedure since the plan is the one that SQL Server will place in its cache and use to execute the stored procedure or query. From within Query Analyzer is an option called "Show Execution Plan" (located on the Query drop-down menu). If this option is turned on it will display query execution plan in separate window when query is ran again.</a>
+</qa><qa>
+<q>34. What are the basic functions for master, msdb, model, tempdb and resource databases?</q>
+<a>The master database holds information for all databases located on the SQL Server instance and is theglue that holds the engine together. Because SQL Server cannot start without a functioning masterdatabase, you must administer this database with care.</a>
+<a>The msdb database stores information regarding database backups, SQL Agent information, DTS packages, SQL Server jobs, and some replication information such as for log shipping.</a>
+<a>The tempdb holds temporary objects such as global and local temporary tables and stored procedures.</a>
+<a>The model is essentially a template database used in the creation of any new user database created in the instance.</a>
+<a>The resoure Database is a read-only database that contains all the system objects that are included with SQL Server. SQL Server system objects, such as sys.objects, are physically persisted in the Resource database, but they logically appear in the sys schema of every database. The Resource database does not contain user data or user metadata.</a>
+</qa><qa>
+<q>35. What is Service Broker?</q>
+<a>Service Broker is a message-queuing technology in SQL Server that allows developers to integrate SQL Server fully into distributed applications. Service Broker is feature which provides facility to SQL Server to send an asynchronous, transactional message. it allows a database to send a message to another database without waiting for the response, so the application will continue to function if the remote database is temporarily unavailable.</a>
+</qa><qa>
+<q>36. Where SQL server user names and passwords are stored in SQL server?</q>
+<a>They get stored in System Catalog Views sys.server_principals and sys.sql_logins.</a>
+</qa><qa>
+<q>37. What is Policy Management?</q>
+<a>Policy Management in SQL SERVER 2008 allows you to define and enforce policies for configuring and managing SQL Server across the enterprise. Policy-Based Management is configured in SQL Server Management Studio (SSMS). Navigate to the Object Explorer and expand the Management node and the Policy Management node; you will see the Policies, Conditions, and Facets nodes.</a>
+</qa><qa>
+<q>38. What is Replication and Database Mirroring?</q>
+<a>Database mirroring can be used with replication to provide availability for the publication database. Database mirroring involves two copies of a single database that typically reside on different computers. At any given time, only one copy of the database is currently available to clients which are known as the principal database. Updates made by clients to the principal database are applied on the other copy of the database, known as the mirror database. Mirroring involves applying the transaction log from every insertion, update, or deletion made on the principal database onto the mirror database.</a>
+</qa><qa>
+<q>39. What are Sparse Columns?</q>
+<a>A sparse column is another tool used to reduce the amount of physical storage used in a database. They are the ordinary columns that have an optimized storage for null values. Sparse columns reduce the space requirements for null values at the cost of more overhead to retrieve nonnull values.</a>
+</qa><qa>
+<q>40. What does TOP Operator Do?</q>
+<a>The TOP operator is used to specify the number of rows to be returned by a query. The TOP operator has new addition in SQL SERVER 2008 that it accepts variables as well as literal values and can be used with INSERT, UPDATE, and DELETES statements.</a>
+</qa><qa>
+<q>41. What is CTE?</q>
+<a>CTE is an abbreviation Common Table Expression. A Common Table Expression (CTE) is an expression that can be thought of as a temporary result set which is defined within the execution of a single SQL statement. A CTE is similar to a derived table in that it is not stored as an object and lasts only for the duration of the query.</a>
+</qa><qa>
+<q>42. What is MERGE Statement?</q>
+<a>MERGE is a new feature that provides an efficient way to perform multiple DML operations. In previous versions of SQL Server, we had to write separate statements to INSERT, UPDATE, or DELETE data based on certain conditions, but now, using MERGE statement we can include the logic of such data modifications in one statement that even checks when the data is matched then just update it and when unmatched then insert it. One of the most important advantages of MERGE statement is all the data is read and processed only once.</a>
+</qa><qa>
+<q>43. What is Filtered Index?</q>
+<a>Filtered Index is used to index a portion of rows in a table that means it applies filter on INDEX which improves query performance, reduce index maintenance costs, and reduce index storage costs compared with full-table indexes. When we see an Index created with some where clause then that is actually a FILTERED INDEX.</a>
+</qa><qa>
+<q>44. Which are new data types introduced in SQL SERVER 2008?</q>
+<a>The GEOMETRY Type: The GEOMETRY data type is a system .NET common language runtime (CLR) data type in SQL Server. This type represents data in a two-dimensional Euclidean coordinate system.</a>
+<a>The GEOGRAPHY Type: The GEOGRAPHY datatype’s functions are the same as with GEOMETRY. The difference between the two is that when you specify GEOGRAPHY, you are usually specifying points in terms of latitude and longitude.</a>
+<a>New Date and Time Datatypes: SQL Server 2008 introduces four new datatypes related to date and time: DATE, TIME, DATETIMEOFFSET, and DATETIME2.</a>
+<a>DATE: The new DATE type just stores the date itself. It is based on the Gregorian calendar and handles years from 1 to 9999.</a>
+<a>TIME: The new TIME (n) type stores time with a range of 00:00:00.0000000 through 23:59:59.9999999. The precision is allowed with this type. TIME supports seconds down to 100 nanoseconds. The n in TIME (n) defines this level of fractional second precision, from 0 to 7 digits of precision.</a>
+<a>The DATETIMEOFFSET Type: DATETIMEOFFSET (n) is the time-zone-aware version of a datetime datatype. The name will appear less odd when you consider what it really is: a date + a time + a time-zone offset. The offset is based on how far behind or ahead you are from Coordinated Universal Time (UTC) time.</a>
+<a>The DATETIME2 Type: It is an extension of the datetime type in earlier versions of SQL Server. This new datatype has a date range covering dates from January 1 of year 1 through December 31 of year 9999. This is a definite improvement over the 1753 lower boundary of the datetime datatype. DATETIME2 not only includes the larger date range, but also has a timestamp and the same fractional precision that TIME type provides</a>
+</qa><qa>
+<q>45. What are the Advantages of using CTE?</q>
+<a>Using CTE improves the readability and makes maintenance of complex queries easy.</a>
+<a>The query can be divided into separate, simple, logical building blocks which can be then used to build more complex CTEs until final result set is generated.</a>
+<a>CTE can be defined in functions, stored procedures, triggers or even views.</a>
+<a>After a CTE is defined, it can be used as a Table or a View and can SELECT, INSERT, UPDATE or DELETE Data.</a>
+</qa><qa>
+<q>46. What is CLR?</q>
+<a>In SQL Server 2008, SQL Server objects such as user-defined functions can be created using such CLR languages. This CLR language support extends not only to user-defined functions, but also to stored procedures and triggers. You can develop such CLR add-ons to SQL Server using Visual Studio 2008.</a>
+</qa><qa>
+<q>47. What are synonyms?</q>
+<a>Synonyms give you the ability to provide alternate names for database objects. You can alias object names; for example, using the Employee table as Emp. You can also shorten names. This is especially useful when dealing with three and four part names; for example, shortening server.database.owner.object to object.</a>
+</qa><qa>
+<q>48. What is LINQ?</q>
+<a>Language Integrated Query (LINQ) adds the ability to query objects using .NET languages. The LINQ to SQL object/relational mapping (O/RM) framework provides the following basic features:</a>
+<a>Tools to create classes (usually called entities) mapped to database tables</a>
+<a>Compatibility with LINQ's standard query operations</a>
+<a>The DataContext class, with features such as entity record monitoring, automatic SQL statement generation, record concurrency detection, and much more</a>
+</qa><qa>
+<q>49. What is Isolation Levels?</q>
+<a>Transactions specify an isolation level that defines the degree to which one transaction must be isolated from resource or data modifications made by other transactions. Isolation levels are described in terms of which concurrency side-effects, such as dirty reads or phantom reads, are allowed.</a>
+<a>Transaction isolation levels control:</a>
+<a>Whether locks are taken when data is read, and what type of locks are requested.</a>
+<a>How long the read locks are held.</a>
+<a>Whether a read operation referencing rows modified by another transaction:</a>
+<a>Blocks until the exclusive lock on the row is freed.</a>
+<a>Retrieves the committed version of the row that existed at the time the statement or transaction started.</a>
+<a>Reads the uncommitted data modification.</a>
+</qa><qa>
+<q>50. What is use of EXCEPT Clause?</q>
+<a>EXCEPT clause is similar to MINUS operation in Oracle. The EXCEPT query and MINUS query returns all rows in the first query that are not returned in the second query. Each SQL statement within the EXCEPT query and MINUS query must have the same number of fields in the result sets with similar data types.</a>
+</qa><qa>
+<q>51. How would you handle error in SQL SERVER 2008?</q>
+<a>SQL Server now supports the use of TRY...CATCH con handling. TRY...CATCH lets us build error handling at the level we need, in the way w to, by setting a region where if any error occurs, it will break out of the region and head to an error handler. </a>
+<a>The basic structure is as follows:</a>
+<a>BEGIN TRY </a>
+<a>stmts.. </a>
+<a>END TRY</a>
+<a>BEGIN CATCH</a>
+<a>stmts..</a>
+<a>END CATCH</a>
+</qa><qa>
+<q>52. What is RAISEERROR?</q>
+<a>RaiseError generates an error message and initiates error processing for the session. RAISERROR can either reference a user-defined message stored in the sys.messages catalog view or build a message dynamically. The message is returned as a server error message to the calling application or to an associated CATCH block of a TRY | CATCH construct.</a>
+</qa><qa>
+<q>53. How to rebuild Master Database?</q>
+<a>Master database is system database and it contains information about running server's configuration. When SQL Server 2005 is installed it usually creates master, model, msdb, tempdb resource and distribution system database by default. Only Master database is th one which is absolutely must have database. Without Master database SQL Server cannot be started. This is the reason it is extremely important to backup Master database.</a>
+<a>To rebuild the Master database, Run Setup.exe, verify, and repair a SQL Server instance, and rebuild the system databases. This procedure is most often used to rebuild the master database for a corrupted installation of SQL Server.</a>
+</qa><qa>
+<q>54. What is XML Datatype?</q>
+<a>The xml data type lets you store XML documents and fragments in a SQL Server database. An XML fragment is an XML instance that is missing a single top-level element. You can create columns and variables of the xml type and store XML instances in them. The xml data type and associated methods help integrate XML into the relational framework of S Server.</a>
+</qa><qa>
+<q>55. What is Data Compression?</q>
+<a>In SQL SERVE 2008 Data Compression comes in two flavors:</a>
+<a>Row Compression: Row compression changes the format of physical storage of data. It minimize the metadata (column information, length, offsets etc) associated with each record. Numeric data types and fixed length strings are stored in variable-length storage format, just like Varchar.</a>
+<a>Page Compression: Page compression allows common data to be shared between rows for a given page. Its uses the following techniques to compress data:</a>
+<a>Row compression.</a>
+<a>Prefix Compression. For every column in a page duplicate prefixes are identified. These prefixes are saved in compression information headers (CI) which resides after page header. A reference number is assigned to these prefixes and that reference number is replaced where ever those prefixes are being used.</a>
+<a>Dictionary Compression: Dictionary compression searches for duplicate values throughout the page and stores them in CI. The main difference between prefix and dictionary compression is that prefix is only restricted to one column while dictionary is applicable to the complete page.</a>
+</qa><qa>
+<q>56. What is Catalog Views?</q>
+<a>Catalog views return information that is used by the SQL Server Database Engine. Catalog Views are the most general interface to the catalog metadata and provide the most efficient way to obtain, transform, and present customized forms of this information. All user- available catalog metadata is exposed through catalog views.</a>
+</qa><qa>
+<q>57. What is PIVOT and UNPIVOT?</q>
+<a>A Pivot Table can automatically sort, count, and total the data stored in one table or spreadsheet and create a second table displaying the summarized data. The PIVOT operator turns the values of a specified column into column names, effectively rotating a table.</a>
+<a>UNPIVOT table is reverse of PIVOT Table.</a>
+</qa><qa>
+<q>58. What is Dirty Read ?</q>
+<a>A dirty read occurs when two operations say, read and write occurs together giving the incorrect or unedited data. Suppose, A has changed a row, but has not committed the changes. B reads the uncommitted data but his view of the data may be wrong so that is Dirty Read.</a>
+</qa><qa>
+<q>59. What is Aggregate Functions?</q>
+<a>Aggregate functions perform a calculation on a set of values and return a single value. Aggregate functions ignore NULL values except COUNT function. HAVING clause is used, along with GROUP BY, for filtering query using aggregate values.</a>
+<a>Following functions are aggregate functions. </a>
+<a>AVG, MIN CHECKSUM_AGG, SUM, COUNT, STDEV, COUNT_BIG, STDEVP, GROUPING, VAR, MAX. VARP</a>
+</qa><qa>
+<q>60. What do you mean by Table Sample?</q>
+<a>TABLESAMPLE allows you to extract a sampling of rows from a table in the FROM clause. The rows retrieved are random and they are not in any order. This sampling can be based on a percentage of number of rows. You can use TABLESAMPLE when only a sampling of rows is necessary for the application instead of a full result set.</a>
+</qa><qa>
+<q>61. What is the difference between UNION and UNION ALL?</q>
+<a>UNION The UNION command is used to select related information from two tables, much like the JOIN command. However, when using the UNION command all selected columns need to be of the same data type. With UNION, only distinct values are selected.</a>
+<a>UNION ALL The UNION ALL command is equal to the UNION command, except that UNION ALL selects all values.</a>
+<a>The difference between Union and Union all is that Union all will not eliminate duplicate rows, instead it just pulls all rows from all tables fitting your query specifics and combines them into a table.</a>
+</qa><qa>
+<q>62. What is B-Tree?</q>
+<a>The database server uses a B-tree structure to organize index information. B-Tree generally has following types of index pages or nodes:</a>
+<a>root node: A root node contains node pointers to branch nodes which can be only one.</a>
+<a>branch node: A branch node contains pointers to leaf nodes or other branch nodes which can be two or more.</a>
+<a>leaf nodes: A leaf node contains index items and orizantal pointers to other leaf nodes which can be many.</a>
+</qa>
+</interview>

@@ -1,0 +1,411 @@
+<interview>
+<topic>Core Java</topic>
+<qa>
+<q>1. What is the most important feature of Java?</q>
+<a>Java is a platform independent language.</a>
+</qa><qa>
+<q>2. What do you mean by platform independence?</q>
+<a>Platform independence means that we can write and compile the java code in one platform (eg Windows) and can execute the class in any other supported platform eg (Linux,Solaris,etc).</a>
+</qa><qa>
+<q>3. What is a JVM?</q>
+<a>JVM is Java Virtual Machine which is a run time environment for the compiled java class files.</a>
+</qa><qa>
+<q>4. Are JVM's platform independent?</q>
+<a>JVM's are not platform independent. JVM's are platform specific run time implementation provided by the vendor.</a>
+</qa><qa>
+<q>5. What is the difference between a JDK and a JVM?</q>
+<a>JDK is Java Development Kit which is for development purpose and it includes execution environment also. But JVM is purely a run time environment and hence you will not be able to compile your source files using a JVM.</a>
+</qa><qa>
+<q>6. What is a pointer and does Java support pointers?</q>
+<a>Pointer is a reference handle to a memory location. Improper handling of pointers leads to memory leaks and reliability issues hence Java doesn't support the usage of pointers.</a>
+</qa><qa>
+<q>7. What is the base class of all classes?</q>
+<a>java.lang.Object</a>
+</qa><qa>
+<q>8. Does Java support multiple inheritance?</q>
+<a>Java doesn't support multiple inheritance.</a>
+</qa><qa>
+<q>9. Is Java a pure object oriented language?</q>
+<a>Java uses primitive data types and hence is not a pure object oriented language.</a>
+</qa><qa>
+<q>10. Are arrays primitive data types?</q>
+<a>In Java, Arrays are objects.</a>
+</qa><qa>
+<q>11. What is difference between Path and Classpath?</q>
+<a>Path and Classpath are operating system level environment variales. Path is used define where the system can find the executables(.exe) files and classpath is used to specify the location .class files.</a>
+</qa><qa>
+<q>12. What are local variables?</q>
+<a>Local varaiables are those which are declared within a block of code like methods. Local variables should be initialised before accessing them.</a>
+</qa><qa>
+<q>13. What are instance variables?</q>
+<a>Instance variables are those which are defined at the class level. Instance variables need not be initialized before using them as they are automatically initialized to their default values.</a>
+</qa><qa>
+<q>14. How to define a constant variable in Java?</q>
+<a>The variable should be declared as static and final. So only one copy of the variable exists for all instances of the class and the value can't be changed also.</a>
+<a>static final int PI = 2.14; is an example for constant.</a>
+</qa><qa>
+<q>15. Should a main() method be compulsorily declared in all java classes?</q>
+<a>No not required. main() method should be defined only if the source class is a java application.</a>
+</qa><qa>
+<q>16. What is the return type of the main() method?</q>
+<a>Main() method doesn't return anything hence declared void.</a>
+</qa><qa>
+<q>17. Why is the main() method declared static?</q>
+<a>main() method is called by the JVM even before the instantiation of the class hence it is declared as static.</a>
+</qa><qa>
+<q>18. What is the arguement of main() method?</q>
+<a>main() method accepts an array of String object as arguement.</a>
+</qa><qa>
+<q>19. Can a main() method be overloaded?</q>
+<a>Yes. You can have any number of main() methods with different method signature and implementation in the class.</a>
+</qa><qa>
+<q>20. Can a main() method be declared final?</q>
+<a>Yes. Any inheriting class will not be able to have it's own default main() method.</a>
+</qa><qa>
+<q>21. Does the order of public and static declaration matter in main() method?</q>
+<a>No. It doesn't matter but void should always come before main().</a>
+</qa><qa>
+<q>22. Can a source file contain more than one class declaration?</q>
+<a>Yes a single source file can contain any number of Class declarations but only one of the class can be declared as public.</a>
+</qa><qa>
+<q>23. What is a package?</q>
+<a>Package is a collection of related classes and interfaces. package declaration should be first statement in a java class.</a>
+</qa><qa>
+<q>24. Which package is imported by default?</q>
+<a>java.lang package is imported by default even without a package declaration.</a>
+</qa><qa>
+<q>25. Can a class declared as private be accessed outside it's package?</q>
+<a>Not possible.</a>
+</qa><qa>
+<q>26. Can a class be declared as protected?</q>
+<a>A class can't be declared as protected. only methods can be declared as protected.</a>
+</qa><qa>
+<q>27. What is the access scope of a protected method?</q>
+<a>A protected method can be accessed by the classes within the same package or by the subclasses of the class in any package.</a>
+</qa><qa>
+<q>28. What is the purpose of declaring a variable as final?</q>
+<a>A final variable's value can't be changed. final variables should be initialized before using them.</a>
+</qa><qa>
+<q>29. What is the impact of declaring a method as final?</q>
+<a>A method declared as final can't be overridden. A sub-class can't have the same method signature with a different implementation.</a>
+</qa><qa>
+<q>30. I don't want my class to be inherited by any other class. What should i do?</q>
+<a>You should declared your class as final. But you can't define your class as final, if it is an abstract class. A class declared as final can't be extended by any other class.</a>
+</qa><qa>
+<q>31. Can you give few examples of final classes defined in Java API?</q>
+<a>java.lang.String, java.lang.Math are final classes.</a>
+</qa><qa>
+<q>32. How is final different from finally and finalize()?</q>
+<a>final is a modifier which can be applied to a class or a method or a variable. final class can't be inherited, final method can't be overridden and final variable can't be changed. </a>
+<a>finally is an exception handling code section which gets executed whether an exception is raised or not by the try block code segment. </a>
+<a>finalize() is a method of Object class which will be executed by the JVM just before garbage collecting object to give a final chance for resource releasing activity.</a>
+</qa><qa>
+<q>33. Can a class be declared as static?</q>
+<a>We can not declare top level class as static, but only inner class can be declared static.</a>
+<a>public class Test</a>
+<a>{ </a>
+<a>    static class InnerClass</a>
+<a>    {</a>
+<a>        public static void InnerMethod()</a>
+<a>        { System.out.println("Static Inner Class!"); }</a>
+<a>    } </a>
+<a>    public static void main(String args[])</a>
+<a>    {</a>
+<a>       Test.InnerClass.InnerMethod();</a>
+<a>    }</a>
+<a>}</a>
+<a>//output: Static Inner Class!</a>
+</qa><qa>
+<q>34. When will you define a method as static?</q>
+<a>When a method needs to be accessed even before the creation of the object of the class then we should declare the method as static.</a>
+</qa><qa>
+<q>35. What are the restriction imposed on a static method or a static block of code?</q>
+<a>A static method should not refer to instance variables without creating an instance and cannot use "this" operator to refer the instance.</a>
+</qa><qa>
+<q>36. I want to print "Hello" even before main() is executed. How will you acheive that?</q>
+<a>Print the statement inside a static block of code. Static blocks get executed when the class gets loaded into the memory and even before the creation of an object. Hence it will be executed before the main() method. And it will be executed only once.</a>
+</qa><qa>
+<q>37. What is the importance of static variable?</q>
+<a>static variables are class level variables where all objects of the class refer to the same variable. If one object changes the value then the change gets reflected in all the objects.</a>
+</qa><qa>
+<q>38. Can we declare a static variable inside a method?</q>
+<a>Static varaibles are class level variables and they can't be declared inside a method. If declared, the class will not compile.</a>
+</qa><qa>
+<q>39. What is an Abstract Class and what is it's purpose?</q>
+<a>A Class which doesn't provide complete implementation is defined as an abstract class. Abstract classes enforce abstraction.</a>
+</qa><qa>
+<q>40. Can a abstract class be declared final?</q>
+<a>Not possible. An abstract class without being inherited is of no use and hence will result in compile time error.</a>
+</qa><qa>
+<q>41. What is use of a abstract variable?</q>
+<a>Variables can't be declared as abstract. only classes and methods can be declared as abstract.</a>
+</qa><qa>
+<q>42. Can you create an object of an abstract class?</q>
+<a>Not possible. Abstract classes can't be instantiated.</a>
+</qa><qa>
+<q>43. Can a abstract class be defined without any abstract methods?</q>
+<a>Yes it's possible. This is basically to avoid instance creation of the class.</a>
+</qa><qa>
+<q>44. Class C implements Interface I containing method m1 and m2 declarations. Class C has provided implementation for method m2. Can i create an object of Class C?</q>
+<a>No not possible. Class C should provide implementation for all the methods in the Interface I. Since Class C didn't provide implementation for m1 method, it has to be declared as abstract. Abstract classes can't be instantiated.</a>
+</qa><qa>
+<q>45. Can a method inside a Interface be declared as final?</q>
+<a>No not possible. Doing so will result in compilation error. public and abstract are the only applicable modifiers for method declaration in an interface.</a>
+</qa><qa>
+<q>46. Can an Interface implement another Interface?</q>
+<a>Intefaces doesn't provide implementation hence a interface cannot implement another interface.</a>
+</qa><qa>
+<q>47. Can an Interface extend another Interface?</q>
+<a>Yes an Interface can inherit another Interface, for that matter an Interface can extend more than one Interface.</a>
+</qa><qa>
+<q>48. Can a Class extend more than one Class?</q>
+<a>Not possible. A Class can extend only one class but can implement any number of Interfaces.</a>
+</qa><qa>
+<q>49. Why is an Interface be able to extend more than one Interface but a Class can't extend more than one Class?</q>
+<a>Basically Java doesn't allow multiple inheritance, so a Class is restricted to extend only one Class. But an Interface is a pure abstraction model and doesn't have inheritance hierarchy like classes(do remember that the base class of all classes is Object). So an Interface is allowed to extend more than one Interface.</a>
+</qa><qa>
+<q>50. Can an Interface be final?</q>
+<a>Not possible. Doing so so will result in compilation error.</a>
+</qa><qa>
+<q>51. Can a class be defined inside an Interface?</q>
+<a>Yes it's possible.</a>
+</qa><qa>
+<q>52. Can an Interface be defined inside a class?</q>
+<a>Yes it's possible.</a>
+</qa><qa>
+<q>53. What is a Marker Interface?</q>
+<a>An Interface which doesn't have any declaration inside but still enforces a mechanism.</a>
+</qa><qa>
+<q>54. Which object oriented Concept is achieved by using overloading and overriding?</q>
+<a>Polymorphism.</a>
+</qa><qa>
+<q>55. Why does Java not support operator overloading?</q>
+<a>Operator overloading makes the code very difficult to read and maintain. To maintain code simplicity, Java doesn't support operator overloading.</a>
+</qa><qa>
+<q>56. Can we define private and protected modifiers for variables in interfaces?</q>
+<a>No.</a>
+</qa><qa>
+<q>57. What is Externalizable?</q>
+<a>Externalizable is an Interface that extends Serializable Interface. And sends data into Streams in Compressed Format. It has two methods, writeExternal(ObjectOuput out) and readExternal(ObjectInput in)</a>
+</qa><qa>
+<q>58. What modifiers are allowed for methods in an Interface?</q>
+<a>Only public and abstract modifiers are allowed for methods in interfaces.</a>
+</qa><qa>
+<q>59. What is a local, member and a class variable?</q>
+<a>Variables declared within a method are "local" variables.</a>
+<a>Variables declared within the class i.e not within any methods are "member" variables (global variables).</a>
+<a>Variables declared within the class i.e not within any methods and are defined as "static" are class variables.</a>
+</qa><qa>
+<q>60. What is an abstract method?</q>
+<a>An abstract method is a method whose implementation is deferred to a subclass.</a>
+</qa><qa>
+<q>61. What value does read() return when it has reached the end of a file?</q>
+<a>The read() method returns -1 when it has reached the end of a file.</a>
+</qa><qa>
+<q>62. Can a Byte object be cast to a double value?</q>
+<a>No, an object cannot be cast to a primitive value.</a>
+</qa><qa>
+<q>63. What is the difference between a static and a non-static inner class?</q>
+<a>A non-static inner class may have object instances that are associated with instances of the class's outer class. A static inner class does not have any object instances.</a>
+</qa><qa>
+<q>64. What is an object's lock and which object's have locks?</q>
+<a>An object's lock is a mechanism that is used by multiple threads to obtain synchronized access to the object. A thread may execute a synchronized method of an object only after it has acquired the object's lock. All objects and classes have locks. A class's lock is acquired on the class's Class object.</a>
+</qa><qa>
+<q>65. What is the % operator?</q>
+<a>It is referred to as the modulo or remainder operator. It returns the remainder of dividing the first operand by the second operand.</a>
+</qa><qa>
+<q>66. When can an object reference be cast to an interface reference?</q>
+<a>An object reference be cast to an interface reference when the object implements the referenced interface.</a>
+</qa><qa>
+<q>67. Which class is extended by all other classes?</q>
+<a>The Object class is extended by all other classes.</a>
+</qa><qa>
+<q>68. Which non-Unicode letter characters may be used as the first character of an identifier?</q>
+<a>The non-Unicode letter characters $ and _ may appear as the first character of an identifier</a>
+</qa><qa>
+<q>69. What restrictions are placed on method overloading?</q>
+<a>Two methods may not have the same name and argument list but different return types.</a>
+</qa><qa>
+<q>70. What is casting?</q>
+<a>There are two types of casting, casting between primitive numeric types and casting between object references. Casting between numeric types is used to convert larger values, such as double values, to smaller values, such as byte values. Casting between object references is used to refer to an object by a compatible class, interface, or array type reference.</a>
+</qa><qa>
+<q>71. What is the return type of a program's main() method?</q>
+<a>void.</a>
+</qa><qa>
+<q>72. If a variable is declared as private, where may the variable be accessed?</q>
+<a>A private variable may only be accessed within the class in which it is declared.</a>
+</qa><qa>
+<q>73. What do you understand by private, protected and public?</q>
+<a>These are accessibility modifiers. Private is the most restrictive, while public is the least restrictive. There is no real difference between protected and the default type (also known as package protected) within the context of the same package, however the protected keyword allows visibility to a derived class in a different package.</a>
+</qa><qa>
+<q>74. What is Downcasting ?</q>
+<a>Downcasting is the casting from a general to a more specific type, i.e. casting down the hierarchy</a>
+</qa><qa>
+<q>75. What modifiers may be used with an inner class that is a member of an outer class?</q>
+<a>A (non-local) inner class may be declared as public, protected, private, static, final, or abstract.</a>
+</qa><qa>
+<q>76. How many bits are used to represent Unicode, ASCII, UTF-16, and UTF-8 characters?</q>
+<a>Unicode requires 16 bits and ASCII require 7 bits Although the ASCII character set uses only 7 bits, it is usually represented as 8 bits.</a>
+<a>UTF-8 represents characters using 8, 16, and 18 bit patterns.</a>
+<a>UTF-16 uses 16-bit and larger bit patterns.</a>
+</qa><qa>
+<q>77. What restrictions are placed on the location of a package statement within a source code file?</q>
+<a>A package statement must appear as the first line in a source code file (excluding blank lines and comments).</a>
+</qa><qa>
+<q>78. What is a native method?</q>
+<a>A native method is a method that is implemented in a language other than Java.</a>
+</qa><qa>
+<q>79. What are order of precedence and associativity, and how are they used?</q>
+<a>Order of precedence determines the order in which operators are evaluated in expressions. Associatity determines whether an expression is evaluated left-to-right or right-to-left.</a>
+</qa><qa>
+<q>80. Can an anonymous class be declared as implementing an interface and extending a class?</q>
+<a>An anonymous class may implement an interface or extend a superclass, but may not be declared to do both.</a>
+</qa><qa>
+<q>81. What is the range of the char type?</q>
+<a>The range of the char type is 0 to 216 - 1 (i.e. 0 to 65535.)</a>
+</qa><qa>
+<q>82. What is the range of the short type?</q>
+<a>The range of the short type is -(215) to 215 - 1. (i.e. -32,768 to 32,767)</a>
+</qa><qa>
+<q>83. Why isn't there operator overloading?</q>
+<a>Because C++ has proven by example that operator overloading makes code almost impossible to maintain.</a>
+</qa><qa>
+<q>84. What does it mean that a method or field is "static"?</q>
+<a>Static variables and methods are instantiated only once per class. In other words they are class variables, not instance variables. If you change the value of a static variable in a particular object, the value of that variable changes for all instances of that class. Static methods can be referenced with the name of the class rather than the name of a particular object of the class (though that works too). That's how library methods like System.out.println() work. out is a static field in the java.lang.System class.</a>
+</qa><qa>
+<q>85. Is null a keyword?</q>
+<a>The null value is not a keyword.</a>
+</qa><qa>
+<q>86. Which characters may be used as the second character of an identifier, but not as the first character of an identifier?</q>
+<a>The digits 0 through 9 may not be used as the first character of an identifier but they may be used after the first character of an identifier.</a>
+</qa><qa>
+<q>87. Is the ternary operator written x : y ? z or x ? y : z ?</q>
+<a>It is written x ? y : z.</a>
+</qa><qa>
+<q>88. How is rounding performed under integer division?</q>
+<a>The fractional part of the result is truncated. This is known as rounding toward zero.</a>
+</qa><qa>
+<q>89. If a class is declared without any access modifiers, where may the class be accessed?</q>
+<a>A class that is declared without any access modifiers is said to have package access. This means that the class can only be accessed by other classes and interfaces that are defined within the same package.</a>
+</qa><qa>
+<q>90. Does a class inherit the constructors of its superclass?</q>
+<a>A class does not inherit constructors from any of its superclasses.</a>
+</qa><qa>
+<q>91. Name the eight primitive Java types.</q>
+<a>The eight primitive types are byte, char, short, int, long, float, double, and boolean.</a>
+</qa><qa>
+<q>92. What restrictions are placed on the values of each case of a switch statement?</q>
+<a>During compilation, the values of each case of a switch statement must evaluate to a value that can be promoted to an int value.</a>
+</qa><qa>
+<q>93. What is the difference between a while statement and a do while statement?</q>
+<a>A while statement checks at the beginning of a loop to see whether the next loop iteration should occur. A do while statement checks at the end of a loop to see whether the next iteration of a loop should occur. The do whilestatement will always execute the body of a loop at least once.</a>
+</qa><qa>
+<q>94. What modifiers can be used with a local inner class?</q>
+<a>A local inner class may be final or abstract.</a>
+</qa><qa>
+<q>95. When does the compiler supply a default constructor for a class?</q>
+<a>The compiler supplies a default constructor for a class if no other constructors are provided.</a>
+</qa><qa>
+<q>96. If a method is declared as protected, where may the method be accessed?</q>
+<a>A protected method may only be accessed by classes or interfaces of the same package or by subclasses of the class in which it is declared.</a>
+</qa><qa>
+<q>97. What are the legal operands of the instanceof operator?</q>
+<a>The left operand is an object reference or null value and the right operand is a class, interface, or array type.</a>
+</qa><qa>
+<q>98. Are true and false keywords?</q>
+<a>The values true and false are not keywords.</a>
+</qa><qa>
+<q>99. What happens when you add a double value to a String?</q>
+<a>The result is a String object.</a>
+</qa><qa>
+<q>100. What is the diffrence between inner class and nested class?</q>
+<a>When a class is defined within a scope od another class, then it becomes inner class. If the access modifier of the inner class is static, then it becomes nested class.</a>
+</qa><qa>
+<q>101. Can an abstract class be final?</q>
+<a>An abstract class may not be declared as final.</a>
+</qa><qa>
+<q>102. What is numeric promotion?</q>
+<a>Numeric promotion is the conversion of a smaller numeric type to a larger numeric type, so that integer and floating-point operations may take place. In numerical promotion, byte, char, and short values are converted to int values. The int values are also converted to long values, if necessary. The long and float values are converted to double values, as required.</a>
+</qa><qa>
+<q>103. What is the difference between a public and a non-public class?</q>
+<a>A public class may be accessed outside of its package. A non-public class may not be accessed outside of its package.</a>
+</qa><qa>
+<q>104. To what value is a variable of the boolean type automatically initialized?</q>
+<a>The default value of the boolean type is false.</a>
+</qa><qa>
+<q>105. What is the difference between the prefix and postfix forms of the ++ operator?</q>
+<a>The prefix form performs the increment operation and returns the value of the increment operation. The postfix form returns the current value all of the expression and then performs the increment operation on that value.</a>
+</qa><qa>
+<q>106. What restrictions are placed on method overriding?</q>
+<a>Overridden methods must have the same name, argument list, and return type. The overriding method may not limit the access of the method it overrides. The overriding method may not throw any exceptions that may not be thrown by the overridden method.</a>
+</qa><qa>
+<q>107. What is a Java package and how is it used?</q>
+<a>A Java package is a naming context for classes and interfaces. A package is used to create a separate name space for groups of classes and interfaces. Packages are also used to organize related classes and interfaces into a single API unit and to control accessibility to these classes and interfaces.</a>
+</qa><qa>
+<q>108. What modifiers may be used with a top-level class?</q>
+<a>A top-level class may be public, abstract, or final.</a>
+</qa><qa>
+<q>109. What is the difference between an if statement and a switch statement?</q>
+<a>The if statement is used to select among two alternatives. It uses a boolean expression to decide which alternative should be executed. The switch statement is used to select among multiple alternatives. It uses an int expression to determine which alternative should be executed.</a>
+</qa><qa>
+<q>110. What are the practical benefits, if any, of importing a specific class rather than an entire package (e.g. import java.net.* versus import java.net.Socket)?</q>
+<a>It makes no difference in the generated class files since only the classes that are actually used are referenced by the generated class file. There is another practical benefit to importing single classes, and this arises when two (or more) packages have classes with the same name. Take java.util.Timer and javax.swing.Timer, for example. If I import java.util.* and javax.swing.* and then try to use "Timer", I get an error while compiling (the class name is ambiguous between both packages). Let's say what you really wanted was the javax.swing.Timer class, and the only classes you plan on using in java.util are Collection and HashMap. In this case, some people will prefer to import java.util.Collection and import java.util.HashMap instead of importing java.util.*. This will now allow them to use Timer, Collection, HashMap, and other javax.swing classes without using fully qualified class names in.</a>
+</qa><qa>
+<q>111. Can a method be overloaded based on different return type but same argument type ?</q>
+<a>No, because the methods can be called without using their return type in which case there is ambiquity for the compiler.</a>
+</qa><qa>
+<q>112. What happens to a static variable that is defined within a method of a class ?</q>
+<a>Can't do it. You'll get a compilation error.</a>
+</qa><qa>
+<q>113. How many static initializers can you have ?</q>
+<a>As many as you want, but the static initializers and class variable initializers are executed in textual order and may not refer to class variables declared in the class whose declarations appear textually after the use, even though these class variables are in scope.</a>
+</qa><qa>
+<q>114. What is the difference between method overriding and overloading?</q>
+<a>Overriding is a method with the same name and arguments as in a parent, whereas overloading is the same method name but different arguments</a>
+</qa><qa>
+<q>115. What is constructor chaining and how is it achieved in Java ?</q>
+<a>A child object constructor always first needs to construct its parent (which in turn calls its parent constructor.). In Java it is done via an implicit call to the no-args constructor as the first statement.</a>
+</qa><!-- <qa>
+<q>116. What is the difference between the Boolean & operator and the && operator?</q>
+<a>If an expression involving the Boolean & operator is evaluated, both operands are evaluated. Then the & operator is applied to the operand. When an expression involving the && operator is evaluated, the first operand is evaluated. If the first operand returns a value of true then the second operand is evaluated. The && operator is then applied to the first and second operands. If the first operand evaluates to false, the evaluation of the second operand is skipped.</a>
+</qa> --><qa>
+<q>117. Which Java operator is right associative?</q>
+<a>The = operator is right associative.</a>
+</qa><qa>
+<q>118. Can a double value be cast to a byte?</q>
+<a>Yes, a double value can be cast to a byte.</a>
+</qa><qa>
+<q>119. What is the difference between a break statement and a continue statement?</q>
+<a>A break statement results in the termination of the statement to which it applies (switch, for, do, or while). A continue statement is used to end the current loop iteration and return control to the loop statement.</a>
+</qa><qa>
+<q>120. Can a for statement loop indefinitely?</q>
+<a>Yes, a for statement can loop indefinitely. For example, consider the following: for(;;);</a>
+</qa><qa>
+<q>121. To what value is a variable of the String type automatically initialized?</q>
+<a>The default value of an String type is null.</a>
+</qa><qa>
+<q>122. What is the difference between a field variable and a local variable?</q>
+<a>A field variable is a variable that is declared as a member of a class. A local variable is a variable that is declared local to a method.</a>
+</qa><qa>
+<q>123. How are this() and super() used with constructors?</q>
+<a>this() is used to invoke a constructor of the same class. super() is used to invoke a superclass constructor.</a>
+</qa><qa>
+<q>124. What does it mean that a class or member is final?</q>
+<a>A final class cannot be inherited. A final method cannot be overridden in a subclass. A final field cannot be changed after it's initialized, and it must include an initializer statement where it's declared.</a>
+</qa><qa>
+<q>125. What does it mean that a method or class is abstract?</q>
+<a>An abstract class cannot be instantiated. Abstract methods may only be included in abstract classes. However, an abstract class is not required to have any abstract methods, though most of them do. Each subclass of an abstract class must override the abstract methods of its superclasses or it also should be declared abstract.</a>
+</qa><qa>
+<q>126. What is a transient variable?</q>
+<a>Transient variable is a variable that may not be serialized.</a>
+</qa><qa>
+<q>127. How does Java handle integer overflows and underflows?</q>
+<a>It uses those low order bytes of the result that can fit into the size of the type allowed by the operation.</a>
+</qa><qa>
+<q>128. What is the difference between the >> and >>> operators?</q>
+<a>The >> operator carries the sign bit when shifting right. The >>> zero-fills bits that have been shifted out.</a>
+</qa><qa>
+<q>129. Is sizeof a keyword?</q>
+<a>The sizeof operator is not a keyword.</a>
+</qa>
+</interview>
