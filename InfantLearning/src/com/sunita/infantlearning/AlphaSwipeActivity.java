@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -19,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class AlphaSwipeActivity extends Activity {
@@ -50,8 +55,31 @@ public class AlphaSwipeActivity extends Activity {
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
+		if(StaticConstants.DISPLAY_ADD){
+        	addAd();	
+        }
 	}
 
+
+	private AdView adView;
+	private void addAd() {
+    	// Create the adView.
+        adView = new AdView(this);
+        adView.setAdUnitId(StaticConstants.ADD_1);
+        adView.setAdSize(AdSize.BANNER);
+        
+        
+        LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout1);
+        //layout = (LinearLayout)findViewById(R.id.groupLinearLayout);
+        // Add the adView to it.
+        layout.addView(adView);
+
+        // Initiate a generic request.
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Load the adView with the ad request.
+        adView.loadAd(adRequest);
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
